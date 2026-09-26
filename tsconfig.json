@@ -3,7 +3,7 @@
     "compilerOptions": {
         "noEmit": true,
         "allowJs": false,
-        "types": ["node"],
+        "types": ["node"]
     },
     "include": ["./scripts/", "eslint.config.ts"],
     "exclude": ["node_modules/**"]

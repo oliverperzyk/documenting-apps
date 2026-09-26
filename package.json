@@ -14,7 +14,14 @@
         "format-cpp": "bun scripts/format-cpp.ts",
         "format-cpp:check": "bun scripts/format-cpp.ts --check",
         "lint": "bunx eslint .",
-        "lint:fix": "bunx eslint --fix ."
+        "lint:fix": "bunx eslint --fix .",
+        "prepare": "lefthook install"
+    },
+    "lint-staged": {
+        "**/*.{json,json5,jsonc,md}": [
+            "bunx prettier --write",
+            "bunx eslint --fix"
+        ]
     },
     "devDependencies": {
         "@eslint/json": "^2.1.0",
@@ -23,6 +30,8 @@
         "@wasm-fmt/clang-format": "^23.1.1",
         "eslint": "^10.11.0",
         "jiti": "^2.7.0",
+        "lefthook": "^2.1.14",
+        "lint-staged": "^17.6.0",
         "prettier": "^3.9.9"
     }
 }
