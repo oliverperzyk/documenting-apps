@@ -10,9 +10,15 @@
     "type": "module",
     "scripts": {
         "format": "bunx prettier --write .",
-        "format:check": "bunx prettier --check ."
+        "format:check": "bunx prettier --check .",
+        "lint": "bunx eslint .",
+        "lint:fix": "bunx eslint --fix ."
     },
     "devDependencies": {
+        "@eslint/json": "^2.1.0",
+        "@eslint/markdown": "^8.0.3",
+        "eslint": "^10.11.0",
+        "jiti": "^2.7.0",
         "prettier": "^3.9.9"
     }
 }
