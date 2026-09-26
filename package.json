@@ -1,0 +1,18 @@
+{
+    "name": "@oliverperzyk/documenting-apps",
+    "description": "Solutions for the tasks from school subject related to testing & documenting IT projects.",
+    "private": true,
+    "author": {
+        "name": "oliverperzyk (Oliwier Perzyński)",
+        "email": "olek@oliverperzyk.com",
+        "url": "https://oliverperzyk.com"
+    },
+    "type": "module",
+    "scripts": {
+        "format": "bunx prettier --write .",
+        "format:check": "bunx prettier --check ."
+    },
+    "devDependencies": {
+        "prettier": "^3.9.9"
+    }
+}

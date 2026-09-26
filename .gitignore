@@ -7,6 +7,9 @@
 # PDFs directory is ignored to not leak school materials outside of it.
 /pdfs/
 
+# Distribution & dependencies files.
+/**/node_modules/
+
 # Operating system files.
 /**/.DS_Store
 /**/*.ini
