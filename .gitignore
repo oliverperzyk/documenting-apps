@@ -4,6 +4,9 @@
 /**/.vs/
 /**/.cursor/
 
+# PDFs directory is ignored to not leak school materials outside of it.
+/pdfs/
+
 # Operating system files.
 /**/.DS_Store
 /**/*.ini
