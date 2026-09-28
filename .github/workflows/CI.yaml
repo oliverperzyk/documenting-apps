@@ -42,3 +42,5 @@ jobs:
               run: bun run format:check
             - name: Lint JSON and Markdown files using ESLint.
               run: bun run lint
+            - name: Check submission bundler.
+              run: bun run test:bundle

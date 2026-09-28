@@ -49,15 +49,15 @@ A chart documents this series on this machine. It is not a universal law. Title 
 - Report failures as they happened. Exit code 0 and “the file exists” do not prove the content is correct.
 - Do not put personal data or directory paths in a report.
 
-## Source materials and scope
-
-### Submission bundler
+## Submission bundler
 
 Use `bun run bundle TiDPI_NN` and the contract in `scripts/BUNDLE.md`. Each completed task has an explicit `submission.json`; declare only completed stages/levels, extensions, and the artifacts intended for handoff. The archive is a whitelist, not a recursive copy of the task folder. Keep the main report and supporting level reports separate; the bundler does not merge them or run experiments.
 
 Report YAML is parsed with Bun's built-in `import { YAML } from "bun"`; do not add a third-party YAML dependency. Missing declared main-report exports may be generated with Pandoc/XeLaTeX. Existing exports are never overwritten. Preserve export diagnostics in the gitignored task-local `.bundle/` directory, outside the submission.
 
 Before setting `reviewedContentSha256`, manually check the exact reported file list, logs, arithmetic, task-specific completeness, report/export consistency, visual layout, metadata, screenshots, and anonymization. The digest binds that review to artifact bytes and manifest configuration; it is not proof of semantic correctness. A changed file or configuration requires a new review. `--check` is read-only; `--force` authorizes replacing only the verified target ZIP. Output stays in gitignored `submissions/`; never submit externally without explicit authorization.
+
+## Source materials and scope
 
 These instructions summarize the local school PDFs. Read the relevant PDF again before implementing a task, especially its exercises, report requirements, and grading criteria. References below use PDF page numbers, starting at 1. Keep the PDFs and extracted copies out of commits. Do not upload school materials or publish them as part of a solution.
 

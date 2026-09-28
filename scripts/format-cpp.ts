@@ -32,7 +32,7 @@ class FormatCpp {
     /**
      * @summary Directory names `collect` does not enter.
      */
-    private static readonly skipped = new Set(["node_modules", "dist", "build", "out", "pdfs"])
+    private static readonly skipped = new Set(["node_modules", "dist", "build", "out", "pdfs", "submissions"])
 
     /**
      * @summary Blocks construction.

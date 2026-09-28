@@ -400,3 +400,5 @@ Podstawa: lekcja 07, s. 2–8.
 - [ ] Wymagane eksporty otwarto i obejrzano, a nie tylko utworzono.
 - [ ] Finalny raport nie zawiera podpowiedzi ani danych osobowych.
 - [ ] Pomoc AI ujawniono i można wyjaśnić kod, obliczenia oraz wnioski.
+
+Do pakowania użyj `bun run bundle TiDPI_NN` według [instrukcji manifestu i zatwierdzania](../../scripts/BUNDLE.md). Lista `artifacts` musi obejmować wszystkie pliki wymagane przez ukończony zakres. Dopiero po powyższej ręcznej kontroli wpisz wskazany `reviewedContentSha256` do `submission.json`; kontrola struktury przez skrypt nie dowodzi poprawności eksperymentu ani zgodności eksportu z raportem.
