@@ -9,6 +9,8 @@
     },
     "type": "module",
     "scripts": {
+        "bundle": "bun scripts/bundle.ts",
+        "test:bundle": "bun test scripts/bundle.test.ts",
         "format": "bunx prettier --write . && bun scripts/format-cpp.ts",
         "format:check": "bunx prettier --check . && bun scripts/format-cpp.ts --check",
         "format-cpp": "bun scripts/format-cpp.ts",

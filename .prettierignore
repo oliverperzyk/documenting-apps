@@ -13,6 +13,8 @@
 /**/dist/
 /**/build/
 /**/out/
+/submissions/
+/solutions/**/.bundle/
 # Lockfiles.
 /**/package-lock.json
 /**/yarn.lock

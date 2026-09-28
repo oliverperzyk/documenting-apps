@@ -9,6 +9,8 @@
 
 # Distribution & dependencies files.
 /**/node_modules/
+/submissions/
+/solutions/**/.bundle/
 
 # Operating system files.
 /**/.DS_Store
