@@ -1,0 +1,123 @@
+TiDPI local environment inventory
+checked_at=2026-09-28
+scope=installed tools and read-only version/metadata checks; no task benchmark or document export performed
+GUI versions come from application bundle metadata; installed does not mean used or tested.
+Output from version probes is explicitly filtered where the command selects version/target lines, to avoid capturing directory paths.
+
+[Hardware probe: sandbox failure]
+sysctl: sysctl fmt -1 1024 1: Operation not permitted
+exit_code=1
+
+[Hardware probe: sysctl -n machdep.cpu.brand_string hw.memsize hw.logicalcpu hw.physicalcpu; approved read outside sandbox]
+Apple M4 Pro
+25769803776
+14
+14
+exit_code=0
+
+[Hardware arithmetic]
+ram_bytes / 1073741824 = 24 GiB
+
+[System]
+ProductName:		macOS
+ProductVersion:		27.0
+BuildVersion:		26A428
+exit_code=0
+
+[Architecture]
+arm64
+exit_code=0
+
+[C++ compiler]
+Apple clang version 21.0.0 (clang-2100.3.34.2)
+Target: arm64-apple-darwin27.0.0
+Thread model: posix
+exit_code=0
+
+[Active developer tools: xcode-select selection classified without directory paths]
+active_developer_tools=Command Line Tools
+exit_code=0
+
+[Default Python]
+Python 3.14.4
+exit_code=0
+
+[System Python]
+Python 3.9.6
+exit_code=0
+
+[Additional Python 3.13]
+Python 3.13.5
+exit_code=0
+
+[Python runtime and clock]
+implementation=CPython
+process_architecture=arm64
+pointer_bytes=8
+clock=mach_absolute_time()
+monotonic=True
+adjustable=False
+resolution_s=4.166666666666666e-08
+exit_code=0
+
+[Pandoc]
+pandoc 3.11
+Features: +server +lua
+Scripting engine: Lua 5.4
+exit_code=0
+
+[XeLaTeX]
+XeTeX 3.141592653-2.6-0.999998 (TeX Live 2026)
+kpathsea version 6.4.2
+exit_code=0
+
+[PowerShell]
+PowerShell 7.5.4
+exit_code=0
+
+[LLDB]
+lldb-2103.0.34.103
+Apple Swift version 6.4 (swiftlang-6.4.0.34.1 clang-2100.3.34.1)
+exit_code=0
+
+[Build and repository tools]
+cmake version 4.1.0
+git version 2.54.0 (Apple Git-157)
+v24.11.1
+1.4.0
+exit_code=0
+
+[Optional Python packages in default interpreter]
+pypandoc=False
+pypandoc_binary=False
+exit_code=0
+
+[Missing CLI tools]
+cl=not_found_in_PATH
+cl.exe=not_found_in_PATH
+ninja=not_found_in_PATH
+gdb=not_found_in_PATH
+pdftotext=not_found_in_PATH
+pdftoppm=not_found_in_PATH
+pdfinfo=not_found_in_PATH
+tectonic=not_found_in_PATH
+exit_code=0
+
+[Application bundle versions]
+Visual Studio Code=1.139.1
+Xcode=26.6
+Pages=14.2
+Numbers=14.2
+Google Chrome=149.0.7827.201
+Cursor=3.21.16
+exit_code=0
+
+[Additional installed application: PyCharm bundle metadata]
+2026.2.1
+exit_code=0
+
+[Availability scope]
+Microsoft Word, Microsoft Excel, LibreOffice, and Visual Studio were not listed in the inspected standard macOS application directories.
+Windows guests and toolchains inside virtual machines were not inspected.
+pypandoc and pypandoc-binary were also not found by pip in the separately installed Python 3.13.5.
+C++ standard, optimization flags, C++ clock resolution, benchmark load, and actual task execution settings have not been established by this inventory.
