@@ -11,10 +11,10 @@
     "scripts": {
         "bundle": "bun scripts/bundle.ts",
         "test:bundle": "bun test scripts/bundle.test.ts",
-        "format": "bunx prettier --write . && bun scripts/format-cpp.ts",
-        "format:check": "bunx prettier --check . && bun scripts/format-cpp.ts --check",
-        "format-cpp": "bun scripts/format-cpp.ts",
-        "format-cpp:check": "bun scripts/format-cpp.ts --check",
+        "format": "bunx prettier --write . && bun scripts/FormatCpp.ts",
+        "format:check": "bunx prettier --check . && bun scripts/FormatCpp.ts --check",
+        "format-cpp": "bun scripts/FormatCpp.ts",
+        "format-cpp:check": "bun scripts/FormatCpp.ts --check",
         "lint": "bunx eslint .",
         "lint:fix": "bunx eslint --fix .",
         "prepare": "lefthook install"
