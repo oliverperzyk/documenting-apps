@@ -1,0 +1,12 @@
+evidence_id=D15
+scenario=controlled_syntax_error
+script_command=python3 run_experiment.py --configuration release --case pass
+script_exit_code=1
+executable_before=true
+executable_after=false
+run_file_count=0
+source_matches_original=false
+source_sha256=d1d6a4b163b287f174723821ebdd0f2cd662c7b210b8e78659a9848691a11c8c
+expected_compile_exit_code=nonzero
+expected_execution_attempted=false
+expected_executable_after=false

@@ -1,0 +1,5 @@
+main.cpp:84:44: error: expected ';' at end of declaration
+   84 |     const bool correct = result == expected
+      |                                            ^
+      |                                            ;
+1 error generated.
