@@ -1,6 +1,6 @@
 import json from "@eslint/json"
 import markdown from "@eslint/markdown"
-import { defineConfig } from "eslint/config"
+import { defineConfig, globalIgnores } from "eslint/config"
 
 /**
  * @summary Configuration of ESLint.
@@ -8,9 +8,11 @@ import { defineConfig } from "eslint/config"
  * @see {@link https://eslint.org/docs/latest/use/configure/configuration-files}
  */
 export default defineConfig([
-    {
-        ignores: ["**/*.js", "**/*.cjs", "**/*.mjs", "submissions/**", "solutions/**/.bundle/**"],
-    },
+    /**
+     * @remarks This repository shouldn't have any JavaScript/TypeScript files,
+     * except this ESLint configuration.
+     */
+    globalIgnores(["**/*.js", "**/*.cjs", "**/*.mjs"]),
     {
         files: ["**/*.json"],
         plugins: { json },
@@ -35,7 +37,10 @@ export default defineConfig([
         language: "markdown/gfm",
         extends: ["markdown/recommended"],
         rules: {
-            // This rule falsly triggers GFM-related tags (e.g. [!IMPORTANT], [!NOTE], etc.)
+            /**
+             * @remarks This rule falsly triggers GFM-related tags (e.g. [!IMPORTANT], [!NOTE], etc.)
+             * @description It's easier to simply turn it off rather than struggle later.
+             */
             "markdown/no-missing-label-refs": "off",
         },
     },
