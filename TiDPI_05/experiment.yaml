@@ -1,0 +1,8 @@
+# Parametry automatu TiDPI_05 (poziom D).
+# Wymagane: configuration, case.
+# Opcjonalne: repeat (1..10), size (1..10000 lub null = default).
+
+configuration: release
+case: pass
+repeat: 1
+size: null

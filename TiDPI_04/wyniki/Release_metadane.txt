@@ -1,0 +1,18 @@
+date=2026-10-09
+timezone=Europe/Warsaw
+configuration=Release
+flags=-std=c++17 -O2 -DNDEBUG -Wall -Wextra -pedantic
+execution=terminal_without_debugger
+host=27.0.1
+build=26A434
+arch=arm64
+Apple clang version 21.0.0 (clang-2100.3.34.2)
+Target: arm64-apple-darwin27.0.0
+name;source_sha256;compile_exit;run_exit;output
+A_bazowy;3d90084a4bc01a1956407d3a424aaa86515d2fbb11a0b44559f4e53d46d2dc8b;0;0;wyniki/A_bazowy.txt
+A_zmieniony_seed;a477651c100c3d82dbbde788b0de12c07242ad42560643548dcead1cee6b13d6;0;0;wyniki/A_zmieniony_seed.txt
+A_zmieniony_generator;05c7b88a1932707acca8f81b11e4109411b25e3753341257066cd1b5e5747ae2;0;0;wyniki/A_zmieniony_generator.txt
+C_wiele_seedow;a0402931f67e1e5c9d2f3921bd6e2aa3b808a75a836a5df48cc665a3ed7f0273;0;0;rozszerzenia/C/wiele_seedow/output.txt
+C_bez_early_exit;cf201e364d2e5c9b944edcdb504c41660d673a004e28bbc89d3a8789a5d3f36a;0;0;rozszerzenia/C/bez_early_exit/output.txt
+D_std_sort;03e44db0226e5466bc5f2745eb712c82ca66a5feb9468383d4ec6caecfd20424;0;0;rozszerzenia/D/output.txt
+A_powtorzony;same_binary_as_A_bazowy;not_recompiled;0;wyniki/A_powtorzony.txt

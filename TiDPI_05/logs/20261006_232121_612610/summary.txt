@@ -1,0 +1,19 @@
+run_id=20261006_232121_612610
+configuration=release
+case=pass
+repeat=1
+size=16
+compile_exit_code=0
+execution_attempted=true
+run_exit_code=0
+final_status=passed
+compiler_backend=clang++
+compile_command=clang++ -O2 -DNDEBUG -std=c++17 -Wall -Wextra -pedantic -o _build/experiment.exe main.cpp
+compile_time_ms=304.373
+compile_timeout=false
+run_command=_build/experiment.exe --size 16
+run_01_exit_code=0
+run_01_time_ms=65.928
+run_01_timeout=false
+run_time_ms=65.928
+run_timeout=false

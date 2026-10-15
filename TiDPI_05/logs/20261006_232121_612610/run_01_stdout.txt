@@ -1,0 +1,4 @@
+Case: normal
+Size argument: 16
+Input count: 16
+Result correct: true

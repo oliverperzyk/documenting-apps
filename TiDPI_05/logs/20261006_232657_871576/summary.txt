@@ -1,0 +1,8 @@
+run_id=20261006_232657_871576
+config_path=fixtures/config_bad_case.yaml
+config_loaded=false
+compile_exit_code=not_started
+execution_attempted=false
+run_exit_code=not_started
+final_status=config_error
+config_error=case must be 'pass' or 'fail'

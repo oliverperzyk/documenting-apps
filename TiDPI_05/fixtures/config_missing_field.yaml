@@ -1,0 +1,3 @@
+# Brak wymaganego pola configuration — test config_error.
+case: pass
+repeat: 1

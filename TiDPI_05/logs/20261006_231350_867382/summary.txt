@@ -1,0 +1,14 @@
+run_id=20261006_231350_867382
+configuration=release
+case=fail
+compile_exit_code=0
+execution_attempted=true
+run_exit_code=1
+final_status=run_failed
+compiler_backend=clang++
+compile_command=clang++ -O2 -DNDEBUG -std=c++17 -Wall -Wextra -pedantic -o _build/experiment.exe main.cpp
+compile_time_ms=371.413
+compile_timeout=false
+run_command=_build/experiment.exe --simulate-failure
+run_time_ms=296.244
+run_timeout=false

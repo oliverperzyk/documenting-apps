@@ -1,0 +1,4 @@
+# Niedozwolona wartość case — test config_error.
+configuration: release
+case: maybe
+repeat: 1
