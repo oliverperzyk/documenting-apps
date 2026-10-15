@@ -1,5 +1,0 @@
-_build/
-.venv/
-.DS_Store
-*.o
-*.obj

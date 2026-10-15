@@ -1,0 +1,14 @@
+recorded_at=2026-10-15T17:14:13.978483+02:00
+timezone=Europe/Warsaw
+host=macOS 27.0.1
+build=26A434
+arch=arm64
+python=3.14.4
+Apple clang version 21.0.0 (clang-2100.3.34.2)
+Target: arm64-apple-darwin27.0.0
+cl_available=false
+source_sha256=5b46192e3f88de12a2b47cc72367891d29bb804ecfd76e4c653083bf8b684e9e
+automation_sha256=0f834e89a1d2cb13e32dc41ef17fce173e0e67a8029fc91f3490a772527567b2
+perf_counter_resolution_seconds=4.166666666666666e-08
+perf_counter_monotonic=true
+perf_counter_implementation=mach_absolute_time()

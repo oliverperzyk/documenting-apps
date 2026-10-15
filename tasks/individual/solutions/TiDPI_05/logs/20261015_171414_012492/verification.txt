@@ -1,0 +1,12 @@
+evidence_id=D16
+scenario=restored_source
+script_command=python3 run_experiment.py --configuration release --case pass
+script_exit_code=0
+executable_before=false
+executable_after=true
+run_file_count=2
+source_matches_original=true
+source_sha256=5b46192e3f88de12a2b47cc72367891d29bb804ecfd76e4c653083bf8b684e9e
+expected_compile_exit_code=0
+expected_execution_attempted=true
+expected_executable_after=true
