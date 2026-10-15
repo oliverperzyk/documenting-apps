@@ -6,8 +6,6 @@ This repository holds solutions for the remaining TiDPI tasks. Reports stay in P
 
 Task directories live under `solutions/`. When a task has levels, use `solutions/TiDPI_NN/raport.md` plus `a/`–`d/`, each with source, a raw log, and a level report. The top-level report is the single individual submission and includes or references all completed levels; level reports are supporting records, not separate school submissions. TiDPI 01 uses stages and optional R1–R5 extensions, not A–D levels.
 
-Use `solutions/general/BASE_RAPORT.md` as the shared report scaffold, together with its task-specific additions. Keep unfinished placeholders visibly unfinished. Do not turn a scaffold into a claimed completed experiment.
-
 ## Report
 
 YAML front matter:
