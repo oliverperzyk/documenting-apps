@@ -1,0 +1,11 @@
+---
+# Mapped from .prettierrc.json where clang-format has an equivalent.
+BasedOnStyle: LLVM
+ColumnLimit: 120
+IndentWidth: 4
+TabWidth: 4
+ContinuationIndentWidth: 4
+UseTab: Never
+LineEnding: LF
+InsertNewlineAtEOF: true
+Cpp11BracedListStyle: false
