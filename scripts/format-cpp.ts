@@ -31,8 +31,9 @@ class FormatCpp {
 
     /**
      * @summary Directory names `collect` does not enter.
+     * @description Logs preserve experiment evidence, including deliberately invalid source snapshots, unchanged.
      */
-    private static readonly skipped = new Set(["node_modules", "dist", "build", "out", "pdfs", "submissions"])
+    private static readonly skipped = new Set(["node_modules", "dist", "build", "out", "pdfs", "submissions", "logs"])
 
     /**
      * @summary Blocks construction.
