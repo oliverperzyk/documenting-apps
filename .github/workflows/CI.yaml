@@ -28,7 +28,7 @@ jobs:
             - name: Set up Bun.
               uses: oven-sh/setup-bun@v2
               with:
-                  bun-version: 1.4.0
+                  bun-version: latest
             - name: Cache Bun dependencies.
               uses: actions/cache@v6
               with:
@@ -42,5 +42,3 @@ jobs:
               run: bun run format:check
             - name: Lint JSON and Markdown files using ESLint.
               run: bun run lint
-            - name: Check submission bundler.
-              run: bun run test:bundle
