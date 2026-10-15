@@ -14,10 +14,10 @@ lang: pl-PL
 - Data prób: 2026-10-01 (poziom A); 2026-10-02 (poziomy B, C i D).
 - Zakres ukończony i sprawdzony: **poziomy A–D** (w tym rozszerzenie: raw `new[]` / `unique_ptr` / `vector`).
 - Checklist zakresu:
-  - [x] A
-  - [x] B
-  - [x] C (wybrane: koszt alokacji + granica lokalnej tablicy; bez x86/x64)
-  - [x] D (porównanie raw / unique_ptr / vector, rozdzielona alokacja i przetwarzanie)
+    - [x] A
+    - [x] B
+    - [x] C (wybrane: koszt alokacji + granica lokalnej tablicy; bez x86/x64)
+    - [x] D (porównanie raw / unique_ptr / vector, rozdzielona alokacja i przetwarzanie)
 - Odstępstwa: polecenie zakłada Visual Studio 2022, MSVC i Windows. Prace wykonano na macOS/arm64 z Apple Clang i LLDB. Kroków w Visual Studio nie wykonano, ponieważ Visual Studio nie jest już oficjalnie wspierane. Eksperymentu „x86 i x64” nie wykonano — uzasadnienie w sekcji poziomu C.
 - Wersja programu: [main.cpp](main.cpp); poziom C: [alloc_bench.cpp](alloc_bench.cpp) + [stack_probe/](stack_probe/); poziom D: [ownership_bench.cpp](ownership_bench.cpp) + [ownership_ops.cpp](ownership_ops.cpp).
 
@@ -470,7 +470,7 @@ Wyjaśnienie rodzajów pamięci:
 3. Wariant `fixed` ma najwyższą średnią w każdym z trzech rozmiarów.
 4. Warianty `global` i `dynamic` mają zbliżone średnie; przy n = 50'000 różnica średnich wynosi ok. 5 µs (300,3 vs 295,5), a zakresy [268, 343] i [288, 312] mocno się nakładają.
 5. Przy n = 5'000 rozstępy (48 / 26 / 27 µs) są duże względem różnic między średnimi — pojedyncze próby są szumne.
-6. Nie ma wariantu, który wygrywałby *każdą* próbę we wszystkich rozmiarach. Stabilnie wolniejszy w średniej jest tylko `fixed`; między `global` a `dynamic` nie da się wskazać jednoznacznej, trwałej przewagi na podstawie tych trzech serii.
+6. Nie ma wariantu, który wygrywałby _każdą_ próbę we wszystkich rozmiarach. Stabilnie wolniejszy w średniej jest tylko `fixed`; między `global` a `dynamic` nie da się wskazać jednoznacznej, trwałej przewagi na podstawie tych trzech serii.
 
 **Przypuszczenie o przyczynie (oddzielone od obserwacji):**
 
