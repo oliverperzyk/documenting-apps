@@ -1,0 +1,22 @@
+# IDE files.
+/**/.idea/
+/**/.vscode/
+/**/.vs/
+/**/.cursor/
+# AI files.
+/**/.claude/
+/**/.codex/
+/**/.ai/
+
+# Dependencies & distribution files.
+/**/node_modules/
+/**/dist/
+/**/build/
+/**/out/
+/submissions/
+/solutions/**/.bundle/
+# Lockfiles.
+/**/package-lock.json
+/**/yarn.lock
+/**/pnpm-lock.yaml
+/**/bun.lock

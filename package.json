@@ -1,0 +1,39 @@
+{
+    "name": "@oliverperzyk/documenting-apps",
+    "description": "Solutions for the tasks from school subject related to testing & documenting IT projects.",
+    "private": true,
+    "author": {
+        "name": "oliverperzyk (Oliwier Perzyński)",
+        "email": "olek@oliverperzyk.com",
+        "url": "https://oliverperzyk.com"
+    },
+    "type": "module",
+    "scripts": {
+        "bundle": "bun scripts/bundle.ts",
+        "test:bundle": "bun test scripts/bundle.test.ts",
+        "format": "bunx prettier --write . && bun scripts/format-cpp.ts",
+        "format:check": "bunx prettier --check . && bun scripts/format-cpp.ts --check",
+        "format-cpp": "bun scripts/format-cpp.ts",
+        "format-cpp:check": "bun scripts/format-cpp.ts --check",
+        "lint": "bunx eslint .",
+        "lint:fix": "bunx eslint --fix .",
+        "prepare": "lefthook install"
+    },
+    "lint-staged": {
+        "**/*.{json,json5,jsonc,md}": [
+            "bunx prettier --write",
+            "bunx eslint --fix"
+        ]
+    },
+    "devDependencies": {
+        "@eslint/json": "^2.1.0",
+        "@eslint/markdown": "^8.0.3",
+        "@types/node": "^26.6.3",
+        "@wasm-fmt/clang-format": "^23.1.1",
+        "eslint": "^10.11.0",
+        "jiti": "^2.7.0",
+        "lefthook": "^2.1.14",
+        "lint-staged": "^17.6.0",
+        "prettier": "^3.9.9"
+    }
+}
