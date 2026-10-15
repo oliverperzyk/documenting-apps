@@ -12,10 +12,10 @@ volatile std::uint32_t ownership_sink = 0;
 __attribute__((optimize("O0")))
 #endif
 void alloc_free_raw(std::size_t count, std::uint32_t tag) {
-  std::uint32_t *p = new std::uint32_t[count];
-  p[0] = tag;
-  ownership_sink = p[0];
-  delete[] p;
+    std::uint32_t *p = new std::uint32_t[count];
+    p[0] = tag;
+    ownership_sink = p[0];
+    delete[] p;
 }
 
 #if defined(__clang__)
@@ -24,9 +24,9 @@ void alloc_free_raw(std::size_t count, std::uint32_t tag) {
 __attribute__((optimize("O0")))
 #endif
 void alloc_free_unique(std::size_t count, std::uint32_t tag) {
-  auto p = std::make_unique<std::uint32_t[]>(count);
-  p[0] = tag;
-  ownership_sink = p[0];
+    auto p = std::make_unique<std::uint32_t[]>(count);
+    p[0] = tag;
+    ownership_sink = p[0];
 }
 
 #if defined(__clang__)
@@ -35,8 +35,8 @@ void alloc_free_unique(std::size_t count, std::uint32_t tag) {
 __attribute__((optimize("O0")))
 #endif
 void alloc_free_vector(std::size_t count, std::uint32_t tag) {
-  // vector(n) value-inicjalizuje elementy (dla uint32_t: zera) — koszt w alokacji.
-  std::vector<std::uint32_t> v(count);
-  v[0] = tag;
-  ownership_sink = v[0];
+    // vector(n) value-inicjalizuje elementy (dla uint32_t: zera) — koszt w alokacji.
+    std::vector<std::uint32_t> v(count);
+    v[0] = tag;
+    ownership_sink = v[0];
 }
