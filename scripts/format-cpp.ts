@@ -1,11 +1,11 @@
 import { format } from "@wasm-fmt/clang-format"
 import { readdirSync, readFileSync, writeFileSync } from "node:fs"
-import { extname, join, relative } from "node:path"
+import { extname, isAbsolute, join, relative, resolve, sep } from "node:path"
 import { fileURLToPath } from "node:url"
 
 /**
  * @summary Format C and C++ sources with clang-format.
- * @description Reads `.clang-format` and rewrites matching sources. `--check` exits with status 1 when a file would change.
+ * @description Formats explicit filenames, or scans the repository when none are supplied. `--check` never writes files.
  */
 class FormatCpp {
     /**
@@ -33,7 +33,22 @@ class FormatCpp {
      * @summary Directory names `collect` does not enter.
      * @description Logs preserve experiment evidence, including deliberately invalid source snapshots, unchanged.
      */
-    private static readonly skipped = new Set(["node_modules", "dist", "build", "out", "pdfs", "submissions", "logs"])
+    private static readonly skipped = new Set([
+        "node_modules",
+        "dist",
+        "build",
+        "out",
+        "_build",
+        "venv",
+        "env",
+        "__pycache__",
+        "coverage",
+        "pdfs",
+        "submissions",
+        "logs",
+        "wyniki",
+        "bundles",
+    ])
 
     /**
      * @summary Blocks construction.
@@ -72,15 +87,47 @@ class FormatCpp {
     }
 
     /**
+     * @summary Select an explicit source using the same exclusions as the repository scan.
+     * @description lint-staged supplies absolute filenames; direct CLI calls may use relative filenames.
+     */
+    private static select(filename: string): string | undefined {
+        const absolute = resolve(filename)
+        const path = relative(this.root, absolute)
+        if (isAbsolute(path) || path === ".." || path.startsWith(`..${sep}`)) {
+            throw new Error(`Source is outside the repository: ${filename}`)
+        }
+
+        if (path.split(sep).some((part) => part.startsWith(".") || this.skipped.has(part))) {
+            return undefined
+        }
+
+        return this.extensions.has(extname(absolute)) ? absolute : undefined
+    }
+
+    /**
      * @summary Format every collected source.
      * @description With `--check`, records paths and exits with status 1 instead of writing them.
      */
     private static async init(): Promise<void> {
         const files: string[] = []
-        this.collect(this.root, files)
+        const filenames = process.argv.slice(2).filter((arg) => arg !== "--check" && arg !== "--")
+        if (filenames.length === 0) {
+            this.collect(this.root, files)
+        } else {
+            for (const filename of filenames) {
+                if (filename.startsWith("--")) {
+                    throw new Error(`Unknown option: ${filename}`)
+                }
+
+                const absolute = this.select(filename)
+                if (absolute !== undefined) {
+                    files.push(absolute)
+                }
+            }
+        }
 
         const dirty: string[] = []
-        for (const absolute of files) {
+        for (const absolute of new Set(files)) {
             const source = readFileSync(absolute, "utf8")
             const formatted = format(source, absolute, this.style)
             if (formatted === source) {

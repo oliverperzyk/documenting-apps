@@ -1,0 +1,30 @@
+{
+    "$schema": "https://json.schemastore.org/lefthook.json",
+    "pre-commit": {
+        "commands": {
+            "lint-staged": {
+                "run": "bunx lint-staged"
+            }
+        }
+    },
+    "pre-push": {
+        "parallel": false,
+        "commands": {
+            "lint-fix": {
+                "run": "bun run lint:fix",
+                "priority": 1
+            },
+            "format-check": {
+                "run": "bun run format:check",
+                "priority": 2
+            }
+        }
+    },
+    "commit-msg": {
+        "commands": {
+            "conventional-commits": {
+                "run": "bash .lefthook/commit-msg.sh \"{1}\""
+            }
+        }
+    }
+}

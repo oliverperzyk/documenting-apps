@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# This file is being executed before committing to git.
+# Invoked by Lefthook's commit-msg hook.
 # This script focuses on verifying whenever commit message is matching
 # Conventional Commits standard: https://www.conventionalcommits.org/
 

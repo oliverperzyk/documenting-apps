@@ -21,9 +21,11 @@
     },
     "lint-staged": {
         "**/*.{json,json5,jsonc,md}": [
-            "bunx prettier --write",
-            "bunx eslint --fix"
-        ]
+            "bunx eslint --fix --no-warn-ignored",
+            "bunx prettier --write"
+        ],
+        "**/*.{ts,tsx,yml,yaml}": "bunx prettier --write",
+        "**/*.{c,cc,cpp,cxx,h,hh,hpp,hxx}": "bun run format-cpp"
     },
     "devDependencies": {
         "@eslint/json": "^2.1.0",

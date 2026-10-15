@@ -15,6 +15,21 @@
 /**/out/
 /submissions/
 /solutions/**/.bundle/
+# Generated output and raw experiment evidence (also used by ESLint and format-cpp).
+**/_build/
+**/.build/
+**/.bundle/
+**/.venv/
+**/venv/
+**/env/
+**/__pycache__/
+**/.cache/
+**/coverage/
+**/pdfs/
+**/submissions/
+**/logs/
+**/wyniki/
+**/bundles/
 # Lockfiles.
 /**/package-lock.json
 /**/yarn.lock
