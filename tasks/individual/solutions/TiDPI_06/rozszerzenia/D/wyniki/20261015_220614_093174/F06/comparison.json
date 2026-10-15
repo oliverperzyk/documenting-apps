@@ -1,0 +1,8 @@
+{
+  "id": "F06",
+  "fixture": "F06_header_order.txt",
+  "expected_code": 2,
+  "actual_code": 2,
+  "passed": true,
+  "problems": []
+}

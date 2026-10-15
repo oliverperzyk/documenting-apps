@@ -1,0 +1,8 @@
+{
+  "id": "F08",
+  "fixture": "F08_decimal_integer.txt",
+  "expected_code": 2,
+  "actual_code": 2,
+  "passed": true,
+  "problems": []
+}

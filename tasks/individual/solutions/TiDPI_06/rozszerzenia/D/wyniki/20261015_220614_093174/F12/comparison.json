@@ -1,0 +1,8 @@
+{
+  "id": "F12",
+  "fixture": "F12_blank_row.txt",
+  "expected_code": 2,
+  "actual_code": 2,
+  "passed": true,
+  "problems": []
+}

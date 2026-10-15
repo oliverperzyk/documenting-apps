@@ -1,0 +1,22 @@
+D18 - przeglad asystenta, 2026-10-15, Europe/Warsaw.
+Sprawdzono podglad Markdown w Visual Studio Code: naglowki, polskie znaki,
+bloki niezmienionych komunikatow, Tabele 2 (7 kolumn, 6 przypadkow)
+oraz sekcje usuniecia starego CSV. Tabela miesci sie w podgladzie;
+dluzsze opisy zawijaja sie w komorkach. Nie dolaczano zrzutow z interfejsu.
+Reczne porownanie: invalid-number line 3 ma size=many;
+missing-field line 3 ma 5 pol; duplicate-row lines 20 i 21 sa identyczne
+(reversed,32,3); wrong-version line 1 ma wersje 99;
+failed-test raw line 3 oraz CSV line 2 maja correct=false.
+CSV failed-test: 18 unikalnych rekordow, false=1, true=17;
+porownano wszystkie pola z raw przy niezaleznym odczycie csv.
+D15: source_sha256 i output_sha256_before zgodne;
+output_exists_before=true, output_exists_after=false.
+D17: stare dowody i dane A bez zmian; parser main.py bez zmian.
+Nie dodano nowego stalego skryptu pomocniczego ani eksportow dokumentow.
+Wygenerowany program wykonywalny B usunieto po kontroli.
+Brak importu w Excelu nadal jawny; bez deklaracji pelnego ukonczenia A-B.
+Kontrole programowe: odsylacze lokalne, surowe komunikaty w raporcie,
+komplet plikow pieciu przypadkow, kody procesow, skróty zrodel i brak
+prywatnych sciezek lub adresow email w zalacznikach.
+Lint i format raportu sprawdzone lokalnie; wynik poprawny.
+To kontrola asystenta, nie niezalezna recenzja uczniowska.

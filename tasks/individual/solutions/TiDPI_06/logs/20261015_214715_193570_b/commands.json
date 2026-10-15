@@ -1,0 +1,164 @@
+[
+  {
+    "cwd": ".",
+    "argv": [
+      "clang++",
+      "-std=c++17",
+      "-O2",
+      "-DNDEBUG",
+      "-Wall",
+      "-Wextra",
+      "-pedantic",
+      "logs/20261015_214715_193570_b/sources/main.cpp",
+      "-o",
+      "_build/20261015_214715_193570_b/tidpi06"
+    ],
+    "streams": "logs/20261015_214715_193570_b/compile"
+  },
+  {
+    "cwd": "logs/20261015_214715_193570_b",
+    "argv": [
+      "../../_build/20261015_214715_193570_b/tidpi06",
+      "--clock-info"
+    ],
+    "streams": "logs/20261015_214715_193570_b/clock"
+  },
+  {
+    "cwd": "przypadki/invalid-number",
+    "argv": [
+      "../../_build/20261015_214715_193570_b/tidpi06",
+      "--fault",
+      "invalid-number"
+    ],
+    "streams": "przypadki/invalid-number/producer"
+  },
+  {
+    "cwd": "przypadki/invalid-number",
+    "argv": [
+      "python3",
+      "-B",
+      "../../main.py",
+      "raw_output.txt",
+      "results.csv"
+    ],
+    "streams": "przypadki/invalid-number/parser"
+  },
+  {
+    "cwd": "przypadki/missing-field",
+    "argv": [
+      "../../_build/20261015_214715_193570_b/tidpi06",
+      "--fault",
+      "missing-field"
+    ],
+    "streams": "przypadki/missing-field/producer"
+  },
+  {
+    "cwd": "przypadki/missing-field",
+    "argv": [
+      "python3",
+      "-B",
+      "../../main.py",
+      "raw_output.txt",
+      "results.csv"
+    ],
+    "streams": "przypadki/missing-field/parser"
+  },
+  {
+    "cwd": "przypadki/duplicate-row",
+    "argv": [
+      "../../_build/20261015_214715_193570_b/tidpi06",
+      "--fault",
+      "duplicate-row"
+    ],
+    "streams": "przypadki/duplicate-row/producer"
+  },
+  {
+    "cwd": "przypadki/duplicate-row",
+    "argv": [
+      "python3",
+      "-B",
+      "../../main.py",
+      "raw_output.txt",
+      "results.csv"
+    ],
+    "streams": "przypadki/duplicate-row/parser"
+  },
+  {
+    "cwd": "przypadki/wrong-version",
+    "argv": [
+      "../../_build/20261015_214715_193570_b/tidpi06",
+      "--fault",
+      "wrong-version"
+    ],
+    "streams": "przypadki/wrong-version/producer"
+  },
+  {
+    "cwd": "przypadki/wrong-version",
+    "argv": [
+      "python3",
+      "-B",
+      "../../main.py",
+      "raw_output.txt",
+      "results.csv"
+    ],
+    "streams": "przypadki/wrong-version/parser"
+  },
+  {
+    "cwd": "przypadki/failed-test",
+    "argv": [
+      "../../_build/20261015_214715_193570_b/tidpi06",
+      "--fault",
+      "failed-test"
+    ],
+    "streams": "przypadki/failed-test/producer"
+  },
+  {
+    "cwd": "przypadki/failed-test",
+    "argv": [
+      "python3",
+      "-B",
+      "../../main.py",
+      "raw_output.txt",
+      "results.csv"
+    ],
+    "streams": "przypadki/failed-test/parser"
+  },
+  {
+    "cwd": "logs/20261015_214715_193570_b/read-error",
+    "argv": [
+      "python3",
+      "-B",
+      "../../../main.py",
+      "missing_input.txt",
+      "results.csv"
+    ],
+    "streams": "logs/20261015_214715_193570_b/read-error/parser"
+  },
+  {
+    "cwd": "logs/20261015_214715_193570_b/baseline",
+    "argv": [
+      "../../../_build/20261015_214715_193570_b/tidpi06"
+    ],
+    "streams": "logs/20261015_214715_193570_b/baseline/producer"
+  },
+  {
+    "cwd": "logs/20261015_214715_193570_b/baseline",
+    "argv": [
+      "python3",
+      "-B",
+      "../../../main.py",
+      "raw_output.txt",
+      "results_verified.csv"
+    ],
+    "streams": "logs/20261015_214715_193570_b/baseline/parser"
+  },
+  {
+    "cwd": "logs/20261015_214715_193570_b/baseline",
+    "argv": [
+      "../../../_build/20261015_214715_193570_b/tidpi06",
+      "--fault",
+      "unknown"
+    ],
+    "streams": "logs/20261015_214715_193570_b/baseline/invalid_argument"
+  }
+]

@@ -1,0 +1,2 @@
+VALIDATION ERROR [EMPTY_DATA]: line 3: file contains no result records
+REJECTED: 1 validation error(s)

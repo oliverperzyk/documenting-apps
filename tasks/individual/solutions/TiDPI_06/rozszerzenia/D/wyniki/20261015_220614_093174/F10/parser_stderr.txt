@@ -1,0 +1,7 @@
+VALIDATION ERROR [CASE]: line 3: unknown case 'other'
+VALIDATION ERROR [RANGE]: line 3: size must be >= 2, got 1
+VALIDATION ERROR [RANGE]: line 3: trial must be >= 1, got 0
+VALIDATION ERROR [RANGE]: line 3: time_us must be >= 0, got -1
+VALIDATION ERROR [RANGE]: line 3: comparisons must be >= 0, got -1
+VALIDATION ERROR [BOOLEAN]: line 3: correct must be exactly 'true' or 'false'
+REJECTED: 6 validation error(s)

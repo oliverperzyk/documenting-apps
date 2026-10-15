@@ -1,0 +1,9 @@
+[
+  "python3",
+  "-B",
+  "../../../parse_results.py",
+  "../../../fixtures/F02_bom_crlf.txt",
+  "results.csv",
+  "--report-json",
+  "validation.json"
+]

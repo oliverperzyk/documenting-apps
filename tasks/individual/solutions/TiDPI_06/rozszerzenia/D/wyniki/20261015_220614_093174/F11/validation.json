@@ -1,0 +1,15 @@
+{
+  "schema_version": 1,
+  "decision": "rejected",
+  "exit_code": 2,
+  "published_records": 0,
+  "failed_tests": 0,
+  "csv_created": false,
+  "errors": [
+    {
+      "rule": "DUPLICATE",
+      "line": 4,
+      "message": "duplicate record identity ('sorted', 16, 1)"
+    }
+  ]
+}

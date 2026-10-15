@@ -1,0 +1,25 @@
+D35 - kontrola asystenta, 2026-10-15, Europe/Warsaw.
+Koncowy przebieg 20261015_220614_093174: 26/26 porownan zgodnych, automat=0.
+Sprawdzono 18 wierszy Tabeli 4 przeciw manifestowi, kodom i JSON.
+Akceptowane CSV odczytano niezaleznie; wszystkie komorki zgodne z oczekiwaniami.
+F03: kod 1, jeden false, jeden opublikowany rekord. F10: szesc bledow line 3.
+F11: 16 i 016 daja duplikat tozsamosci w line 4. F12: blank row line 4.
+F17: false jest legalne, lecz bledne size daje kod 2 i brak CSV.
+F04: time_us i comparisons maja dokladnie jedynke plus 99 zer (100 cyfr).
+F02: BOM/CRLF wejscia i BOM/LF wyjscia, bez zmiany komorek.
+Rachunki: 3 kody 0 + 1 kod 1 + 14 kodow 2 = 18; 18+8=26.
+14 odrzuconych fixture i brak wejscia to 15 kontroli usuniecia starego CSV.
+Osiem dodatkowych scenariuszy zgodnych: brak wejscia, piec kolizji sciezek,
+blad CSV i blad JSON. Chronione wejscia zachowaly bajty; brak CSV po awariach.
+Skróty zrodel D i wszystkich fixture zgodne; poprzednie materialy A-C bez zmian.
+Stare zrodla D odpowiadaja wczesnym manifestom. Oryginaly pierwszego przebiegu
+prywatnie; publiczna kopia oznaczona. Kazda redakcja sprawdzona przeciw
+oryginalowi: wylacznie prefiks sciezki, decyzje i liczby bez zmian.
+Sprawdzono prywatne sciezki i emaile w publicznych zalacznikach; brak trafien.
+F14 celowo zawiera niepoprawny UTF-8. To fixture, nie blad anonimizacji.
+Lokalne odsylacze, naglowki i niezmienione cytaty raw/JSON sprawdzone.
+W podgladzie Markdown VS Code obejrzano polskie znaki, bloki diagnostyki,
+Tabele 4 z 18 fixture i 5 kolumnami oraz Tabele 5 z 8 scenariuszami.
+Kolumny czytelne, dluzsze komorki zawijaja sie, podpisy wskazuja dowody.
+Format raportu i lint raportu/manifestu sprawdzone. Bez eksportow i wysylki.
+Excel niewykonany. To przeglad asystenta, nie niezalezna recenzja uczniowska.

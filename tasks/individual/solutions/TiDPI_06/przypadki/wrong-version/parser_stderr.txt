@@ -1,0 +1,2 @@
+VALIDATION ERROR: line 1: expected protocol TIDPI_RESULTS;1
+REJECTED: 1 validation error(s)

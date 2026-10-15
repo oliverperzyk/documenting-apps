@@ -1,0 +1,8 @@
+{
+  "id": "F02",
+  "fixture": "F02_bom_crlf.txt",
+  "expected_code": 0,
+  "actual_code": 0,
+  "passed": true,
+  "problems": []
+}

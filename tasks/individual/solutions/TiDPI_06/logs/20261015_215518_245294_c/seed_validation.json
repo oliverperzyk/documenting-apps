@@ -1,0 +1,83 @@
+[
+  {
+    "fixture": "synthetic seed range test, not a generator result",
+    "row": [
+      "random",
+      "16",
+      "1",
+      "0",
+      "15",
+      "true",
+      "0"
+    ],
+    "expected_accept": true,
+    "actual_accept": true,
+    "errors": []
+  },
+  {
+    "fixture": "synthetic seed range test, not a generator result",
+    "row": [
+      "random",
+      "16",
+      "1",
+      "0",
+      "15",
+      "true",
+      "4294967295"
+    ],
+    "expected_accept": true,
+    "actual_accept": true,
+    "errors": []
+  },
+  {
+    "fixture": "synthetic seed range test, not a generator result",
+    "row": [
+      "random",
+      "16",
+      "1",
+      "0",
+      "15",
+      "true",
+      "-1"
+    ],
+    "expected_accept": false,
+    "actual_accept": false,
+    "errors": [
+      "line 3: seed must be >= 0, got -1"
+    ]
+  },
+  {
+    "fixture": "synthetic seed range test, not a generator result",
+    "row": [
+      "random",
+      "16",
+      "1",
+      "0",
+      "15",
+      "true",
+      "4294967296"
+    ],
+    "expected_accept": false,
+    "actual_accept": false,
+    "errors": [
+      "line 3: seed must be <= 4294967295, got 4294967296"
+    ]
+  },
+  {
+    "fixture": "synthetic seed range test, not a generator result",
+    "row": [
+      "random",
+      "16",
+      "1",
+      "0",
+      "15",
+      "true",
+      "many"
+    ],
+    "expected_accept": false,
+    "actual_accept": false,
+    "errors": [
+      "line 3: seed must be an integer, got 'many'"
+    ]
+  }
+]

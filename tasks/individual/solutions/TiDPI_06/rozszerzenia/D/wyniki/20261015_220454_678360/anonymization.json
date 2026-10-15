@@ -1,0 +1,9 @@
+{
+  "copy_kind": "Osobna zanonimizowana kopia pierwszej proby; oryginalne strumienie zachowane prywatnie w pomijanym _build/.",
+  "redaction": "Prywatny prefiks sciezki zadania zastapiono znacznikiem [KATALOG_ZADANIA]. Nie zmieniano wynikow fixture ani kodow procesow.",
+  "redacted_files": [
+    "json_write_error/parser_stderr.txt",
+    "csv_write_error/validation.json",
+    "csv_write_error/parser_stderr.txt"
+  ]
+}

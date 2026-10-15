@@ -6,7 +6,15 @@
 
 # Distribution & dependencies files.
 /**/node_modules/
+/**/_build/
+/**/__pycache__/
+/**/*.tmp
+/**/*.pdf
+/**/.preview/
 
 # Operating system files.
 /**/.DS_Store
 /**/*.ini
+
+# Generated submission archives.
+/submissions/

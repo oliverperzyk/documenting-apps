@@ -1,0 +1,9 @@
+TC-A02=PASS protocol and header
+TC-A03=PASS records=18 unique=18 expected_identities=18
+TC-A04=PASS correct_true=18 correct_false=0
+TC-A05=PASS parser output matches all raw fields
+TC-A06=PASS BOM=true delimiter=; fields=6 datasets_equal=true
+TC-A07=PASS numeric_fields_without_units=true expected_comparisons=true
+TC-A08=PASS independent csv reread; text editor review recorded separately
+summary_groups=6 trials_per_group=3
+excel_import=not_performed

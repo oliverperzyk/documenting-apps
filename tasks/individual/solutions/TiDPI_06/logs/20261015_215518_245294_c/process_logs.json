@@ -1,0 +1,23 @@
+{
+  "description": "Scalony zapis pomocniczych procesow. Klucze oznaczaja pierwotne nazwy; wartosci zachowuja dokladna tresc plikow, w tym puste strumienie.",
+  "files": {
+    "config_validation_exit_code.txt": "0\n",
+    "config_validation_stderr.txt": "",
+    "config_validation_stdout.txt": "PASS: 12 configuration function checks (synthetic fixtures, no timings).\n",
+    "kompletnosc_clock_exit_code.txt": "0\n",
+    "kompletnosc_clock_stderr.txt": "",
+    "kompletnosc_clock_stdout.txt": "clock=std::chrono::steady_clock\nis_steady=true\nperiod_num=1\nperiod_den=1000000000\noutput_unit=microseconds (integer, truncated)\neffective_resolution=not_measured\n",
+    "kompletnosc_compile_exit_code.txt": "0\n",
+    "kompletnosc_compile_stderr.txt": "",
+    "kompletnosc_compile_stdout.txt": "",
+    "seed_clock_exit_code.txt": "0\n",
+    "seed_clock_stderr.txt": "",
+    "seed_clock_stdout.txt": "clock=std::chrono::steady_clock\nis_steady=true\nperiod_num=1\nperiod_den=1000000000\noutput_unit=microseconds (integer, truncated)\neffective_resolution=not_measured\n",
+    "seed_compile_exit_code.txt": "0\n",
+    "seed_compile_stderr.txt": "",
+    "seed_compile_stdout.txt": "",
+    "seed_validation_exit_code.txt": "0\n",
+    "seed_validation_stderr.txt": "",
+    "seed_validation_stdout.txt": "PASS: seed bounds 0, 4294967295 accepted; -1, 4294967296, many rejected (synthetic function fixtures).\n"
+  }
+}

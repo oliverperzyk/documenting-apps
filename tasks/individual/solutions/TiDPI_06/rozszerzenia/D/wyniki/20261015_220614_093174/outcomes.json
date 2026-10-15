@@ -1,0 +1,202 @@
+[
+  {
+    "id": "F01",
+    "fixture": "F01_minimum.txt",
+    "expected_code": 0,
+    "actual_code": 0,
+    "passed": true,
+    "problems": []
+  },
+  {
+    "id": "F02",
+    "fixture": "F02_bom_crlf.txt",
+    "expected_code": 0,
+    "actual_code": 0,
+    "passed": true,
+    "problems": []
+  },
+  {
+    "id": "F03",
+    "fixture": "F03_failed_test.txt",
+    "expected_code": 1,
+    "actual_code": 1,
+    "passed": true,
+    "problems": []
+  },
+  {
+    "id": "F04",
+    "fixture": "F04_large_integers.txt",
+    "expected_code": 0,
+    "actual_code": 0,
+    "passed": true,
+    "problems": []
+  },
+  {
+    "id": "F05",
+    "fixture": "F05_wrong_version.txt",
+    "expected_code": 2,
+    "actual_code": 2,
+    "passed": true,
+    "problems": []
+  },
+  {
+    "id": "F06",
+    "fixture": "F06_header_order.txt",
+    "expected_code": 2,
+    "actual_code": 2,
+    "passed": true,
+    "problems": []
+  },
+  {
+    "id": "F07",
+    "fixture": "F07_missing_field.txt",
+    "expected_code": 2,
+    "actual_code": 2,
+    "passed": true,
+    "problems": []
+  },
+  {
+    "id": "F08",
+    "fixture": "F08_decimal_integer.txt",
+    "expected_code": 2,
+    "actual_code": 2,
+    "passed": true,
+    "problems": []
+  },
+  {
+    "id": "F09",
+    "fixture": "F09_size_below_minimum.txt",
+    "expected_code": 2,
+    "actual_code": 2,
+    "passed": true,
+    "problems": []
+  },
+  {
+    "id": "F10",
+    "fixture": "F10_combined_errors.txt",
+    "expected_code": 2,
+    "actual_code": 2,
+    "passed": true,
+    "problems": []
+  },
+  {
+    "id": "F11",
+    "fixture": "F11_duplicate_normalized.txt",
+    "expected_code": 2,
+    "actual_code": 2,
+    "passed": true,
+    "problems": []
+  },
+  {
+    "id": "F12",
+    "fixture": "F12_blank_row.txt",
+    "expected_code": 2,
+    "actual_code": 2,
+    "passed": true,
+    "problems": []
+  },
+  {
+    "id": "F13",
+    "fixture": "F13_repeated_header.txt",
+    "expected_code": 2,
+    "actual_code": 2,
+    "passed": true,
+    "problems": []
+  },
+  {
+    "id": "F14",
+    "fixture": "F14_invalid_utf8.txt",
+    "expected_code": 2,
+    "actual_code": 2,
+    "passed": true,
+    "problems": []
+  },
+  {
+    "id": "F15",
+    "fixture": "F15_broken_csv.txt",
+    "expected_code": 2,
+    "actual_code": 2,
+    "passed": true,
+    "problems": []
+  },
+  {
+    "id": "F16",
+    "fixture": "F16_empty_data.txt",
+    "expected_code": 2,
+    "actual_code": 2,
+    "passed": true,
+    "problems": []
+  },
+  {
+    "id": "F17",
+    "fixture": "F17_failed_and_invalid.txt",
+    "expected_code": 2,
+    "actual_code": 2,
+    "passed": true,
+    "problems": []
+  },
+  {
+    "id": "F18",
+    "fixture": "F18_last_row_invalid.txt",
+    "expected_code": 2,
+    "actual_code": 2,
+    "passed": true,
+    "problems": []
+  },
+  {
+    "id": "missing_input",
+    "expected_code": 2,
+    "actual_code": 2,
+    "passed": true,
+    "problems": []
+  },
+  {
+    "id": "input_as_csv",
+    "expected_code": 2,
+    "actual_code": 2,
+    "passed": true,
+    "problems": []
+  },
+  {
+    "id": "input_as_json",
+    "expected_code": 2,
+    "actual_code": 2,
+    "passed": true,
+    "problems": []
+  },
+  {
+    "id": "symlink_as_csv",
+    "expected_code": 2,
+    "actual_code": 2,
+    "passed": true,
+    "problems": []
+  },
+  {
+    "id": "hardlink_as_json",
+    "expected_code": 2,
+    "actual_code": 2,
+    "passed": true,
+    "problems": []
+  },
+  {
+    "id": "csv_equals_json",
+    "expected_code": 2,
+    "actual_code": 2,
+    "passed": true,
+    "problems": []
+  },
+  {
+    "id": "csv_write_error",
+    "expected_code": 2,
+    "actual_code": 2,
+    "passed": true,
+    "problems": []
+  },
+  {
+    "id": "json_write_error",
+    "expected_code": 2,
+    "actual_code": 2,
+    "passed": true,
+    "problems": []
+  }
+]

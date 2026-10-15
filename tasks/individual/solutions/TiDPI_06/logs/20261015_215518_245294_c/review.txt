@@ -1,0 +1,30 @@
+D30 - przeglad asystenta, 2026-10-15, Europe/Warsaw.
+Osiem planowanych kontroli procesow parsera w koncowej serii zgodnych
+z oczekiwaniami. Dwa CSV zaakceptowane: 18 tozsamosci, wszystkie pola
+zgodne z raw, BOM UTF-8, srednik. Odrzucone proby nie zawieraja CSV.
+Reczne sprawdzenie: random 16 trial 1 seed=20260761;
+20260600+16*10+1=20260761. random 32 trial 3 seed=20260923;
+20260600+32*10+3=20260923. Sorted/reversed seed=0 oznacza brak generatora.
+Invalid-seed line 3: -1. Missing-row: brak sorted,16,1.
+Extra-row line 21: reversed,32,4; to rzeczywista dodatkowa proba.
+Sprawdzono konfiguracje 3 przypadki x 2 rozmiary x 3 proby = 18.
+Poprawne C1: 12 rekordow sorted/reversed i 6 random, razem 18.
+Stary CSV C2: zgodne skroty przed; po parserze brak wyniku.
+Dodatkowe kontrole funkcji: 5 syntetycznych fixture seed i 12 konfiguracji;
+wejscia i decyzje zachowano w JSON; to nie wyniki pomiarow ani poziom D.
+Pierwsza przerwana proba zachowana w D20; stary parser ma blad tekstu
+oczekiwanej wersji, a jego skrot zgadza sie z manifestem pierwszej proby.
+Poprawka nie zmienila warunku akceptacji. Seria koncowa ma osobne logi.
+Zachowano wszystkie dane, zrodla i dowody A-B; kontrola SHA-256 poprawna.
+Glowne main.cpp i main.py bez zmian; osobne zrodla rozszerzen zgodne
+z manifestem koncowej serii. Sprawdzono odsylacze i niezmienione bloki raw.
+Przejrzano tresc zalacznikow; automatyczne sprawdzenie nie wykrylo
+prywatnych sciezek ani emaili. Metryczka raportu zawiera tylko Regulus.
+Obejrzano Markdown Preview w Visual Studio Code: polskie znaki,
+bloki diagnostyki, Tabele 3 z piecioma kolumnami i osmioma przypadkami,
+opis wykrytej usterki i dowodu usuniecia starego CSV. Tabela czytelna,
+dluzsze komorki zawijaja sie. Nie dolaczano zrzutow z prywatnego interfejsu.
+Format i lint raportu oraz konfiguracji sprawdzone lokalnie.
+Programy wykonywalne i tymczasowe skrypty kontrolne usunieto po pracy;
+prywatny oryginal wersji kompilatora pozostaje w pomijanym _build/.
+Excel nadal niewykonany. Brak eksportow i wysylki zewnetrznej.

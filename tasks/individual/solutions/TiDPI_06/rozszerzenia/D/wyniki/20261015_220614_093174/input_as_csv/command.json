@@ -1,0 +1,9 @@
+[
+  "python3",
+  "-B",
+  "../../../parse_results.py",
+  "input.txt",
+  "input.txt",
+  "--report-json",
+  "validation.json"
+]

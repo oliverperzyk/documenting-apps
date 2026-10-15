@@ -1,0 +1,5 @@
+TIDPI_RESULTS;1
+case;size;trial;time_us;comparisons;correct
+sorted;2;1;0;1;true
+case;size;trial;time_us;comparisons;correct
+random;2;1;0;1;true

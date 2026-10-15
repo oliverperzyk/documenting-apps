@@ -1,0 +1,202 @@
+[
+  {
+    "case": "valid",
+    "input": {
+      "cases": [
+        "sorted",
+        "reversed",
+        "random"
+      ],
+      "sizes": [
+        16,
+        32
+      ],
+      "trials": 3
+    },
+    "expected_accept": true,
+    "actual_accept": true,
+    "message": "identities=18"
+  },
+  {
+    "case": "bool-trials",
+    "input": {
+      "cases": [
+        "sorted",
+        "reversed",
+        "random"
+      ],
+      "sizes": [
+        16,
+        32
+      ],
+      "trials": true
+    },
+    "expected_accept": false,
+    "actual_accept": false,
+    "message": "trials must be an integer >= 1 (not boolean)"
+  },
+  {
+    "case": "bool-size",
+    "input": {
+      "cases": [
+        "sorted",
+        "reversed",
+        "random"
+      ],
+      "sizes": [
+        true
+      ],
+      "trials": 3
+    },
+    "expected_accept": false,
+    "actual_accept": false,
+    "message": "sizes must contain only integers >= 2 (not booleans)"
+  },
+  {
+    "case": "duplicate-cases",
+    "input": {
+      "cases": [
+        "random",
+        "random"
+      ],
+      "sizes": [
+        16,
+        32
+      ],
+      "trials": 3
+    },
+    "expected_accept": false,
+    "actual_accept": false,
+    "message": "cases must be unique"
+  },
+  {
+    "case": "duplicate-sizes",
+    "input": {
+      "cases": [
+        "sorted",
+        "reversed",
+        "random"
+      ],
+      "sizes": [
+        16,
+        16
+      ],
+      "trials": 3
+    },
+    "expected_accept": false,
+    "actual_accept": false,
+    "message": "sizes must be unique"
+  },
+  {
+    "case": "unknown-field",
+    "input": {
+      "cases": [
+        "sorted",
+        "reversed",
+        "random"
+      ],
+      "sizes": [
+        16,
+        32
+      ],
+      "trials": 3,
+      "other": 1
+    },
+    "expected_accept": false,
+    "actual_accept": false,
+    "message": "configuration must contain exactly cases, sizes, trials"
+  },
+  {
+    "case": "empty-cases",
+    "input": {
+      "cases": [],
+      "sizes": [
+        16,
+        32
+      ],
+      "trials": 3
+    },
+    "expected_accept": false,
+    "actual_accept": false,
+    "message": "cases must be a nonempty list"
+  },
+  {
+    "case": "empty-sizes",
+    "input": {
+      "cases": [
+        "sorted",
+        "reversed",
+        "random"
+      ],
+      "sizes": [],
+      "trials": 3
+    },
+    "expected_accept": false,
+    "actual_accept": false,
+    "message": "sizes must be a nonempty list"
+  },
+  {
+    "case": "wrong-case",
+    "input": {
+      "cases": [
+        "other"
+      ],
+      "sizes": [
+        16,
+        32
+      ],
+      "trials": 3
+    },
+    "expected_accept": false,
+    "actual_accept": false,
+    "message": "cases must contain only sorted, reversed, random"
+  },
+  {
+    "case": "float-size",
+    "input": {
+      "cases": [
+        "sorted",
+        "reversed",
+        "random"
+      ],
+      "sizes": [
+        16.0
+      ],
+      "trials": 3
+    },
+    "expected_accept": false,
+    "actual_accept": false,
+    "message": "sizes must contain only integers >= 2 (not booleans)"
+  },
+  {
+    "case": "size-one",
+    "input": {
+      "cases": [
+        "sorted",
+        "reversed",
+        "random"
+      ],
+      "sizes": [
+        1
+      ],
+      "trials": 3
+    },
+    "expected_accept": false,
+    "actual_accept": false,
+    "message": "sizes must contain only integers >= 2 (not booleans)"
+  },
+  {
+    "case": "missing-field",
+    "input": {
+      "cases": [
+        "sorted"
+      ],
+      "sizes": [
+        16
+      ]
+    },
+    "expected_accept": false,
+    "actual_accept": false,
+    "message": "configuration must contain exactly cases, sizes, trials"
+  }
+]

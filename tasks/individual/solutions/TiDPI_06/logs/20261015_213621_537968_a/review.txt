@@ -1,0 +1,42 @@
+D08 - kontrola asystenta, 2026-10-15 (Europe/Warsaw)
+
+Tekstowy CSV: otwarto results.csv w Apple TextEdit; widoczne naglowek,
+sredniki i wszystkie 18 rekordow. time_us i comparisons zawieraja liczby
+bez dopisanych jednostek. Nie zmieniano ani nie zapisywano pliku w edytorze.
+
+Markdown: otwarto RAPORT.md w podgladzie Markdown Visual Studio Code.
+Sprawdzono polskie znaki, metryczke, hierarchie naglowkow, linki i pelny
+blok surowego output. Tabela statystyk zostala rozpoznana w podgladzie
+jako tabela z 9 kolumnami i 6 wierszami danych; wartosci zgodne z D06.
+Podglad pokazuje oznaczenia [x]/[ ] jako tekst - znaczenie jest czytelne.
+Nie wykonywano eksportu DOCX/PDF ani nie dolaczano zrzutow z interfejsu,
+ktory zawiera prywatne elementy poza dokumentem.
+
+Rachunki reczne przeciw D04:
+line 3: sorted 16 -> 16-1=15
+line 4: reversed 16 -> 16*15/2=120
+line 12: sorted 32 -> 32-1=31
+line 13: reversed 32 -> 32*31/2=496
+lines 14,16,18: random 32 -> times [1,1,1]; min=1 max=1 range=0 median=1
+Pozostale grupy: [0,0,0]; min=0 max=0 range=0 median=0.
+Seed graniczny: 20260600+16*10+1=20260761;
+20260600+32*10+3=20260923.
+
+Kontrola plikow:
+- Kod kompilacji, producenta i parsera: 0; stderr tych procesow pusty.
+- Surowy blok raportu identyczny z raw_output.txt i producer_stdout.txt.
+- Kopie danych w katalogu zadania identyczne bajtowo z danymi serii.
+- Skroty czterech zrodel zgodne z kopiami w sources/ i plikami roboczymi.
+- Sprawdzono komplet oczekiwanych tozsamosci oraz wszystkie pola obu CSV.
+- Sprawdzono lokalne odsylacze, jeden H1, parzystosc ogrodzen kodu i YAML.
+- Przejrzano tresc pod katem danych osobowych; automatyczna kontrola
+  prywatnych sciezek bezwzglednych i adresow email nie wykryla trafien
+  w zalacznikach. Metadane raportu zawieraja jedynie kryptonim Regulus.
+- Prywatny oryginal pelnego stdout wersji kompilatora pozostaje w _build/;
+  environment.txt jest jawnym wyciagiem identyfikacji bez sciezki instalacji.
+- Szkolny PDF, plik wykonywalny i _build/ sa poza zalacznikami.
+
+Excel: nie wykonano importu, ograniczona dostepnosc aplikacji w uzywanym
+srodowisku. Nie jest to stwierdzenie o braku wsparcia Excela przez macOS.
+Poziom A pozostaje niewykazany w tym jednym kroku.
+Recenzja uczniowska: niewykonana; powyzsze kontrole wykonal asystent.

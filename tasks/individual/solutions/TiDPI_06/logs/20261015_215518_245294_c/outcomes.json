@@ -1,0 +1,66 @@
+[
+  {
+    "study": "seed",
+    "test": "poprawne-v2",
+    "expected_parser_code": 0,
+    "actual_parser_code": 0,
+    "rule": "v2 18 records, all 7 fields, actual seeds",
+    "csv_created": true
+  },
+  {
+    "study": "seed",
+    "test": "v1-odrzuca-v2",
+    "expected_parser_code": 2,
+    "actual_parser_code": 2,
+    "rule": "line 1 unsupported v2; v1 header/field counts also invalid",
+    "csv_created": false
+  },
+  {
+    "study": "seed",
+    "test": "invalid-seed",
+    "expected_parser_code": 2,
+    "actual_parser_code": 2,
+    "rule": "line 3 seed >= 0",
+    "csv_created": false
+  },
+  {
+    "study": "seed",
+    "test": "v2-odrzuca-v1",
+    "expected_parser_code": 2,
+    "actual_parser_code": 2,
+    "rule": "line 1 unsupported v1; v2 header/field counts also invalid",
+    "csv_created": false
+  },
+  {
+    "study": "kompletnosc",
+    "test": "poprawne",
+    "expected_parser_code": 0,
+    "actual_parser_code": 0,
+    "rule": "18 records match configured identities",
+    "csv_created": true
+  },
+  {
+    "study": "kompletnosc",
+    "test": "missing-row",
+    "expected_parser_code": 2,
+    "actual_parser_code": 2,
+    "rule": "missing sorted,16,1; old CSV removed",
+    "csv_created": false
+  },
+  {
+    "study": "kompletnosc",
+    "test": "extra-row",
+    "expected_parser_code": 2,
+    "actual_parser_code": 2,
+    "rule": "line 21 unexpected reversed,32,4",
+    "csv_created": false
+  },
+  {
+    "study": "kompletnosc",
+    "test": "invalid-config",
+    "expected_parser_code": 2,
+    "actual_parser_code": 2,
+    "rule": "configuration trials >= 1",
+    "csv_created": false
+  }
+]

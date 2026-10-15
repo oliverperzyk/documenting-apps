@@ -1,0 +1,11 @@
+{
+  "description": "Scalony zapis pomocniczych procesow. Klucze oznaczaja pierwotne nazwy; wartosci zachowuja dokladna tresc plikow, w tym puste strumienie.",
+  "files": {
+    "clock_exit_code.txt": "0\n",
+    "clock_stderr.txt": "",
+    "clock_stdout.txt": "clock=std::chrono::steady_clock\nis_steady=true\nperiod_num=1\nperiod_den=1000000000\noutput_unit=microseconds (integer, truncated)\neffective_resolution=not_measured\n",
+    "compile_exit_code.txt": "0\n",
+    "compile_stderr.txt": "",
+    "compile_stdout.txt": ""
+  }
+}

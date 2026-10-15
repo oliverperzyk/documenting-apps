@@ -1,0 +1,8 @@
+{
+  "id": "F05",
+  "fixture": "F05_wrong_version.txt",
+  "expected_code": 2,
+  "actual_code": 2,
+  "passed": true,
+  "problems": []
+}

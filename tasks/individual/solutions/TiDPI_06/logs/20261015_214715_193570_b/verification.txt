@@ -1,0 +1,7 @@
+PASS: five fault cases match expected decisions and line numbers.
+PASS: failed-test CSV matches all raw fields, 18 unique identities, one false.
+PASS: four rejected cases have no CSV; stale CSV removed before rejection.
+PASS: missing input rejected, no CSV.
+PASS: default producer and parser remain compatible; 18 successful records.
+PASS: clock-info retained; unknown fault rejected with code 2.
+PASS: all existing level A data and evidence unchanged; main.py unchanged.

@@ -1,0 +1,8 @@
+{
+  "main.py": "9846f0558f42b5c65594895c967e9f3ca0cc12ac8cef1743c454c813400e22a3",
+  "rozszerzenia/C/seed/main.cpp": "229e24052d89d4e8095c1262b78820158bb52fb27230eca5bc310326a7e672db",
+  "rozszerzenia/C/seed/main.py": "bcf946de9e9ceea23275da55f8a6b492f7f601b5d697fe532891055daf87a938",
+  "rozszerzenia/C/kompletnosc/main.cpp": "b99579083ab4ea7d230dfb1ce6da9b3499eb3c56a6c505471d62b5c3af27bcc1",
+  "rozszerzenia/C/kompletnosc/main.py": "6505daf289565be468e01744b158d01511398eb08ac15d677500abff4a8b1baf",
+  "rozszerzenia/C/kompletnosc/expected.json": "2ed331e80d9ed5badc4c48b0d034b3b07619028d81d151d9d85f673223fae5e9"
+}

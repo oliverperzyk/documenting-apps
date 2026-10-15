@@ -1,0 +1,1 @@
+VALIDATION ERROR [REPORT]: cannot write JSON: [Errno 2] No such file or directory: '[KATALOG_ZADANIA]/rozszerzenia/D/wyniki/20261015_220454_678360/json_write_error/missing/.tidpi-d-mubfgdmp.tmp'

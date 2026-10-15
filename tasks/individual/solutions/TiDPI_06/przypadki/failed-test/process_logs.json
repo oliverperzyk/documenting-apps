@@ -1,0 +1,7 @@
+{
+    "description": "Scalony zapis pomocniczych procesow. Klucze oznaczaja pierwotne nazwy; wartosci zachowuja dokladna tresc plikow, w tym puste strumienie.",
+    "files": {
+        "producer_exit_code.txt": "1\n",
+        "producer_stderr.txt": ""
+    }
+}

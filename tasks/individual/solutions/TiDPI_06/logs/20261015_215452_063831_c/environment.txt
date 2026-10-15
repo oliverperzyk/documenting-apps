@@ -1,0 +1,10 @@
+recorded_at=2026-10-15T21:54:52.110400+02:00
+host=macOS 27.0.1
+build=26A434
+arch=arm64
+python=3.14.4
+Apple clang version 21.0.0 (clang-2100.3.34.2)
+Target: arm64-apple-darwin27.0.0
+configuration=Release C++17 -O2 -DNDEBUG -Wall -Wextra -pedantic
+debugger=not_attached
+compiler_version_full_stdout=private _build; public metadata is an extract

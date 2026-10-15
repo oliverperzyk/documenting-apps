@@ -1,0 +1,7 @@
+{
+  "input_sha256": "28dc610075925faa223fa4e2babc493cc281e97818163f779f75b9a80f6ceca5",
+  "input_exists": true,
+  "output_argument": "results.csv",
+  "report_argument": "input.txt",
+  "stale_csv_present": false
+}

@@ -1,0 +1,2 @@
+VALIDATION ERROR [INTEGER]: line 4: time_us must be an integer, got 'bad'
+REJECTED: 1 validation error(s)

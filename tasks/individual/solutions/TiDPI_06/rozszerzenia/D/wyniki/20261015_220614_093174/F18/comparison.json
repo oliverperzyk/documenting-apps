@@ -1,0 +1,8 @@
+{
+  "id": "F18",
+  "fixture": "F18_last_row_invalid.txt",
+  "expected_code": 2,
+  "actual_code": 2,
+  "passed": true,
+  "problems": []
+}

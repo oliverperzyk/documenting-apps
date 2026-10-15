@@ -1,0 +1,8 @@
+{
+  "id": "F16",
+  "fixture": "F16_empty_data.txt",
+  "expected_code": 2,
+  "actual_code": 2,
+  "passed": true,
+  "problems": []
+}

@@ -1,0 +1,21 @@
+{
+  "description": "Scalony zapis pomocniczych procesow. Klucze oznaczaja pierwotne nazwy; wartosci zachowuja dokladna tresc plikow, w tym puste strumienie.",
+  "files": {
+    "clock_command.json": "[\"../../_build/20261015_213621_537968_a/tidpi06\", \"--clock-info\"]\n",
+    "clock_exit_code.txt": "0\n",
+    "clock_stderr.txt": "",
+    "clock_stdout.txt": "clock=std::chrono::steady_clock\nis_steady=true\nperiod_num=1\nperiod_den=1000000000\noutput_unit=microseconds (integer, truncated)\neffective_resolution=not_measured\n",
+    "compile_command.json": "[\"clang++\", \"-std=c++17\", \"-O2\", \"-DNDEBUG\", \"-Wall\", \"-Wextra\", \"-pedantic\", \"logs/20261015_213621_537968_a/sources/main.cpp\", \"-o\", \"_build/20261015_213621_537968_a/tidpi06\"]\n",
+    "compile_exit_code.txt": "0\n",
+    "compile_stderr.txt": "",
+    "compile_stdout.txt": "",
+    "producer_command.json": "[\"../../_build/20261015_213621_537968_a/tidpi06\"]\n",
+    "producer_exit_code.txt": "0\n",
+    "producer_stderr.txt": "",
+    "producer_stdout.txt": "TIDPI_RESULTS;1\ncase;size;trial;time_us;comparisons;correct\nsorted;16;1;0;15;true\nreversed;16;1;0;120;true\nrandom;16;1;0;110;true\nreversed;16;2;0;120;true\nrandom;16;2;0;114;true\nsorted;16;2;0;15;true\nrandom;16;3;0;105;true\nsorted;16;3;0;15;true\nreversed;16;3;0;120;true\nsorted;32;1;0;31;true\nreversed;32;1;0;496;true\nrandom;32;1;1;475;true\nreversed;32;2;0;496;true\nrandom;32;2;1;490;true\nsorted;32;2;0;31;true\nrandom;32;3;1;493;true\nsorted;32;3;0;31;true\nreversed;32;3;0;496;true\n",
+    "tests_command.json": "[\"python3\", \"-B\", \"-m\", \"unittest\", \"discover\", \"-s\", \"logs/20261015_213621_537968_a/sources\", \"-p\", \"test_main.py\", \"-v\"]\n",
+    "tests_exit_code.txt": "0\n",
+    "tests_stderr.txt": "test_failed_test_is_published (test_main.ParserTests.test_failed_test_is_published) ... ok\ntest_full_dataset_and_bom_round_trip (test_main.ParserTests.test_full_dataset_and_bom_round_trip) ... ok\ntest_input_aliases_are_never_deleted (test_main.ParserTests.test_input_aliases_are_never_deleted) ... ok\ntest_missing_input_removes_stale_output (test_main.ParserTests.test_missing_input_removes_stale_output) ... ok\ntest_output_failure_returns_two (test_main.ParserTests.test_output_failure_returns_two) ... ok\ntest_rejections_remove_previous_csv (test_main.ParserTests.test_rejections_remove_previous_csv) ... ok\n\n----------------------------------------------------------------------\nRan 6 tests in 1.758s\n\nOK\n",
+    "tests_stdout.txt": ""
+  }
+}

@@ -1,0 +1,2 @@
+VALIDATION ERROR [DUPLICATE]: line 4: duplicate record identity ('sorted', 16, 1)
+REJECTED: 1 validation error(s)
