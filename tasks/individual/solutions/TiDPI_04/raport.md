@@ -14,10 +14,10 @@ lang: pl-PL
 - Data prób: 2026-10-09.
 - Zakres ukończony i sprawdzony: **poziomy A–D**.
 - Checklist zakresu:
-  - [x] A
-  - [x] B
-  - [x] C
-  - [x] D
+    - [x] A
+    - [x] B
+    - [x] C
+    - [x] D
 - Odstępstwa: polecenie zakłada Visual Studio 2022, MSVC i Windows. Prace wykonano na macOS/arm64 z Apple Clang. Kroków w Visual Studio nie wykonano.
 - Wersja programu: [main.cpp](main.cpp) — program bazowy z lekcji. Badania poziomów C–D są w [rozszerzenia/](rozszerzenia/).
 
@@ -64,7 +64,6 @@ TiDPI_04/
 - Wykres poziomu D: [images/D_std_sort_porownania.png](images/D_std_sort_porownania.png).
 - Badanie „prawie posortowane” nie wykonano (wybrane dwa z trzech w C).
 
-
 ### Archiwum wcześniejszych wyników Debug
 
 Poprzednia seria z 2026-10-02 (`-O0 -g -D_DEBUG`, macOS 27.0 build 26A428) została zachowana bez zmian w [wyniki/debug/](wyniki/debug/): `A_bazowy.txt`, `A_zmieniony_seed.txt`, `A_zmieniony_generator.txt`, `C_wiele_seedow.txt`, `C_bez_early_exit.txt` i `D_std_sort.txt`. Tabele i wykresy tego raportu korzystają wyłącznie z nowej serii Release z 2026-10-09. Odciski i liczniki Bubble porównano ze starymi plikami; są zgodne. Liczniki `std::sort` również pozostały identyczne w obecnym środowisku.
@@ -87,21 +86,21 @@ Hipoteza C2 (zachowana przed nową serią Release): dla `sorted` wariant bez ear
 
 Cel poziomu D: policzyć porównania wykonywane przez `std::sort` własnym komparatorem i ostrożnie zestawić tempo wzrostu z instrumentowanym Bubble Sortem na tych samych wejściach (seed `20260401`).
 
-Hipoteza D (zachowana przed nową serią Release): przy identycznych wejściach liczba porównań `std::sort` będzie istotnie mniejsza niż Bubble Sortu dla `reversed`/`pseudorandom`, a współczynnik wzrostu przy podwojeniu `n` będzie bliższy ~2–2,5 (typowe dla O(n log n)) niż ~4 (O(n²) Bubble). Nie porównujemy czasów µs jako dowodu złożoności — tylko liczniki porównań. Dla `sorted` Bubble z early-exit może mieć *mniej* porównań niż `std::sort`. Wzrost liczników dla konkretnego układu ocenimy na podstawie pomiarów, bez zakładania z góry n log n.
+Hipoteza D (zachowana przed nową serią Release): przy identycznych wejściach liczba porównań `std::sort` będzie istotnie mniejsza niż Bubble Sortu dla `reversed`/`pseudorandom`, a współczynnik wzrostu przy podwojeniu `n` będzie bliższy ~2–2,5 (typowe dla O(n log n)) niż ~4 (O(n²) Bubble). Nie porównujemy czasów µs jako dowodu złożoności — tylko liczniki porównań. Dla `sorted` Bubble z early-exit może mieć _mniej_ porównań niż `std::sort`. Wzrost liczników dla konkretnego układu ocenimy na podstawie pomiarów, bez zakładania z góry n log n.
 
 ## Środowisko oraz konfiguracja
 
 Tabela 1 - narzędzia faktycznie użyte (D00).
 
-| Element            | Wartość                    | Dowód |
-| ------------------ | -------------------------- | ----- |
-| System             | macOS 27.0.1, build 26A434   | D00   |
-| Architektura       | arm64 (Apple Silicon)      | D00   |
-| Kompilator         | Apple Clang 21.0.0, C++17  | D00   |
-| Konfiguracja A–D | Release: `-O2 -DNDEBUG`, bez debuggera | D09 |
-| Zegar w programie  | `steady_clock`, wynik w µs | kod   |
-| Generator          | `std::mt19937`             | D01   |
-| Mapowanie wartości | `generator() % 10'000U`    | D01   |
+| Element            | Wartość                                | Dowód |
+| ------------------ | -------------------------------------- | ----- |
+| System             | macOS 27.0.1, build 26A434             | D00   |
+| Architektura       | arm64 (Apple Silicon)                  | D00   |
+| Kompilator         | Apple Clang 21.0.0, C++17              | D00   |
+| Konfiguracja A–D   | Release: `-O2 -DNDEBUG`, bez debuggera | D09   |
+| Zegar w programie  | `steady_clock`, wynik w µs             | kod   |
+| Generator          | `std::mt19937`                         | D01   |
+| Mapowanie wartości | `generator() % 10'000U`                | D01   |
 
 Pełna metryczka nowych uruchomień: [wyniki/Release_metadane.txt](wyniki/Release_metadane.txt).
 
@@ -207,33 +206,33 @@ Pełny surowy output (nagłówek `engine`/`value_mapping`, 120 wierszy CSV, `all
 
 Tabela 2a - układ `sorted` (`n=500`, seed `20260401`).
 
-| trial | fingerprint | comparisons | swaps | passes | correct | time_us [µs] |
-| --- | --- | --- | --- | --- | --- | --- |
-| 1 | 10234385171984889473 | 499 | 0 | 1 | true | 0 |
-| 2 | 10234385171984889473 | 499 | 0 | 1 | true | 0 |
-| 3 | 10234385171984889473 | 499 | 0 | 1 | true | 0 |
-| 4 | 10234385171984889473 | 499 | 0 | 1 | true | 0 |
-| 5 | 10234385171984889473 | 499 | 0 | 1 | true | 0 |
+| trial | fingerprint          | comparisons | swaps | passes | correct | time_us [µs] |
+| ----- | -------------------- | ----------- | ----- | ------ | ------- | ------------ |
+| 1     | 10234385171984889473 | 499         | 0     | 1      | true    | 0            |
+| 2     | 10234385171984889473 | 499         | 0     | 1      | true    | 0            |
+| 3     | 10234385171984889473 | 499         | 0     | 1      | true    | 0            |
+| 4     | 10234385171984889473 | 499         | 0     | 1      | true    | 0            |
+| 5     | 10234385171984889473 | 499         | 0     | 1      | true    | 0            |
 
 Tabela 2b - układ `reversed` (`n=500`, seed `20260401`).
 
-| trial | fingerprint | comparisons | swaps | passes | correct | time_us [µs] |
-| --- | --- | --- | --- | --- | --- | --- |
-| 1 | 8837019113408834681 | 124750 | 124750 | 499 | true | 90 |
-| 2 | 8837019113408834681 | 124750 | 124750 | 499 | true | 90 |
-| 3 | 8837019113408834681 | 124750 | 124750 | 499 | true | 90 |
-| 4 | 8837019113408834681 | 124750 | 124750 | 499 | true | 90 |
-| 5 | 8837019113408834681 | 124750 | 124750 | 499 | true | 90 |
+| trial | fingerprint         | comparisons | swaps  | passes | correct | time_us [µs] |
+| ----- | ------------------- | ----------- | ------ | ------ | ------- | ------------ |
+| 1     | 8837019113408834681 | 124750      | 124750 | 499    | true    | 90           |
+| 2     | 8837019113408834681 | 124750      | 124750 | 499    | true    | 90           |
+| 3     | 8837019113408834681 | 124750      | 124750 | 499    | true    | 90           |
+| 4     | 8837019113408834681 | 124750      | 124750 | 499    | true    | 90           |
+| 5     | 8837019113408834681 | 124750      | 124750 | 499    | true    | 90           |
 
 Tabela 2c - układ `pseudorandom` (`n=500`, seed `20260401`).
 
-| trial | fingerprint | comparisons | swaps | passes | correct | time_us [µs] |
-| --- | --- | --- | --- | --- | --- | --- |
-| 1 | 4831905941288758783 | 122920 | 61066 | 439 | true | 140 |
-| 2 | 4831905941288758783 | 122920 | 61066 | 439 | true | 128 |
-| 3 | 4831905941288758783 | 122920 | 61066 | 439 | true | 119 |
-| 4 | 4831905941288758783 | 122920 | 61066 | 439 | true | 117 |
-| 5 | 4831905941288758783 | 122920 | 61066 | 439 | true | 114 |
+| trial | fingerprint         | comparisons | swaps | passes | correct | time_us [µs] |
+| ----- | ------------------- | ----------- | ----- | ------ | ------- | ------------ |
+| 1     | 4831905941288758783 | 122920      | 61066 | 439    | true    | 140          |
+| 2     | 4831905941288758783 | 122920      | 61066 | 439    | true    | 128          |
+| 3     | 4831905941288758783 | 122920      | 61066 | 439    | true    | 119          |
+| 4     | 4831905941288758783 | 122920      | 61066 | 439    | true    | 117          |
+| 5     | 4831905941288758783 | 122920      | 61066 | 439    | true    | 114          |
 
 Tabela 2d - co jest odtwarzalne, a co może się zmieniać (między pięcioma próbami).
 
@@ -256,11 +255,11 @@ constexpr std::array<std::uint32_t, 2> seeds = {20260499, 20260402};
 
 Tabela 3 - wpływ zmiany seeda na odciski (`n=500`).
 
-| Układ | fingerprint seed 20260401 | fingerprint seed 20260499 | Zmiana? |
-| --- | --- | --- | --- |
-| sorted | 10234385171984889473 | 10234385171984889473 | nie |
-| reversed | 8837019113408834681 | 8837019113408834681 | nie |
-| pseudorandom | 4831905941288758783 | 12614073233898071586 | tak |
+| Układ        | fingerprint seed 20260401 | fingerprint seed 20260499 | Zmiana? |
+| ------------ | ------------------------- | ------------------------- | ------- |
+| sorted       | 10234385171984889473      | 10234385171984889473      | nie     |
+| reversed     | 8837019113408834681       | 8837019113408834681       | nie     |
+| pseudorandom | 4831905941288758783       | 12614073233898071586      | tak     |
 
 Wyjaśnienie z kodu: w `make_data` parametr `seed` trafia tylko do gałęzi `InputOrder::Pseudorandom` (`std::mt19937 generator(seed)`). Gałęzie `Sorted` i `Reversed` budują tablicę przez `std::iota` i ewentualnie `std::reverse`, więc seed nie wpływa na te układy. Liczniki `comparisons`/`swaps`/`passes` dla sorted i reversed pozostają bez zmian; dla pseudorandom zmieniają się wraz z nowym wejściem.
 
@@ -276,10 +275,10 @@ value = static_cast<int>(generator() % 9'999U);
 
 Tabela 4 - wpływ zmiany mapowania (`n=500`, seed `20260401`, układ `pseudorandom`).
 
-| Wariant | fingerprint | comparisons | swaps | passes |
-| --- | --- | --- | --- | --- |
-| bazowy `% 10'000U` | 4831905941288758783 | 122920 | 61066 | 439 |
-| `% 9'999U` | 16916683457636190562 | 124425 | 63118 | 474 |
+| Wariant            | fingerprint          | comparisons | swaps | passes |
+| ------------------ | -------------------- | ----------- | ----- | ------ |
+| bazowy `% 10'000U` | 4831905941288758783  | 122920      | 61066 | 439    |
+| `% 9'999U`         | 16916683457636190562 | 124425      | 63118 | 474    |
 
 Inne wartości w tablicy pseudolosowej zmieniają też pracę sortowania, więc liczniki operacji również się różnią — mimo że seed pozostał ten sam. Odciski `sorted` i `reversed` nie uległy zmianie (te układy nie korzystają z generatora).
 
@@ -293,54 +292,54 @@ Po badaniu wariantu ponowne uruchomienie niezmienionego [main.cpp](main.cpp) da�
 
 Tabela 5 - liczniki operacji i zakres czasów [µs] (Release, D01).
 
-| n | układ | comparisons | swaps | time_us min [µs] | time_us max [µs] |
-| --- | --- | --- | --- | --- | --- |
-| 500 | sorted | 499 | 0 | 0 | 0 |
-| 500 | reversed | 124750 | 124750 | 90 | 90 |
-| 500 | pseudorandom | 122920 | 61066 | 114 | 140 |
-| 1000 | sorted | 999 | 0 | 0 | 0 |
-| 1000 | reversed | 499500 | 499500 | 332 | 382 |
-| 1000 | pseudorandom | 496260 | 248197 | 427 | 655 |
-| 2000 | sorted | 1999 | 0 | 1 | 1 |
-| 2000 | reversed | 1999000 | 1999000 | 878 | 1152 |
-| 2000 | pseudorandom | 1998964 | 1000462 | 1709 | 2217 |
-| 4000 | sorted | 3999 | 0 | 1 | 2 |
-| 4000 | reversed | 7998000 | 7998000 | 2370 | 3457 |
-| 4000 | pseudorandom | 7997565 | 3997984 | 4470 | 5911 |
+| n    | układ        | comparisons | swaps   | time_us min [µs] | time_us max [µs] |
+| ---- | ------------ | ----------- | ------- | ---------------- | ---------------- |
+| 500  | sorted       | 499         | 0       | 0                | 0                |
+| 500  | reversed     | 124750      | 124750  | 90               | 90               |
+| 500  | pseudorandom | 122920      | 61066   | 114              | 140              |
+| 1000 | sorted       | 999         | 0       | 0                | 0                |
+| 1000 | reversed     | 499500      | 499500  | 332              | 382              |
+| 1000 | pseudorandom | 496260      | 248197  | 427              | 655              |
+| 2000 | sorted       | 1999        | 0       | 1                | 1                |
+| 2000 | reversed     | 1999000     | 1999000 | 878              | 1152             |
+| 2000 | pseudorandom | 1998964     | 1000462 | 1709             | 2217             |
+| 4000 | sorted       | 3999        | 0       | 1                | 2                |
+| 4000 | reversed     | 7998000     | 7998000 | 2370             | 3457             |
+| 4000 | pseudorandom | 7997565     | 3997984 | 4470             | 5911             |
 
 Surowe czasy pięciu prób (kolejność jak w D01):
 
-| n | układ | time_us [µs] (próby 1–5) |
-| --- | --- | --- |
-| 500 | sorted | 0, 0, 0, 0, 0 |
-| 500 | reversed | 90, 90, 90, 90, 90 |
-| 500 | pseudorandom | 140, 128, 119, 117, 114 |
-| 1000 | sorted | 0, 0, 0, 0, 0 |
-| 1000 | reversed | 341, 332, 333, 359, 382 |
-| 1000 | pseudorandom | 427, 434, 439, 431, 655 |
-| 2000 | sorted | 1, 1, 1, 1, 1 |
-| 2000 | reversed | 1152, 1152, 1024, 994, 878 |
+| n    | układ        | time_us [µs] (próby 1–5)     |
+| ---- | ------------ | ---------------------------- |
+| 500  | sorted       | 0, 0, 0, 0, 0                |
+| 500  | reversed     | 90, 90, 90, 90, 90           |
+| 500  | pseudorandom | 140, 128, 119, 117, 114      |
+| 1000 | sorted       | 0, 0, 0, 0, 0                |
+| 1000 | reversed     | 341, 332, 333, 359, 382      |
+| 1000 | pseudorandom | 427, 434, 439, 431, 655      |
+| 2000 | sorted       | 1, 1, 1, 1, 1                |
+| 2000 | reversed     | 1152, 1152, 1024, 994, 878   |
 | 2000 | pseudorandom | 2217, 2104, 1932, 1763, 1709 |
-| 4000 | sorted | 2, 1, 1, 1, 1 |
-| 4000 | reversed | 3457, 2903, 2664, 2499, 2370 |
+| 4000 | sorted       | 2, 1, 1, 1, 1                |
+| 4000 | reversed     | 3457, 2903, 2664, 2499, 2370 |
 | 4000 | pseudorandom | 5911, 5435, 4989, 4619, 4470 |
 
 Tabela 6 - współczynniki wzrostu porównań: `comparisons(2n) / comparisons(n)`.
 
-| układ | 500→1000 | 1000→2000 | 2000→4000 | obserwacja |
-| --- | --- | --- | --- | --- |
-| sorted | 2.002004 | 2.001001 | 2.000500 | wzrost liniowy |
-| reversed | 4.004008 | 4.002002 | 4.001001 | wzrost bliski kwadratowemu |
-| pseudorandom | 4.037260 | 4.028058 | 4.000855 | wzrost bliski kwadratowemu |
+| układ        | 500→1000 | 1000→2000 | 2000→4000 | obserwacja                 |
+| ------------ | -------- | --------- | --------- | -------------------------- |
+| sorted       | 2.002004 | 2.001001  | 2.000500  | wzrost liniowy             |
+| reversed     | 4.004008 | 4.002002  | 4.001001  | wzrost bliski kwadratowemu |
+| pseudorandom | 4.037260 | 4.028058  | 4.000855  | wzrost bliski kwadratowemu |
 
 Tabela 7 - porównanie ze wzorami.
 
-| n | sorted observed | n - 1 | zgodne? | reversed observed | n(n - 1)/2 | zgodne? |
-| --- | --- | --- | --- | --- | --- | --- |
-| 500 | 499 | 499 | tak | 124750 | 124750 | tak |
-| 1000 | 999 | 999 | tak | 499500 | 499500 | tak |
-| 2000 | 1999 | 1999 | tak | 1999000 | 1999000 | tak |
-| 4000 | 3999 | 3999 | tak | 7998000 | 7998000 | tak |
+| n    | sorted observed | n - 1 | zgodne? | reversed observed | n(n - 1)/2 | zgodne? |
+| ---- | --------------- | ----- | ------- | ----------------- | ---------- | ------- |
+| 500  | 499             | 499   | tak     | 124750            | 124750     | tak     |
+| 1000 | 999             | 999   | tak     | 499500            | 499500     | tak     |
+| 2000 | 1999            | 1999  | tak     | 1999000           | 1999000    | tak     |
+| 4000 | 3999            | 3999  | tak     | 7998000           | 7998000    | tak     |
 
 Dla danych odwróconych `swaps` jest równe `comparisons` i równe wzorowi. Dla posortowanych `swaps = 0` i `passes = 1` — wczesne wyjście po pierwszym przebiegu bez zamian.
 
@@ -358,20 +357,20 @@ Parametry: seedy `{20260401, 20260402, 20260403, 20260404, 20260405}` (trzy nowe
 
 Tabela 8 - liczniki i odciski dla `n=500` (pięć seedów).
 
-| seed | comparisons | swaps | passes | fingerprint | correct |
-| --- | --- | --- | --- | --- | --- |
-| 20260401 | 122920 | 61066 | 439 | 4831905941288758783 | true |
-| 20260402 | 124189 | 64112 | 466 | 1748127650070261405 | true |
-| 20260403 | 124315 | 64288 | 470 | 2019253337181905212 | true |
-| 20260404 | 124372 | 63097 | 472 | 8589954449293142770 | true |
-| 20260405 | 124540 | 60177 | 479 | 2737534714930217706 | true |
+| seed     | comparisons | swaps | passes | fingerprint         | correct |
+| -------- | ----------- | ----- | ------ | ------------------- | ------- |
+| 20260401 | 122920      | 61066 | 439    | 4831905941288758783 | true    |
+| 20260402 | 124189      | 64112 | 466    | 1748127650070261405 | true    |
+| 20260403 | 124315      | 64288 | 470    | 2019253337181905212 | true    |
+| 20260404 | 124372      | 63097 | 472    | 8589954449293142770 | true    |
+| 20260405 | 124540      | 60177 | 479    | 2737534714930217706 | true    |
 
 Tabela 9 - rozrzut między pięcioma seedami.
 
-| n | comparisons min–max (zakres) | swaps min–max (zakres) | passes min–max (zakres) | unikalne odciski |
-| --- | --- | --- | --- | --- |
-| 500 | 122920–124540 (1620) | 60177–64288 (4111) | 439–479 (40) | 5/5 |
-| 4000 | 7989354–7997565 (8211) | 3949068–4052038 (102970) | 3868–3970 (102) | 5/5 |
+| n    | comparisons min–max (zakres) | swaps min–max (zakres)   | passes min–max (zakres) | unikalne odciski |
+| ---- | ---------------------------- | ------------------------ | ----------------------- | ---------------- |
+| 500  | 122920–124540 (1620)         | 60177–64288 (4111)       | 439–479 (40)            | 5/5              |
+| 4000 | 7989354–7997565 (8211)       | 3949068–4052038 (102970) | 3868–3970 (102)         | 5/5              |
 
 Dla `n=500` mediana comparisons = 124315; seed `20260401` leży poniżej mediany, `20260405` powyżej. Żadnego z tych pięciu nie nazywamy „przypadkiem średnim” — to pięć konkretnych, odtwarzalnych wejść.
 
@@ -391,25 +390,25 @@ if (!swapped) {
 
 Tabela 10 - porównanie early vs full (`n=500`, seed `20260401`).
 
-| układ | variant | comparisons | swaps | passes | fingerprint | correct |
-| --- | --- | --- | --- | --- | --- | --- |
-| sorted | early | 499 | 0 | 1 | 10234385171984889473 | true |
-| sorted | full | 124750 | 0 | 499 | 10234385171984889473 | true |
-| reversed | early | 124750 | 124750 | 499 | 8837019113408834681 | true |
-| reversed | full | 124750 | 124750 | 499 | 8837019113408834681 | true |
-| pseudorandom | early | 122920 | 61066 | 439 | 4831905941288758783 | true |
-| pseudorandom | full | 124750 | 61066 | 499 | 4831905941288758783 | true |
+| układ        | variant | comparisons | swaps  | passes | fingerprint          | correct |
+| ------------ | ------- | ----------- | ------ | ------ | -------------------- | ------- |
+| sorted       | early   | 499         | 0      | 1      | 10234385171984889473 | true    |
+| sorted       | full    | 124750      | 0      | 499    | 10234385171984889473 | true    |
+| reversed     | early   | 124750      | 124750 | 499    | 8837019113408834681  | true    |
+| reversed     | full    | 124750      | 124750 | 499    | 8837019113408834681  | true    |
+| pseudorandom | early   | 122920      | 61066  | 439    | 4831905941288758783  | true    |
+| pseudorandom | full    | 124750      | 61066  | 499    | 4831905941288758783  | true    |
 
 Tabela 11 - porównanie early vs full (`n=4000`, seed `20260401`).
 
-| układ | variant | comparisons | swaps | passes | fingerprint | correct |
-| --- | --- | --- | --- | --- | --- | --- |
-| sorted | early | 3999 | 0 | 1 | 11732463451640709189 | true |
-| sorted | full | 7998000 | 0 | 3999 | 11732463451640709189 | true |
-| reversed | early | 7998000 | 7998000 | 3999 | 14753679230542420197 | true |
-| reversed | full | 7998000 | 7998000 | 3999 | 14753679230542420197 | true |
-| pseudorandom | early | 7997565 | 3997984 | 3970 | 9686258832850047619 | true |
-| pseudorandom | full | 7998000 | 3997984 | 3999 | 9686258832850047619 | true |
+| układ        | variant | comparisons | swaps   | passes | fingerprint          | correct |
+| ------------ | ------- | ----------- | ------- | ------ | -------------------- | ------- |
+| sorted       | early   | 3999        | 0       | 1      | 11732463451640709189 | true    |
+| sorted       | full    | 7998000     | 0       | 3999   | 11732463451640709189 | true    |
+| reversed     | early   | 7998000     | 7998000 | 3999   | 14753679230542420197 | true    |
+| reversed     | full    | 7998000     | 7998000 | 3999   | 14753679230542420197 | true    |
+| pseudorandom | early   | 7997565     | 3997984 | 3970   | 9686258832850047619  | true    |
+| pseudorandom | full    | 7998000     | 3997984 | 3999   | 9686258832850047619  | true    |
 
 Obserwacje: dla `sorted` early = `n-1`, full = `n(n-1)/2`; dla `reversed` liczniki identyczne; dla `pseudorandom` early skraca końcówkę (`passes` i `comparisons` mniejsze), a `swaps` pozostaje ten sam (wszystkie potrzebne zamiany i tak wykonano wcześniej).
 
@@ -456,31 +455,31 @@ Dodatkowa obserwacja z D01: dla `n=500` odciski `sorted` i `reversed` są identy
 
 Tabela 12 - liczba porównań Bubble vs `std::sort`.
 
-| n | układ | bubble comparisons | std_sort comparisons |
-| --- | --- | --- | --- |
-| 500 | sorted | 499 | 1006 |
-| 500 | reversed | 124750 | 1521 |
-| 500 | pseudorandom | 122920 | 5177 |
-| 1000 | sorted | 999 | 2006 |
-| 1000 | reversed | 499500 | 3021 |
-| 1000 | pseudorandom | 496260 | 11472 |
-| 2000 | sorted | 1999 | 4006 |
-| 2000 | reversed | 1999000 | 6021 |
-| 2000 | pseudorandom | 1998964 | 25328 |
-| 4000 | sorted | 3999 | 8006 |
-| 4000 | reversed | 7998000 | 12021 |
-| 4000 | pseudorandom | 7997565 | 54016 |
+| n    | układ        | bubble comparisons | std_sort comparisons |
+| ---- | ------------ | ------------------ | -------------------- |
+| 500  | sorted       | 499                | 1006                 |
+| 500  | reversed     | 124750             | 1521                 |
+| 500  | pseudorandom | 122920             | 5177                 |
+| 1000 | sorted       | 999                | 2006                 |
+| 1000 | reversed     | 499500             | 3021                 |
+| 1000 | pseudorandom | 496260             | 11472                |
+| 2000 | sorted       | 1999               | 4006                 |
+| 2000 | reversed     | 1999000            | 6021                 |
+| 2000 | pseudorandom | 1998964            | 25328                |
+| 4000 | sorted       | 3999               | 8006                 |
+| 4000 | reversed     | 7998000            | 12021                |
+| 4000 | pseudorandom | 7997565            | 54016                |
 
 Tabela 13 - współczynniki wzrostu porównań `ops(2n)/ops(n)`.
 
-| układ / algo | 500→1000 | 1000→2000 | 2000→4000 |
-| --- | --- | --- | --- |
-| bubble / sorted | 2.002 | 2.001 | 2.001 |
-| bubble / reversed | 4.004 | 4.002 | 4.001 |
-| bubble / pseudorandom | 4.037 | 4.028 | 4.001 |
-| std_sort / sorted | 1.994 | 1.997 | 1.999 |
-| std_sort / reversed | 1.986 | 1.993 | 1.997 |
-| std_sort / pseudorandom | 2.216 | 2.208 | 2.133 |
+| układ / algo            | 500→1000 | 1000→2000 | 2000→4000 |
+| ----------------------- | -------- | --------- | --------- |
+| bubble / sorted         | 2.002    | 2.001     | 2.001     |
+| bubble / reversed       | 4.004    | 4.002     | 4.001     |
+| bubble / pseudorandom   | 4.037    | 4.028     | 4.001     |
+| std_sort / sorted       | 1.994    | 1.997     | 1.999     |
+| std_sort / reversed     | 1.986    | 1.993     | 1.997     |
+| std_sort / pseudorandom | 2.216    | 2.208     | 2.133     |
 
 ![Porównania Bubble vs std::sort](images/D_std_sort_porownania.png)
 
@@ -512,6 +511,6 @@ Dla `sorted` Bubble z early-exit ma mniej porównań (499 wobec 1006 przy n=500)
 
 ## Wykorzystanie AI i sposób weryfikacji
 
-Codex pomógł zbudować programy A–D, zapisać stdout, obliczyć współczynniki wzrostu, wygenerować skrypty od stworzenia porównań w B i D oraz uporządkować raport na podstawie mocka. 
+Codex pomógł zbudować programy A–D, zapisać stdout, obliczyć współczynniki wzrostu, wygenerować skrypty od stworzenia porównań w B i D oraz uporządkować raport na podstawie mocka.
 
 Sprawdzono ręcznie: `all_correct=true` w D01/D06/D07/D08; zgodność sorted = `n-1` i reversed = `n(n-1)/2` dla Bubble; różne odciski pięciu seedów w D06; w D07 identyczne fingerprint early/full; w D08 wspólne fingerprint bubble/std_sort oraz ilorazy wzrostu (np. `12021/6021 ≈ 1.997`).
