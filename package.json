@@ -2,6 +2,7 @@
     "name": "@oliverperzyk/documenting-apps",
     "description": "Solutions for the tasks from school subject related to testing & documenting IT projects.",
     "private": true,
+    "license": "MIT",
     "author": {
         "name": "oliverperzyk (Oliwier Perzyński)",
         "email": "olek@oliverperzyk.com",
