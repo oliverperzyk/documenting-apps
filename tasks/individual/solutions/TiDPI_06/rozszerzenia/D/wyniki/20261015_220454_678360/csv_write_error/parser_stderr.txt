@@ -1,0 +1,2 @@
+VALIDATION ERROR [OUTPUT]: cannot write CSV: [Errno 2] No such file or directory: '[KATALOG_ZADANIA]/rozszerzenia/D/wyniki/20261015_220454_678360/csv_write_error/missing/.tidpi-d-41apsy6t.tmp'
+REJECTED: 1 validation error(s)

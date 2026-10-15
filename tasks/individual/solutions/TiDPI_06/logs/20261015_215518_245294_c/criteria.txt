@@ -1,0 +1,11 @@
+Kryteria C zapisane przed kompilacja i wykonaniem.
+C1: valid v2 -> parser v2=0, 18 rekordow, 7 pol, zgodne seed rzeczywistego generatora.
+C1: v2 do v1 -> 2, odrzucenie wersji, brak CSV.
+C1: invalid-seed=-1 w pierwszym rekordzie -> 2, line 3, brak CSV.
+C1: v1 do v2 -> 2, odrzucenie wersji, brak CSV.
+C2: config cases sorted/reversed/random, sizes 16/32, trials=3 -> oczekiwane 18 tozsamosci.
+C2: poprawne v1 -> 0, 18 rekordow i wszystkie pola CSV zgodne z raw.
+C2: missing-row -> 2, brak (sorted,16,1), brak CSV; stary poprawny CSV musi zniknac.
+C2: extra-row -> 2, line 21 nieoczekiwane (reversed,32,4), brak CSV.
+C2: config trials=0 -> 2, blad konfiguracji, brak CSV.
+Nowe pomiary sa oddzielne od statystyk A. A-B bez zmian. Excel nadal niewykonany.

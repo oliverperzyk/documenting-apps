@@ -1,0 +1,7 @@
+source=rozszerzenia/C/kompletnosc/testy/poprawne/results_verified.csv
+records=18
+all_correct=true
+source_sha256=a0446c91f50e3bd1f9022a86d61b27e33c85aa9f96d0266fa11baad22c5bd4a4
+output_sha256_before=a0446c91f50e3bd1f9022a86d61b27e33c85aa9f96d0266fa11baad22c5bd4a4
+output_exists_before=true
+producer_created_csv=false

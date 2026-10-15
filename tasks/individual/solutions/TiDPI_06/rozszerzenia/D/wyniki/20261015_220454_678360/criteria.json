@@ -1,0 +1,329 @@
+{
+  "schema_version": 1,
+  "provenance": "Wszystkie fixture to sztuczne dane dydaktyczne do kontroli kontraktu v1; nie wyniki pomiarow. Oczekiwania zapisano niezaleznie przed uruchomieniem parsera D.",
+  "expected_header": [
+    "case",
+    "size",
+    "trial",
+    "time_us",
+    "comparisons",
+    "correct"
+  ],
+  "fixtures": [
+    {
+      "id": "F01",
+      "file": "F01_minimum.txt",
+      "purpose": "Dolne dopuszczalne granice i czas 0; bez BOM.",
+      "expected_exit_code": 0,
+      "csv_expected": true,
+      "expected_errors": [],
+      "expected_records": [
+        [
+          "sorted",
+          "2",
+          "1",
+          "0",
+          "1",
+          "true"
+        ]
+      ]
+    },
+    {
+      "id": "F02",
+      "file": "F02_bom_crlf.txt",
+      "purpose": "UTF-8 BOM i CRLF nie zmieniaja wartosci.",
+      "expected_exit_code": 0,
+      "csv_expected": true,
+      "expected_errors": [],
+      "expected_records": [
+        [
+          "sorted",
+          "2",
+          "1",
+          "0",
+          "1",
+          "true"
+        ],
+        [
+          "random",
+          "2",
+          "1",
+          "0",
+          "1",
+          "true"
+        ]
+      ]
+    },
+    {
+      "id": "F03",
+      "file": "F03_failed_test.txt",
+      "purpose": "Poprawne dane opisujace nieudany test.",
+      "expected_exit_code": 1,
+      "csv_expected": true,
+      "expected_errors": [],
+      "expected_records": [
+        [
+          "sorted",
+          "2",
+          "1",
+          "0",
+          "1",
+          "false"
+        ]
+      ]
+    },
+    {
+      "id": "F04",
+      "file": "F04_large_integers.txt",
+      "purpose": "100-cyfrowe liczby bez konwersji do float i utraty precyzji; fixture kontraktu, nie rzeczywiste liczniki sortowania.",
+      "expected_exit_code": 0,
+      "csv_expected": true,
+      "expected_errors": [],
+      "expected_records": [
+        [
+          "random",
+          "2",
+          "1",
+          "1000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+          "1000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+          "true"
+        ]
+      ]
+    },
+    {
+      "id": "F05",
+      "file": "F05_wrong_version.txt",
+      "purpose": "wrong_version",
+      "expected_exit_code": 2,
+      "csv_expected": false,
+      "expected_errors": [
+        {
+          "rule": "PROTOCOL",
+          "line": 1,
+          "contains": "TIDPI_RESULTS;1"
+        }
+      ],
+      "expected_records": []
+    },
+    {
+      "id": "F06",
+      "file": "F06_header_order.txt",
+      "purpose": "header_order",
+      "expected_exit_code": 2,
+      "csv_expected": false,
+      "expected_errors": [
+        {
+          "rule": "HEADER",
+          "line": 2,
+          "contains": "case;size"
+        }
+      ],
+      "expected_records": []
+    },
+    {
+      "id": "F07",
+      "file": "F07_missing_field.txt",
+      "purpose": "missing_field",
+      "expected_exit_code": 2,
+      "csv_expected": false,
+      "expected_errors": [
+        {
+          "rule": "FIELD_COUNT",
+          "line": 3,
+          "contains": "got 5"
+        }
+      ],
+      "expected_records": []
+    },
+    {
+      "id": "F08",
+      "file": "F08_decimal_integer.txt",
+      "purpose": "decimal_integer",
+      "expected_exit_code": 2,
+      "csv_expected": false,
+      "expected_errors": [
+        {
+          "rule": "INTEGER",
+          "line": 3,
+          "contains": "size must be an integer"
+        }
+      ],
+      "expected_records": []
+    },
+    {
+      "id": "F09",
+      "file": "F09_size_below_minimum.txt",
+      "purpose": "size_below_minimum",
+      "expected_exit_code": 2,
+      "csv_expected": false,
+      "expected_errors": [
+        {
+          "rule": "RANGE",
+          "line": 3,
+          "contains": "size must be >= 2"
+        }
+      ],
+      "expected_records": []
+    },
+    {
+      "id": "F10",
+      "file": "F10_combined_errors.txt",
+      "purpose": "combined_errors",
+      "expected_exit_code": 2,
+      "csv_expected": false,
+      "expected_errors": [
+        {
+          "rule": "CASE",
+          "line": 3,
+          "contains": "unknown case"
+        },
+        {
+          "rule": "RANGE",
+          "line": 3,
+          "contains": "size"
+        },
+        {
+          "rule": "RANGE",
+          "line": 3,
+          "contains": "trial"
+        },
+        {
+          "rule": "RANGE",
+          "line": 3,
+          "contains": "time_us"
+        },
+        {
+          "rule": "RANGE",
+          "line": 3,
+          "contains": "comparisons"
+        },
+        {
+          "rule": "BOOLEAN",
+          "line": 3,
+          "contains": "'true' or 'false'"
+        }
+      ],
+      "expected_records": []
+    },
+    {
+      "id": "F11",
+      "file": "F11_duplicate_normalized.txt",
+      "purpose": "duplicate_normalized",
+      "expected_exit_code": 2,
+      "csv_expected": false,
+      "expected_errors": [
+        {
+          "rule": "DUPLICATE",
+          "line": 4,
+          "contains": "('sorted', 16, 1)"
+        }
+      ],
+      "expected_records": []
+    },
+    {
+      "id": "F12",
+      "file": "F12_blank_row.txt",
+      "purpose": "blank_row",
+      "expected_exit_code": 2,
+      "csv_expected": false,
+      "expected_errors": [
+        {
+          "rule": "BLANK_ROW",
+          "line": 4,
+          "contains": "blank row"
+        }
+      ],
+      "expected_records": []
+    },
+    {
+      "id": "F13",
+      "file": "F13_repeated_header.txt",
+      "purpose": "repeated_header",
+      "expected_exit_code": 2,
+      "csv_expected": false,
+      "expected_errors": [
+        {
+          "rule": "REPEATED_HEADER",
+          "line": 4,
+          "contains": "repeated header"
+        }
+      ],
+      "expected_records": []
+    },
+    {
+      "id": "F14",
+      "file": "F14_invalid_utf8.txt",
+      "purpose": "invalid_utf8",
+      "expected_exit_code": 2,
+      "csv_expected": false,
+      "expected_errors": [
+        {
+          "rule": "READ",
+          "line": null,
+          "contains": "cannot read input"
+        }
+      ],
+      "expected_records": []
+    },
+    {
+      "id": "F15",
+      "file": "F15_broken_csv.txt",
+      "purpose": "broken_csv",
+      "expected_exit_code": 2,
+      "csv_expected": false,
+      "expected_errors": [
+        {
+          "rule": "CSV_SYNTAX",
+          "line": 3,
+          "contains": "unexpected end"
+        }
+      ],
+      "expected_records": []
+    },
+    {
+      "id": "F16",
+      "file": "F16_empty_data.txt",
+      "purpose": "empty_data",
+      "expected_exit_code": 2,
+      "csv_expected": false,
+      "expected_errors": [
+        {
+          "rule": "EMPTY_DATA",
+          "line": 3,
+          "contains": "no result records"
+        }
+      ],
+      "expected_records": []
+    },
+    {
+      "id": "F17",
+      "file": "F17_failed_and_invalid.txt",
+      "purpose": "failed_and_invalid",
+      "expected_exit_code": 2,
+      "csv_expected": false,
+      "expected_errors": [
+        {
+          "rule": "INTEGER",
+          "line": 3,
+          "contains": "size must be an integer"
+        }
+      ],
+      "expected_records": []
+    },
+    {
+      "id": "F18",
+      "file": "F18_last_row_invalid.txt",
+      "purpose": "last_row_invalid",
+      "expected_exit_code": 2,
+      "csv_expected": false,
+      "expected_errors": [
+        {
+          "rule": "INTEGER",
+          "line": 4,
+          "contains": "time_us must be an integer"
+        }
+      ],
+      "expected_records": []
+    }
+  ]
+}

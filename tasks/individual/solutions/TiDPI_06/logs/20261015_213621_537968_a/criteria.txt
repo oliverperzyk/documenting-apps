@@ -1,0 +1,12 @@
+Kryteria zapisane przed kompilacją i pomiarami:
+TC-A01: Release C++17 -O2 -DNDEBUG, kompilator i producent kończą się kodem 0.
+TC-A02: surowy protokół TIDPI_RESULTS;1 i dokładny nagłówek v1.
+TC-A03: 18 unikalnych rekordów: sorted/reversed/random x 16/32 x próby 1/2/3.
+TC-A04: pełne porównanie z std::sort w C++; wszystkie correct=true.
+TC-A05: parser kończy się kodem 0 i zachowuje wszystkie wartości.
+TC-A06: oba CSV mają UTF-8 BOM, separator ;, 6 pól i identyczną treść.
+TC-A07: liczby bez jednostek; sorted comparisons=n-1; reversed=n*(n-1)/2.
+TC-A08: kontrola tekstowa CSV i ponowny niezależny odczyt modułem csv.
+TC-A09: istniejące testy parsera przechodzą; fixture to dane sztuczne.
+Excel: niewykonane, ograniczona dostępność aplikacji w używanym środowisku.
+Czasy nie są konkursem wydajności; rotacja układów między próbami.

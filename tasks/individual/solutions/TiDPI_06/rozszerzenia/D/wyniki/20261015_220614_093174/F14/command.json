@@ -1,0 +1,9 @@
+[
+  "python3",
+  "-B",
+  "../../../parse_results.py",
+  "../../../fixtures/F14_invalid_utf8.txt",
+  "results.csv",
+  "--report-json",
+  "validation.json"
+]

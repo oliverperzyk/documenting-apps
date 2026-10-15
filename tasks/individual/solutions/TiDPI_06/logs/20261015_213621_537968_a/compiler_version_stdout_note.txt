@@ -1,0 +1,1 @@
+Full compiler version stdout kept privately in ignored _build/; environment.txt contains only compiler identity and target.

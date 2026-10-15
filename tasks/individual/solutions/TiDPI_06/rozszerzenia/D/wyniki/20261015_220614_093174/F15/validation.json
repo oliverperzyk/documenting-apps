@@ -1,0 +1,15 @@
+{
+  "schema_version": 1,
+  "decision": "rejected",
+  "exit_code": 2,
+  "published_records": 0,
+  "failed_tests": 0,
+  "csv_created": false,
+  "errors": [
+    {
+      "rule": "CSV_SYNTAX",
+      "line": 3,
+      "message": "unexpected end of data"
+    }
+  ]
+}

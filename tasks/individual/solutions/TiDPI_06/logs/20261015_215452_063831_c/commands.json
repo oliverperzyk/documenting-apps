@@ -1,0 +1,130 @@
+[
+  {
+    "cwd": ".",
+    "argv": [
+      "clang++",
+      "-std=c++17",
+      "-O2",
+      "-DNDEBUG",
+      "-Wall",
+      "-Wextra",
+      "-pedantic",
+      "rozszerzenia/C/seed/main.cpp",
+      "-o",
+      "_build/20261015_215452_063831_c/seed"
+    ],
+    "destination": "logs/20261015_215452_063831_c",
+    "prefix": "seed_compile",
+    "stdout": "seed_compile_stdout.txt"
+  },
+  {
+    "cwd": "logs/20261015_215452_063831_c",
+    "argv": [
+      "../../_build/20261015_215452_063831_c/seed",
+      "--clock-info"
+    ],
+    "destination": "logs/20261015_215452_063831_c",
+    "prefix": "seed_clock",
+    "stdout": "seed_clock_stdout.txt"
+  },
+  {
+    "cwd": ".",
+    "argv": [
+      "clang++",
+      "-std=c++17",
+      "-O2",
+      "-DNDEBUG",
+      "-Wall",
+      "-Wextra",
+      "-pedantic",
+      "rozszerzenia/C/kompletnosc/main.cpp",
+      "-o",
+      "_build/20261015_215452_063831_c/kompletnosc"
+    ],
+    "destination": "logs/20261015_215452_063831_c",
+    "prefix": "kompletnosc_compile",
+    "stdout": "kompletnosc_compile_stdout.txt"
+  },
+  {
+    "cwd": "logs/20261015_215452_063831_c",
+    "argv": [
+      "../../_build/20261015_215452_063831_c/kompletnosc",
+      "--clock-info"
+    ],
+    "destination": "logs/20261015_215452_063831_c",
+    "prefix": "kompletnosc_clock",
+    "stdout": "kompletnosc_clock_stdout.txt"
+  },
+  {
+    "cwd": "rozszerzenia/C/seed/testy/poprawne-v2",
+    "argv": [
+      "../../../../../_build/20261015_215452_063831_c/seed"
+    ],
+    "destination": "rozszerzenia/C/seed/testy/poprawne-v2",
+    "prefix": "producer",
+    "stdout": "raw_output.txt"
+  },
+  {
+    "cwd": "rozszerzenia/C/seed/testy/poprawne-v2",
+    "argv": [
+      "python3",
+      "-B",
+      "../../main.py",
+      "raw_output.txt",
+      "results_verified.csv"
+    ],
+    "destination": "rozszerzenia/C/seed/testy/poprawne-v2",
+    "prefix": "parser",
+    "stdout": "parser_stdout.txt"
+  },
+  {
+    "cwd": "rozszerzenia/C/seed/testy/v1-odrzuca-v2",
+    "argv": [
+      "python3",
+      "-B",
+      "../../../../../main.py",
+      "raw_output.txt",
+      "results.csv"
+    ],
+    "destination": "rozszerzenia/C/seed/testy/v1-odrzuca-v2",
+    "prefix": "parser",
+    "stdout": "parser_stdout.txt"
+  },
+  {
+    "cwd": "rozszerzenia/C/seed/testy/invalid-seed",
+    "argv": [
+      "../../../../../_build/20261015_215452_063831_c/seed",
+      "--fault",
+      "invalid-seed"
+    ],
+    "destination": "rozszerzenia/C/seed/testy/invalid-seed",
+    "prefix": "producer",
+    "stdout": "raw_output.txt"
+  },
+  {
+    "cwd": "rozszerzenia/C/seed/testy/invalid-seed",
+    "argv": [
+      "python3",
+      "-B",
+      "../../main.py",
+      "raw_output.txt",
+      "results.csv"
+    ],
+    "destination": "rozszerzenia/C/seed/testy/invalid-seed",
+    "prefix": "parser",
+    "stdout": "parser_stdout.txt"
+  },
+  {
+    "cwd": "rozszerzenia/C/seed/testy/v2-odrzuca-v1",
+    "argv": [
+      "python3",
+      "-B",
+      "../../main.py",
+      "raw_output.txt",
+      "results.csv"
+    ],
+    "destination": "rozszerzenia/C/seed/testy/v2-odrzuca-v1",
+    "prefix": "parser",
+    "stdout": "parser_stdout.txt"
+  }
+]

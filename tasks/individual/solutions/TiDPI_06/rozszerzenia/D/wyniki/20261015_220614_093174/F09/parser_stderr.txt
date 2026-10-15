@@ -1,0 +1,2 @@
+VALIDATION ERROR [RANGE]: line 3: size must be >= 2, got 1
+REJECTED: 1 validation error(s)

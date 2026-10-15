@@ -1,0 +1,3 @@
+TIDPI_RESULTS;99
+case;size;trial;time_us;comparisons;correct
+sorted;2;1;0;1;true

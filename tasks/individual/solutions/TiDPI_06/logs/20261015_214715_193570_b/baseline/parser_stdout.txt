@@ -1,0 +1,1 @@
+ACCEPTED: 18 record(s), failed tests: 0

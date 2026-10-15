@@ -1,0 +1,9 @@
+[
+  "python3",
+  "-B",
+  "../../../parse_results.py",
+  "../../../fixtures/F03_failed_test.txt",
+  "results.csv",
+  "--report-json",
+  "validation.json"
+]

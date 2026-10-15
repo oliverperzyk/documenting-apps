@@ -1,0 +1,7 @@
+previous_source=results_verified.csv (level A)
+source_sha256=06112fb3f3bbe01dadb5524092837658281ecc0ba95ad4e9dedf619e739fe0ba
+output_exists_before=true
+output_sha256_before=06112fb3f3bbe01dadb5524092837658281ecc0ba95ad4e9dedf619e739fe0ba
+validated_previous_records=18
+validated_previous_correct_true=18
+producer_created_csv=false

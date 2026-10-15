@@ -1,0 +1,40 @@
+{
+  "schema_version": 1,
+  "decision": "rejected",
+  "exit_code": 2,
+  "published_records": 0,
+  "failed_tests": 0,
+  "csv_created": false,
+  "errors": [
+    {
+      "rule": "CASE",
+      "line": 3,
+      "message": "unknown case 'other'"
+    },
+    {
+      "rule": "RANGE",
+      "line": 3,
+      "message": "size must be >= 2, got 1"
+    },
+    {
+      "rule": "RANGE",
+      "line": 3,
+      "message": "trial must be >= 1, got 0"
+    },
+    {
+      "rule": "RANGE",
+      "line": 3,
+      "message": "time_us must be >= 0, got -1"
+    },
+    {
+      "rule": "RANGE",
+      "line": 3,
+      "message": "comparisons must be >= 0, got -1"
+    },
+    {
+      "rule": "BOOLEAN",
+      "line": 3,
+      "message": "correct must be exactly 'true' or 'false'"
+    }
+  ]
+}

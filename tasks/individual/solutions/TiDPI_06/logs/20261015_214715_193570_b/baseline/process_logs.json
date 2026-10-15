@@ -1,0 +1,10 @@
+{
+  "description": "Scalony zapis pomocniczych procesow. Klucze oznaczaja pierwotne nazwy; wartosci zachowuja dokladna tresc plikow, w tym puste strumienie.",
+  "files": {
+    "invalid_argument_exit_code.txt": "2\n",
+    "invalid_argument_stderr.txt": "ERROR: unknown fault mode: unknown\n",
+    "invalid_argument_stdout.txt": "",
+    "producer_exit_code.txt": "0\n",
+    "producer_stderr.txt": ""
+  }
+}

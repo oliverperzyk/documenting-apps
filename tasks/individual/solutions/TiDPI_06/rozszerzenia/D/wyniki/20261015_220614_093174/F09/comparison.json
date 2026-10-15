@@ -1,0 +1,8 @@
+{
+  "id": "F09",
+  "fixture": "F09_size_below_minimum.txt",
+  "expected_code": 2,
+  "actual_code": 2,
+  "passed": true,
+  "problems": []
+}

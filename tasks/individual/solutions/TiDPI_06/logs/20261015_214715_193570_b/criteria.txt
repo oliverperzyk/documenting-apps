@@ -1,0 +1,8 @@
+Kryteria B zapisane przed kompilacja i wykonaniem.
+Kolejnosc: invalid-number, missing-field, duplicate-row, wrong-version, failed-test.
+Pierwsze cztery: producer=0, parser=2, stderr podaje regule i wiersz (3,3,21,1), brak CSV.
+failed-test: producer=1, parser=1, 18 rekordow, dokladnie jeden correct=false w pierwszym rekordzie; CSV powstaje.
+Przed invalid-number: poprawny CSV z A, zweryfikowane 18 rekordow i SHA-256; po parserze brak CSV.
+Dodatkowo: brak wejscia -> parser=2, blad odczytu, brak CSV.
+Regresja A: zwykly producent=0, bezposredni CSV zgodny z raw; parser=0.
+Nie laczyc nowych czasow ze statystykami A.

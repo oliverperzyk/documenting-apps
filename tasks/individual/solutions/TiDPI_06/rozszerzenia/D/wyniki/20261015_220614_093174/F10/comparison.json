@@ -1,0 +1,8 @@
+{
+  "id": "F10",
+  "fixture": "F10_combined_errors.txt",
+  "expected_code": 2,
+  "actual_code": 2,
+  "passed": true,
+  "problems": []
+}

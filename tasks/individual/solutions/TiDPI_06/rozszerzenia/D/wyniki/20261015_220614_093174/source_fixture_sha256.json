@@ -1,0 +1,23 @@
+{
+  "parse_results.py": "21376315bb4ce27ea10855bf6532a94a9f210d80f2cd8d71238b768e8f3499e6",
+  "run_fixtures.py": "07f59f16136675803961408c6ccf984f710bfc7182d7fa85bc3c2a06e629c40a",
+  "fixtures/manifest.json": "56c50296e8717630b202d838dd2ff0ab35a7c6bee88307dd08005fdc9c3c2f5e",
+  "fixtures/F01_minimum.txt": "28dc610075925faa223fa4e2babc493cc281e97818163f779f75b9a80f6ceca5",
+  "fixtures/F02_bom_crlf.txt": "bcd11f8c8b055204d733b86416292e3eea2425c6e18266546539a9be15466b69",
+  "fixtures/F03_failed_test.txt": "8718edfe61670602caf57e659e9f955630e20d6189c9d9bdc3e8845c823f1697",
+  "fixtures/F04_large_integers.txt": "e49139b679ee2d02d4471c6b26e45e1e448c880d73afc796d6e45f777c1badb5",
+  "fixtures/F05_wrong_version.txt": "e07db23d3a474381044d620df349e959ee54e629e0d69bf16f19d0a82372d9c5",
+  "fixtures/F06_header_order.txt": "4b7a23cf25cc0eca4ad2c73bb59222c6d0790c50253296c5e6fc5da418aa442d",
+  "fixtures/F07_missing_field.txt": "e53495ef372e8ed931ebf136fcc112922499ad113165577f25e09ee58c7a3ee0",
+  "fixtures/F08_decimal_integer.txt": "ebe3140cd100d421bdd6c2558b0fc3604f513e3aac92ad56f0d85ba4734149ba",
+  "fixtures/F09_size_below_minimum.txt": "df22f5530bfec6be86c9834fd8c20d9b10ac0bdbc0c75185de1eed9a21be7297",
+  "fixtures/F10_combined_errors.txt": "a46e88d923fb4392e17b55e1e3146b8743c69c753146f9a2bdda24369f0eb7ff",
+  "fixtures/F11_duplicate_normalized.txt": "46560799437dac8dba265901c120eea6a1b05c0a22ab7314a093b7c1787824bf",
+  "fixtures/F12_blank_row.txt": "524003ef9a127b278e5f18210343558f524a0778d40166d5e4da8eb78baf2da7",
+  "fixtures/F13_repeated_header.txt": "e07f55ab52bcc1c1f23d29c8d0c1d928c7b9eb58c8b897e74e7c30657091190a",
+  "fixtures/F14_invalid_utf8.txt": "92f478e249ca65242b10059ec7b8c9371e580e1628ec1243b013962962f5025c",
+  "fixtures/F15_broken_csv.txt": "ebf6ff826f8ad36a11913739f49e1c9cc400771aca3223656db29eff8a444eac",
+  "fixtures/F16_empty_data.txt": "2b6a7f508c995594b96eda059b7790fc0215741b86b17178724ad1935ab93ebf",
+  "fixtures/F17_failed_and_invalid.txt": "e9e661308ee6bc475a67fc82a211b3bf742b83b7d8a5c4be4f5837ce84462a88",
+  "fixtures/F18_last_row_invalid.txt": "9be0857dfb2c011ae9f80fd58af691b04b6726d4586ad9834bfa14eaa1e3fec6"
+}

@@ -1,0 +1,15 @@
+{
+  "schema_version": 1,
+  "decision": "rejected",
+  "exit_code": 2,
+  "published_records": 0,
+  "failed_tests": 0,
+  "csv_created": false,
+  "errors": [
+    {
+      "rule": "INTEGER",
+      "line": 4,
+      "message": "time_us must be an integer, got 'bad'"
+    }
+  ]
+}

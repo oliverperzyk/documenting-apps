@@ -1,0 +1,5 @@
+{
+    "cases": ["sorted", "reversed", "random"],
+    "sizes": [16, 32],
+    "trials": 3
+}

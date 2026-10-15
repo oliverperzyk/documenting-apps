@@ -1,0 +1,9 @@
+[
+  "python3",
+  "-B",
+  "../../../parse_results.py",
+  "../../../fixtures/F09_size_below_minimum.txt",
+  "results.csv",
+  "--report-json",
+  "validation.json"
+]

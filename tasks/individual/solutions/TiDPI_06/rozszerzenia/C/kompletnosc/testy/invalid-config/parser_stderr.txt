@@ -1,0 +1,1 @@
+CONFIGURATION ERROR: trials must be an integer >= 1 (not boolean)

@@ -1,0 +1,7 @@
+PASS: 8 planned parser outcomes, 2 compilations Release.
+PASS: v2 CSV all 7 fields match raw, 18 identities and correct seeds.
+PASS: completeness CSV all fields match raw and expected 18 identities.
+PASS: v1 rejects v2; v2 rejects v1; invalid seed -1 rejected at line 3.
+PASS: missing-row and extra-row rejected; stale CSV removed.
+PASS: trials=0 rejected; 12 supplementary configuration function checks pass.
+PASS: previous A-B sources, results and evidence unchanged.

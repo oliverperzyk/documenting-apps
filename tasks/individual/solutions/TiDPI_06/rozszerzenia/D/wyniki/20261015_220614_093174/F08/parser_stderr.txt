@@ -1,0 +1,2 @@
+VALIDATION ERROR [INTEGER]: line 3: size must be an integer, got '2.0'
+REJECTED: 1 validation error(s)

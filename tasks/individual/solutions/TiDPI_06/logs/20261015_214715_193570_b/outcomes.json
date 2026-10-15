@@ -1,0 +1,62 @@
+[
+  {
+    "case": "invalid-number",
+    "expected_parser_code": 2,
+    "actual_parser_code": 2,
+    "producer_code": 0,
+    "line": 3,
+    "rule": "size must be an integer",
+    "csv_exists": false,
+    "match": true
+  },
+  {
+    "case": "missing-field",
+    "expected_parser_code": 2,
+    "actual_parser_code": 2,
+    "producer_code": 0,
+    "line": 3,
+    "rule": "expected 6 fields, got 5",
+    "csv_exists": false,
+    "match": true
+  },
+  {
+    "case": "duplicate-row",
+    "expected_parser_code": 2,
+    "actual_parser_code": 2,
+    "producer_code": 0,
+    "line": 21,
+    "rule": "duplicate record identity",
+    "csv_exists": false,
+    "match": true
+  },
+  {
+    "case": "wrong-version",
+    "expected_parser_code": 2,
+    "actual_parser_code": 2,
+    "producer_code": 0,
+    "line": 1,
+    "rule": "expected protocol TIDPI_RESULTS;1",
+    "csv_exists": false,
+    "match": true
+  },
+  {
+    "case": "failed-test",
+    "expected_parser_code": 1,
+    "actual_parser_code": 1,
+    "producer_code": 1,
+    "line": 3,
+    "rule": "failed tests: 1",
+    "csv_exists": true,
+    "match": true
+  },
+  {
+    "case": "read-error",
+    "producer_code": null,
+    "expected_parser_code": 2,
+    "actual_parser_code": 2,
+    "line": null,
+    "rule": "cannot read input",
+    "csv_exists": false,
+    "match": true
+  }
+]

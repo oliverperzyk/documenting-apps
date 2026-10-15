@@ -1,0 +1,3 @@
+output_exists_after=false
+output_recreated=false
+parser_exit_code=2

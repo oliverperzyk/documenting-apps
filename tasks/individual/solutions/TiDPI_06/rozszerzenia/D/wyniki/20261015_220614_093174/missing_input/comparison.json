@@ -1,0 +1,7 @@
+{
+  "id": "missing_input",
+  "expected_code": 2,
+  "actual_code": 2,
+  "passed": true,
+  "problems": []
+}

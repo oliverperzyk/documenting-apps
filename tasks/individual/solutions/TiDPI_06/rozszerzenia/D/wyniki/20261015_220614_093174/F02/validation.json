@@ -1,0 +1,9 @@
+{
+  "schema_version": 1,
+  "decision": "accepted",
+  "exit_code": 0,
+  "published_records": 2,
+  "failed_tests": 0,
+  "csv_created": true,
+  "errors": []
+}

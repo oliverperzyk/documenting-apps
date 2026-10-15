@@ -1,0 +1,1 @@
+Przerwano kontrole po wykryciu blednej diagnostyki v2: odrzucenie danych v1 mialo kod 2, lecz komunikat podawal oczekiwana wersje 1 zamiast 2. Zachowano pierwszy parser i wszystkie powstale dane/strumienie w seed_tests_before_fix/. Polecenia pozostaja niezmienione i wskazuja pierwotne lokalizacje przed przeniesieniem. Poprawiona seria bedzie osobnym przebiegiem.

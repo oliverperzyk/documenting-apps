@@ -1,0 +1,1 @@
+VALIDATION ERROR [PATH]: input, CSV and JSON must be distinct files

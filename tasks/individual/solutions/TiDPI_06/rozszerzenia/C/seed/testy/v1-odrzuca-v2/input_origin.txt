@@ -1,0 +1,1 @@
+Unchanged copy of ../poprawne-v2/raw_output.txt; producer streams/code are in that directory.

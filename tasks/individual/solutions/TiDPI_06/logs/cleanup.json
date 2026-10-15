@@ -1,0 +1,28 @@
+{
+  "reason": "Porzadkowanie zalacznikow wedlug PDF TiDPI_06, s. 14–18; obowiazkowe wejscia, CSV oraz strumienie i kody parsera zachowane.",
+  "removed_files": 568,
+  "consolidated_fragments": 81,
+  "consolidated_archives": 17,
+  "removed_redundant_execution_json": 78,
+  "historical_fixture_details": "Pierwsza proba D: zachowano usterki csv_write_error/json_write_error; druga proba: podsumowanie i metadane; koncowa proba: komplet 26 scenariuszy.",
+  "verification": {
+    "consolidated_contents_match_original_sha256": true,
+    "retained_core_artifacts_unchanged": true,
+    "required_parser_artifacts_present": true,
+    "historical_runner_snapshot_matches_recorded_hash": true
+  },
+  "runner_recheck": {
+    "method": "Zmodyfikowany automat i fixture skopiowano do izolowanego katalogu tymczasowego; uruchomiono calosc, a katalog usunieto po kontroli.",
+    "summary": {
+      "fixture_count": 18,
+      "extra_scenarios": 8,
+      "total": 26,
+      "passed": 26,
+      "failed": 0,
+      "previous_unchanged": true,
+      "anonymization_passed": true,
+      "exit_code": 0
+    },
+    "redundant_execution_files_created": 0
+  }
+}
