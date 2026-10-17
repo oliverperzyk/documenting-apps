@@ -1,0 +1,12 @@
+TC-04: 
+cpp: sort=[Decimal('659875'), Decimal('668208'), Decimal('676125'), Decimal('730208'), Decimal('731834'), Decimal('773084'), Decimal('779375'), Decimal('795375'), Decimal('808500'), Decimal('840916')]; median=(731834+773084)/2=752459 ns; range=840916-659875=181041 ns
+cpp trial=1: checksum=1002000000=20*2*125250*200; time=808500 ns = 0.8085 ms; correct=true
+cpp trial=10: checksum=1002000000=20*2*125250*200; time=659875 ns = 0.659875 ms; correct=true
+cpp block=1: min=773084 ns; max=840916 ns
+cpp block=2: min=659875 ns; max=731834 ns
+python: sort=[Decimal('106012416'), Decimal('106552750'), Decimal('106623500'), Decimal('107586333'), Decimal('107626500'), Decimal('132183500'), Decimal('133934750'), Decimal('135279125'), Decimal('135451250'), Decimal('139381458')]; median=(107626500+132183500)/2=119905000 ns; range=139381458-106012416=33369042 ns
+python trial=1: checksum=1002000000=20*2*125250*200; time=107626500 ns = 107.6265 ms; correct=true
+python trial=10: checksum=1002000000=20*2*125250*200; time=135279125 ns = 135.279125 ms; correct=true
+python block=1: min=106012416 ns; max=107626500 ns
+python block=2: min=132183500 ns; max=139381458 ns
+z

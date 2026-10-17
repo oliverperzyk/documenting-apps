@@ -1,0 +1,36 @@
+{
+    "issue": "Rejected fixture retained copied derived warmups.csv; results.csv cleanup was already correct",
+    "fix": "Remove both derived CSVs before validation",
+    "before_sha256": "6feb69006088a1bb58b045d34e02c2c58f9274e3d56096f6b68fb5d61c97702e",
+    "after_sha256": "23e0a58febb107d84dfdb39fd9f2b838c690032e9beea48680cf3f9e2b7dc61f",
+    "old_derived_evidence": [
+        {
+            "file": "kontrole/validator_2026-10-17T113425.302328+0200/schedule/stale_warmups_before_fix.txt",
+            "sha256": "8449ce60159da709b88d722572cd2f50f8fd315756ccace0317dbf4ede150410",
+            "note": "Copied derived warmup CSV left stale by original validator; renamed as marked defect evidence, raw streams unchanged"
+        },
+        {
+            "file": "kontrole/validator_2026-10-17T113425.302328+0200/missing/stale_warmups_before_fix.txt",
+            "sha256": "8449ce60159da709b88d722572cd2f50f8fd315756ccace0317dbf4ede150410",
+            "note": "Copied derived warmup CSV left stale by original validator; renamed as marked defect evidence, raw streams unchanged"
+        },
+        {
+            "file": "kontrole/validator_2026-10-17T113425.302328+0200/checksum/stale_warmups_before_fix.txt",
+            "sha256": "8449ce60159da709b88d722572cd2f50f8fd315756ccace0317dbf4ede150410",
+            "note": "Copied derived warmup CSV left stale by original validator; renamed as marked defect evidence, raw streams unchanged"
+        },
+        {
+            "file": "kontrole/validator_2026-10-17T113425.302328+0200/overlap/stale_warmups_before_fix.txt",
+            "sha256": "8449ce60159da709b88d722572cd2f50f8fd315756ccace0317dbf4ede150410",
+            "note": "Copied derived warmup CSV left stale by original validator; renamed as marked defect evidence, raw streams unchanged"
+        },
+        {
+            "file": "kontrole/validator_2026-10-17T113425.302328+0200/warmup/stale_warmups_before_fix.txt",
+            "sha256": "8449ce60159da709b88d722572cd2f50f8fd315756ccace0317dbf4ede150410",
+            "note": "Copied derived warmup CSV left stale by original validator; renamed as marked defect evidence, raw streams unchanged"
+        }
+    ],
+    "final_tests": "kontrole/validator_2026-10-17T113500.997614+0200",
+    "measurements_repeated": false,
+    "raw_changed": false
+}

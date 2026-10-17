@@ -1,0 +1,179 @@
+{
+    "reviewer": "Codex assistant; not a manual student check",
+    "runs": {
+        "C1": {
+            "run": "C1/przebiegi/20261017_110944_353315_good",
+            "groups": {
+                "Debug/10000/cpp": {
+                    "median_ns": "8127354",
+                    "middle_pair_ns": ["8072333", "8182375"],
+                    "range_ns": "3645458",
+                    "selected_rows": [
+                        {
+                            "trial": 1,
+                            "time_ns": "10899417",
+                            "time_ms": "10.899417",
+                            "checksum": "251042700"
+                        },
+                        {
+                            "trial": 10,
+                            "time_ns": "7628917",
+                            "time_ms": "7.628917",
+                            "checksum": "251042700"
+                        }
+                    ]
+                },
+                "Release/10000/cpp": {
+                    "median_ns": "176729.5",
+                    "middle_pair_ns": ["169417", "184042"],
+                    "range_ns": "216083",
+                    "selected_rows": [
+                        {
+                            "trial": 1,
+                            "time_ns": "365083",
+                            "time_ms": "0.365083",
+                            "checksum": "251042700"
+                        },
+                        {
+                            "trial": 10,
+                            "time_ns": "184042",
+                            "time_ms": "0.184042",
+                            "checksum": "251042700"
+                        }
+                    ]
+                }
+            },
+            "expected_histogram": {
+                "10000": 251042700
+            }
+        },
+        "C2": {
+            "run": "C2/przebiegi/20261017_111039_385982_good",
+            "groups": {
+                "CPython/10000/python": {
+                    "median_ns": "31742062.5",
+                    "middle_pair_ns": ["29058042", "34426083"],
+                    "range_ns": "12172375",
+                    "selected_rows": [
+                        {
+                            "trial": 1,
+                            "time_ns": "27792917",
+                            "time_ms": "27.792917",
+                            "checksum": "250039700"
+                        },
+                        {
+                            "trial": 10,
+                            "time_ns": "39755250",
+                            "time_ms": "39.75525",
+                            "checksum": "250039700"
+                        }
+                    ]
+                },
+                "CPython/30000/python": {
+                    "median_ns": "90495937",
+                    "middle_pair_ns": ["85746541", "95245333"],
+                    "range_ns": "28125000",
+                    "selected_rows": [
+                        {
+                            "trial": 1,
+                            "time_ns": "105892250",
+                            "time_ms": "105.89225",
+                            "checksum": "748157600"
+                        },
+                        {
+                            "trial": 10,
+                            "time_ns": "85746541",
+                            "time_ms": "85.746541",
+                            "checksum": "748157600"
+                        }
+                    ]
+                },
+                "CPython/50000/python": {
+                    "median_ns": "144853500",
+                    "middle_pair_ns": ["144019583", "145687417"],
+                    "range_ns": "43858708",
+                    "selected_rows": [
+                        {
+                            "trial": 1,
+                            "time_ns": "145687417",
+                            "time_ms": "145.687417",
+                            "checksum": "1250122500"
+                        },
+                        {
+                            "trial": 10,
+                            "time_ns": "178493208",
+                            "time_ms": "178.493208",
+                            "checksum": "1250122500"
+                        }
+                    ]
+                },
+                "Release/10000/cpp": {
+                    "median_ns": "156687.5",
+                    "middle_pair_ns": ["151750", "161625"],
+                    "range_ns": "325168",
+                    "selected_rows": [
+                        {
+                            "trial": 1,
+                            "time_ns": "148916",
+                            "time_ms": "0.148916",
+                            "checksum": "250039700"
+                        },
+                        {
+                            "trial": 10,
+                            "time_ns": "474084",
+                            "time_ms": "0.474084",
+                            "checksum": "250039700"
+                        }
+                    ]
+                },
+                "Release/30000/cpp": {
+                    "median_ns": "495291.5",
+                    "middle_pair_ns": ["489917", "500666"],
+                    "range_ns": "85959",
+                    "selected_rows": [
+                        {
+                            "trial": 1,
+                            "time_ns": "509708",
+                            "time_ms": "0.509708",
+                            "checksum": "748157600"
+                        },
+                        {
+                            "trial": 10,
+                            "time_ns": "489917",
+                            "time_ms": "0.489917",
+                            "checksum": "748157600"
+                        }
+                    ]
+                },
+                "Release/50000/cpp": {
+                    "median_ns": "797896",
+                    "middle_pair_ns": ["792292", "803500"],
+                    "range_ns": "109917",
+                    "selected_rows": [
+                        {
+                            "trial": 1,
+                            "time_ns": "778250",
+                            "time_ms": "0.77825",
+                            "checksum": "1250122500"
+                        },
+                        {
+                            "trial": 10,
+                            "time_ns": "803500",
+                            "time_ms": "0.8035",
+                            "checksum": "1250122500"
+                        }
+                    ]
+                }
+            },
+            "expected_histogram": {
+                "10000": 250039700,
+                "30000": 748157600,
+                "50000": 1250122500
+            }
+        }
+    },
+    "fault_rejected_no_csv": true,
+    "correct_python_restored": true,
+    "all_accepted_csv_rows_match_raw": true,
+    "all_stats_independently_recomputed": true
+}

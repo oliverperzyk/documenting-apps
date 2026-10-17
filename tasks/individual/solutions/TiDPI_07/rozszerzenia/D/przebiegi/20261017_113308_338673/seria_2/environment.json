@@ -1,0 +1,18 @@
+{
+    "series": 2,
+    "started_at": "2026-10-17T11:33:40.154121+02:00",
+    "architecture": "arm64",
+    "python_implementation": "CPython",
+    "python_version": "3.14.4",
+    "flags": ["-std=c++17", "-O2", "-DNDEBUG"],
+    "debugger": false,
+    "count": 10000,
+    "rounds": 100,
+    "time_unit": "ns",
+    "data_sha256_before": "9e19f79d6545d7af30356b633e33183c7dedb859ad6f9b2f40391ff5a908eb07",
+    "binary_sha256_before": "e4bb72e6d65f0c03358f9567db21e851f297602b63e89c9781b951675a4bca72",
+    "preparation": "2026-10-17T11:27:57.547968+02:00",
+    "finished_at": "2026-10-17T11:34:11.017342+02:00",
+    "data_sha256_after": "9e19f79d6545d7af30356b633e33183c7dedb859ad6f9b2f40391ff5a908eb07",
+    "binary_sha256_after": "e4bb72e6d65f0c03358f9567db21e851f297602b63e89c9781b951675a4bca72"
+}

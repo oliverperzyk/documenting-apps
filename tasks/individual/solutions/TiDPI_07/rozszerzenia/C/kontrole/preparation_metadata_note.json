@@ -1,0 +1,7 @@
+{
+    "change": "Current preparation helper labels C1 historical generator as count=20020 before prefix extraction; C2 remains count=50000. Manifests already contained correct provenance before runs. Snapshot sources remain unchanged.",
+    "before_sha256": "181eb355935b10e4edb388ab2f01cb507db81bb62bd546378d55efce753f5844",
+    "after_sha256": "0f672da865f7ae6b96aaf39994dafff63b6af1d3770defd2b2d93286fa8c0117",
+    "benchmark_calculation_changed": false,
+    "raw_evidence_changed": false
+}

@@ -1,0 +1,9 @@
+Error producing PDF.
+! LaTeX Error: \begin{minipage} on input line 2086 ended by \end{document}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.2337 \end{document}
+

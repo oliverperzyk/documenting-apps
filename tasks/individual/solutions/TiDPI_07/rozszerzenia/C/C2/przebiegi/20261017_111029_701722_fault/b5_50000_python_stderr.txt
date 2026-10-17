@@ -1,0 +1,2 @@
+{"clock": "mach_absolute_time()", "resolution_seconds": 4.166666666666666e-08, "monotonic": true}
+warmup=1;time_ns=105215458;checksum=2497622500;correct=false

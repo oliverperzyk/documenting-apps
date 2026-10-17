@@ -1,0 +1,8 @@
+{
+    "status": "preflight_failed",
+    "reason": "sandbox sysctl permission denied",
+    "benchmark_processes_started": 0,
+    "compilation_started": false,
+    "validation_executed": false,
+    "results_csv_created": false
+}

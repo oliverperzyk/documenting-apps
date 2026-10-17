@@ -1,0 +1,16 @@
+{
+    "source_checks": {
+        "plan_A.md": true,
+        "benchmark.py": true,
+        "benchmark.cpp": true,
+        "collect_A.py": true,
+        "verify_A.py": true,
+        "generate_data.py": true
+    },
+    "archive_sha256": {
+        "raport.md": "2458ce0a1289e1567025d8d4a9690f25a405d12e3ecba67b9dadcec52b8a2d0f",
+        "raport.pdf": "c16e88302a38daff02cf138ee1b5ae94bc49d55b74c2591423cacd8ac601752c",
+        "check_artifacts.py": "ae2963606566d2c94e8c532354afbbcfbee2f3e1eb26a72c41a7e2976a381608"
+    },
+    "note": "Kontrola wykonana przed zmianami B; nie jest nowym pomiarem A."
+}

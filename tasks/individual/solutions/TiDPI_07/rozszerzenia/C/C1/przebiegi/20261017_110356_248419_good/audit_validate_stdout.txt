@@ -1,0 +1,11 @@
+{
+  "accepted": false,
+  "errors": [
+    {
+      "rule": "READ_OR_STRUCTURE",
+      "location": "FileNotFoundError"
+    }
+  ],
+  "published_records": 0,
+  "csv_created": false
+}

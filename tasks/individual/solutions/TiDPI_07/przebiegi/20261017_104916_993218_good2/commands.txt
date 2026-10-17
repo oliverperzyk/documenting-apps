@@ -1,0 +1,6 @@
+clang++ -std=c++17 -O2 -DNDEBUG -Wall -Wextra -pedantic przebiegi/20261017_104916_993218_good2/sources/benchmark.cpp -o przebiegi/20261017_104916_993218_good2/_build/benchmark
+przebiegi/20261017_104916_993218_good2/_build/benchmark dane/input.txt 1
+python3 przebiegi/20261017_104916_993218_good2/sources/benchmark.py dane/input.txt 1
+python3 przebiegi/20261017_104916_993218_good2/sources/benchmark.py dane/input.txt 6
+przebiegi/20261017_104916_993218_good2/_build/benchmark dane/input.txt 6
+python3 przebiegi/20261017_104916_993218_good2/sources/validate_results.py przebiegi/20261017_104916_993218_good2

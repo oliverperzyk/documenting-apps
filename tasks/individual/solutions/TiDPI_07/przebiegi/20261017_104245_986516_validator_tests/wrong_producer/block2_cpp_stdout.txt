@@ -1,0 +1,6 @@
+language;trial;time_ns;checksum;correct
+cpp;6;6;501000000;true
+cpp;7;7;501000000;true
+cpp;8;8;501000000;true
+cpp;9;9;501000000;true
+cpp;10;10;501000000;true

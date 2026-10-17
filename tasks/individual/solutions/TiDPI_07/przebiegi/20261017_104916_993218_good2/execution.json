@@ -1,0 +1,44 @@
+[
+    {
+        "label": "compile",
+        "started_at": "2026-10-17T10:49:17.035345+02:00",
+        "finished_at": "2026-10-17T10:49:17.505729+02:00",
+        "code": 0,
+        "status": "completed"
+    },
+    {
+        "label": "block1_cpp",
+        "started_at": "2026-10-17T10:49:17.506365+02:00",
+        "finished_at": "2026-10-17T10:49:17.701486+02:00",
+        "code": 0,
+        "status": "completed"
+    },
+    {
+        "label": "block1_python",
+        "started_at": "2026-10-17T10:49:17.701989+02:00",
+        "finished_at": "2026-10-17T10:49:18.130604+02:00",
+        "code": 0,
+        "status": "completed"
+    },
+    {
+        "label": "block2_python",
+        "started_at": "2026-10-17T10:49:18.131349+02:00",
+        "finished_at": "2026-10-17T10:49:18.559069+02:00",
+        "code": 0,
+        "status": "completed"
+    },
+    {
+        "label": "block2_cpp",
+        "started_at": "2026-10-17T10:49:18.559887+02:00",
+        "finished_at": "2026-10-17T10:49:18.566846+02:00",
+        "code": 0,
+        "status": "completed"
+    },
+    {
+        "label": "validate",
+        "started_at": "2026-10-17T10:49:18.567773+02:00",
+        "finished_at": "2026-10-17T10:49:18.613381+02:00",
+        "code": 0,
+        "status": "completed"
+    }
+]

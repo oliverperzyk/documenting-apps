@@ -1,0 +1,15 @@
+{
+  "accepted": false,
+  "errors": [
+    {
+      "rule": "SCHEDULE",
+      "location": "schedule.json"
+    },
+    {
+      "rule": "SCHEDULE_PREPARED",
+      "location": "schedule.json"
+    }
+  ],
+  "published_records": 0,
+  "csv_created": false
+}

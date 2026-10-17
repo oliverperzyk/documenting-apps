@@ -1,0 +1,100 @@
+{
+    "runs": {
+        "20261017_104449_232316_good1": {
+            "cpp": {
+                "min_ns": "303792",
+                "max_ns": "552000",
+                "range_ns": "248208",
+                "median_ns": "400521",
+                "middle_pair_ns": ["341750", "459292"],
+                "selected_rows": [
+                    {
+                        "trial": 1,
+                        "time_ns": "552000",
+                        "time_ms": "0.552",
+                        "checksum": 501000000
+                    },
+                    {
+                        "trial": 10,
+                        "time_ns": "303792",
+                        "time_ms": "0.303792",
+                        "checksum": 501000000
+                    }
+                ]
+            },
+            "python": {
+                "min_ns": "54561709",
+                "max_ns": "57055084",
+                "range_ns": "2493375",
+                "median_ns": "55465896",
+                "middle_pair_ns": ["55462792", "55469000"],
+                "selected_rows": [
+                    {
+                        "trial": 1,
+                        "time_ns": "54592709",
+                        "time_ms": "54.592709",
+                        "checksum": 501000000
+                    },
+                    {
+                        "trial": 10,
+                        "time_ns": "55618583",
+                        "time_ms": "55.618583",
+                        "checksum": 501000000
+                    }
+                ]
+            }
+        },
+        "20261017_104916_993218_good2": {
+            "cpp": {
+                "min_ns": "306125",
+                "max_ns": "376042",
+                "range_ns": "69917",
+                "median_ns": "346187.5",
+                "middle_pair_ns": ["340042", "352333"],
+                "selected_rows": [
+                    {
+                        "trial": 1,
+                        "time_ns": "352333",
+                        "time_ms": "0.352333",
+                        "checksum": 501000000
+                    },
+                    {
+                        "trial": 10,
+                        "time_ns": "319292",
+                        "time_ms": "0.319292",
+                        "checksum": 501000000
+                    }
+                ]
+            },
+            "python": {
+                "min_ns": "56790667",
+                "max_ns": "58419209",
+                "range_ns": "1628542",
+                "median_ns": "57430854.5",
+                "middle_pair_ns": ["57419042", "57442667"],
+                "selected_rows": [
+                    {
+                        "trial": 1,
+                        "time_ns": "57780875",
+                        "time_ms": "57.780875",
+                        "checksum": 501000000
+                    },
+                    {
+                        "trial": 10,
+                        "time_ns": "56792625",
+                        "time_ms": "56.792625",
+                        "checksum": 501000000
+                    }
+                ]
+            }
+        }
+    },
+    "historical_A": {
+        "source_snapshot_hashes": "passed",
+        "raw_trials_and_medians": "passed",
+        "note": "Ponowna kontrola dowodów A; nie nowy przebieg historyczny."
+    },
+    "fault_rejected_no_csv": true,
+    "original_python_matches_good2": true,
+    "conclusion_repeats": true
+}

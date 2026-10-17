@@ -1,0 +1,17 @@
+{
+  "recorded_at": "2026-10-17T10:22:26.917545+02:00",
+  "system": "Darwin",
+  "arch": "arm64",
+  "python": "3.14.4",
+  "python_implementation": "CPython",
+  "compiler": [
+    "Apple clang version 21.0.0 (clang-2100.3.34.2)",
+    "Target: arm64-apple-darwin27.0.0"
+  ],
+  "compiler_version_command": "clang++ --version (first two lines only; installation path not collected)",
+  "debugger": false,
+  "macOS": "27.0.1",
+  "build": "26A434",
+  "cpu": "Apple M4 Pro",
+  "memory_bytes": "25769803776"
+}

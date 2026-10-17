@@ -1,0 +1,698 @@
+[
+    {
+        "label": "compiler_version",
+        "started_at": "2026-10-17T11:33:39.638004+02:00",
+        "finished_at": "2026-10-17T11:33:39.892643+02:00",
+        "start_monotonic_ns": 6653978715750,
+        "end_monotonic_ns": 6654233363458,
+        "code": 0
+    },
+    {
+        "label": "macOS",
+        "started_at": "2026-10-17T11:33:39.894624+02:00",
+        "finished_at": "2026-10-17T11:33:39.935102+02:00",
+        "start_monotonic_ns": 6654235313083,
+        "end_monotonic_ns": 6654275858958,
+        "code": 0
+    },
+    {
+        "label": "build",
+        "started_at": "2026-10-17T11:33:39.937620+02:00",
+        "finished_at": "2026-10-17T11:33:39.978113+02:00",
+        "start_monotonic_ns": 6654278318958,
+        "end_monotonic_ns": 6654318865083,
+        "code": 0
+    },
+    {
+        "label": "cpu",
+        "started_at": "2026-10-17T11:33:39.981344+02:00",
+        "finished_at": "2026-10-17T11:33:40.015217+02:00",
+        "start_monotonic_ns": 6654322046291,
+        "end_monotonic_ns": 6654356035208,
+        "code": 0
+    },
+    {
+        "label": "memory",
+        "started_at": "2026-10-17T11:33:40.017347+02:00",
+        "finished_at": "2026-10-17T11:33:40.047681+02:00",
+        "start_monotonic_ns": 6654358044583,
+        "end_monotonic_ns": 6654388787208,
+        "code": 0
+    },
+    {
+        "label": "python_version",
+        "started_at": "2026-10-17T11:33:40.050031+02:00",
+        "finished_at": "2026-10-17T11:33:40.104759+02:00",
+        "start_monotonic_ns": 6654390727708,
+        "end_monotonic_ns": 6654445529750,
+        "code": 0
+    },
+    {
+        "label": "compile",
+        "started_at": "2026-10-17T11:33:40.108367+02:00",
+        "finished_at": "2026-10-17T11:33:40.150023+02:00",
+        "start_monotonic_ns": 6654449061125,
+        "end_monotonic_ns": 6654490774625,
+        "code": 0
+    },
+    {
+        "label": "losowany_p01_1_cpp",
+        "started_at": "2026-10-17T11:33:40.156512+02:00",
+        "finished_at": "2026-10-17T11:33:40.685406+02:00",
+        "start_monotonic_ns": 6654497223791,
+        "end_monotonic_ns": 6655026209291,
+        "code": 0
+    },
+    {
+        "label": "losowany_p01_2_python",
+        "started_at": "2026-10-17T11:33:40.687136+02:00",
+        "finished_at": "2026-10-17T11:33:41.416984+02:00",
+        "start_monotonic_ns": 6655027831583,
+        "end_monotonic_ns": 6655757737041,
+        "code": 0
+    },
+    {
+        "label": "losowany_p02_1_cpp",
+        "started_at": "2026-10-17T11:33:41.419246+02:00",
+        "finished_at": "2026-10-17T11:33:41.439107+02:00",
+        "start_monotonic_ns": 6655759951916,
+        "end_monotonic_ns": 6655779873333,
+        "code": 0
+    },
+    {
+        "label": "losowany_p02_2_python",
+        "started_at": "2026-10-17T11:33:41.442324+02:00",
+        "finished_at": "2026-10-17T11:33:42.005812+02:00",
+        "start_monotonic_ns": 6655783135166,
+        "end_monotonic_ns": 6656346656625,
+        "code": 0
+    },
+    {
+        "label": "losowany_p03_1_python",
+        "started_at": "2026-10-17T11:33:42.008346+02:00",
+        "finished_at": "2026-10-17T11:33:42.760814+02:00",
+        "start_monotonic_ns": 6656349065333,
+        "end_monotonic_ns": 6657101573833,
+        "code": 0
+    },
+    {
+        "label": "losowany_p03_2_cpp",
+        "started_at": "2026-10-17T11:33:42.763183+02:00",
+        "finished_at": "2026-10-17T11:33:42.835877+02:00",
+        "start_monotonic_ns": 6657103888916,
+        "end_monotonic_ns": 6657177262291,
+        "code": 0
+    },
+    {
+        "label": "losowany_p04_1_cpp",
+        "started_at": "2026-10-17T11:33:42.839682+02:00",
+        "finished_at": "2026-10-17T11:33:42.914586+02:00",
+        "start_monotonic_ns": 6657180388416,
+        "end_monotonic_ns": 6657255355041,
+        "code": 0
+    },
+    {
+        "label": "losowany_p04_2_python",
+        "started_at": "2026-10-17T11:33:42.919799+02:00",
+        "finished_at": "2026-10-17T11:33:43.754400+02:00",
+        "start_monotonic_ns": 6657260500500,
+        "end_monotonic_ns": 6658095159208,
+        "code": 0
+    },
+    {
+        "label": "losowany_p05_1_cpp",
+        "started_at": "2026-10-17T11:33:43.757223+02:00",
+        "finished_at": "2026-10-17T11:33:43.779092+02:00",
+        "start_monotonic_ns": 6658097924250,
+        "end_monotonic_ns": 6658119886250,
+        "code": 0
+    },
+    {
+        "label": "losowany_p05_2_python",
+        "started_at": "2026-10-17T11:33:43.781727+02:00",
+        "finished_at": "2026-10-17T11:33:44.541981+02:00",
+        "start_monotonic_ns": 6658122431958,
+        "end_monotonic_ns": 6658882763083,
+        "code": 0
+    },
+    {
+        "label": "losowany_p06_1_python",
+        "started_at": "2026-10-17T11:33:44.544511+02:00",
+        "finished_at": "2026-10-17T11:33:45.225078+02:00",
+        "start_monotonic_ns": 6658885213666,
+        "end_monotonic_ns": 6659565933583,
+        "code": 0
+    },
+    {
+        "label": "losowany_p06_2_cpp",
+        "started_at": "2026-10-17T11:33:45.227786+02:00",
+        "finished_at": "2026-10-17T11:33:45.263343+02:00",
+        "start_monotonic_ns": 6659568491666,
+        "end_monotonic_ns": 6659604111833,
+        "code": 0
+    },
+    {
+        "label": "losowany_p07_1_cpp",
+        "started_at": "2026-10-17T11:33:45.265298+02:00",
+        "finished_at": "2026-10-17T11:33:45.342050+02:00",
+        "start_monotonic_ns": 6659606023625,
+        "end_monotonic_ns": 6659682822041,
+        "code": 0
+    },
+    {
+        "label": "losowany_p07_2_python",
+        "started_at": "2026-10-17T11:33:45.345105+02:00",
+        "finished_at": "2026-10-17T11:33:46.146494+02:00",
+        "start_monotonic_ns": 6659685803500,
+        "end_monotonic_ns": 6660487265333,
+        "code": 0
+    },
+    {
+        "label": "losowany_p08_1_python",
+        "started_at": "2026-10-17T11:33:46.149456+02:00",
+        "finished_at": "2026-10-17T11:33:46.854863+02:00",
+        "start_monotonic_ns": 6660490162458,
+        "end_monotonic_ns": 6661195645541,
+        "code": 0
+    },
+    {
+        "label": "losowany_p08_2_cpp",
+        "started_at": "2026-10-17T11:33:46.858062+02:00",
+        "finished_at": "2026-10-17T11:33:46.894452+02:00",
+        "start_monotonic_ns": 6661198776250,
+        "end_monotonic_ns": 6661235222666,
+        "code": 0
+    },
+    {
+        "label": "losowany_p09_1_cpp",
+        "started_at": "2026-10-17T11:33:46.898107+02:00",
+        "finished_at": "2026-10-17T11:33:46.917572+02:00",
+        "start_monotonic_ns": 6661238815625,
+        "end_monotonic_ns": 6661258316666,
+        "code": 0
+    },
+    {
+        "label": "losowany_p09_2_python",
+        "started_at": "2026-10-17T11:33:46.919379+02:00",
+        "finished_at": "2026-10-17T11:33:47.589885+02:00",
+        "start_monotonic_ns": 6661260097958,
+        "end_monotonic_ns": 6661930661666,
+        "code": 0
+    },
+    {
+        "label": "losowany_p10_1_cpp",
+        "started_at": "2026-10-17T11:33:47.593949+02:00",
+        "finished_at": "2026-10-17T11:33:47.624995+02:00",
+        "start_monotonic_ns": 6661934658708,
+        "end_monotonic_ns": 6661965763208,
+        "code": 0
+    },
+    {
+        "label": "losowany_p10_2_python",
+        "started_at": "2026-10-17T11:33:47.627522+02:00",
+        "finished_at": "2026-10-17T11:33:48.392869+02:00",
+        "start_monotonic_ns": 6661968226041,
+        "end_monotonic_ns": 6662733675125,
+        "code": 0
+    },
+    {
+        "label": "losowany_p11_1_python",
+        "started_at": "2026-10-17T11:33:48.396563+02:00",
+        "finished_at": "2026-10-17T11:33:49.056283+02:00",
+        "start_monotonic_ns": 6662737279375,
+        "end_monotonic_ns": 6663397059208,
+        "code": 0
+    },
+    {
+        "label": "losowany_p11_2_cpp",
+        "started_at": "2026-10-17T11:33:49.058745+02:00",
+        "finished_at": "2026-10-17T11:33:49.093653+02:00",
+        "start_monotonic_ns": 6663399451416,
+        "end_monotonic_ns": 6663434471416,
+        "code": 0
+    },
+    {
+        "label": "losowany_p12_1_python",
+        "started_at": "2026-10-17T11:33:49.095911+02:00",
+        "finished_at": "2026-10-17T11:33:49.694491+02:00",
+        "start_monotonic_ns": 6663436616250,
+        "end_monotonic_ns": 6664035273000,
+        "code": 0
+    },
+    {
+        "label": "losowany_p12_2_cpp",
+        "started_at": "2026-10-17T11:33:49.696995+02:00",
+        "finished_at": "2026-10-17T11:33:49.757966+02:00",
+        "start_monotonic_ns": 6664037700041,
+        "end_monotonic_ns": 6664098731250,
+        "code": 0
+    },
+    {
+        "label": "losowany_p13_1_cpp",
+        "started_at": "2026-10-17T11:33:49.761519+02:00",
+        "finished_at": "2026-10-17T11:33:49.799550+02:00",
+        "start_monotonic_ns": 6664102224166,
+        "end_monotonic_ns": 6664140333375,
+        "code": 0
+    },
+    {
+        "label": "losowany_p13_2_python",
+        "started_at": "2026-10-17T11:33:49.802261+02:00",
+        "finished_at": "2026-10-17T11:33:50.472863+02:00",
+        "start_monotonic_ns": 6664142965000,
+        "end_monotonic_ns": 6664813811750,
+        "code": 0
+    },
+    {
+        "label": "losowany_p14_1_cpp",
+        "started_at": "2026-10-17T11:33:50.476159+02:00",
+        "finished_at": "2026-10-17T11:33:50.514645+02:00",
+        "start_monotonic_ns": 6664816871583,
+        "end_monotonic_ns": 6664855390500,
+        "code": 0
+    },
+    {
+        "label": "losowany_p14_2_python",
+        "started_at": "2026-10-17T11:33:50.518055+02:00",
+        "finished_at": "2026-10-17T11:33:51.249819+02:00",
+        "start_monotonic_ns": 6664858767958,
+        "end_monotonic_ns": 6665590593708,
+        "code": 0
+    },
+    {
+        "label": "losowany_p15_1_python",
+        "started_at": "2026-10-17T11:33:51.253680+02:00",
+        "finished_at": "2026-10-17T11:33:51.927431+02:00",
+        "start_monotonic_ns": 6665594385958,
+        "end_monotonic_ns": 6666268230291,
+        "code": 0
+    },
+    {
+        "label": "losowany_p15_2_cpp",
+        "started_at": "2026-10-17T11:33:51.929962+02:00",
+        "finished_at": "2026-10-17T11:33:51.998379+02:00",
+        "start_monotonic_ns": 6666270673333,
+        "end_monotonic_ns": 6666339148791,
+        "code": 0
+    },
+    {
+        "label": "losowany_p16_1_cpp",
+        "started_at": "2026-10-17T11:33:52.002149+02:00",
+        "finished_at": "2026-10-17T11:33:52.044936+02:00",
+        "start_monotonic_ns": 6666342866416,
+        "end_monotonic_ns": 6666385710541,
+        "code": 0
+    },
+    {
+        "label": "losowany_p16_2_python",
+        "started_at": "2026-10-17T11:33:52.049436+02:00",
+        "finished_at": "2026-10-17T11:33:52.696960+02:00",
+        "start_monotonic_ns": 6666390169333,
+        "end_monotonic_ns": 6667037734333,
+        "code": 0
+    },
+    {
+        "label": "losowany_p17_1_python",
+        "started_at": "2026-10-17T11:33:52.699345+02:00",
+        "finished_at": "2026-10-17T11:33:53.393991+02:00",
+        "start_monotonic_ns": 6667040059791,
+        "end_monotonic_ns": 6667734807125,
+        "code": 0
+    },
+    {
+        "label": "losowany_p17_2_cpp",
+        "started_at": "2026-10-17T11:33:53.397854+02:00",
+        "finished_at": "2026-10-17T11:33:53.458570+02:00",
+        "start_monotonic_ns": 6667738575333,
+        "end_monotonic_ns": 6667799369625,
+        "code": 0
+    },
+    {
+        "label": "losowany_p18_1_python",
+        "started_at": "2026-10-17T11:33:53.462153+02:00",
+        "finished_at": "2026-10-17T11:33:54.147130+02:00",
+        "start_monotonic_ns": 6667802871250,
+        "end_monotonic_ns": 6668488050125,
+        "code": 0
+    },
+    {
+        "label": "losowany_p18_2_cpp",
+        "started_at": "2026-10-17T11:33:54.150264+02:00",
+        "finished_at": "2026-10-17T11:33:54.216677+02:00",
+        "start_monotonic_ns": 6668490987375,
+        "end_monotonic_ns": 6668557477333,
+        "code": 0
+    },
+    {
+        "label": "losowany_p19_1_python",
+        "started_at": "2026-10-17T11:33:54.219915+02:00",
+        "finished_at": "2026-10-17T11:33:54.899296+02:00",
+        "start_monotonic_ns": 6668560632250,
+        "end_monotonic_ns": 6669240122916,
+        "code": 0
+    },
+    {
+        "label": "losowany_p19_2_cpp",
+        "started_at": "2026-10-17T11:33:54.902917+02:00",
+        "finished_at": "2026-10-17T11:33:54.930272+02:00",
+        "start_monotonic_ns": 6669243631750,
+        "end_monotonic_ns": 6669271070958,
+        "code": 0
+    },
+    {
+        "label": "losowany_p20_1_python",
+        "started_at": "2026-10-17T11:33:54.934204+02:00",
+        "finished_at": "2026-10-17T11:33:55.629234+02:00",
+        "start_monotonic_ns": 6669274913666,
+        "end_monotonic_ns": 6669970019125,
+        "code": 0
+    },
+    {
+        "label": "losowany_p20_2_cpp",
+        "started_at": "2026-10-17T11:33:55.632767+02:00",
+        "finished_at": "2026-10-17T11:33:55.677802+02:00",
+        "start_monotonic_ns": 6669973482500,
+        "end_monotonic_ns": 6670018562500,
+        "code": 0
+    },
+    {
+        "label": "naprzemienny_p01_1_cpp",
+        "started_at": "2026-10-17T11:33:55.680918+02:00",
+        "finished_at": "2026-10-17T11:33:55.713789+02:00",
+        "start_monotonic_ns": 6670021642791,
+        "end_monotonic_ns": 6670054581875,
+        "code": 0
+    },
+    {
+        "label": "naprzemienny_p01_2_python",
+        "started_at": "2026-10-17T11:33:55.717404+02:00",
+        "finished_at": "2026-10-17T11:33:56.464013+02:00",
+        "start_monotonic_ns": 6670058129916,
+        "end_monotonic_ns": 6670804823625,
+        "code": 0
+    },
+    {
+        "label": "naprzemienny_p02_1_python",
+        "started_at": "2026-10-17T11:33:56.468296+02:00",
+        "finished_at": "2026-10-17T11:33:57.278972+02:00",
+        "start_monotonic_ns": 6670809017916,
+        "end_monotonic_ns": 6671619759250,
+        "code": 0
+    },
+    {
+        "label": "naprzemienny_p02_2_cpp",
+        "started_at": "2026-10-17T11:33:57.282891+02:00",
+        "finished_at": "2026-10-17T11:33:57.310492+02:00",
+        "start_monotonic_ns": 6671623630166,
+        "end_monotonic_ns": 6671651251958,
+        "code": 0
+    },
+    {
+        "label": "naprzemienny_p03_1_cpp",
+        "started_at": "2026-10-17T11:33:57.314401+02:00",
+        "finished_at": "2026-10-17T11:33:57.352739+02:00",
+        "start_monotonic_ns": 6671655128625,
+        "end_monotonic_ns": 6671693529625,
+        "code": 0
+    },
+    {
+        "label": "naprzemienny_p03_2_python",
+        "started_at": "2026-10-17T11:33:57.356664+02:00",
+        "finished_at": "2026-10-17T11:33:58.024863+02:00",
+        "start_monotonic_ns": 6671697390291,
+        "end_monotonic_ns": 6672365700916,
+        "code": 0
+    },
+    {
+        "label": "naprzemienny_p04_1_python",
+        "started_at": "2026-10-17T11:33:58.029201+02:00",
+        "finished_at": "2026-10-17T11:33:58.686129+02:00",
+        "start_monotonic_ns": 6672369937000,
+        "end_monotonic_ns": 6673026933958,
+        "code": 0
+    },
+    {
+        "label": "naprzemienny_p04_2_cpp",
+        "started_at": "2026-10-17T11:33:58.690715+02:00",
+        "finished_at": "2026-10-17T11:33:58.775078+02:00",
+        "start_monotonic_ns": 6673031444333,
+        "end_monotonic_ns": 6673115887875,
+        "code": 0
+    },
+    {
+        "label": "naprzemienny_p05_1_cpp",
+        "started_at": "2026-10-17T11:33:58.782192+02:00",
+        "finished_at": "2026-10-17T11:33:58.833135+02:00",
+        "start_monotonic_ns": 6673122946125,
+        "end_monotonic_ns": 6673173907916,
+        "code": 0
+    },
+    {
+        "label": "naprzemienny_p05_2_python",
+        "started_at": "2026-10-17T11:33:58.840203+02:00",
+        "finished_at": "2026-10-17T11:33:59.877383+02:00",
+        "start_monotonic_ns": 6673180938208,
+        "end_monotonic_ns": 6674218189666,
+        "code": 0
+    },
+    {
+        "label": "naprzemienny_p06_1_python",
+        "started_at": "2026-10-17T11:33:59.882046+02:00",
+        "finished_at": "2026-10-17T11:34:00.614844+02:00",
+        "start_monotonic_ns": 6674222770666,
+        "end_monotonic_ns": 6674955603125,
+        "code": 0
+    },
+    {
+        "label": "naprzemienny_p06_2_cpp",
+        "started_at": "2026-10-17T11:34:00.618758+02:00",
+        "finished_at": "2026-10-17T11:34:00.650008+02:00",
+        "start_monotonic_ns": 6674959488250,
+        "end_monotonic_ns": 6674990833625,
+        "code": 0
+    },
+    {
+        "label": "naprzemienny_p07_1_cpp",
+        "started_at": "2026-10-17T11:34:00.654454+02:00",
+        "finished_at": "2026-10-17T11:34:00.713303+02:00",
+        "start_monotonic_ns": 6674995185750,
+        "end_monotonic_ns": 6675054076875,
+        "code": 0
+    },
+    {
+        "label": "naprzemienny_p07_2_python",
+        "started_at": "2026-10-17T11:34:00.716673+02:00",
+        "finished_at": "2026-10-17T11:34:01.393734+02:00",
+        "start_monotonic_ns": 6675057409833,
+        "end_monotonic_ns": 6675734537708,
+        "code": 0
+    },
+    {
+        "label": "naprzemienny_p08_1_python",
+        "started_at": "2026-10-17T11:34:01.397346+02:00",
+        "finished_at": "2026-10-17T11:34:02.091456+02:00",
+        "start_monotonic_ns": 6675738077666,
+        "end_monotonic_ns": 6676432260708,
+        "code": 0
+    },
+    {
+        "label": "naprzemienny_p08_2_cpp",
+        "started_at": "2026-10-17T11:34:02.095475+02:00",
+        "finished_at": "2026-10-17T11:34:02.131610+02:00",
+        "start_monotonic_ns": 6676436204250,
+        "end_monotonic_ns": 6676472420583,
+        "code": 0
+    },
+    {
+        "label": "naprzemienny_p09_1_cpp",
+        "started_at": "2026-10-17T11:34:02.134262+02:00",
+        "finished_at": "2026-10-17T11:34:02.184580+02:00",
+        "start_monotonic_ns": 6676474991708,
+        "end_monotonic_ns": 6676525383041,
+        "code": 0
+    },
+    {
+        "label": "naprzemienny_p09_2_python",
+        "started_at": "2026-10-17T11:34:02.188749+02:00",
+        "finished_at": "2026-10-17T11:34:02.938899+02:00",
+        "start_monotonic_ns": 6676529486375,
+        "end_monotonic_ns": 6677279692208,
+        "code": 0
+    },
+    {
+        "label": "naprzemienny_p10_1_python",
+        "started_at": "2026-10-17T11:34:02.942319+02:00",
+        "finished_at": "2026-10-17T11:34:03.723522+02:00",
+        "start_monotonic_ns": 6677283057583,
+        "end_monotonic_ns": 6678064335166,
+        "code": 0
+    },
+    {
+        "label": "naprzemienny_p10_2_cpp",
+        "started_at": "2026-10-17T11:34:03.726535+02:00",
+        "finished_at": "2026-10-17T11:34:03.758143+02:00",
+        "start_monotonic_ns": 6678067272375,
+        "end_monotonic_ns": 6678098988291,
+        "code": 0
+    },
+    {
+        "label": "naprzemienny_p11_1_cpp",
+        "started_at": "2026-10-17T11:34:03.762254+02:00",
+        "finished_at": "2026-10-17T11:34:03.797153+02:00",
+        "start_monotonic_ns": 6678102981291,
+        "end_monotonic_ns": 6678137945208,
+        "code": 0
+    },
+    {
+        "label": "naprzemienny_p11_2_python",
+        "started_at": "2026-10-17T11:34:03.800484+02:00",
+        "finished_at": "2026-10-17T11:34:04.585865+02:00",
+        "start_monotonic_ns": 6678141223916,
+        "end_monotonic_ns": 6678926667458,
+        "code": 0
+    },
+    {
+        "label": "naprzemienny_p12_1_python",
+        "started_at": "2026-10-17T11:34:04.590059+02:00",
+        "finished_at": "2026-10-17T11:34:05.224900+02:00",
+        "start_monotonic_ns": 6678930801083,
+        "end_monotonic_ns": 6679565705250,
+        "code": 0
+    },
+    {
+        "label": "naprzemienny_p12_2_cpp",
+        "started_at": "2026-10-17T11:34:05.228610+02:00",
+        "finished_at": "2026-10-17T11:34:05.256642+02:00",
+        "start_monotonic_ns": 6679569354208,
+        "end_monotonic_ns": 6679597439291,
+        "code": 0
+    },
+    {
+        "label": "naprzemienny_p13_1_cpp",
+        "started_at": "2026-10-17T11:34:05.258922+02:00",
+        "finished_at": "2026-10-17T11:34:05.286445+02:00",
+        "start_monotonic_ns": 6679599647916,
+        "end_monotonic_ns": 6679627234125,
+        "code": 0
+    },
+    {
+        "label": "naprzemienny_p13_2_python",
+        "started_at": "2026-10-17T11:34:05.289872+02:00",
+        "finished_at": "2026-10-17T11:34:05.960930+02:00",
+        "start_monotonic_ns": 6679630618125,
+        "end_monotonic_ns": 6680301750250,
+        "code": 0
+    },
+    {
+        "label": "naprzemienny_p14_1_python",
+        "started_at": "2026-10-17T11:34:05.964933+02:00",
+        "finished_at": "2026-10-17T11:34:06.560773+02:00",
+        "start_monotonic_ns": 6680305673041,
+        "end_monotonic_ns": 6680901592583,
+        "code": 0
+    },
+    {
+        "label": "naprzemienny_p14_2_cpp",
+        "started_at": "2026-10-17T11:34:06.564510+02:00",
+        "finished_at": "2026-10-17T11:34:06.602554+02:00",
+        "start_monotonic_ns": 6680905253333,
+        "end_monotonic_ns": 6680943345541,
+        "code": 0
+    },
+    {
+        "label": "naprzemienny_p15_1_cpp",
+        "started_at": "2026-10-17T11:34:06.604386+02:00",
+        "finished_at": "2026-10-17T11:34:06.627547+02:00",
+        "start_monotonic_ns": 6680945120625,
+        "end_monotonic_ns": 6680968318541,
+        "code": 0
+    },
+    {
+        "label": "naprzemienny_p15_2_python",
+        "started_at": "2026-10-17T11:34:06.630319+02:00",
+        "finished_at": "2026-10-17T11:34:07.261356+02:00",
+        "start_monotonic_ns": 6680971048791,
+        "end_monotonic_ns": 6681602141583,
+        "code": 0
+    },
+    {
+        "label": "naprzemienny_p16_1_python",
+        "started_at": "2026-10-17T11:34:07.264125+02:00",
+        "finished_at": "2026-10-17T11:34:07.893745+02:00",
+        "start_monotonic_ns": 6681604882833,
+        "end_monotonic_ns": 6682234574125,
+        "code": 0
+    },
+    {
+        "label": "naprzemienny_p16_2_cpp",
+        "started_at": "2026-10-17T11:34:07.897911+02:00",
+        "finished_at": "2026-10-17T11:34:07.978234+02:00",
+        "start_monotonic_ns": 6682238652791,
+        "end_monotonic_ns": 6682319069166,
+        "code": 0
+    },
+    {
+        "label": "naprzemienny_p17_1_cpp",
+        "started_at": "2026-10-17T11:34:07.982364+02:00",
+        "finished_at": "2026-10-17T11:34:08.021188+02:00",
+        "start_monotonic_ns": 6682323098333,
+        "end_monotonic_ns": 6682362041291,
+        "code": 0
+    },
+    {
+        "label": "naprzemienny_p17_2_python",
+        "started_at": "2026-10-17T11:34:08.024588+02:00",
+        "finished_at": "2026-10-17T11:34:08.733982+02:00",
+        "start_monotonic_ns": 6682365319583,
+        "end_monotonic_ns": 6683074829458,
+        "code": 0
+    },
+    {
+        "label": "naprzemienny_p18_1_python",
+        "started_at": "2026-10-17T11:34:08.736772+02:00",
+        "finished_at": "2026-10-17T11:34:09.493315+02:00",
+        "start_monotonic_ns": 6683077507958,
+        "end_monotonic_ns": 6683834166041,
+        "code": 0
+    },
+    {
+        "label": "naprzemienny_p18_2_cpp",
+        "started_at": "2026-10-17T11:34:09.497082+02:00",
+        "finished_at": "2026-10-17T11:34:09.523164+02:00",
+        "start_monotonic_ns": 6683837827833,
+        "end_monotonic_ns": 6683863941666,
+        "code": 0
+    },
+    {
+        "label": "naprzemienny_p19_1_cpp",
+        "started_at": "2026-10-17T11:34:09.526038+02:00",
+        "finished_at": "2026-10-17T11:34:09.598067+02:00",
+        "start_monotonic_ns": 6683866786958,
+        "end_monotonic_ns": 6683938916250,
+        "code": 0
+    },
+    {
+        "label": "naprzemienny_p19_2_python",
+        "started_at": "2026-10-17T11:34:09.602480+02:00",
+        "finished_at": "2026-10-17T11:34:10.282303+02:00",
+        "start_monotonic_ns": 6683943220291,
+        "end_monotonic_ns": 6684623188166,
+        "code": 0
+    },
+    {
+        "label": "naprzemienny_p20_1_python",
+        "started_at": "2026-10-17T11:34:10.286314+02:00",
+        "finished_at": "2026-10-17T11:34:10.949819+02:00",
+        "start_monotonic_ns": 6684627062666,
+        "end_monotonic_ns": 6685290703833,
+        "code": 0
+    },
+    {
+        "label": "naprzemienny_p20_2_cpp",
+        "started_at": "2026-10-17T11:34:10.956599+02:00",
+        "finished_at": "2026-10-17T11:34:10.999713+02:00",
+        "start_monotonic_ns": 6685297787958,
+        "end_monotonic_ns": 6685340533833,
+        "code": 0
+    }
+]

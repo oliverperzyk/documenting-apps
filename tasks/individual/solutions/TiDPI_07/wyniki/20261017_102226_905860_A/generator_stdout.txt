@@ -1,0 +1,10 @@
+{
+  "count": 20020,
+  "seed": 20261017,
+  "range": [
+    0,
+    1000
+  ],
+  "copies_per_value": 20,
+  "sha256": "1e1422a8679f65bb7ec778bdbd821b74a4596431774711e89671acaa9ddca3d8"
+}

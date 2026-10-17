@@ -1,0 +1,12 @@
+{
+  "accepted": false,
+  "errors": [
+    "HEADER_COUNT:naprzemienny_p01_1_cpp",
+    "TOTAL_COUNT",
+    "GROUP_COMPLETENESS",
+    "POSITION_BALANCE"
+  ],
+  "published_records": 0,
+  "warmup_records": 0,
+  "csv_created": false
+}

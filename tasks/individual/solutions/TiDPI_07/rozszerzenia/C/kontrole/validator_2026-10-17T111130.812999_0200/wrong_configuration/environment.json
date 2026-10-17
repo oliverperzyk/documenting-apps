@@ -1,0 +1,39 @@
+{
+    "recorded_at": "2026-10-17T11:10:39.389143+02:00",
+    "study": "C2",
+    "system": "Darwin",
+    "arch": "arm64",
+    "python": "3.14.4",
+    "python_implementation": "CPython",
+    "debugger": false,
+    "rounds": 100,
+    "time_unit": "ns",
+    "fault": false,
+    "flags": {
+        "Release": ["-std=c++17", "-O0", "-g"]
+    },
+    "compiler_version_scope": "first two lines; installation path deliberately not collected",
+    "data_sha256_before": {
+        "input_50000.txt": "500b7f8b59c90c9990dce7ea53ac5d31dc99d88f70d32b8a655108eba8d1fd40",
+        "input_30000.txt": "8fd5b5c6428f4a264fe60d21864aa957716f9df81ea5d4673d10564a55a59a5e",
+        "input_10000.txt": "71496284c49978be7367ee8385b13f7c95c5d187e05eb7f9d4acee569c5e93b5",
+        "historical_A.txt": "1e1422a8679f65bb7ec778bdbd821b74a4596431774711e89671acaa9ddca3d8"
+    },
+    "compiler": [
+        "Apple clang version 21.0.0 (clang-2100.3.34.2)",
+        "Target: arm64-apple-darwin27.0.0"
+    ],
+    "macOS": "27.0.1",
+    "build": "26A434",
+    "cpu": "Apple M4 Pro",
+    "memory_bytes": "25769803776",
+    "binary_sha256": {
+        "Release": "5d8b5cfc53206f6048a50c71873319d079756ff2b2ac8c746049f1d3c245fda2"
+    },
+    "data_sha256_after": {
+        "input_50000.txt": "500b7f8b59c90c9990dce7ea53ac5d31dc99d88f70d32b8a655108eba8d1fd40",
+        "input_30000.txt": "8fd5b5c6428f4a264fe60d21864aa957716f9df81ea5d4673d10564a55a59a5e",
+        "input_10000.txt": "71496284c49978be7367ee8385b13f7c95c5d187e05eb7f9d4acee569c5e93b5",
+        "historical_A.txt": "1e1422a8679f65bb7ec778bdbd821b74a4596431774711e89671acaa9ddca3d8"
+    }
+}

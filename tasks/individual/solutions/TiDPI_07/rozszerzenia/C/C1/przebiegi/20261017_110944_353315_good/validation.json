@@ -1,0 +1,38 @@
+{
+    "accepted": true,
+    "errors": [],
+    "published_records": 20,
+    "csv_created": true,
+    "stats": {
+        "Debug/10000/cpp": {
+            "configuration": "Debug",
+            "count": 10000,
+            "language": "cpp",
+            "trials": 10,
+            "min_ns": 7253959,
+            "max_ns": 10899417,
+            "range_ns": 3645458,
+            "median_ns": "8127354",
+            "middle_pair_ns": [8072333, 8182375],
+            "sorted_ns": [
+                7253959, 7628917, 7706292, 7857916, 8072333, 8182375, 9106500,
+                9198291, 9806583, 10899417
+            ]
+        },
+        "Release/10000/cpp": {
+            "configuration": "Release",
+            "count": 10000,
+            "language": "cpp",
+            "trials": 10,
+            "min_ns": 149000,
+            "max_ns": 365083,
+            "range_ns": 216083,
+            "median_ns": "176729.5",
+            "middle_pair_ns": [169417, 184042],
+            "sorted_ns": [
+                149000, 150041, 167542, 167750, 169417, 184042, 279625, 291958,
+                356792, 365083
+            ]
+        }
+    }
+}

@@ -1,0 +1,11 @@
+{
+    "accepted": false,
+    "errors": [
+        {
+            "rule": "CONFIGURATION",
+            "location": "environment.json"
+        }
+    ],
+    "published_records": 0,
+    "csv_created": false
+}

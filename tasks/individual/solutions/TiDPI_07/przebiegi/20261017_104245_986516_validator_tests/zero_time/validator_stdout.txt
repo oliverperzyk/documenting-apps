@@ -1,0 +1,56 @@
+{
+  "accepted": true,
+  "errors": [],
+  "csv_created": true,
+  "expected": 501000000,
+  "time_unit": "ns",
+  "trials_per_language": 10,
+  "warmups_per_language": 4,
+  "stats": {
+    "cpp": {
+      "min_ns": 0,
+      "max_ns": 10,
+      "range_ns": 10,
+      "median_ns": "5.5",
+      "sorted_ns": [
+        0,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "middle_pair_ns": [
+        5,
+        6
+      ]
+    },
+    "python": {
+      "min_ns": 1,
+      "max_ns": 10,
+      "range_ns": 9,
+      "median_ns": "5.5",
+      "sorted_ns": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "middle_pair_ns": [
+        5,
+        6
+      ]
+    }
+  },
+  "published_records": 20
+}

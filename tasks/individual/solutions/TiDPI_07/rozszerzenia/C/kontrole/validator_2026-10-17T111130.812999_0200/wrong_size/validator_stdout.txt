@@ -1,0 +1,11 @@
+{
+  "accepted": false,
+  "errors": [
+    {
+      "rule": "DATA_MANIFEST",
+      "location": "10000"
+    }
+  ],
+  "published_records": 0,
+  "csv_created": false
+}

@@ -1,0 +1,958 @@
+[
+    {
+        "label": "compiler_version",
+        "argv": [
+            "python3",
+            "-c",
+            "import subprocess,sys; p=subprocess.run([\"clang++\",\"--version\"],capture_output=True); sys.stdout.buffer.write(b\"\\n\".join(p.stdout.splitlines()[:2])+b\"\\n\"); sys.stderr.buffer.write(p.stderr); sys.exit(p.returncode)"
+        ]
+    },
+    {
+        "label": "macOS",
+        "argv": ["sw_vers", "-productVersion"]
+    },
+    {
+        "label": "build",
+        "argv": ["sw_vers", "-buildVersion"]
+    },
+    {
+        "label": "cpu",
+        "argv": ["sysctl", "-n", "machdep.cpu.brand_string"]
+    },
+    {
+        "label": "memory",
+        "argv": ["sysctl", "-n", "hw.memsize"]
+    },
+    {
+        "label": "python_version",
+        "argv": ["python3", "--version"]
+    },
+    {
+        "label": "compile",
+        "argv": [
+            "cp",
+            "przebiegi/20261017_113308_338673/seria_1/_build/benchmark",
+            "przebiegi/20261017_113308_338673/seria_2/_build/benchmark"
+        ]
+    },
+    {
+        "label": "losowany_p01_1_cpp",
+        "argv": [
+            "przebiegi/20261017_113308_338673/seria_2/_build/benchmark",
+            "przebiegi/20261017_113308_338673/seria_2/data/input_10000.txt",
+            "10000",
+            "251042700",
+            "1",
+            "1"
+        ]
+    },
+    {
+        "label": "losowany_p01_2_python",
+        "argv": [
+            "python3",
+            "przebiegi/20261017_113308_338673/seria_2/sources/benchmark.py",
+            "przebiegi/20261017_113308_338673/seria_2/data/input_10000.txt",
+            "10000",
+            "251042700",
+            "1",
+            "1"
+        ]
+    },
+    {
+        "label": "losowany_p02_1_cpp",
+        "argv": [
+            "przebiegi/20261017_113308_338673/seria_2/_build/benchmark",
+            "przebiegi/20261017_113308_338673/seria_2/data/input_10000.txt",
+            "10000",
+            "251042700",
+            "1",
+            "1"
+        ]
+    },
+    {
+        "label": "losowany_p02_2_python",
+        "argv": [
+            "python3",
+            "przebiegi/20261017_113308_338673/seria_2/sources/benchmark.py",
+            "przebiegi/20261017_113308_338673/seria_2/data/input_10000.txt",
+            "10000",
+            "251042700",
+            "1",
+            "1"
+        ]
+    },
+    {
+        "label": "losowany_p03_1_python",
+        "argv": [
+            "python3",
+            "przebiegi/20261017_113308_338673/seria_2/sources/benchmark.py",
+            "przebiegi/20261017_113308_338673/seria_2/data/input_10000.txt",
+            "10000",
+            "251042700",
+            "1",
+            "1"
+        ]
+    },
+    {
+        "label": "losowany_p03_2_cpp",
+        "argv": [
+            "przebiegi/20261017_113308_338673/seria_2/_build/benchmark",
+            "przebiegi/20261017_113308_338673/seria_2/data/input_10000.txt",
+            "10000",
+            "251042700",
+            "1",
+            "1"
+        ]
+    },
+    {
+        "label": "losowany_p04_1_cpp",
+        "argv": [
+            "przebiegi/20261017_113308_338673/seria_2/_build/benchmark",
+            "przebiegi/20261017_113308_338673/seria_2/data/input_10000.txt",
+            "10000",
+            "251042700",
+            "1",
+            "1"
+        ]
+    },
+    {
+        "label": "losowany_p04_2_python",
+        "argv": [
+            "python3",
+            "przebiegi/20261017_113308_338673/seria_2/sources/benchmark.py",
+            "przebiegi/20261017_113308_338673/seria_2/data/input_10000.txt",
+            "10000",
+            "251042700",
+            "1",
+            "1"
+        ]
+    },
+    {
+        "label": "losowany_p05_1_cpp",
+        "argv": [
+            "przebiegi/20261017_113308_338673/seria_2/_build/benchmark",
+            "przebiegi/20261017_113308_338673/seria_2/data/input_10000.txt",
+            "10000",
+            "251042700",
+            "1",
+            "1"
+        ]
+    },
+    {
+        "label": "losowany_p05_2_python",
+        "argv": [
+            "python3",
+            "przebiegi/20261017_113308_338673/seria_2/sources/benchmark.py",
+            "przebiegi/20261017_113308_338673/seria_2/data/input_10000.txt",
+            "10000",
+            "251042700",
+            "1",
+            "1"
+        ]
+    },
+    {
+        "label": "losowany_p06_1_python",
+        "argv": [
+            "python3",
+            "przebiegi/20261017_113308_338673/seria_2/sources/benchmark.py",
+            "przebiegi/20261017_113308_338673/seria_2/data/input_10000.txt",
+            "10000",
+            "251042700",
+            "1",
+            "1"
+        ]
+    },
+    {
+        "label": "losowany_p06_2_cpp",
+        "argv": [
+            "przebiegi/20261017_113308_338673/seria_2/_build/benchmark",
+            "przebiegi/20261017_113308_338673/seria_2/data/input_10000.txt",
+            "10000",
+            "251042700",
+            "1",
+            "1"
+        ]
+    },
+    {
+        "label": "losowany_p07_1_cpp",
+        "argv": [
+            "przebiegi/20261017_113308_338673/seria_2/_build/benchmark",
+            "przebiegi/20261017_113308_338673/seria_2/data/input_10000.txt",
+            "10000",
+            "251042700",
+            "1",
+            "1"
+        ]
+    },
+    {
+        "label": "losowany_p07_2_python",
+        "argv": [
+            "python3",
+            "przebiegi/20261017_113308_338673/seria_2/sources/benchmark.py",
+            "przebiegi/20261017_113308_338673/seria_2/data/input_10000.txt",
+            "10000",
+            "251042700",
+            "1",
+            "1"
+        ]
+    },
+    {
+        "label": "losowany_p08_1_python",
+        "argv": [
+            "python3",
+            "przebiegi/20261017_113308_338673/seria_2/sources/benchmark.py",
+            "przebiegi/20261017_113308_338673/seria_2/data/input_10000.txt",
+            "10000",
+            "251042700",
+            "1",
+            "1"
+        ]
+    },
+    {
+        "label": "losowany_p08_2_cpp",
+        "argv": [
+            "przebiegi/20261017_113308_338673/seria_2/_build/benchmark",
+            "przebiegi/20261017_113308_338673/seria_2/data/input_10000.txt",
+            "10000",
+            "251042700",
+            "1",
+            "1"
+        ]
+    },
+    {
+        "label": "losowany_p09_1_cpp",
+        "argv": [
+            "przebiegi/20261017_113308_338673/seria_2/_build/benchmark",
+            "przebiegi/20261017_113308_338673/seria_2/data/input_10000.txt",
+            "10000",
+            "251042700",
+            "1",
+            "1"
+        ]
+    },
+    {
+        "label": "losowany_p09_2_python",
+        "argv": [
+            "python3",
+            "przebiegi/20261017_113308_338673/seria_2/sources/benchmark.py",
+            "przebiegi/20261017_113308_338673/seria_2/data/input_10000.txt",
+            "10000",
+            "251042700",
+            "1",
+            "1"
+        ]
+    },
+    {
+        "label": "losowany_p10_1_cpp",
+        "argv": [
+            "przebiegi/20261017_113308_338673/seria_2/_build/benchmark",
+            "przebiegi/20261017_113308_338673/seria_2/data/input_10000.txt",
+            "10000",
+            "251042700",
+            "1",
+            "1"
+        ]
+    },
+    {
+        "label": "losowany_p10_2_python",
+        "argv": [
+            "python3",
+            "przebiegi/20261017_113308_338673/seria_2/sources/benchmark.py",
+            "przebiegi/20261017_113308_338673/seria_2/data/input_10000.txt",
+            "10000",
+            "251042700",
+            "1",
+            "1"
+        ]
+    },
+    {
+        "label": "losowany_p11_1_python",
+        "argv": [
+            "python3",
+            "przebiegi/20261017_113308_338673/seria_2/sources/benchmark.py",
+            "przebiegi/20261017_113308_338673/seria_2/data/input_10000.txt",
+            "10000",
+            "251042700",
+            "1",
+            "1"
+        ]
+    },
+    {
+        "label": "losowany_p11_2_cpp",
+        "argv": [
+            "przebiegi/20261017_113308_338673/seria_2/_build/benchmark",
+            "przebiegi/20261017_113308_338673/seria_2/data/input_10000.txt",
+            "10000",
+            "251042700",
+            "1",
+            "1"
+        ]
+    },
+    {
+        "label": "losowany_p12_1_python",
+        "argv": [
+            "python3",
+            "przebiegi/20261017_113308_338673/seria_2/sources/benchmark.py",
+            "przebiegi/20261017_113308_338673/seria_2/data/input_10000.txt",
+            "10000",
+            "251042700",
+            "1",
+            "1"
+        ]
+    },
+    {
+        "label": "losowany_p12_2_cpp",
+        "argv": [
+            "przebiegi/20261017_113308_338673/seria_2/_build/benchmark",
+            "przebiegi/20261017_113308_338673/seria_2/data/input_10000.txt",
+            "10000",
+            "251042700",
+            "1",
+            "1"
+        ]
+    },
+    {
+        "label": "losowany_p13_1_cpp",
+        "argv": [
+            "przebiegi/20261017_113308_338673/seria_2/_build/benchmark",
+            "przebiegi/20261017_113308_338673/seria_2/data/input_10000.txt",
+            "10000",
+            "251042700",
+            "1",
+            "1"
+        ]
+    },
+    {
+        "label": "losowany_p13_2_python",
+        "argv": [
+            "python3",
+            "przebiegi/20261017_113308_338673/seria_2/sources/benchmark.py",
+            "przebiegi/20261017_113308_338673/seria_2/data/input_10000.txt",
+            "10000",
+            "251042700",
+            "1",
+            "1"
+        ]
+    },
+    {
+        "label": "losowany_p14_1_cpp",
+        "argv": [
+            "przebiegi/20261017_113308_338673/seria_2/_build/benchmark",
+            "przebiegi/20261017_113308_338673/seria_2/data/input_10000.txt",
+            "10000",
+            "251042700",
+            "1",
+            "1"
+        ]
+    },
+    {
+        "label": "losowany_p14_2_python",
+        "argv": [
+            "python3",
+            "przebiegi/20261017_113308_338673/seria_2/sources/benchmark.py",
+            "przebiegi/20261017_113308_338673/seria_2/data/input_10000.txt",
+            "10000",
+            "251042700",
+            "1",
+            "1"
+        ]
+    },
+    {
+        "label": "losowany_p15_1_python",
+        "argv": [
+            "python3",
+            "przebiegi/20261017_113308_338673/seria_2/sources/benchmark.py",
+            "przebiegi/20261017_113308_338673/seria_2/data/input_10000.txt",
+            "10000",
+            "251042700",
+            "1",
+            "1"
+        ]
+    },
+    {
+        "label": "losowany_p15_2_cpp",
+        "argv": [
+            "przebiegi/20261017_113308_338673/seria_2/_build/benchmark",
+            "przebiegi/20261017_113308_338673/seria_2/data/input_10000.txt",
+            "10000",
+            "251042700",
+            "1",
+            "1"
+        ]
+    },
+    {
+        "label": "losowany_p16_1_cpp",
+        "argv": [
+            "przebiegi/20261017_113308_338673/seria_2/_build/benchmark",
+            "przebiegi/20261017_113308_338673/seria_2/data/input_10000.txt",
+            "10000",
+            "251042700",
+            "1",
+            "1"
+        ]
+    },
+    {
+        "label": "losowany_p16_2_python",
+        "argv": [
+            "python3",
+            "przebiegi/20261017_113308_338673/seria_2/sources/benchmark.py",
+            "przebiegi/20261017_113308_338673/seria_2/data/input_10000.txt",
+            "10000",
+            "251042700",
+            "1",
+            "1"
+        ]
+    },
+    {
+        "label": "losowany_p17_1_python",
+        "argv": [
+            "python3",
+            "przebiegi/20261017_113308_338673/seria_2/sources/benchmark.py",
+            "przebiegi/20261017_113308_338673/seria_2/data/input_10000.txt",
+            "10000",
+            "251042700",
+            "1",
+            "1"
+        ]
+    },
+    {
+        "label": "losowany_p17_2_cpp",
+        "argv": [
+            "przebiegi/20261017_113308_338673/seria_2/_build/benchmark",
+            "przebiegi/20261017_113308_338673/seria_2/data/input_10000.txt",
+            "10000",
+            "251042700",
+            "1",
+            "1"
+        ]
+    },
+    {
+        "label": "losowany_p18_1_python",
+        "argv": [
+            "python3",
+            "przebiegi/20261017_113308_338673/seria_2/sources/benchmark.py",
+            "przebiegi/20261017_113308_338673/seria_2/data/input_10000.txt",
+            "10000",
+            "251042700",
+            "1",
+            "1"
+        ]
+    },
+    {
+        "label": "losowany_p18_2_cpp",
+        "argv": [
+            "przebiegi/20261017_113308_338673/seria_2/_build/benchmark",
+            "przebiegi/20261017_113308_338673/seria_2/data/input_10000.txt",
+            "10000",
+            "251042700",
+            "1",
+            "1"
+        ]
+    },
+    {
+        "label": "losowany_p19_1_python",
+        "argv": [
+            "python3",
+            "przebiegi/20261017_113308_338673/seria_2/sources/benchmark.py",
+            "przebiegi/20261017_113308_338673/seria_2/data/input_10000.txt",
+            "10000",
+            "251042700",
+            "1",
+            "1"
+        ]
+    },
+    {
+        "label": "losowany_p19_2_cpp",
+        "argv": [
+            "przebiegi/20261017_113308_338673/seria_2/_build/benchmark",
+            "przebiegi/20261017_113308_338673/seria_2/data/input_10000.txt",
+            "10000",
+            "251042700",
+            "1",
+            "1"
+        ]
+    },
+    {
+        "label": "losowany_p20_1_python",
+        "argv": [
+            "python3",
+            "przebiegi/20261017_113308_338673/seria_2/sources/benchmark.py",
+            "przebiegi/20261017_113308_338673/seria_2/data/input_10000.txt",
+            "10000",
+            "251042700",
+            "1",
+            "1"
+        ]
+    },
+    {
+        "label": "losowany_p20_2_cpp",
+        "argv": [
+            "przebiegi/20261017_113308_338673/seria_2/_build/benchmark",
+            "przebiegi/20261017_113308_338673/seria_2/data/input_10000.txt",
+            "10000",
+            "251042700",
+            "1",
+            "1"
+        ]
+    },
+    {
+        "label": "naprzemienny_p01_1_cpp",
+        "argv": [
+            "przebiegi/20261017_113308_338673/seria_2/_build/benchmark",
+            "przebiegi/20261017_113308_338673/seria_2/data/input_10000.txt",
+            "10000",
+            "251042700",
+            "1",
+            "1"
+        ]
+    },
+    {
+        "label": "naprzemienny_p01_2_python",
+        "argv": [
+            "python3",
+            "przebiegi/20261017_113308_338673/seria_2/sources/benchmark.py",
+            "przebiegi/20261017_113308_338673/seria_2/data/input_10000.txt",
+            "10000",
+            "251042700",
+            "1",
+            "1"
+        ]
+    },
+    {
+        "label": "naprzemienny_p02_1_python",
+        "argv": [
+            "python3",
+            "przebiegi/20261017_113308_338673/seria_2/sources/benchmark.py",
+            "przebiegi/20261017_113308_338673/seria_2/data/input_10000.txt",
+            "10000",
+            "251042700",
+            "1",
+            "1"
+        ]
+    },
+    {
+        "label": "naprzemienny_p02_2_cpp",
+        "argv": [
+            "przebiegi/20261017_113308_338673/seria_2/_build/benchmark",
+            "przebiegi/20261017_113308_338673/seria_2/data/input_10000.txt",
+            "10000",
+            "251042700",
+            "1",
+            "1"
+        ]
+    },
+    {
+        "label": "naprzemienny_p03_1_cpp",
+        "argv": [
+            "przebiegi/20261017_113308_338673/seria_2/_build/benchmark",
+            "przebiegi/20261017_113308_338673/seria_2/data/input_10000.txt",
+            "10000",
+            "251042700",
+            "1",
+            "1"
+        ]
+    },
+    {
+        "label": "naprzemienny_p03_2_python",
+        "argv": [
+            "python3",
+            "przebiegi/20261017_113308_338673/seria_2/sources/benchmark.py",
+            "przebiegi/20261017_113308_338673/seria_2/data/input_10000.txt",
+            "10000",
+            "251042700",
+            "1",
+            "1"
+        ]
+    },
+    {
+        "label": "naprzemienny_p04_1_python",
+        "argv": [
+            "python3",
+            "przebiegi/20261017_113308_338673/seria_2/sources/benchmark.py",
+            "przebiegi/20261017_113308_338673/seria_2/data/input_10000.txt",
+            "10000",
+            "251042700",
+            "1",
+            "1"
+        ]
+    },
+    {
+        "label": "naprzemienny_p04_2_cpp",
+        "argv": [
+            "przebiegi/20261017_113308_338673/seria_2/_build/benchmark",
+            "przebiegi/20261017_113308_338673/seria_2/data/input_10000.txt",
+            "10000",
+            "251042700",
+            "1",
+            "1"
+        ]
+    },
+    {
+        "label": "naprzemienny_p05_1_cpp",
+        "argv": [
+            "przebiegi/20261017_113308_338673/seria_2/_build/benchmark",
+            "przebiegi/20261017_113308_338673/seria_2/data/input_10000.txt",
+            "10000",
+            "251042700",
+            "1",
+            "1"
+        ]
+    },
+    {
+        "label": "naprzemienny_p05_2_python",
+        "argv": [
+            "python3",
+            "przebiegi/20261017_113308_338673/seria_2/sources/benchmark.py",
+            "przebiegi/20261017_113308_338673/seria_2/data/input_10000.txt",
+            "10000",
+            "251042700",
+            "1",
+            "1"
+        ]
+    },
+    {
+        "label": "naprzemienny_p06_1_python",
+        "argv": [
+            "python3",
+            "przebiegi/20261017_113308_338673/seria_2/sources/benchmark.py",
+            "przebiegi/20261017_113308_338673/seria_2/data/input_10000.txt",
+            "10000",
+            "251042700",
+            "1",
+            "1"
+        ]
+    },
+    {
+        "label": "naprzemienny_p06_2_cpp",
+        "argv": [
+            "przebiegi/20261017_113308_338673/seria_2/_build/benchmark",
+            "przebiegi/20261017_113308_338673/seria_2/data/input_10000.txt",
+            "10000",
+            "251042700",
+            "1",
+            "1"
+        ]
+    },
+    {
+        "label": "naprzemienny_p07_1_cpp",
+        "argv": [
+            "przebiegi/20261017_113308_338673/seria_2/_build/benchmark",
+            "przebiegi/20261017_113308_338673/seria_2/data/input_10000.txt",
+            "10000",
+            "251042700",
+            "1",
+            "1"
+        ]
+    },
+    {
+        "label": "naprzemienny_p07_2_python",
+        "argv": [
+            "python3",
+            "przebiegi/20261017_113308_338673/seria_2/sources/benchmark.py",
+            "przebiegi/20261017_113308_338673/seria_2/data/input_10000.txt",
+            "10000",
+            "251042700",
+            "1",
+            "1"
+        ]
+    },
+    {
+        "label": "naprzemienny_p08_1_python",
+        "argv": [
+            "python3",
+            "przebiegi/20261017_113308_338673/seria_2/sources/benchmark.py",
+            "przebiegi/20261017_113308_338673/seria_2/data/input_10000.txt",
+            "10000",
+            "251042700",
+            "1",
+            "1"
+        ]
+    },
+    {
+        "label": "naprzemienny_p08_2_cpp",
+        "argv": [
+            "przebiegi/20261017_113308_338673/seria_2/_build/benchmark",
+            "przebiegi/20261017_113308_338673/seria_2/data/input_10000.txt",
+            "10000",
+            "251042700",
+            "1",
+            "1"
+        ]
+    },
+    {
+        "label": "naprzemienny_p09_1_cpp",
+        "argv": [
+            "przebiegi/20261017_113308_338673/seria_2/_build/benchmark",
+            "przebiegi/20261017_113308_338673/seria_2/data/input_10000.txt",
+            "10000",
+            "251042700",
+            "1",
+            "1"
+        ]
+    },
+    {
+        "label": "naprzemienny_p09_2_python",
+        "argv": [
+            "python3",
+            "przebiegi/20261017_113308_338673/seria_2/sources/benchmark.py",
+            "przebiegi/20261017_113308_338673/seria_2/data/input_10000.txt",
+            "10000",
+            "251042700",
+            "1",
+            "1"
+        ]
+    },
+    {
+        "label": "naprzemienny_p10_1_python",
+        "argv": [
+            "python3",
+            "przebiegi/20261017_113308_338673/seria_2/sources/benchmark.py",
+            "przebiegi/20261017_113308_338673/seria_2/data/input_10000.txt",
+            "10000",
+            "251042700",
+            "1",
+            "1"
+        ]
+    },
+    {
+        "label": "naprzemienny_p10_2_cpp",
+        "argv": [
+            "przebiegi/20261017_113308_338673/seria_2/_build/benchmark",
+            "przebiegi/20261017_113308_338673/seria_2/data/input_10000.txt",
+            "10000",
+            "251042700",
+            "1",
+            "1"
+        ]
+    },
+    {
+        "label": "naprzemienny_p11_1_cpp",
+        "argv": [
+            "przebiegi/20261017_113308_338673/seria_2/_build/benchmark",
+            "przebiegi/20261017_113308_338673/seria_2/data/input_10000.txt",
+            "10000",
+            "251042700",
+            "1",
+            "1"
+        ]
+    },
+    {
+        "label": "naprzemienny_p11_2_python",
+        "argv": [
+            "python3",
+            "przebiegi/20261017_113308_338673/seria_2/sources/benchmark.py",
+            "przebiegi/20261017_113308_338673/seria_2/data/input_10000.txt",
+            "10000",
+            "251042700",
+            "1",
+            "1"
+        ]
+    },
+    {
+        "label": "naprzemienny_p12_1_python",
+        "argv": [
+            "python3",
+            "przebiegi/20261017_113308_338673/seria_2/sources/benchmark.py",
+            "przebiegi/20261017_113308_338673/seria_2/data/input_10000.txt",
+            "10000",
+            "251042700",
+            "1",
+            "1"
+        ]
+    },
+    {
+        "label": "naprzemienny_p12_2_cpp",
+        "argv": [
+            "przebiegi/20261017_113308_338673/seria_2/_build/benchmark",
+            "przebiegi/20261017_113308_338673/seria_2/data/input_10000.txt",
+            "10000",
+            "251042700",
+            "1",
+            "1"
+        ]
+    },
+    {
+        "label": "naprzemienny_p13_1_cpp",
+        "argv": [
+            "przebiegi/20261017_113308_338673/seria_2/_build/benchmark",
+            "przebiegi/20261017_113308_338673/seria_2/data/input_10000.txt",
+            "10000",
+            "251042700",
+            "1",
+            "1"
+        ]
+    },
+    {
+        "label": "naprzemienny_p13_2_python",
+        "argv": [
+            "python3",
+            "przebiegi/20261017_113308_338673/seria_2/sources/benchmark.py",
+            "przebiegi/20261017_113308_338673/seria_2/data/input_10000.txt",
+            "10000",
+            "251042700",
+            "1",
+            "1"
+        ]
+    },
+    {
+        "label": "naprzemienny_p14_1_python",
+        "argv": [
+            "python3",
+            "przebiegi/20261017_113308_338673/seria_2/sources/benchmark.py",
+            "przebiegi/20261017_113308_338673/seria_2/data/input_10000.txt",
+            "10000",
+            "251042700",
+            "1",
+            "1"
+        ]
+    },
+    {
+        "label": "naprzemienny_p14_2_cpp",
+        "argv": [
+            "przebiegi/20261017_113308_338673/seria_2/_build/benchmark",
+            "przebiegi/20261017_113308_338673/seria_2/data/input_10000.txt",
+            "10000",
+            "251042700",
+            "1",
+            "1"
+        ]
+    },
+    {
+        "label": "naprzemienny_p15_1_cpp",
+        "argv": [
+            "przebiegi/20261017_113308_338673/seria_2/_build/benchmark",
+            "przebiegi/20261017_113308_338673/seria_2/data/input_10000.txt",
+            "10000",
+            "251042700",
+            "1",
+            "1"
+        ]
+    },
+    {
+        "label": "naprzemienny_p15_2_python",
+        "argv": [
+            "python3",
+            "przebiegi/20261017_113308_338673/seria_2/sources/benchmark.py",
+            "przebiegi/20261017_113308_338673/seria_2/data/input_10000.txt",
+            "10000",
+            "251042700",
+            "1",
+            "1"
+        ]
+    },
+    {
+        "label": "naprzemienny_p16_1_python",
+        "argv": [
+            "python3",
+            "przebiegi/20261017_113308_338673/seria_2/sources/benchmark.py",
+            "przebiegi/20261017_113308_338673/seria_2/data/input_10000.txt",
+            "10000",
+            "251042700",
+            "1",
+            "1"
+        ]
+    },
+    {
+        "label": "naprzemienny_p16_2_cpp",
+        "argv": [
+            "przebiegi/20261017_113308_338673/seria_2/_build/benchmark",
+            "przebiegi/20261017_113308_338673/seria_2/data/input_10000.txt",
+            "10000",
+            "251042700",
+            "1",
+            "1"
+        ]
+    },
+    {
+        "label": "naprzemienny_p17_1_cpp",
+        "argv": [
+            "przebiegi/20261017_113308_338673/seria_2/_build/benchmark",
+            "przebiegi/20261017_113308_338673/seria_2/data/input_10000.txt",
+            "10000",
+            "251042700",
+            "1",
+            "1"
+        ]
+    },
+    {
+        "label": "naprzemienny_p17_2_python",
+        "argv": [
+            "python3",
+            "przebiegi/20261017_113308_338673/seria_2/sources/benchmark.py",
+            "przebiegi/20261017_113308_338673/seria_2/data/input_10000.txt",
+            "10000",
+            "251042700",
+            "1",
+            "1"
+        ]
+    },
+    {
+        "label": "naprzemienny_p18_1_python",
+        "argv": [
+            "python3",
+            "przebiegi/20261017_113308_338673/seria_2/sources/benchmark.py",
+            "przebiegi/20261017_113308_338673/seria_2/data/input_10000.txt",
+            "10000",
+            "251042700",
+            "1",
+            "1"
+        ]
+    },
+    {
+        "label": "naprzemienny_p18_2_cpp",
+        "argv": [
+            "przebiegi/20261017_113308_338673/seria_2/_build/benchmark",
+            "przebiegi/20261017_113308_338673/seria_2/data/input_10000.txt",
+            "10000",
+            "251042700",
+            "1",
+            "1"
+        ]
+    },
+    {
+        "label": "naprzemienny_p19_1_cpp",
+        "argv": [
+            "przebiegi/20261017_113308_338673/seria_2/_build/benchmark",
+            "przebiegi/20261017_113308_338673/seria_2/data/input_10000.txt",
+            "10000",
+            "251042700",
+            "1",
+            "1"
+        ]
+    },
+    {
+        "label": "naprzemienny_p19_2_python",
+        "argv": [
+            "python3",
+            "przebiegi/20261017_113308_338673/seria_2/sources/benchmark.py",
+            "przebiegi/20261017_113308_338673/seria_2/data/input_10000.txt",
+            "10000",
+            "251042700",
+            "1",
+            "1"
+        ]
+    },
+    {
+        "label": "naprzemienny_p20_1_python",
+        "argv": [
+            "python3",
+            "przebiegi/20261017_113308_338673/seria_2/sources/benchmark.py",
+            "przebiegi/20261017_113308_338673/seria_2/data/input_10000.txt",
+            "10000",
+            "251042700",
+            "1",
+            "1"
+        ]
+    },
+    {
+        "label": "naprzemienny_p20_2_cpp",
+        "argv": [
+            "przebiegi/20261017_113308_338673/seria_2/_build/benchmark",
+            "przebiegi/20261017_113308_338673/seria_2/data/input_10000.txt",
+            "10000",
+            "251042700",
+            "1",
+            "1"
+        ]
+    }
+]

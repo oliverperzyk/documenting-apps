@@ -1,0 +1,11 @@
+{
+    "checked_at": "2026-10-17T11:03:47.484708+02:00",
+    "historical_A_count": 20020,
+    "A_full_equals_C2_10000": false,
+    "A_first10000_equals_C2_10000": false,
+    "A_first10000_sha256": "9e19f79d6545d7af30356b633e33183c7dedb859ad6f9b2f40391ff5a908eb07",
+    "C2_first10000_sha256": "71496284c49978be7367ee8385b13f7c95c5d187e05eb7f9d4acee569c5e93b5",
+    "C2_10000_is_master_prefix": true,
+    "C2_30000_is_master_prefix": true,
+    "resolution": "User approved retaining the A generator, using A prefix for C1, and disclosing mismatch for C2."
+}

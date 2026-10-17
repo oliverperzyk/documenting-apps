@@ -1,0 +1,42 @@
+{
+    "prepared_at": "2026-10-17T11:03:47.419162+02:00",
+    "study": "C2",
+    "seed": 20261017,
+    "historical_A_sha256": "1e1422a8679f65bb7ec778bdbd821b74a4596431774711e89671acaa9ddca3d8",
+    "historical_A_count": 20020,
+    "generator": "values=[i % 1001 for i in range(50000)]; random.Random(20261017).shuffle(values)",
+    "format": "ASCII, one integer per line, LF",
+    "data": {
+        "10000": {
+            "count": 30000,
+            "sha256": "71496284c49978be7367ee8385b13f7c95c5d187e05eb7f9d4acee569c5e93b5",
+            "expected": 250039700,
+            "one_round": 2500397,
+            "min": 0,
+            "max": 1000,
+            "range": [0, 1000],
+            "rounds": 100
+        },
+        "30000": {
+            "count": 30000,
+            "sha256": "8fd5b5c6428f4a264fe60d21864aa957716f9df81ea5d4673d10564a55a59a5e",
+            "expected": 748157600,
+            "one_round": 7481576,
+            "min": 0,
+            "max": 1000,
+            "range": [0, 1000],
+            "rounds": 100
+        },
+        "50000": {
+            "count": 50000,
+            "sha256": "500b7f8b59c90c9990dce7ea53ac5d31dc99d88f70d32b8a655108eba8d1fd40",
+            "expected": 1250122500,
+            "one_round": 12501225,
+            "min": 0,
+            "max": 1000,
+            "range": [0, 1000],
+            "rounds": 100
+        }
+    },
+    "provenance": "new 50000 master and its prefixes"
+}

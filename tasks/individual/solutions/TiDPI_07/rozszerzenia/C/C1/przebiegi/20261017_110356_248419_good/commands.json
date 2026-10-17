@@ -1,0 +1,26 @@
+[
+    {
+        "label": "compiler_version",
+        "argv": [
+            "python3",
+            "-c",
+            "import subprocess,sys; p=subprocess.run(['clang++','--version'],capture_output=True); print('\\n'.join(p.stdout.decode().splitlines()[:2])); sys.exit(p.returncode)"
+        ],
+        "timeout_seconds": 60
+    },
+    {
+        "label": "meta_macOS",
+        "argv": ["sw_vers", "-productVersion"],
+        "timeout_seconds": 60
+    },
+    {
+        "label": "meta_build",
+        "argv": ["sw_vers", "-buildVersion"],
+        "timeout_seconds": 60
+    },
+    {
+        "label": "meta_cpu",
+        "argv": ["sysctl", "-n", "machdep.cpu.brand_string"],
+        "timeout_seconds": 60
+    }
+]

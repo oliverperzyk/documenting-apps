@@ -1,0 +1,319 @@
+{
+  "accepted": false,
+  "errors": [
+    {
+      "rule": "PROCESS_EXIT",
+      "location": "b1_10000_python"
+    },
+    {
+      "rule": "PROCESS_EXIT",
+      "location": "b1_30000_python"
+    },
+    {
+      "rule": "PROCESS_EXIT",
+      "location": "b1_50000_python"
+    },
+    {
+      "rule": "PROCESS_EXIT",
+      "location": "b2_30000_python"
+    },
+    {
+      "rule": "PROCESS_EXIT",
+      "location": "b2_50000_python"
+    },
+    {
+      "rule": "PROCESS_EXIT",
+      "location": "b2_10000_python"
+    },
+    {
+      "rule": "PROCESS_EXIT",
+      "location": "b3_50000_python"
+    },
+    {
+      "rule": "PROCESS_EXIT",
+      "location": "b3_10000_python"
+    },
+    {
+      "rule": "PROCESS_EXIT",
+      "location": "b3_30000_python"
+    },
+    {
+      "rule": "PROCESS_EXIT",
+      "location": "b4_10000_python"
+    },
+    {
+      "rule": "PROCESS_EXIT",
+      "location": "b4_30000_python"
+    },
+    {
+      "rule": "PROCESS_EXIT",
+      "location": "b4_50000_python"
+    },
+    {
+      "rule": "PROCESS_EXIT",
+      "location": "b5_30000_python"
+    },
+    {
+      "rule": "PROCESS_EXIT",
+      "location": "b5_50000_python"
+    },
+    {
+      "rule": "PROCESS_EXIT",
+      "location": "b5_10000_python"
+    },
+    {
+      "rule": "BLOCK_COUNT",
+      "location": "b1_10000_python"
+    },
+    {
+      "rule": "TRIAL_SEQUENCE",
+      "location": "b1_10000_python"
+    },
+    {
+      "rule": "WARMUP_COUNT",
+      "location": "b1_10000_python"
+    },
+    {
+      "rule": "WARMUP_VALUE",
+      "location": "b1_10000_python"
+    },
+    {
+      "rule": "BLOCK_COUNT",
+      "location": "b1_30000_python"
+    },
+    {
+      "rule": "TRIAL_SEQUENCE",
+      "location": "b1_30000_python"
+    },
+    {
+      "rule": "WARMUP_COUNT",
+      "location": "b1_30000_python"
+    },
+    {
+      "rule": "WARMUP_VALUE",
+      "location": "b1_30000_python"
+    },
+    {
+      "rule": "BLOCK_COUNT",
+      "location": "b1_50000_python"
+    },
+    {
+      "rule": "TRIAL_SEQUENCE",
+      "location": "b1_50000_python"
+    },
+    {
+      "rule": "WARMUP_COUNT",
+      "location": "b1_50000_python"
+    },
+    {
+      "rule": "WARMUP_VALUE",
+      "location": "b1_50000_python"
+    },
+    {
+      "rule": "BLOCK_COUNT",
+      "location": "b2_30000_python"
+    },
+    {
+      "rule": "TRIAL_SEQUENCE",
+      "location": "b2_30000_python"
+    },
+    {
+      "rule": "WARMUP_COUNT",
+      "location": "b2_30000_python"
+    },
+    {
+      "rule": "WARMUP_VALUE",
+      "location": "b2_30000_python"
+    },
+    {
+      "rule": "BLOCK_COUNT",
+      "location": "b2_50000_python"
+    },
+    {
+      "rule": "TRIAL_SEQUENCE",
+      "location": "b2_50000_python"
+    },
+    {
+      "rule": "WARMUP_COUNT",
+      "location": "b2_50000_python"
+    },
+    {
+      "rule": "WARMUP_VALUE",
+      "location": "b2_50000_python"
+    },
+    {
+      "rule": "BLOCK_COUNT",
+      "location": "b2_10000_python"
+    },
+    {
+      "rule": "TRIAL_SEQUENCE",
+      "location": "b2_10000_python"
+    },
+    {
+      "rule": "WARMUP_COUNT",
+      "location": "b2_10000_python"
+    },
+    {
+      "rule": "WARMUP_VALUE",
+      "location": "b2_10000_python"
+    },
+    {
+      "rule": "BLOCK_COUNT",
+      "location": "b3_50000_python"
+    },
+    {
+      "rule": "TRIAL_SEQUENCE",
+      "location": "b3_50000_python"
+    },
+    {
+      "rule": "WARMUP_COUNT",
+      "location": "b3_50000_python"
+    },
+    {
+      "rule": "WARMUP_VALUE",
+      "location": "b3_50000_python"
+    },
+    {
+      "rule": "BLOCK_COUNT",
+      "location": "b3_10000_python"
+    },
+    {
+      "rule": "TRIAL_SEQUENCE",
+      "location": "b3_10000_python"
+    },
+    {
+      "rule": "WARMUP_COUNT",
+      "location": "b3_10000_python"
+    },
+    {
+      "rule": "WARMUP_VALUE",
+      "location": "b3_10000_python"
+    },
+    {
+      "rule": "BLOCK_COUNT",
+      "location": "b3_30000_python"
+    },
+    {
+      "rule": "TRIAL_SEQUENCE",
+      "location": "b3_30000_python"
+    },
+    {
+      "rule": "WARMUP_COUNT",
+      "location": "b3_30000_python"
+    },
+    {
+      "rule": "WARMUP_VALUE",
+      "location": "b3_30000_python"
+    },
+    {
+      "rule": "BLOCK_COUNT",
+      "location": "b4_10000_python"
+    },
+    {
+      "rule": "TRIAL_SEQUENCE",
+      "location": "b4_10000_python"
+    },
+    {
+      "rule": "WARMUP_COUNT",
+      "location": "b4_10000_python"
+    },
+    {
+      "rule": "WARMUP_VALUE",
+      "location": "b4_10000_python"
+    },
+    {
+      "rule": "BLOCK_COUNT",
+      "location": "b4_30000_python"
+    },
+    {
+      "rule": "TRIAL_SEQUENCE",
+      "location": "b4_30000_python"
+    },
+    {
+      "rule": "WARMUP_COUNT",
+      "location": "b4_30000_python"
+    },
+    {
+      "rule": "WARMUP_VALUE",
+      "location": "b4_30000_python"
+    },
+    {
+      "rule": "BLOCK_COUNT",
+      "location": "b4_50000_python"
+    },
+    {
+      "rule": "TRIAL_SEQUENCE",
+      "location": "b4_50000_python"
+    },
+    {
+      "rule": "WARMUP_COUNT",
+      "location": "b4_50000_python"
+    },
+    {
+      "rule": "WARMUP_VALUE",
+      "location": "b4_50000_python"
+    },
+    {
+      "rule": "BLOCK_COUNT",
+      "location": "b5_30000_python"
+    },
+    {
+      "rule": "TRIAL_SEQUENCE",
+      "location": "b5_30000_python"
+    },
+    {
+      "rule": "WARMUP_COUNT",
+      "location": "b5_30000_python"
+    },
+    {
+      "rule": "WARMUP_VALUE",
+      "location": "b5_30000_python"
+    },
+    {
+      "rule": "BLOCK_COUNT",
+      "location": "b5_50000_python"
+    },
+    {
+      "rule": "TRIAL_SEQUENCE",
+      "location": "b5_50000_python"
+    },
+    {
+      "rule": "WARMUP_COUNT",
+      "location": "b5_50000_python"
+    },
+    {
+      "rule": "WARMUP_VALUE",
+      "location": "b5_50000_python"
+    },
+    {
+      "rule": "BLOCK_COUNT",
+      "location": "b5_10000_python"
+    },
+    {
+      "rule": "TRIAL_SEQUENCE",
+      "location": "b5_10000_python"
+    },
+    {
+      "rule": "WARMUP_COUNT",
+      "location": "b5_10000_python"
+    },
+    {
+      "rule": "WARMUP_VALUE",
+      "location": "b5_10000_python"
+    },
+    {
+      "rule": "GROUP_COMPLETENESS",
+      "location": "CPython/50000/python"
+    },
+    {
+      "rule": "GROUP_COMPLETENESS",
+      "location": "CPython/30000/python"
+    },
+    {
+      "rule": "GROUP_COMPLETENESS",
+      "location": "CPython/10000/python"
+    }
+  ],
+  "published_records": 0,
+  "csv_created": false
+}

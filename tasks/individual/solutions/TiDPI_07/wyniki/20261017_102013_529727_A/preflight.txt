@@ -1,0 +1,1 @@
+Próba przygotowania metryczki 2026-10-17: sysctl -n machdep.cpu.brand_string zwrócił kod 1 wewnątrz sandboxa. Nie rozpoczęto generatora, kompilacji ani pomiarów. Po autoryzacji wykonano serię w nowym katalogu. To nie jest odrzucona seria pomiarowa. Pełny traceback zawierający prywatną ścieżkę nie został zapisany jako załącznik.

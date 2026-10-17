@@ -1,0 +1,30 @@
+[
+    {
+        "label": "compiler_version",
+        "started_at": "2026-10-17T11:03:56.270748+02:00",
+        "finished_at": "2026-10-17T11:03:56.445960+02:00",
+        "code": 0,
+        "status": "completed"
+    },
+    {
+        "label": "meta_macOS",
+        "started_at": "2026-10-17T11:03:56.451615+02:00",
+        "finished_at": "2026-10-17T11:03:56.480555+02:00",
+        "code": 0,
+        "status": "completed"
+    },
+    {
+        "label": "meta_build",
+        "started_at": "2026-10-17T11:03:56.484382+02:00",
+        "finished_at": "2026-10-17T11:03:56.530523+02:00",
+        "code": 0,
+        "status": "completed"
+    },
+    {
+        "label": "meta_cpu",
+        "started_at": "2026-10-17T11:03:56.534959+02:00",
+        "finished_at": "2026-10-17T11:03:56.553344+02:00",
+        "code": 1,
+        "status": "completed"
+    }
+]

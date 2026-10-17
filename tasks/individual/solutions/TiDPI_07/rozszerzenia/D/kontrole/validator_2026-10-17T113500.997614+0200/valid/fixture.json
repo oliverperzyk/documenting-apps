@@ -1,0 +1,7 @@
+{
+    "synthetic": true,
+    "source": "przebiegi/20261017_113308_338673/seria_1",
+    "mutation": "valid",
+    "expected_accept": true,
+    "expected_rule": null
+}

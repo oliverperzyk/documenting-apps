@@ -1,0 +1,34 @@
+{
+    "accepted": true,
+    "errors": [],
+    "csv_created": true,
+    "expected": 501000000,
+    "time_unit": "ns",
+    "trials_per_language": 10,
+    "warmups_per_language": 4,
+    "stats": {
+        "cpp": {
+            "min_ns": 303792,
+            "max_ns": 552000,
+            "range_ns": 248208,
+            "median_ns": "400521",
+            "sorted_ns": [
+                303792, 335541, 335875, 339458, 341750, 459292, 463000, 464959,
+                467875, 552000
+            ],
+            "middle_pair_ns": [341750, 459292]
+        },
+        "python": {
+            "min_ns": 54561709,
+            "max_ns": 57055084,
+            "range_ns": 2493375,
+            "median_ns": "55465896",
+            "sorted_ns": [
+                54561709, 54592709, 54863041, 55348208, 55462792, 55469000,
+                55618583, 55922333, 55978709, 57055084
+            ],
+            "middle_pair_ns": [55462792, 55469000]
+        }
+    },
+    "published_records": 20
+}

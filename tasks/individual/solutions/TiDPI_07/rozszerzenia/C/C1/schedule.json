@@ -1,0 +1,102 @@
+[
+    {
+        "label": "b1_10000_Debug",
+        "block": 1,
+        "size": 10000,
+        "language": "cpp",
+        "configuration": "Debug",
+        "first_trial": 1,
+        "trials": 2,
+        "warmups": 2
+    },
+    {
+        "label": "b1_10000_Release",
+        "block": 1,
+        "size": 10000,
+        "language": "cpp",
+        "configuration": "Release",
+        "first_trial": 1,
+        "trials": 2,
+        "warmups": 2
+    },
+    {
+        "label": "b2_10000_Release",
+        "block": 2,
+        "size": 10000,
+        "language": "cpp",
+        "configuration": "Release",
+        "first_trial": 3,
+        "trials": 2,
+        "warmups": 2
+    },
+    {
+        "label": "b2_10000_Debug",
+        "block": 2,
+        "size": 10000,
+        "language": "cpp",
+        "configuration": "Debug",
+        "first_trial": 3,
+        "trials": 2,
+        "warmups": 2
+    },
+    {
+        "label": "b3_10000_Debug",
+        "block": 3,
+        "size": 10000,
+        "language": "cpp",
+        "configuration": "Debug",
+        "first_trial": 5,
+        "trials": 2,
+        "warmups": 2
+    },
+    {
+        "label": "b3_10000_Release",
+        "block": 3,
+        "size": 10000,
+        "language": "cpp",
+        "configuration": "Release",
+        "first_trial": 5,
+        "trials": 2,
+        "warmups": 2
+    },
+    {
+        "label": "b4_10000_Release",
+        "block": 4,
+        "size": 10000,
+        "language": "cpp",
+        "configuration": "Release",
+        "first_trial": 7,
+        "trials": 2,
+        "warmups": 2
+    },
+    {
+        "label": "b4_10000_Debug",
+        "block": 4,
+        "size": 10000,
+        "language": "cpp",
+        "configuration": "Debug",
+        "first_trial": 7,
+        "trials": 2,
+        "warmups": 2
+    },
+    {
+        "label": "b5_10000_Debug",
+        "block": 5,
+        "size": 10000,
+        "language": "cpp",
+        "configuration": "Debug",
+        "first_trial": 9,
+        "trials": 2,
+        "warmups": 2
+    },
+    {
+        "label": "b5_10000_Release",
+        "block": 5,
+        "size": 10000,
+        "language": "cpp",
+        "configuration": "Release",
+        "first_trial": 9,
+        "trials": 2,
+        "warmups": 2
+    }
+]

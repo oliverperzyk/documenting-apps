@@ -1,0 +1,15 @@
+{
+    "accepted": false,
+    "errors": [
+        {
+            "rule": "PROCESS_EXIT",
+            "location": "b1_10000_cpp"
+        },
+        {
+            "rule": "EXECUTION_STATUS",
+            "location": "b1_10000_cpp"
+        }
+    ],
+    "published_records": 0,
+    "csv_created": false
+}

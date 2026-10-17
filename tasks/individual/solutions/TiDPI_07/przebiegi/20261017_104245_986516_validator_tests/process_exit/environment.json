@@ -1,0 +1,8 @@
+{
+    "rounds": 100,
+    "time_unit": "ns",
+    "debugger": false,
+    "data_sha256_before": "1e1422a8679f65bb7ec778bdbd821b74a4596431774711e89671acaa9ddca3d8",
+    "data_sha256_after": "1e1422a8679f65bb7ec778bdbd821b74a4596431774711e89671acaa9ddca3d8",
+    "flags": ["-std=c++17", "-O2", "-DNDEBUG", "-Wall", "-Wextra", "-pedantic"]
+}

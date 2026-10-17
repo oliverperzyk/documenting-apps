@@ -1,0 +1,152 @@
+{
+    "kind": "synthetic validation fixtures, not benchmark measurements",
+    "cases": [
+        {
+            "name": "complete",
+            "expected_accept": true,
+            "passed": true,
+            "code": 0,
+            "had_stale_csv": true,
+            "errors": []
+        },
+        {
+            "name": "wrong_checksum_true",
+            "expected_accept": false,
+            "passed": true,
+            "code": 1,
+            "had_stale_csv": true,
+            "errors": [
+                {
+                    "rule": "CHECKSUM",
+                    "location": "b1_10000_cpp:2"
+                }
+            ]
+        },
+        {
+            "name": "missing_trial",
+            "expected_accept": false,
+            "passed": true,
+            "code": 1,
+            "had_stale_csv": true,
+            "errors": [
+                {
+                    "rule": "BLOCK_COUNT",
+                    "location": "b1_10000_cpp"
+                },
+                {
+                    "rule": "TRIAL_SEQUENCE",
+                    "location": "b1_10000_cpp"
+                },
+                {
+                    "rule": "GROUP_COMPLETENESS",
+                    "location": "Release/10000/cpp"
+                }
+            ]
+        },
+        {
+            "name": "duplicate_trial",
+            "expected_accept": false,
+            "passed": true,
+            "code": 1,
+            "had_stale_csv": true,
+            "errors": [
+                {
+                    "rule": "TRIAL_SEQUENCE",
+                    "location": "b1_10000_cpp"
+                },
+                {
+                    "rule": "GROUP_COMPLETENESS",
+                    "location": "Release/10000/cpp"
+                }
+            ]
+        },
+        {
+            "name": "wrong_size",
+            "expected_accept": false,
+            "passed": true,
+            "code": 1,
+            "had_stale_csv": true,
+            "errors": [
+                {
+                    "rule": "DATA_MANIFEST",
+                    "location": "10000"
+                }
+            ]
+        },
+        {
+            "name": "wrong_configuration",
+            "expected_accept": false,
+            "passed": true,
+            "code": 1,
+            "had_stale_csv": true,
+            "errors": [
+                {
+                    "rule": "CONFIGURATION",
+                    "location": "environment.json"
+                }
+            ]
+        },
+        {
+            "name": "missing_warmup",
+            "expected_accept": false,
+            "passed": true,
+            "code": 1,
+            "had_stale_csv": true,
+            "errors": [
+                {
+                    "rule": "WARMUP_COUNT",
+                    "location": "b1_10000_cpp"
+                }
+            ]
+        },
+        {
+            "name": "wrong_header_unit",
+            "expected_accept": false,
+            "passed": true,
+            "code": 1,
+            "had_stale_csv": true,
+            "errors": [
+                {
+                    "rule": "HEADER",
+                    "location": "b1_10000_cpp"
+                }
+            ]
+        },
+        {
+            "name": "wrong_schedule",
+            "expected_accept": false,
+            "passed": true,
+            "code": 1,
+            "had_stale_csv": true,
+            "errors": [
+                {
+                    "rule": "SCHEDULE",
+                    "location": "schedule.json"
+                },
+                {
+                    "rule": "SCHEDULE_PREPARED",
+                    "location": "schedule.json"
+                }
+            ]
+        },
+        {
+            "name": "nonzero_exit",
+            "expected_accept": false,
+            "passed": true,
+            "code": 1,
+            "had_stale_csv": true,
+            "errors": [
+                {
+                    "rule": "PROCESS_EXIT",
+                    "location": "b1_10000_cpp"
+                },
+                {
+                    "rule": "EXECUTION_STATUS",
+                    "location": "b1_10000_cpp"
+                }
+            ]
+        }
+    ],
+    "passed": 10,
+    "failed": 0
+}

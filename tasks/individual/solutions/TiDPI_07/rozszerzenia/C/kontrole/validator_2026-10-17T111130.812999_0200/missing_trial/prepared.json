@@ -1,0 +1,9 @@
+{
+    "prepared_at": "2026-10-17T11:03:47.485840+02:00",
+    "measurements_started": false,
+    "plan_sha256": "4c1fcdb1cca2fd97d16c5dedbdd8c6828a578074462ef8c587674f5c04c9fc84",
+    "schedules": {
+        "C1": "cb8639672a3b2865d0b4402cef5ee8dc72b9de4872c1af1f9fd2430954c295e7",
+        "C2": "1b5d356f92162531b60251bd03a3f328934f9d4d4b4d8cb663cf998fd9c0f48f"
+    }
+}

@@ -1,0 +1,193 @@
+{
+    "scope": "Sztuczne fixture kontraktu, nie czasy benchmarku",
+    "cases": [
+        {
+            "name": "valid",
+            "expected_accept": true,
+            "exit_code": 0,
+            "csv_before": false,
+            "csv_after": true,
+            "passed": true,
+            "rules": []
+        },
+        {
+            "name": "zero_time",
+            "expected_accept": true,
+            "exit_code": 0,
+            "csv_before": false,
+            "csv_after": true,
+            "passed": true,
+            "rules": []
+        },
+        {
+            "name": "header",
+            "expected_accept": false,
+            "exit_code": 1,
+            "csv_before": true,
+            "csv_after": false,
+            "passed": true,
+            "rules": ["HEADER"]
+        },
+        {
+            "name": "missing_field",
+            "expected_accept": false,
+            "exit_code": 1,
+            "csv_before": true,
+            "csv_after": false,
+            "passed": true,
+            "rules": [
+                "FIELD_COUNT",
+                "TRIAL_SEQUENCE",
+                "TRIAL_COMPLETENESS_UNIQUENESS"
+            ]
+        },
+        {
+            "name": "extra_field",
+            "expected_accept": false,
+            "exit_code": 1,
+            "csv_before": true,
+            "csv_after": false,
+            "passed": true,
+            "rules": [
+                "FIELD_COUNT",
+                "TRIAL_SEQUENCE",
+                "TRIAL_COMPLETENESS_UNIQUENESS"
+            ]
+        },
+        {
+            "name": "language",
+            "expected_accept": false,
+            "exit_code": 1,
+            "csv_before": true,
+            "csv_after": false,
+            "passed": true,
+            "rules": ["LANGUAGE", "TRIAL_COMPLETENESS_UNIQUENESS"]
+        },
+        {
+            "name": "wrong_producer",
+            "expected_accept": false,
+            "exit_code": 1,
+            "csv_before": true,
+            "csv_after": false,
+            "passed": true,
+            "rules": [
+                "LANGUAGE",
+                "TRIAL_COMPLETENESS_UNIQUENESS",
+                "TRIAL_COMPLETENESS_UNIQUENESS"
+            ]
+        },
+        {
+            "name": "integer",
+            "expected_accept": false,
+            "exit_code": 1,
+            "csv_before": true,
+            "csv_after": false,
+            "passed": true,
+            "rules": [
+                "INTEGER",
+                "TRIAL_SEQUENCE",
+                "TRIAL_COMPLETENESS_UNIQUENESS"
+            ]
+        },
+        {
+            "name": "negative_time",
+            "expected_accept": false,
+            "exit_code": 1,
+            "csv_before": true,
+            "csv_after": false,
+            "passed": true,
+            "rules": ["TIME_NS_NONNEGATIVE"]
+        },
+        {
+            "name": "duplicate",
+            "expected_accept": false,
+            "exit_code": 1,
+            "csv_before": true,
+            "csv_after": false,
+            "passed": true,
+            "rules": ["TRIAL_SEQUENCE", "TRIAL_COMPLETENESS_UNIQUENESS"]
+        },
+        {
+            "name": "missing_trial",
+            "expected_accept": false,
+            "exit_code": 1,
+            "csv_before": true,
+            "csv_after": false,
+            "passed": true,
+            "rules": [
+                "BLOCK_COUNT",
+                "TRIAL_SEQUENCE",
+                "TRIAL_COMPLETENESS_UNIQUENESS"
+            ]
+        },
+        {
+            "name": "extra_trial",
+            "expected_accept": false,
+            "exit_code": 1,
+            "csv_before": true,
+            "csv_after": false,
+            "passed": true,
+            "rules": [
+                "BLOCK_COUNT",
+                "TRIAL_SEQUENCE",
+                "TRIAL_COMPLETENESS_UNIQUENESS"
+            ]
+        },
+        {
+            "name": "false",
+            "expected_accept": false,
+            "exit_code": 1,
+            "csv_before": true,
+            "csv_after": false,
+            "passed": true,
+            "rules": ["CORRECT"]
+        },
+        {
+            "name": "wrong_checksum_true",
+            "expected_accept": false,
+            "exit_code": 1,
+            "csv_before": true,
+            "csv_after": false,
+            "passed": true,
+            "rules": ["CHECKSUM"]
+        },
+        {
+            "name": "warmup",
+            "expected_accept": false,
+            "exit_code": 1,
+            "csv_before": true,
+            "csv_after": false,
+            "passed": true,
+            "rules": ["WARMUP_CHECKSUM"]
+        },
+        {
+            "name": "process_exit",
+            "expected_accept": false,
+            "exit_code": 1,
+            "csv_before": true,
+            "csv_after": false,
+            "passed": true,
+            "rules": ["PROCESS_EXIT"]
+        },
+        {
+            "name": "schedule",
+            "expected_accept": false,
+            "exit_code": 1,
+            "csv_before": true,
+            "csv_after": false,
+            "passed": true,
+            "rules": ["SCHEDULE"]
+        },
+        {
+            "name": "data_hash",
+            "expected_accept": false,
+            "exit_code": 1,
+            "csv_before": true,
+            "csv_after": false,
+            "passed": true,
+            "rules": ["READ_OR_STRUCTURE"]
+        }
+    ],
+    "passed": 18,
+    "failed": 0
+}

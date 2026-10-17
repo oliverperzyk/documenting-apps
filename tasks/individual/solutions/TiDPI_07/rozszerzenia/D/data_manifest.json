@@ -1,0 +1,17 @@
+{
+    "count": 10000,
+    "rounds": 100,
+    "seed": 20261017,
+    "range": [0, 1000],
+    "generator": "[i % 1001 for i in range(20020)]; random.Random(20261017).shuffle(values); ASCII LF; first 10000 lines",
+    "historical_A_count": 20020,
+    "historical_A_sha256": "1e1422a8679f65bb7ec778bdbd821b74a4596431774711e89671acaa9ddca3d8",
+    "sha256": "9e19f79d6545d7af30356b633e33183c7dedb859ad6f9b2f40391ff5a908eb07",
+    "expected": 251042700,
+    "low_count": 4965,
+    "low_sum": 1239730,
+    "high_count": 5027,
+    "high_sum": 3781157,
+    "one_round": 2510427,
+    "deviation": "A has 20020 numbers; D uses its exact 10000-line prefix, same as C1"
+}
