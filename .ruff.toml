@@ -1,0 +1,46 @@
+line-length = 120
+indent-width = 4
+target-version = "py310"
+preview = false
+unsafe-fixes = false
+include = ["*.py"]
+force-exclude = true
+extend-exclude = [
+    "**/node_modules/**",
+    "**/dist/**",
+    "**/build/**",
+    "**/out/**",
+    "**/_build/**",
+    "**/.build/**",
+    "**/.bundle/**",
+    "**/.venv/**",
+    "**/venv/**",
+    "**/env/**",
+    "**/__pycache__/**",
+    "**/.cache/**",
+    "**/coverage/**",
+    "**/pdfs/**",
+    "**/submissions/**",
+    "**/logs/**",
+    "**/wyniki/**",
+    "**/bundles/**",
+    # Archived experiment runs, validation fixtures, and historical snapshots.
+    "**/przebiegi/**",
+    "**/kontrole/**",
+    "**/archiwum_*/**",
+    "**/.idea/**",
+    "**/.vscode/**",
+    "**/.vs/**",
+    "**/.cursor/**",
+    "**/.claude/**",
+    "**/.codex/**",
+    "**/.ai/**",
+]
+
+[lint]
+select = ["E4", "E7", "E9", "F", "I"]
+
+[format]
+quote-style = "double"
+indent-style = "space"
+line-ending = "lf"

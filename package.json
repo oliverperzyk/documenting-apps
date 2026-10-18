@@ -12,12 +12,16 @@
     "scripts": {
         "bundle": "bun scripts/bundle.ts",
         "test:bundle": "bun test scripts/bundle.test.ts",
-        "format": "bunx prettier --write . && bun scripts/FormatCpp.ts",
-        "format:check": "bunx prettier --check . && bun scripts/FormatCpp.ts --check",
+        "format": "bunx prettier --write . && bun scripts/FormatCpp.ts && bun run format-python",
+        "format:check": "bunx prettier --check . && bun scripts/FormatCpp.ts --check && bun run format-python:check",
         "format-cpp": "bun scripts/FormatCpp.ts",
         "format-cpp:check": "bun scripts/FormatCpp.ts --check",
-        "lint": "bunx eslint .",
-        "lint:fix": "bunx eslint --fix .",
+        "format-python": "uvx ruff@0.17.1 format",
+        "format-python:check": "uvx ruff@0.17.1 format --check",
+        "lint": "bunx eslint . && bun run lint-python",
+        "lint:fix": "bunx eslint --fix . && bun run lint-python:fix",
+        "lint-python": "uvx ruff@0.17.1 check",
+        "lint-python:fix": "uvx ruff@0.17.1 check --fix",
         "prepare": "lefthook install"
     },
     "lint-staged": {
@@ -26,7 +30,11 @@
             "bunx prettier --write"
         ],
         "**/*.{ts,tsx,yml,yaml}": "bunx prettier --write",
-        "**/*.{c,cc,cpp,cxx,h,hh,hpp,hxx}": "bun run format-cpp"
+        "**/*.{c,cc,cpp,cxx,h,hh,hpp,hxx}": "bun run format-cpp",
+        "**/*.py": [
+            "bun run lint-python:fix",
+            "bun run format-python"
+        ]
     },
     "devDependencies": {
         "@eslint/json": "^2.1.0",
