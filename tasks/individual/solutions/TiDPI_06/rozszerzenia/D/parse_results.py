@@ -100,8 +100,13 @@ def atomic_write(path, encoding, emit):
     temporary = None
     try:
         with tempfile.NamedTemporaryFile(
-            mode="w", encoding=encoding, newline="", dir=path.parent,
-            prefix=".tidpi-d-", suffix=".tmp", delete=False,
+            mode="w",
+            encoding=encoding,
+            newline="",
+            dir=path.parent,
+            prefix=".tidpi-d-",
+            suffix=".tmp",
+            delete=False,
         ) as target:
             temporary = Path(target.name)
             emit(target)
@@ -116,6 +121,7 @@ def write_csv(path, records):
         writer = csv.DictWriter(target, fieldnames=HEADER, delimiter=";", lineterminator="\n")
         writer.writeheader()
         writer.writerows(records)
+
     atomic_write(path, "utf-8-sig", emit)
 
 
