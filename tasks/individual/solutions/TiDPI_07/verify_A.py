@@ -1,4 +1,5 @@
 """Weryfikacja całej serii A przed statystykami."""
+
 import collections
 import csv
 import hashlib
@@ -22,8 +23,8 @@ def verify(run):
     # Wzorzec z sum dwóch partycji, inny algorytm niż badana pętla.
     low = [x for x in values if x < 500]
     high = [x for x in values if x > 500]
-    one_round = 500*len(low) - sum(low) + sum(high) - 500*len(high)
-    assert one_round == 20*2*(500*501//2) == 5010000
+    one_round = 500 * len(low) - sum(low) + sum(high) - 500 * len(high)
+    assert one_round == 20 * 2 * (500 * 501 // 2) == 5010000
     expected = one_round * 200
     assert expected == 1002000000
     codes = json.loads((run / "exit_codes.json").read_text())
@@ -42,7 +43,7 @@ def verify(run):
             assert next(reader) == HEADER
             blockrows = list(reader)
             assert len(blockrows) == 5
-            for number, row in enumerate(blockrows, 1+(block-1)*5):
+            for number, row in enumerate(blockrows, 1 + (block - 1) * 5):
                 assert len(row) == 5 and row[0] == lang
                 assert row[1].isdigit() and int(row[1]) == number
                 assert row[2].isdigit() and int(row[2]) > 0
@@ -64,17 +65,31 @@ def verify(run):
         ordered = sorted(times)
         median = (ordered[4] + ordered[5]) / 2
         assert median == statistics.median(times)
-        stats[lang] = {"min_ns": min(times), "max_ns": max(times),
-                       "range_ns": max(times)-min(times), "median_ns": median,
-                       "sorted_ns": ordered, "middle_pair_ns": ordered[4:6]}
+        stats[lang] = {
+            "min_ns": min(times),
+            "max_ns": max(times),
+            "range_ns": max(times) - min(times),
+            "median_ns": median,
+            "sorted_ns": ordered,
+            "middle_pair_ns": ordered[4:6],
+        }
         with (run / f"A_{lang}_raw.txt").open("w", newline="") as f:
             writer = csv.writer(f, delimiter=";", lineterminator="\n")
             writer.writerow(HEADER)
             writer.writerows(rows)
-    result = {"TC-01": "passed", "TC-02": "passed", "TC-03": "passed", "TC-04": "passed",
-              "expected": expected, "one_round": one_round, "data_sha256": meta["sha256"],
-              "trials_per_language": 10, "warmups_per_language": 4, "stats": stats,
-              "raw_aggregation": "Two original block stdout files, one header retained in derived A_*_raw.txt"}
+    result = {
+        "TC-01": "passed",
+        "TC-02": "passed",
+        "TC-03": "passed",
+        "TC-04": "passed",
+        "expected": expected,
+        "one_round": one_round,
+        "data_sha256": meta["sha256"],
+        "trials_per_language": 10,
+        "warmups_per_language": 4,
+        "stats": stats,
+        "raw_aggregation": "Two original block stdout files, one header retained in derived A_*_raw.txt",
+    }
     (run / "verification.json").write_text(json.dumps(result, indent=2) + "\n")
     print(json.dumps(result, indent=2))
 

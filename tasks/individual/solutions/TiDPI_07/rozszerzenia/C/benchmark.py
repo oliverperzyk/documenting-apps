@@ -1,4 +1,5 @@
 """Ręczna pętla: 100 rund sumowania odległości od 500."""
+
 import json
 import sys
 import time
@@ -24,8 +25,13 @@ def main():
         return 2
     try:
         count, expected, first, trials = map(int, sys.argv[2:])
-        if not (1 <= count <= 50000 and 0 <= expected <= count*500*100 and
-                1 <= first <= 10 and 1 <= trials <= 10 and first+trials <= 11):
+        if not (
+            1 <= count <= 50000
+            and 0 <= expected <= count * 500 * 100
+            and 1 <= first <= 10
+            and 1 <= trials <= 10
+            and first + trials <= 11
+        ):
             raise ValueError()
     except ValueError:
         print("invalid parameters", file=sys.stderr)
@@ -39,8 +45,12 @@ def main():
         print("invalid count/range", file=sys.stderr)
         return 2
     clock = time.get_clock_info("perf_counter")
-    print(json.dumps({"clock": clock.implementation, "resolution_seconds": clock.resolution,
-                      "monotonic": clock.monotonic}), file=sys.stderr)
+    print(
+        json.dumps(
+            {"clock": clock.implementation, "resolution_seconds": clock.resolution, "monotonic": clock.monotonic}
+        ),
+        file=sys.stderr,
+    )
     print("language;trial;time_ns;checksum;correct")
     for offset in range(-2, trials):
         start = time.perf_counter_ns()
@@ -48,9 +58,12 @@ def main():
         stop = time.perf_counter_ns()
         correct = checksum == expected
         if offset < 0:
-            print(f"warmup={offset + 3};time_ns={stop-start};checksum={checksum};correct={str(correct).lower()}", file=sys.stderr)
+            print(
+                f"warmup={offset + 3};time_ns={stop - start};checksum={checksum};correct={str(correct).lower()}",
+                file=sys.stderr,
+            )
         else:
-            print(f"python;{first+offset};{stop-start};{checksum};{str(correct).lower()}")
+            print(f"python;{first + offset};{stop - start};{checksum};{str(correct).lower()}")
         if not correct:
             return 1
     return 0

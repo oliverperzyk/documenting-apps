@@ -1,4 +1,5 @@
 """Zachowuje jedną serię A (dwa bloki), bez eksperymentów poziomu B."""
+
 import hashlib
 import json
 import platform
@@ -29,16 +30,22 @@ def main():
             raise SystemExit(f"failed: {label}")
 
     compiler = subprocess.run(["clang++", "--version"], capture_output=True, text=True, check=True)
-    env = {"recorded_at": datetime.now(ZoneInfo("Europe/Warsaw")).isoformat(),
-           "system": platform.system(), "arch": platform.machine(), "python": platform.python_version(),
-           "python_implementation": platform.python_implementation(),
-           "compiler": compiler.stdout.splitlines()[:2],
-           "compiler_version_command": "clang++ --version (first two lines only; installation path not collected)",
-           "debugger": False}
-    for key, args in [("macOS", ["sw_vers", "-productVersion"]),
-                      ("build", ["sw_vers", "-buildVersion"]),
-                      ("cpu", ["sysctl", "-n", "machdep.cpu.brand_string"]),
-                      ("memory_bytes", ["sysctl", "-n", "hw.memsize"])]:
+    env = {
+        "recorded_at": datetime.now(ZoneInfo("Europe/Warsaw")).isoformat(),
+        "system": platform.system(),
+        "arch": platform.machine(),
+        "python": platform.python_version(),
+        "python_implementation": platform.python_implementation(),
+        "compiler": compiler.stdout.splitlines()[:2],
+        "compiler_version_command": "clang++ --version (first two lines only; installation path not collected)",
+        "debugger": False,
+    }
+    for key, args in [
+        ("macOS", ["sw_vers", "-productVersion"]),
+        ("build", ["sw_vers", "-buildVersion"]),
+        ("cpu", ["sysctl", "-n", "machdep.cpu.brand_string"]),
+        ("memory_bytes", ["sysctl", "-n", "hw.memsize"]),
+    ]:
         env[key] = subprocess.run(args, capture_output=True, text=True, check=True).stdout.strip()
     (run / "environment.json").write_text(json.dumps(env, indent=2) + "\n")
     sources = run / "sources"
@@ -49,12 +56,25 @@ def main():
     (run / "source_sha256.json").write_text(json.dumps(manifest, indent=2) + "\n")
     call("generator", ["python3", "generate_data.py"])
     Path("_build").mkdir(exist_ok=True)
-    call("compile", ["clang++", "-std=c++17", "-O2", "-DNDEBUG", "-Wall", "-Wextra", "-pedantic",
-                     "benchmark.cpp", "-o", "_build/benchmark"])
+    call(
+        "compile",
+        [
+            "clang++",
+            "-std=c++17",
+            "-O2",
+            "-DNDEBUG",
+            "-Wall",
+            "-Wextra",
+            "-pedantic",
+            "benchmark.cpp",
+            "-o",
+            "_build/benchmark",
+        ],
+    )
     for block, languages in [(1, ["cpp", "python"]), (2, ["python", "cpp"])]:
         for lang in languages:
             exe = ["_build/benchmark"] if lang == "cpp" else ["python3", "benchmark.py"]
-            call(f"block{block}_{lang}", exe + ["dane/input.txt", str(1 + (block-1)*5)])
+            call(f"block{block}_{lang}", exe + ["dane/input.txt", str(1 + (block - 1) * 5)])
     print(run.as_posix())
 
 

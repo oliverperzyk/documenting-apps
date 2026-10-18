@@ -1,22 +1,52 @@
 """Append D subsections to the preserved C report, without changing historical results."""
-from pathlib import Path
+
 import json
+import re
 from decimal import Decimal
-D=Path('rozszerzenia/D');latest=json.loads((D/'latest.json').read_text());root=D/latest['root'];r1=root/'seria_1';r2=root/'seria_2'
-st=json.loads((D/'analysis/stats.json').read_text());tests=D/json.loads((D/'test_latest.json').read_text())['root']
-def link(label,path):return f'[{label}]({path})'
-def fmt(x,places=None):
-    x=Decimal(x)
-    if places is not None:return f'{x:.{places}f}'.replace('.',',')
-    return format(x,'f').replace('.',',')
-def ms(x):return fmt(Decimal(x)/1000000)
-def pct(a,b):return fmt((Decimal(a)/Decimal(b)-1)*100,2)
-text=Path('archiwum_C/raport.md').read_text()
-text=text.replace('**A–C, z uzgodnionym odstępstwem danych C**','**A–D w opisanej adaptacji danych i narzędzi**',1)
-text=text.replace('C wykonano w dwóch kontrolowanych badaniach opisanych poniżej; D nie wykonywano.', 'C wykonano w dwóch kontrolowanych badaniach opisanych poniżej; D obejmuje badanie harmonogramu kolejności w dwóch seriach.',1)
-text=text.replace('Materiały historyczne A–B zachowano; D nie wykonywano.', 'Materiały historyczne A–B zachowano; na etapie C nie wykonywano D.',1)
-parts={}
-parts[1]='''### Poziom D - zakres i odstępstwo danych
+from pathlib import Path
+
+D = Path("rozszerzenia/D")
+latest = json.loads((D / "latest.json").read_text())
+root = D / latest["root"]
+r1 = root / "seria_1"
+r2 = root / "seria_2"
+st = json.loads((D / "analysis/stats.json").read_text())
+tests = D / json.loads((D / "test_latest.json").read_text())["root"]
+
+
+def link(label, path):
+    return f"[{label}]({path})"
+
+
+def fmt(x, places=None):
+    x = Decimal(x)
+    if places is not None:
+        return f"{x:.{places}f}".replace(".", ",")
+    return format(x, "f").replace(".", ",")
+
+
+def ms(x):
+    return fmt(Decimal(x) / 1000000)
+
+
+def pct(a, b):
+    return fmt((Decimal(a) / Decimal(b) - 1) * 100, 2)
+
+
+text = Path("archiwum_C/raport.md").read_text()
+text = text.replace("**A–C, z uzgodnionym odstępstwem danych C**", "**A–D w opisanej adaptacji danych i narzędzi**", 1)
+text = text.replace(
+    "C wykonano w dwóch kontrolowanych badaniach opisanych poniżej; D nie wykonywano.",
+    "C wykonano w dwóch kontrolowanych badaniach opisanych poniżej; D obejmuje badanie harmonogramu kolejności w dwóch seriach.",
+    1,
+)
+text = text.replace(
+    "Materiały historyczne A–B zachowano; D nie wykonywano.",
+    "Materiały historyczne A–B zachowano; na etapie C nie wykonywano D.",
+    1,
+)
+parts = {}
+parts[1] = """### Poziom D - zakres i odstępstwo danych
 
 W D wykonano kontrolowane badanie kolejności: dwa harmonogramy, dwie serie,
 80 par i 160 świeżych procesów. Operacja i status uzgodnienia z prowadzącym
@@ -38,8 +68,8 @@ katalogu TiDPI_07. D25–D31 i TC-21–TC-27 są nowymi identyfikatorami.
 [walidator](rozszerzenia/D/validate_D.py), [niezależna analiza](rozszerzenia/D/analyze_D.py).
 Benchmarki są niezmienionymi kopiami wersji C. Plan wymaga nowych harmonogramów,
 a nie kolejnych rozszerzeń C. AGENTS.md nadal jest pusty i nie był edytowany.
-'''
-parts[2]='''### Poziom D - pytanie i hipoteza
+"""
+parts[2] = """### Poziom D - pytanie i hipoteza
 
 Czy przy wspólnych danych i poprawnym wyniku harmonogram zmienia rozkład czasów
 oraz relację median Python/C++? Hipoteza D25: harmonogram **może** zmienić oba
@@ -47,8 +77,8 @@ opisy; nie zakładano istnienia ani kierunku efektu. Brak powtarzalnej różnicy
 również jest wynikiem. Analiza jest opisowa, bez progu istotności i bez wyboru
 zwycięzcy z góry. D jest jednym rozszerzeniem: kontrolowanym badaniem harmonogramu;
 wykres i metryczki służą temu badaniu.
-'''
-parts[3]=f'''### Poziom D - środowisko obu serii
+"""
+parts[3] = """### Poziom D - środowisko obu serii
 
 D27 i D28 zapisują rzeczywiste zapytania i wyniki: Apple M4 Pro, arm64,
 24 GiB RAM, macOS 27.0.1 (26A434), Apple Clang 21.0.0
@@ -65,8 +95,8 @@ Zegary (stderr wszystkich procesów): C++ `steady_clock`, `is_steady=1`,
 nominalny okres `1/1000000000` s; Python `mach_absolute_time()`, zgłoszona
 rozdzielczość około **41,667 ns**. `time_ns` to jednostka zapisu; efektywnej
 rozdzielczości C++ ani dokładności eksperymentu nie zmierzono.
-'''
-parts[4]='''### Poziom D - czynniki i dane
+"""
+parts[4] = """### Poziom D - czynniki i dane
 
 Zmieniany czynnik: naprzemienny albo losowany harmonogram 20 par.
 Stałe: maszyna, wspólny prefiks i jego kolejność, źródła, binarny C++ Release,
@@ -88,11 +118,13 @@ Właściwy pełny SHA-256 zapisano też w manifeście D26, bez łamania wiersza.
 Odcisk danych rozpoznaje plik; checksum obliczeń to **251 042 700**.
 Oba procesy każdej pary czytają tę samą kopię pliku. Walidacja odtwarza dane
 A i sprawdza tożsamość prefiksu oraz odciski przed i po badaniu.
-'''
+"""
 # fix exact split hash to valid 32 +32
-h=json.loads((D/'data_manifest.json').read_text())['sha256']
-parts[4]=parts[4].replace('9e19f79d6545d7af30356b633e33183c7de\ndb859ad6f9b2f40391ff5a908eb07',h[:32]+'\n'+h[32:])
-parts[5]=f'''### Poziom D - wzorzec i walidacja
+h = json.loads((D / "data_manifest.json").read_text())["sha256"]
+parts[4] = parts[4].replace(
+    "9e19f79d6545d7af30356b633e33183c7de\ndb859ad6f9b2f40391ff5a908eb07", h[:32] + "\n" + h[32:]
+)
+parts[5] = """### Poziom D - wzorzec i walidacja
 
 Przed pomiarami D26 wyznaczył niezależnie:
 `100 × (500 × 4965 − 1239730 + 3781157 − 500 × 5027)`
@@ -133,8 +165,8 @@ pierwszej kontroli i ponowiono sześć kontroli oraz walidację obu rzeczywistyc
 Źródeł benchmarków i surowych pomiarów nie zmieniano; kopie historycznego walidatora
 w przebiegach pozostają zachowane. D29 dokumentuje obie wersje i przeniesienie
 starego pliku pochodnego do oznaczonego dowodu usterki.
-'''
-parts[6]=f'''### Poziom D - wykonana procedura
+"""
+parts[6] = f"""### Poziom D - wykonana procedura
 
 1. Zbadano podstawy A–C, zapisano ich manifest i migawkę raportu C.
    Zapisano plan D25, dane D26, oba harmonogramy i pełne metadane 160 procesów.
@@ -164,16 +196,16 @@ Istniejący plan jest niezmienny; `prepare_D.py` odmawia jego nadpisania.
 Po nowym przebiegu: `python3 analyze_D.py`, `python3 test_D.py`.
 Eksport raportu z katalogu TiDPI_07: `sh rozszerzenia/D/export_D.sh`.
 Pełny automat zapisuje osobne katalogi; nie należy nakładać uruchomień benchmarków.
-'''
-parts[7]=f'''### Poziom D - rejestr dowodów i pełne strumienie
+"""
+parts[7] = f"""### Poziom D - rejestr dowodów i pełne strumienie
 
-- **D25** — {link('plan D',D/'plan_D.md')}, {link('czas i hashe przygotowania',D/'prepared.json')}, {link('oba harmonogramy',D/'schedules.json')}, {link('metadane wszystkich zaplanowanych procesów',D/'planned_trials.json')}, {link('manifest zastanych plików',D/'preexisting_sha256.json')}, {link('przerwane przygotowanie',D/'przebiegi/20261017_112757_745453/seria_1/exit_codes.txt')}.
-- **D26** — {link('dane 10 000',D/'data/input_10000.txt')}, {link('generator, pochodzenie, SHA-256 i wzorzec',D/'data_manifest.json')}.
-- **D27** — seria 1: {link('metryczka',r1/'environment.json')}, {link('kolejność',r1/'schedule.json')}, {link('polecenia',r1/'commands.json')}, {link('czasy wykonania procesów',r1/'execution.json')}, {link('kody',r1/'exit_codes.txt')}, {link('walidacja',r1/'validation.json')}, {link('zaakceptowane pomiary',r1/'results.csv')}, {link('rozgrzewki osobno',r1/'warmups.csv')}.
-- **D28** — seria 2: {link('metryczka',r2/'environment.json')}, {link('kolejność',r2/'schedule.json')}, {link('polecenia',r2/'commands.json')}, {link('czasy wykonania procesów',r2/'execution.json')}, {link('kody',r2/'exit_codes.txt')}, {link('walidacja',r2/'validation.json')}, {link('zaakceptowane pomiary',r2/'results.csv')}, {link('rozgrzewki osobno',r2/'warmups.csv')}.
-- **D29** — {link('końcowe 6 kontroli walidatora',tests/'summary.json')}, {link('źródło kontroli',D/'test_D.py')}, {link('rejestr poprawki sprzątania CSV',D/'kontrole/cleanup_fix.json')}.
-- **D30** — {link('niezależny audyt i rachunki',D/'analysis/independent_check.json')}, {link('statystyki wszystkich przekrojów',D/'analysis/stats.json')}, {link('160 źródłowych punktów wykresu',D/'analysis/plot_data.csv')}, {link('źródło PGFPlots',D/'analysis/distribution.tex')}, {link('skrypt analizy',D/'analyze_D.py')}.
-- **D31** — {link('kontrola końcowa',D/'kontrole/final_check.json')}, {link('weryfikator artefaktów',D/'check_D.py')}, {link('manifest plików do oddania',D/'submission_files.txt')}.
+- **D25** — {link("plan D", D / "plan_D.md")}, {link("czas i hashe przygotowania", D / "prepared.json")}, {link("oba harmonogramy", D / "schedules.json")}, {link("metadane wszystkich zaplanowanych procesów", D / "planned_trials.json")}, {link("manifest zastanych plików", D / "preexisting_sha256.json")}, {link("przerwane przygotowanie", D / "przebiegi/20261017_112757_745453/seria_1/exit_codes.txt")}.
+- **D26** — {link("dane 10 000", D / "data/input_10000.txt")}, {link("generator, pochodzenie, SHA-256 i wzorzec", D / "data_manifest.json")}.
+- **D27** — seria 1: {link("metryczka", r1 / "environment.json")}, {link("kolejność", r1 / "schedule.json")}, {link("polecenia", r1 / "commands.json")}, {link("czasy wykonania procesów", r1 / "execution.json")}, {link("kody", r1 / "exit_codes.txt")}, {link("walidacja", r1 / "validation.json")}, {link("zaakceptowane pomiary", r1 / "results.csv")}, {link("rozgrzewki osobno", r1 / "warmups.csv")}.
+- **D28** — seria 2: {link("metryczka", r2 / "environment.json")}, {link("kolejność", r2 / "schedule.json")}, {link("polecenia", r2 / "commands.json")}, {link("czasy wykonania procesów", r2 / "execution.json")}, {link("kody", r2 / "exit_codes.txt")}, {link("walidacja", r2 / "validation.json")}, {link("zaakceptowane pomiary", r2 / "results.csv")}, {link("rozgrzewki osobno", r2 / "warmups.csv")}.
+- **D29** — {link("końcowe 6 kontroli walidatora", tests / "summary.json")}, {link("źródło kontroli", D / "test_D.py")}, {link("rejestr poprawki sprzątania CSV", D / "kontrole/cleanup_fix.json")}.
+- **D30** — {link("niezależny audyt i rachunki", D / "analysis/independent_check.json")}, {link("statystyki wszystkich przekrojów", D / "analysis/stats.json")}, {link("160 źródłowych punktów wykresu", D / "analysis/plot_data.csv")}, {link("źródło PGFPlots", D / "analysis/distribution.tex")}, {link("skrypt analizy", D / "analyze_D.py")}.
+- **D31** — {link("kontrola końcowa", D / "kontrole/final_check.json")}, {link("weryfikator artefaktów", D / "check_D.py")}, {link("manifest plików do oddania", D / "submission_files.txt")}.
 
 Pełne, niezmienione stdout i stderr są zachowane osobno dla każdego procesu,
 np. pierwszy stdout C++ serii 1:
@@ -194,40 +226,84 @@ W raporcie nie powiela się 160 pełnych wierszy; komplet znajduje się w linkow
 strumieniach i CSV. Poniżej wyłącznie **fragment**, pierwsza para D27:
 
 ```text
-{(r1/'naprzemienny_p01_1_cpp_stdout.txt').read_text().strip()}
-{(r1/'naprzemienny_p01_2_python_stdout.txt').read_text().strip()}
+{(r1 / "naprzemienny_p01_1_cpp_stdout.txt").read_text().strip()}
+{(r1 / "naprzemienny_p01_2_python_stdout.txt").read_text().strip()}
 ```
-'''
+"""
 # stats tables are part of requested report artifact, not a separate chat table.
-table=['Tabela 6. D: **ms**, 20 pomiarów w każdej grupie; źródła D27–D28, kontrola D30.','',
-'| Seria | Układ | Program | Minimum | Maksimum | Rozstęp | Mediana |',
-'| --- | --- | --- | ---: | ---: | ---: | ---: |']
-for key,v in st['groups'].items():
-    series,s,lang=key.split('/');table.append('| '+' | '.join([series,"N" if s=="naprzemienny" else "L","C++" if lang=="cpp" else "Py"]+[ms(v[k]) for k in ['min_ns','max_ns','range_ns','median_ns']])+' |')
-pt=['Tabela 7. D: pozycje w parze, **ms**, po 10 pomiarów; D30.','',
-'| Grupa | Poz. | Minimum | Maksimum | Rozstęp | Mediana |',
-'| --- | --- | ---: | ---: | ---: | ---: |']
-for key,v in st['positions'].items():
-    ser,s,lang,p=key.split('/');pt.append('| '+' | '.join([f'{ser}/{"N" if s=="naprzemienny" else "L"}/{"C++" if lang=="cpp" else "Py"}',p]+[ms(v[k]) for k in ['min_ns','max_ns','range_ns','median_ns']])+' |')
-rt=['Tabela 8. D: iloraz median **Python/C++** i mediany pozycji **2/1**, bez jednostki; D30.','',
-'| Seria / układ | Python/C++ | C++ poz. 2/1 | Python poz. 2/1 |',
-'| --- | ---: | ---: | ---: |']
-for ser,s in [('1','naprzemienny'),('1','losowany'),('2','losowany'),('2','naprzemienny')]:
-    prefix=f'{ser}/{s}';rt.append('| '+' | '.join([f'{ser} / {"N" if s=="naprzemienny" else "L"}',fmt(st['ratios'][prefix+'/python_over_cpp'],3),fmt(st['ratios'][prefix+'/cpp/position_2_over_1'],3),fmt(st['ratios'][prefix+'/python/position_2_over_1'],3)])+' |')
-v=st['groups']['1/naprzemienny/cpp']
-parts[8]='''### Poziom D - rozkłady i rachunki
+table = [
+    "Tabela 6. D: **ms**, 20 pomiarów w każdej grupie; źródła D27–D28, kontrola D30.",
+    "",
+    "| Seria | Układ | Program | Minimum | Maksimum | Rozstęp | Mediana |",
+    "| --- | --- | --- | ---: | ---: | ---: | ---: |",
+]
+for key, v in st["groups"].items():
+    series, s, lang = key.split("/")
+    table.append(
+        "| "
+        + " | ".join(
+            [series, "N" if s == "naprzemienny" else "L", "C++" if lang == "cpp" else "Py"]
+            + [ms(v[k]) for k in ["min_ns", "max_ns", "range_ns", "median_ns"]]
+        )
+        + " |"
+    )
+pt = [
+    "Tabela 7. D: pozycje w parze, **ms**, po 10 pomiarów; D30.",
+    "",
+    "| Grupa | Poz. | Minimum | Maksimum | Rozstęp | Mediana |",
+    "| --- | --- | ---: | ---: | ---: | ---: |",
+]
+for key, v in st["positions"].items():
+    ser, s, lang, p = key.split("/")
+    pt.append(
+        "| "
+        + " | ".join(
+            [f"{ser}/{'N' if s == 'naprzemienny' else 'L'}/{'C++' if lang == 'cpp' else 'Py'}", p]
+            + [ms(v[k]) for k in ["min_ns", "max_ns", "range_ns", "median_ns"]]
+        )
+        + " |"
+    )
+rt = [
+    "Tabela 8. D: iloraz median **Python/C++** i mediany pozycji **2/1**, bez jednostki; D30.",
+    "",
+    "| Seria / układ | Python/C++ | C++ poz. 2/1 | Python poz. 2/1 |",
+    "| --- | ---: | ---: | ---: |",
+]
+for ser, s in [("1", "naprzemienny"), ("1", "losowany"), ("2", "losowany"), ("2", "naprzemienny")]:
+    prefix = f"{ser}/{s}"
+    rt.append(
+        "| "
+        + " | ".join(
+            [
+                f"{ser} / {'N' if s == 'naprzemienny' else 'L'}",
+                fmt(st["ratios"][prefix + "/python_over_cpp"], 3),
+                fmt(st["ratios"][prefix + "/cpp/position_2_over_1"], 3),
+                fmt(st["ratios"][prefix + "/python/position_2_over_1"], 3),
+            ]
+        )
+        + " |"
+    )
+v = st["groups"]["1/naprzemienny/cpp"]
+parts[8] = (
+    """### Poziom D - rozkłady i rachunki
 
 Nie połączono serii, harmonogramów ani implementacji w jedną statystykę.
 N = naprzemienny, L = losowany; S1/S2 = seria; Py = Python. Tabele 6–8 i wykres D30
 pochodzą wyłącznie ze 160 zaakceptowanych prób właściwych, bez rozgrzewek.
 
-'''+ '\n'.join(table)+'\n\n'+'\n'.join(pt)+'\n\n'+'\n'.join(rt)+f'''
+"""
+    + "\n".join(table)
+    + "\n\n"
+    + "\n".join(pt)
+    + "\n\n"
+    + "\n".join(rt)
+    + f"""
 
 Mediana dla 20 prób jest średnią 10. i 11. czasu po sortowaniu,
 a dla 10 prób — 5. i 6. Na przykład D27/N/C++:
-`({v['middle_pair_ns'][0]} + {v['middle_pair_ns'][1]}) / 2 = {fmt(v['median_ns'])} ns`
-= {ms(v['median_ns'])} ms; rozstęp
-`{v['max_ns']} − {v['min_ns']} = {v['range_ns']} ns`.
+`({v["middle_pair_ns"][0]} + {v["middle_pair_ns"][1]}) / 2 = {fmt(v["median_ns"])} ns`
+= {ms(v["median_ns"])} ms; rozstęp
+`{v["max_ns"]} − {v["min_ns"]} = {v["range_ns"]} ns`.
 Minimum to najlepszy zaobserwowany czas, podatny na korzystny przypadek;
 mediana opisuje środek tej próby i nie wskazuje jej mechanizmu ani gwarantowanego czasu.
 
@@ -242,12 +318,13 @@ Nie przypisuje się tej kontroli ręcznej pracy użytkownika.
 Dane wykresu: [CSV z każdym punktem](rozszerzenia/D/analysis/plot_data.csv).
 Oś pozioma zachowuje faktyczną kolejność bloków, a wszystkie punkty mają
 osobne współrzędne poziome. Nie usuwano obserwacji skrajnych.
-'''
-cpp1=pct(st['groups']['1/losowany/cpp']['median_ns'],st['groups']['1/naprzemienny/cpp']['median_ns'])
-py1=pct(st['groups']['1/losowany/python']['median_ns'],st['groups']['1/naprzemienny/python']['median_ns'])
-cpp2=pct(st['groups']['2/losowany/cpp']['median_ns'],st['groups']['2/naprzemienny/cpp']['median_ns'])
-py2=pct(st['groups']['2/losowany/python']['median_ns'],st['groups']['2/naprzemienny/python']['median_ns'])
-parts[9]=f'''### Poziom D - obserwacje bez przypisywania przyczyn
+"""
+)
+cpp1 = pct(st["groups"]["1/losowany/cpp"]["median_ns"], st["groups"]["1/naprzemienny/cpp"]["median_ns"])
+py1 = pct(st["groups"]["1/losowany/python"]["median_ns"], st["groups"]["1/naprzemienny/python"]["median_ns"])
+cpp2 = pct(st["groups"]["2/losowany/cpp"]["median_ns"], st["groups"]["2/naprzemienny/cpp"]["median_ns"])
+py2 = pct(st["groups"]["2/losowany/python"]["median_ns"], st["groups"]["2/naprzemienny/python"]["median_ns"])
+parts[9] = f"""### Poziom D - obserwacje bez przypisywania przyczyn
 
 **Obserwacja:** w serii 1 losowany układ ma medianę większą od naprzemiennego
 o {cpp1}% dla C++ i {py1}% dla Pythona. W serii 2 różnice wynoszą
@@ -273,8 +350,8 @@ w czasie i zakłóceń. Nie ma podstaw do kategorycznego potwierdzenia przyczyno
 hipotezy ani do stwierdzenia, że kolejność nigdy nie ma znaczenia.
 Nie mierzono cache, temperatury, taktowania i procesów tła; nie przypisuje się
 im różnic. Wnioski dotyczą tych implementacji, pliku i warunków.
-'''
-parts[10]='''### Poziom D - ograniczenia projektu
+"""
+parts[10] = """### Poziom D - ograniczenia projektu
 
 - Jedna maszyna i **dwie serie** z jedną ustaloną permutacją losowaną.
   Po 20 par nie oznacza 20 niezależnych serii. Brak wielu dni, maszyn,
@@ -297,8 +374,8 @@ parts[10]='''### Poziom D - ograniczenia projektu
 - Fixture walidatora to wybrane mutacje, nie dowód wykrycia wszystkich awarii.
   Pierwsze przygotowanie i usterkę pliku pochodnego zachowano oddzielnie od
   pełnych zaakceptowanych serii; nie zastępowały żadnego niewygodnego pomiaru.
-'''
-parts[11]='''### Poziom D - wynik i decyzje do obrony
+"""
+parts[11] = """### Poziom D - wynik i decyzje do obrony
 
 D25–D31 potwierdzają wykonanie rozszerzenia D w opisanej adaptacji danych:
 harmonogramy utrwalone przed pomiarami, dwa odwrócone układy bloków,
@@ -316,8 +393,8 @@ do jednej pozycji; **odwrócenie bloków** ogranicza powiązanie harmonogramu z 
 **osobne metadane** zachowują kontrakt i pozwalają wskazać raw;
 **niezależny wzorzec** sprawdza poprawność, a SHA-256 tożsamość pliku;
 **wszystkie punkty** pokazują rozrzut ukryty przez pojedynczą medianę.
-'''
-parts[12]='''### Poziom D - udział AI i kontrola końcowa
+"""
+parts[12] = """### Poziom D - udział AI i kontrola końcowa
 
 Codex odczytał cały PDF i zbadał istniejące źródła oraz dowody, przygotował
 plan i narzędzia D, wykonał rzeczywiste procesy, naprawił publikację po odrzuceniu,
@@ -330,13 +407,12 @@ zbierano bez prywatnych ścieżek. Skany dotyczą treści, logów, metadanych PD
 oraz obrazu wykresu; kod 0 eksportu nie zastąpił przeglądu renderu.
 Manifest oddania wyklucza szkolny PDF, `_build` i `__pycache__`.
 Nie commitowano, nie pushowano i nie wysyłano niczego zewnętrznie.
-'''
+"""
 # Inject D at end of each existing section; exactly one top-level heading.
-import re
-sections=list(re.finditer(r'^## (\d+)\..*$',text,re.M))
-out=text[:sections[0].start()]
-for i,m in enumerate(sections):
-    end=sections[i+1].start() if i+1<len(sections) else len(text)
-    out+=text[m.start():end].rstrip()+'\n\n'+parts[int(m[1])].strip()+'\n\n'
-Path('raport.md').write_text(out)
-print('D added to all 12 sections; historical results retained')
+sections = list(re.finditer(r"^## (\d+)\..*$", text, re.M))
+out = text[: sections[0].start()]
+for i, m in enumerate(sections):
+    end = sections[i + 1].start() if i + 1 < len(sections) else len(text)
+    out += text[m.start() : end].rstrip() + "\n\n" + parts[int(m[1])].strip() + "\n\n"
+Path("raport.md").write_text(out)
+print("D added to all 12 sections; historical results retained")
