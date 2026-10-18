@@ -1,0 +1,11 @@
+{
+  "accepted": false,
+  "errors": [
+    {
+      "rule": "HEADER",
+      "location": "b1_10000_cpp"
+    }
+  ],
+  "published_records": 0,
+  "csv_created": false
+}

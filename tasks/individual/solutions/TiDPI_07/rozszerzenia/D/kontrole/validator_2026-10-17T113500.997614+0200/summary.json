@@ -1,0 +1,54 @@
+{
+    "synthetic": true,
+    "passed": 6,
+    "failed": 0,
+    "cases": [
+        {
+            "name": "valid",
+            "expected_accept": true,
+            "actual_accept": true,
+            "passed": true,
+            "errors": []
+        },
+        {
+            "name": "checksum",
+            "expected_accept": false,
+            "actual_accept": false,
+            "passed": true,
+            "errors": ["CHECKSUM_TIME:naprzemienny_p01_1_cpp"]
+        },
+        {
+            "name": "missing",
+            "expected_accept": false,
+            "actual_accept": false,
+            "passed": true,
+            "errors": [
+                "HEADER_COUNT:naprzemienny_p01_1_cpp",
+                "TOTAL_COUNT",
+                "GROUP_COMPLETENESS",
+                "POSITION_BALANCE"
+            ]
+        },
+        {
+            "name": "schedule",
+            "expected_accept": false,
+            "actual_accept": false,
+            "passed": true,
+            "errors": ["SCHEDULE"]
+        },
+        {
+            "name": "warmup",
+            "expected_accept": false,
+            "actual_accept": false,
+            "passed": true,
+            "errors": ["WARMUP_VALUE:naprzemienny_p01_1_cpp"]
+        },
+        {
+            "name": "overlap",
+            "expected_accept": false,
+            "actual_accept": false,
+            "passed": true,
+            "errors": ["SEQUENTIAL"]
+        }
+    ]
+}

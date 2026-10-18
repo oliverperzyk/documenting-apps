@@ -1,0 +1,15 @@
+{
+    "accepted": false,
+    "errors": [
+        {
+            "rule": "PROCESS_EXIT",
+            "location": "block1_cpp"
+        }
+    ],
+    "csv_created": false,
+    "expected": 501000000,
+    "time_unit": "ns",
+    "trials_per_language": 10,
+    "warmups_per_language": 4,
+    "published_records": 0
+}

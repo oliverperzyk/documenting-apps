@@ -1,0 +1,34 @@
+[
+    {
+        "label": "compiler_version",
+        "started_at": "2026-10-17T11:27:57.771414+02:00",
+        "finished_at": "2026-10-17T11:27:57.950426+02:00",
+        "start_monotonic_ns": 6312111621458,
+        "end_monotonic_ns": 6312290631875,
+        "code": 0
+    },
+    {
+        "label": "macOS",
+        "started_at": "2026-10-17T11:27:57.953736+02:00",
+        "finished_at": "2026-10-17T11:27:58.013141+02:00",
+        "start_monotonic_ns": 6312293938375,
+        "end_monotonic_ns": 6312353351166,
+        "code": 0
+    },
+    {
+        "label": "build",
+        "started_at": "2026-10-17T11:27:58.016677+02:00",
+        "finished_at": "2026-10-17T11:27:58.096429+02:00",
+        "start_monotonic_ns": 6312356873666,
+        "end_monotonic_ns": 6312436677750,
+        "code": 0
+    },
+    {
+        "label": "cpu",
+        "started_at": "2026-10-17T11:27:58.099294+02:00",
+        "finished_at": "2026-10-17T11:27:58.137466+02:00",
+        "start_monotonic_ns": 6312439483583,
+        "end_monotonic_ns": 6312477710375,
+        "code": 1
+    }
+]

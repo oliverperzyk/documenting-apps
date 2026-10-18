@@ -1,0 +1,11 @@
+{
+  "accepted": false,
+  "errors": [
+    {
+      "rule": "CHECKSUM",
+      "location": "b1_10000_cpp:2"
+    }
+  ],
+  "published_records": 0,
+  "csv_created": false
+}

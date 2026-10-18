@@ -1,0 +1,19 @@
+{
+    "accepted": false,
+    "errors": [
+        {
+            "rule": "LANGUAGE",
+            "location": "block1_cpp:2"
+        },
+        {
+            "rule": "TRIAL_COMPLETENESS_UNIQUENESS",
+            "location": "cpp"
+        }
+    ],
+    "csv_created": false,
+    "expected": 501000000,
+    "time_unit": "ns",
+    "trials_per_language": 10,
+    "warmups_per_language": 4,
+    "published_records": 0
+}

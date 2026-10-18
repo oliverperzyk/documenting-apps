@@ -1,0 +1,18 @@
+python3 -c 'import subprocess,sys; p=subprocess.run(['"'"'clang++'"'"','"'"'--version'"'"'],capture_output=True); print('"'"'\n'"'"'.join(p.stdout.decode().splitlines()[:2])); sys.exit(p.returncode)'
+sw_vers -productVersion
+sw_vers -buildVersion
+sysctl -n machdep.cpu.brand_string
+sysctl -n hw.memsize
+clang++ -std=c++17 -O0 -g C1/przebiegi/20261017_110944_353315_good/sources/benchmark.cpp -o C1/przebiegi/20261017_110944_353315_good/_build/benchmark_Debug
+clang++ -std=c++17 -O2 -DNDEBUG C1/przebiegi/20261017_110944_353315_good/sources/benchmark.cpp -o C1/przebiegi/20261017_110944_353315_good/_build/benchmark_Release
+C1/przebiegi/20261017_110944_353315_good/_build/benchmark_Debug C1/przebiegi/20261017_110944_353315_good/data/input_10000.txt 10000 251042700 1 2
+C1/przebiegi/20261017_110944_353315_good/_build/benchmark_Release C1/przebiegi/20261017_110944_353315_good/data/input_10000.txt 10000 251042700 1 2
+C1/przebiegi/20261017_110944_353315_good/_build/benchmark_Release C1/przebiegi/20261017_110944_353315_good/data/input_10000.txt 10000 251042700 3 2
+C1/przebiegi/20261017_110944_353315_good/_build/benchmark_Debug C1/przebiegi/20261017_110944_353315_good/data/input_10000.txt 10000 251042700 3 2
+C1/przebiegi/20261017_110944_353315_good/_build/benchmark_Debug C1/przebiegi/20261017_110944_353315_good/data/input_10000.txt 10000 251042700 5 2
+C1/przebiegi/20261017_110944_353315_good/_build/benchmark_Release C1/przebiegi/20261017_110944_353315_good/data/input_10000.txt 10000 251042700 5 2
+C1/przebiegi/20261017_110944_353315_good/_build/benchmark_Release C1/przebiegi/20261017_110944_353315_good/data/input_10000.txt 10000 251042700 7 2
+C1/przebiegi/20261017_110944_353315_good/_build/benchmark_Debug C1/przebiegi/20261017_110944_353315_good/data/input_10000.txt 10000 251042700 7 2
+C1/przebiegi/20261017_110944_353315_good/_build/benchmark_Debug C1/przebiegi/20261017_110944_353315_good/data/input_10000.txt 10000 251042700 9 2
+C1/przebiegi/20261017_110944_353315_good/_build/benchmark_Release C1/przebiegi/20261017_110944_353315_good/data/input_10000.txt 10000 251042700 9 2
+python3 C1/przebiegi/20261017_110944_353315_good/sources/validate_C.py C1/przebiegi/20261017_110944_353315_good

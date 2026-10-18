@@ -1,0 +1,9 @@
+{
+  "accepted": false,
+  "errors": [
+    "CHECKSUM_TIME:naprzemienny_p01_1_cpp"
+  ],
+  "published_records": 0,
+  "warmup_records": 0,
+  "csv_created": false
+}

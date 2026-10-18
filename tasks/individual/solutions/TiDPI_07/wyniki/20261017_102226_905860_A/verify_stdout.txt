@@ -1,0 +1,58 @@
+{
+  "TC-01": "passed",
+  "TC-02": "passed",
+  "TC-03": "passed",
+  "TC-04": "passed",
+  "expected": 1002000000,
+  "one_round": 5010000,
+  "data_sha256": "1e1422a8679f65bb7ec778bdbd821b74a4596431774711e89671acaa9ddca3d8",
+  "trials_per_language": 10,
+  "warmups_per_language": 4,
+  "stats": {
+    "cpp": {
+      "min_ns": 659875,
+      "max_ns": 840916,
+      "range_ns": 181041,
+      "median_ns": 752459.0,
+      "sorted_ns": [
+        659875,
+        668208,
+        676125,
+        730208,
+        731834,
+        773084,
+        779375,
+        795375,
+        808500,
+        840916
+      ],
+      "middle_pair_ns": [
+        731834,
+        773084
+      ]
+    },
+    "python": {
+      "min_ns": 106012416,
+      "max_ns": 139381458,
+      "range_ns": 33369042,
+      "median_ns": 119905000.0,
+      "sorted_ns": [
+        106012416,
+        106552750,
+        106623500,
+        107586333,
+        107626500,
+        132183500,
+        133934750,
+        135279125,
+        135451250,
+        139381458
+      ],
+      "middle_pair_ns": [
+        107626500,
+        132183500
+      ]
+    }
+  },
+  "raw_aggregation": "Two original block stdout files, one header retained in derived A_*_raw.txt"
+}

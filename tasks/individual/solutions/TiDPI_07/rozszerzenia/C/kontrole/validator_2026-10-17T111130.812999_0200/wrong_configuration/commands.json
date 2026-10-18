@@ -1,0 +1,428 @@
+[
+    {
+        "label": "compiler_version",
+        "argv": [
+            "python3",
+            "-c",
+            "import subprocess,sys; p=subprocess.run(['clang++','--version'],capture_output=True); print('\\n'.join(p.stdout.decode().splitlines()[:2])); sys.exit(p.returncode)"
+        ],
+        "timeout_seconds": 60
+    },
+    {
+        "label": "meta_macOS",
+        "argv": ["sw_vers", "-productVersion"],
+        "timeout_seconds": 60
+    },
+    {
+        "label": "meta_build",
+        "argv": ["sw_vers", "-buildVersion"],
+        "timeout_seconds": 60
+    },
+    {
+        "label": "meta_cpu",
+        "argv": ["sysctl", "-n", "machdep.cpu.brand_string"],
+        "timeout_seconds": 60
+    },
+    {
+        "label": "meta_memory_bytes",
+        "argv": ["sysctl", "-n", "hw.memsize"],
+        "timeout_seconds": 60
+    },
+    {
+        "label": "compile_Release",
+        "argv": [
+            "clang++",
+            "-std=c++17",
+            "-O2",
+            "-DNDEBUG",
+            "kontrole/validator_2026-10-17T111130.812999_0200/wrong_configuration/sources/benchmark.cpp",
+            "-o",
+            "kontrole/validator_2026-10-17T111130.812999_0200/wrong_configuration/_build/benchmark_Release"
+        ],
+        "timeout_seconds": 120
+    },
+    {
+        "label": "b1_10000_cpp",
+        "argv": [
+            "kontrole/validator_2026-10-17T111130.812999_0200/wrong_configuration/_build/benchmark_Release",
+            "kontrole/validator_2026-10-17T111130.812999_0200/wrong_configuration/data/input_10000.txt",
+            "10000",
+            "250039700",
+            "1",
+            "2"
+        ],
+        "timeout_seconds": 60
+    },
+    {
+        "label": "b1_10000_python",
+        "argv": [
+            "python3",
+            "kontrole/validator_2026-10-17T111130.812999_0200/wrong_configuration/sources/benchmark.py",
+            "kontrole/validator_2026-10-17T111130.812999_0200/wrong_configuration/data/input_10000.txt",
+            "10000",
+            "250039700",
+            "1",
+            "2"
+        ],
+        "timeout_seconds": 60
+    },
+    {
+        "label": "b1_30000_cpp",
+        "argv": [
+            "kontrole/validator_2026-10-17T111130.812999_0200/wrong_configuration/_build/benchmark_Release",
+            "kontrole/validator_2026-10-17T111130.812999_0200/wrong_configuration/data/input_30000.txt",
+            "30000",
+            "748157600",
+            "1",
+            "2"
+        ],
+        "timeout_seconds": 60
+    },
+    {
+        "label": "b1_30000_python",
+        "argv": [
+            "python3",
+            "kontrole/validator_2026-10-17T111130.812999_0200/wrong_configuration/sources/benchmark.py",
+            "kontrole/validator_2026-10-17T111130.812999_0200/wrong_configuration/data/input_30000.txt",
+            "30000",
+            "748157600",
+            "1",
+            "2"
+        ],
+        "timeout_seconds": 60
+    },
+    {
+        "label": "b1_50000_cpp",
+        "argv": [
+            "kontrole/validator_2026-10-17T111130.812999_0200/wrong_configuration/_build/benchmark_Release",
+            "kontrole/validator_2026-10-17T111130.812999_0200/wrong_configuration/data/input_50000.txt",
+            "50000",
+            "1250122500",
+            "1",
+            "2"
+        ],
+        "timeout_seconds": 60
+    },
+    {
+        "label": "b1_50000_python",
+        "argv": [
+            "python3",
+            "kontrole/validator_2026-10-17T111130.812999_0200/wrong_configuration/sources/benchmark.py",
+            "kontrole/validator_2026-10-17T111130.812999_0200/wrong_configuration/data/input_50000.txt",
+            "50000",
+            "1250122500",
+            "1",
+            "2"
+        ],
+        "timeout_seconds": 60
+    },
+    {
+        "label": "b2_30000_python",
+        "argv": [
+            "python3",
+            "kontrole/validator_2026-10-17T111130.812999_0200/wrong_configuration/sources/benchmark.py",
+            "kontrole/validator_2026-10-17T111130.812999_0200/wrong_configuration/data/input_30000.txt",
+            "30000",
+            "748157600",
+            "3",
+            "2"
+        ],
+        "timeout_seconds": 60
+    },
+    {
+        "label": "b2_30000_cpp",
+        "argv": [
+            "kontrole/validator_2026-10-17T111130.812999_0200/wrong_configuration/_build/benchmark_Release",
+            "kontrole/validator_2026-10-17T111130.812999_0200/wrong_configuration/data/input_30000.txt",
+            "30000",
+            "748157600",
+            "3",
+            "2"
+        ],
+        "timeout_seconds": 60
+    },
+    {
+        "label": "b2_50000_python",
+        "argv": [
+            "python3",
+            "kontrole/validator_2026-10-17T111130.812999_0200/wrong_configuration/sources/benchmark.py",
+            "kontrole/validator_2026-10-17T111130.812999_0200/wrong_configuration/data/input_50000.txt",
+            "50000",
+            "1250122500",
+            "3",
+            "2"
+        ],
+        "timeout_seconds": 60
+    },
+    {
+        "label": "b2_50000_cpp",
+        "argv": [
+            "kontrole/validator_2026-10-17T111130.812999_0200/wrong_configuration/_build/benchmark_Release",
+            "kontrole/validator_2026-10-17T111130.812999_0200/wrong_configuration/data/input_50000.txt",
+            "50000",
+            "1250122500",
+            "3",
+            "2"
+        ],
+        "timeout_seconds": 60
+    },
+    {
+        "label": "b2_10000_python",
+        "argv": [
+            "python3",
+            "kontrole/validator_2026-10-17T111130.812999_0200/wrong_configuration/sources/benchmark.py",
+            "kontrole/validator_2026-10-17T111130.812999_0200/wrong_configuration/data/input_10000.txt",
+            "10000",
+            "250039700",
+            "3",
+            "2"
+        ],
+        "timeout_seconds": 60
+    },
+    {
+        "label": "b2_10000_cpp",
+        "argv": [
+            "kontrole/validator_2026-10-17T111130.812999_0200/wrong_configuration/_build/benchmark_Release",
+            "kontrole/validator_2026-10-17T111130.812999_0200/wrong_configuration/data/input_10000.txt",
+            "10000",
+            "250039700",
+            "3",
+            "2"
+        ],
+        "timeout_seconds": 60
+    },
+    {
+        "label": "b3_50000_cpp",
+        "argv": [
+            "kontrole/validator_2026-10-17T111130.812999_0200/wrong_configuration/_build/benchmark_Release",
+            "kontrole/validator_2026-10-17T111130.812999_0200/wrong_configuration/data/input_50000.txt",
+            "50000",
+            "1250122500",
+            "5",
+            "2"
+        ],
+        "timeout_seconds": 60
+    },
+    {
+        "label": "b3_50000_python",
+        "argv": [
+            "python3",
+            "kontrole/validator_2026-10-17T111130.812999_0200/wrong_configuration/sources/benchmark.py",
+            "kontrole/validator_2026-10-17T111130.812999_0200/wrong_configuration/data/input_50000.txt",
+            "50000",
+            "1250122500",
+            "5",
+            "2"
+        ],
+        "timeout_seconds": 60
+    },
+    {
+        "label": "b3_10000_cpp",
+        "argv": [
+            "kontrole/validator_2026-10-17T111130.812999_0200/wrong_configuration/_build/benchmark_Release",
+            "kontrole/validator_2026-10-17T111130.812999_0200/wrong_configuration/data/input_10000.txt",
+            "10000",
+            "250039700",
+            "5",
+            "2"
+        ],
+        "timeout_seconds": 60
+    },
+    {
+        "label": "b3_10000_python",
+        "argv": [
+            "python3",
+            "kontrole/validator_2026-10-17T111130.812999_0200/wrong_configuration/sources/benchmark.py",
+            "kontrole/validator_2026-10-17T111130.812999_0200/wrong_configuration/data/input_10000.txt",
+            "10000",
+            "250039700",
+            "5",
+            "2"
+        ],
+        "timeout_seconds": 60
+    },
+    {
+        "label": "b3_30000_cpp",
+        "argv": [
+            "kontrole/validator_2026-10-17T111130.812999_0200/wrong_configuration/_build/benchmark_Release",
+            "kontrole/validator_2026-10-17T111130.812999_0200/wrong_configuration/data/input_30000.txt",
+            "30000",
+            "748157600",
+            "5",
+            "2"
+        ],
+        "timeout_seconds": 60
+    },
+    {
+        "label": "b3_30000_python",
+        "argv": [
+            "python3",
+            "kontrole/validator_2026-10-17T111130.812999_0200/wrong_configuration/sources/benchmark.py",
+            "kontrole/validator_2026-10-17T111130.812999_0200/wrong_configuration/data/input_30000.txt",
+            "30000",
+            "748157600",
+            "5",
+            "2"
+        ],
+        "timeout_seconds": 60
+    },
+    {
+        "label": "b4_10000_python",
+        "argv": [
+            "python3",
+            "kontrole/validator_2026-10-17T111130.812999_0200/wrong_configuration/sources/benchmark.py",
+            "kontrole/validator_2026-10-17T111130.812999_0200/wrong_configuration/data/input_10000.txt",
+            "10000",
+            "250039700",
+            "7",
+            "2"
+        ],
+        "timeout_seconds": 60
+    },
+    {
+        "label": "b4_10000_cpp",
+        "argv": [
+            "kontrole/validator_2026-10-17T111130.812999_0200/wrong_configuration/_build/benchmark_Release",
+            "kontrole/validator_2026-10-17T111130.812999_0200/wrong_configuration/data/input_10000.txt",
+            "10000",
+            "250039700",
+            "7",
+            "2"
+        ],
+        "timeout_seconds": 60
+    },
+    {
+        "label": "b4_30000_python",
+        "argv": [
+            "python3",
+            "kontrole/validator_2026-10-17T111130.812999_0200/wrong_configuration/sources/benchmark.py",
+            "kontrole/validator_2026-10-17T111130.812999_0200/wrong_configuration/data/input_30000.txt",
+            "30000",
+            "748157600",
+            "7",
+            "2"
+        ],
+        "timeout_seconds": 60
+    },
+    {
+        "label": "b4_30000_cpp",
+        "argv": [
+            "kontrole/validator_2026-10-17T111130.812999_0200/wrong_configuration/_build/benchmark_Release",
+            "kontrole/validator_2026-10-17T111130.812999_0200/wrong_configuration/data/input_30000.txt",
+            "30000",
+            "748157600",
+            "7",
+            "2"
+        ],
+        "timeout_seconds": 60
+    },
+    {
+        "label": "b4_50000_python",
+        "argv": [
+            "python3",
+            "kontrole/validator_2026-10-17T111130.812999_0200/wrong_configuration/sources/benchmark.py",
+            "kontrole/validator_2026-10-17T111130.812999_0200/wrong_configuration/data/input_50000.txt",
+            "50000",
+            "1250122500",
+            "7",
+            "2"
+        ],
+        "timeout_seconds": 60
+    },
+    {
+        "label": "b4_50000_cpp",
+        "argv": [
+            "kontrole/validator_2026-10-17T111130.812999_0200/wrong_configuration/_build/benchmark_Release",
+            "kontrole/validator_2026-10-17T111130.812999_0200/wrong_configuration/data/input_50000.txt",
+            "50000",
+            "1250122500",
+            "7",
+            "2"
+        ],
+        "timeout_seconds": 60
+    },
+    {
+        "label": "b5_30000_cpp",
+        "argv": [
+            "kontrole/validator_2026-10-17T111130.812999_0200/wrong_configuration/_build/benchmark_Release",
+            "kontrole/validator_2026-10-17T111130.812999_0200/wrong_configuration/data/input_30000.txt",
+            "30000",
+            "748157600",
+            "9",
+            "2"
+        ],
+        "timeout_seconds": 60
+    },
+    {
+        "label": "b5_30000_python",
+        "argv": [
+            "python3",
+            "kontrole/validator_2026-10-17T111130.812999_0200/wrong_configuration/sources/benchmark.py",
+            "kontrole/validator_2026-10-17T111130.812999_0200/wrong_configuration/data/input_30000.txt",
+            "30000",
+            "748157600",
+            "9",
+            "2"
+        ],
+        "timeout_seconds": 60
+    },
+    {
+        "label": "b5_50000_cpp",
+        "argv": [
+            "kontrole/validator_2026-10-17T111130.812999_0200/wrong_configuration/_build/benchmark_Release",
+            "kontrole/validator_2026-10-17T111130.812999_0200/wrong_configuration/data/input_50000.txt",
+            "50000",
+            "1250122500",
+            "9",
+            "2"
+        ],
+        "timeout_seconds": 60
+    },
+    {
+        "label": "b5_50000_python",
+        "argv": [
+            "python3",
+            "kontrole/validator_2026-10-17T111130.812999_0200/wrong_configuration/sources/benchmark.py",
+            "kontrole/validator_2026-10-17T111130.812999_0200/wrong_configuration/data/input_50000.txt",
+            "50000",
+            "1250122500",
+            "9",
+            "2"
+        ],
+        "timeout_seconds": 60
+    },
+    {
+        "label": "b5_10000_cpp",
+        "argv": [
+            "kontrole/validator_2026-10-17T111130.812999_0200/wrong_configuration/_build/benchmark_Release",
+            "kontrole/validator_2026-10-17T111130.812999_0200/wrong_configuration/data/input_10000.txt",
+            "10000",
+            "250039700",
+            "9",
+            "2"
+        ],
+        "timeout_seconds": 60
+    },
+    {
+        "label": "b5_10000_python",
+        "argv": [
+            "python3",
+            "kontrole/validator_2026-10-17T111130.812999_0200/wrong_configuration/sources/benchmark.py",
+            "kontrole/validator_2026-10-17T111130.812999_0200/wrong_configuration/data/input_10000.txt",
+            "10000",
+            "250039700",
+            "9",
+            "2"
+        ],
+        "timeout_seconds": 60
+    },
+    {
+        "label": "validate",
+        "argv": [
+            "python3",
+            "kontrole/validator_2026-10-17T111130.812999_0200/wrong_configuration/sources/validate_C.py",
+            "C2/przebiegi/20261017_111039_385982_good"
+        ],
+        "timeout_seconds": 60
+    }
+]

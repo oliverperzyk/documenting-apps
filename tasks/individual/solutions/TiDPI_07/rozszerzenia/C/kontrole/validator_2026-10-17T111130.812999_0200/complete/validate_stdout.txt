@@ -1,0 +1,164 @@
+{
+  "accepted": true,
+  "errors": [],
+  "published_records": 60,
+  "csv_created": true,
+  "stats": {
+    "CPython/10000/python": {
+      "configuration": "CPython",
+      "count": 10000,
+      "language": "python",
+      "trials": 10,
+      "min_ns": 27582875,
+      "max_ns": 39755250,
+      "range_ns": 12172375,
+      "median_ns": "31742062.5",
+      "middle_pair_ns": [
+        29058042,
+        34426083
+      ],
+      "sorted_ns": [
+        27582875,
+        27792917,
+        27906459,
+        28126125,
+        29058042,
+        34426083,
+        34716416,
+        34936333,
+        35362166,
+        39755250
+      ]
+    },
+    "CPython/30000/python": {
+      "configuration": "CPython",
+      "count": 30000,
+      "language": "python",
+      "trials": 10,
+      "min_ns": 83147375,
+      "max_ns": 111272375,
+      "range_ns": 28125000,
+      "median_ns": "90495937",
+      "middle_pair_ns": [
+        85746541,
+        95245333
+      ],
+      "sorted_ns": [
+        83147375,
+        83214167,
+        83409458,
+        84061458,
+        85746541,
+        95245333,
+        98458542,
+        105892250,
+        106783875,
+        111272375
+      ]
+    },
+    "CPython/50000/python": {
+      "configuration": "CPython",
+      "count": 50000,
+      "language": "python",
+      "trials": 10,
+      "min_ns": 141958000,
+      "max_ns": 185816708,
+      "range_ns": 43858708,
+      "median_ns": "144853500",
+      "middle_pair_ns": [
+        144019583,
+        145687417
+      ],
+      "sorted_ns": [
+        141958000,
+        142522958,
+        142815458,
+        143600042,
+        144019583,
+        145687417,
+        146225375,
+        148166834,
+        178493208,
+        185816708
+      ]
+    },
+    "Release/10000/cpp": {
+      "configuration": "Release",
+      "count": 10000,
+      "language": "cpp",
+      "trials": 10,
+      "min_ns": 148916,
+      "max_ns": 474084,
+      "range_ns": 325168,
+      "median_ns": "156687.5",
+      "middle_pair_ns": [
+        151750,
+        161625
+      ],
+      "sorted_ns": [
+        148916,
+        148917,
+        149042,
+        149042,
+        151750,
+        161625,
+        170709,
+        170792,
+        202334,
+        474084
+      ]
+    },
+    "Release/30000/cpp": {
+      "configuration": "Release",
+      "count": 30000,
+      "language": "cpp",
+      "trials": 10,
+      "min_ns": 446750,
+      "max_ns": 532709,
+      "range_ns": 85959,
+      "median_ns": "495291.5",
+      "middle_pair_ns": [
+        489917,
+        500666
+      ],
+      "sorted_ns": [
+        446750,
+        446792,
+        446792,
+        475542,
+        489917,
+        500666,
+        509708,
+        512834,
+        512875,
+        532709
+      ]
+    },
+    "Release/50000/cpp": {
+      "configuration": "Release",
+      "count": 50000,
+      "language": "cpp",
+      "trials": 10,
+      "min_ns": 746375,
+      "max_ns": 856292,
+      "range_ns": 109917,
+      "median_ns": "797896",
+      "middle_pair_ns": [
+        792292,
+        803500
+      ],
+      "sorted_ns": [
+        746375,
+        776250,
+        777416,
+        778250,
+        792292,
+        803500,
+        825500,
+        842708,
+        852834,
+        856292
+      ]
+    }
+  }
+}

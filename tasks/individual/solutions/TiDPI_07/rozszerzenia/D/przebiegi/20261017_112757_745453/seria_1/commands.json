@@ -1,0 +1,22 @@
+[
+    {
+        "label": "compiler_version",
+        "argv": [
+            "python3",
+            "-c",
+            "import subprocess,sys; p=subprocess.run([\"clang++\",\"--version\"],capture_output=True); sys.stdout.buffer.write(b\"\\n\".join(p.stdout.splitlines()[:2])+b\"\\n\"); sys.stderr.buffer.write(p.stderr); sys.exit(p.returncode)"
+        ]
+    },
+    {
+        "label": "macOS",
+        "argv": ["sw_vers", "-productVersion"]
+    },
+    {
+        "label": "build",
+        "argv": ["sw_vers", "-buildVersion"]
+    },
+    {
+        "label": "cpu",
+        "argv": ["sysctl", "-n", "machdep.cpu.brand_string"]
+    }
+]

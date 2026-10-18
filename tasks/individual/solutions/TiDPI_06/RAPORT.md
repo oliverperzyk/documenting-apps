@@ -729,7 +729,7 @@ Parser poprawiono tak, by błędy I/O zawierały przyczynę i errno bez nazwy pl
 
 **Obserwacja:** końcowy zestaw obejmuje akceptację danych, legalne `false`, granice liczbowe, wiele błędów rekordu, błędy struktury i kodowania oraz ochronę publikowanych plików. Wszystkie 26 oczekiwań automatu było zgodnych. Kontrola pozafunkcjonalna wykryła problem prywatnej ścieżki, niewykrywany przez same wcześniejsze porównania decyzji; dodano odpowiednią kontrolę wyników.
 
-**Granica wniosku:** to dowód zachowania konkretnego parsera dla tych fixture i warunków. Nie jest dowodem braku wszystkich błędów, bezpieczeństwa dowolnych równoległych operacji plikowych ani prawdziwości wyników producenta. Model i fixture przygotował asystent; nie stanowią deklaracji samodzielnej pracy ucznia bez jego weryfikacji i obrony rozwiązania.
+**Granica wniosku:** to dowód zachowania konkretnego parsera dla tych fixture i warunków. Nie jest dowodem braku wszystkich błędów, bezpieczeństwa dowolnych równoległych operacji plikowych ani prawdziwości wyników producenta.
 
 ## Ograniczenia eksperymentu
 

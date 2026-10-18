@@ -1,0 +1,30 @@
+[
+    {
+        "block": 1,
+        "language": "cpp",
+        "first_trial": 1,
+        "warmups": 2,
+        "trials": 5
+    },
+    {
+        "block": 1,
+        "language": "python",
+        "first_trial": 1,
+        "warmups": 2,
+        "trials": 5
+    },
+    {
+        "block": 2,
+        "language": "python",
+        "first_trial": 6,
+        "warmups": 2,
+        "trials": 5
+    },
+    {
+        "block": 2,
+        "language": "cpp",
+        "first_trial": 6,
+        "warmups": 2,
+        "trials": 5
+    }
+]

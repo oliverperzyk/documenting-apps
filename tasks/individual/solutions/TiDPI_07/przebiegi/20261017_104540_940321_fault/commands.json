@@ -1,0 +1,65 @@
+[
+    {
+        "label": "compile",
+        "argv": [
+            "clang++",
+            "-std=c++17",
+            "-O2",
+            "-DNDEBUG",
+            "-Wall",
+            "-Wextra",
+            "-pedantic",
+            "przebiegi/20261017_104540_940321_fault/sources/benchmark.cpp",
+            "-o",
+            "przebiegi/20261017_104540_940321_fault/_build/benchmark"
+        ],
+        "timeout_seconds": 120
+    },
+    {
+        "label": "block1_cpp",
+        "argv": [
+            "przebiegi/20261017_104540_940321_fault/_build/benchmark",
+            "dane/input.txt",
+            "1"
+        ],
+        "timeout_seconds": 60
+    },
+    {
+        "label": "block1_python",
+        "argv": [
+            "python3",
+            "przebiegi/20261017_104540_940321_fault/sources/benchmark.py",
+            "dane/input.txt",
+            "1"
+        ],
+        "timeout_seconds": 60
+    },
+    {
+        "label": "block2_python",
+        "argv": [
+            "python3",
+            "przebiegi/20261017_104540_940321_fault/sources/benchmark.py",
+            "dane/input.txt",
+            "6"
+        ],
+        "timeout_seconds": 60
+    },
+    {
+        "label": "block2_cpp",
+        "argv": [
+            "przebiegi/20261017_104540_940321_fault/_build/benchmark",
+            "dane/input.txt",
+            "6"
+        ],
+        "timeout_seconds": 60
+    },
+    {
+        "label": "validate",
+        "argv": [
+            "python3",
+            "przebiegi/20261017_104540_940321_fault/sources/validate_results.py",
+            "przebiegi/20261017_104540_940321_fault"
+        ],
+        "timeout_seconds": 60
+    }
+]

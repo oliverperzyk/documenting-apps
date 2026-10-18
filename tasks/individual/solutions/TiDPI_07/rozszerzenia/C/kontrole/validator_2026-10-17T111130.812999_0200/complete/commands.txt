@@ -1,0 +1,37 @@
+python3 -c 'import subprocess,sys; p=subprocess.run(['"'"'clang++'"'"','"'"'--version'"'"'],capture_output=True); print('"'"'\n'"'"'.join(p.stdout.decode().splitlines()[:2])); sys.exit(p.returncode)'
+sw_vers -productVersion
+sw_vers -buildVersion
+sysctl -n machdep.cpu.brand_string
+sysctl -n hw.memsize
+clang++ -std=c++17 -O2 -DNDEBUG C2/przebiegi/20261017_111039_385982_good/sources/benchmark.cpp -o C2/przebiegi/20261017_111039_385982_good/_build/benchmark_Release
+C2/przebiegi/20261017_111039_385982_good/_build/benchmark_Release C2/przebiegi/20261017_111039_385982_good/data/input_10000.txt 10000 250039700 1 2
+python3 C2/przebiegi/20261017_111039_385982_good/sources/benchmark.py C2/przebiegi/20261017_111039_385982_good/data/input_10000.txt 10000 250039700 1 2
+C2/przebiegi/20261017_111039_385982_good/_build/benchmark_Release C2/przebiegi/20261017_111039_385982_good/data/input_30000.txt 30000 748157600 1 2
+python3 C2/przebiegi/20261017_111039_385982_good/sources/benchmark.py C2/przebiegi/20261017_111039_385982_good/data/input_30000.txt 30000 748157600 1 2
+C2/przebiegi/20261017_111039_385982_good/_build/benchmark_Release C2/przebiegi/20261017_111039_385982_good/data/input_50000.txt 50000 1250122500 1 2
+python3 C2/przebiegi/20261017_111039_385982_good/sources/benchmark.py C2/przebiegi/20261017_111039_385982_good/data/input_50000.txt 50000 1250122500 1 2
+python3 C2/przebiegi/20261017_111039_385982_good/sources/benchmark.py C2/przebiegi/20261017_111039_385982_good/data/input_30000.txt 30000 748157600 3 2
+C2/przebiegi/20261017_111039_385982_good/_build/benchmark_Release C2/przebiegi/20261017_111039_385982_good/data/input_30000.txt 30000 748157600 3 2
+python3 C2/przebiegi/20261017_111039_385982_good/sources/benchmark.py C2/przebiegi/20261017_111039_385982_good/data/input_50000.txt 50000 1250122500 3 2
+C2/przebiegi/20261017_111039_385982_good/_build/benchmark_Release C2/przebiegi/20261017_111039_385982_good/data/input_50000.txt 50000 1250122500 3 2
+python3 C2/przebiegi/20261017_111039_385982_good/sources/benchmark.py C2/przebiegi/20261017_111039_385982_good/data/input_10000.txt 10000 250039700 3 2
+C2/przebiegi/20261017_111039_385982_good/_build/benchmark_Release C2/przebiegi/20261017_111039_385982_good/data/input_10000.txt 10000 250039700 3 2
+C2/przebiegi/20261017_111039_385982_good/_build/benchmark_Release C2/przebiegi/20261017_111039_385982_good/data/input_50000.txt 50000 1250122500 5 2
+python3 C2/przebiegi/20261017_111039_385982_good/sources/benchmark.py C2/przebiegi/20261017_111039_385982_good/data/input_50000.txt 50000 1250122500 5 2
+C2/przebiegi/20261017_111039_385982_good/_build/benchmark_Release C2/przebiegi/20261017_111039_385982_good/data/input_10000.txt 10000 250039700 5 2
+python3 C2/przebiegi/20261017_111039_385982_good/sources/benchmark.py C2/przebiegi/20261017_111039_385982_good/data/input_10000.txt 10000 250039700 5 2
+C2/przebiegi/20261017_111039_385982_good/_build/benchmark_Release C2/przebiegi/20261017_111039_385982_good/data/input_30000.txt 30000 748157600 5 2
+python3 C2/przebiegi/20261017_111039_385982_good/sources/benchmark.py C2/przebiegi/20261017_111039_385982_good/data/input_30000.txt 30000 748157600 5 2
+python3 C2/przebiegi/20261017_111039_385982_good/sources/benchmark.py C2/przebiegi/20261017_111039_385982_good/data/input_10000.txt 10000 250039700 7 2
+C2/przebiegi/20261017_111039_385982_good/_build/benchmark_Release C2/przebiegi/20261017_111039_385982_good/data/input_10000.txt 10000 250039700 7 2
+python3 C2/przebiegi/20261017_111039_385982_good/sources/benchmark.py C2/przebiegi/20261017_111039_385982_good/data/input_30000.txt 30000 748157600 7 2
+C2/przebiegi/20261017_111039_385982_good/_build/benchmark_Release C2/przebiegi/20261017_111039_385982_good/data/input_30000.txt 30000 748157600 7 2
+python3 C2/przebiegi/20261017_111039_385982_good/sources/benchmark.py C2/przebiegi/20261017_111039_385982_good/data/input_50000.txt 50000 1250122500 7 2
+C2/przebiegi/20261017_111039_385982_good/_build/benchmark_Release C2/przebiegi/20261017_111039_385982_good/data/input_50000.txt 50000 1250122500 7 2
+C2/przebiegi/20261017_111039_385982_good/_build/benchmark_Release C2/przebiegi/20261017_111039_385982_good/data/input_30000.txt 30000 748157600 9 2
+python3 C2/przebiegi/20261017_111039_385982_good/sources/benchmark.py C2/przebiegi/20261017_111039_385982_good/data/input_30000.txt 30000 748157600 9 2
+C2/przebiegi/20261017_111039_385982_good/_build/benchmark_Release C2/przebiegi/20261017_111039_385982_good/data/input_50000.txt 50000 1250122500 9 2
+python3 C2/przebiegi/20261017_111039_385982_good/sources/benchmark.py C2/przebiegi/20261017_111039_385982_good/data/input_50000.txt 50000 1250122500 9 2
+C2/przebiegi/20261017_111039_385982_good/_build/benchmark_Release C2/przebiegi/20261017_111039_385982_good/data/input_10000.txt 10000 250039700 9 2
+python3 C2/przebiegi/20261017_111039_385982_good/sources/benchmark.py C2/przebiegi/20261017_111039_385982_good/data/input_10000.txt 10000 250039700 9 2
+python3 C2/przebiegi/20261017_111039_385982_good/sources/validate_C.py C2/przebiegi/20261017_111039_385982_good

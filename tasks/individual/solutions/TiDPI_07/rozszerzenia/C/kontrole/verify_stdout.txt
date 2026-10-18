@@ -1,0 +1,1 @@
+A-B preserved; C histogram checks, every CSV row, statistics and trials 1/10 checked independently

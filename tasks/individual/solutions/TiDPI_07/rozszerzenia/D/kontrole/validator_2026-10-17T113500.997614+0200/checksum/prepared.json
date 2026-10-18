@@ -1,0 +1,11 @@
+{
+    "prepared_at": "2026-10-17T11:27:57.547968+02:00",
+    "measurements_started": false,
+    "hashes": {
+        "plan_D.md": "afe2595ea44fdf44d684b024a364134166bfde7c7b680b7b87066d81f10043cb",
+        "schedules.json": "9153ecfe6e84c3d1fe13e40ba1022365894614603383f3b03794bbeff81ef6d5",
+        "planned_trials.json": "982b3ef49dc865d9808fba2b983aaf076be0a754f40566fd43d0b048d6a0fd40",
+        "data_manifest.json": "1835fdbe50a6abe2c90f68cfbb9857ebc2d5c992c5342cd18058e3e116bcb418",
+        "data/input_10000.txt": "9e19f79d6545d7af30356b633e33183c7dedb859ad6f9b2f40391ff5a908eb07"
+    }
+}

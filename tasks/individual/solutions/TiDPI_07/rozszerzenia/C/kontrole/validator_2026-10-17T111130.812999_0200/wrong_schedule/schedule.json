@@ -1,0 +1,302 @@
+[
+    {
+        "label": "b1_10000_python",
+        "block": 1,
+        "size": 10000,
+        "language": "python",
+        "configuration": "CPython",
+        "first_trial": 1,
+        "trials": 2,
+        "warmups": 2
+    },
+    {
+        "label": "b1_10000_cpp",
+        "block": 1,
+        "size": 10000,
+        "language": "cpp",
+        "configuration": "Release",
+        "first_trial": 1,
+        "trials": 2,
+        "warmups": 2
+    },
+    {
+        "label": "b1_30000_cpp",
+        "block": 1,
+        "size": 30000,
+        "language": "cpp",
+        "configuration": "Release",
+        "first_trial": 1,
+        "trials": 2,
+        "warmups": 2
+    },
+    {
+        "label": "b1_30000_python",
+        "block": 1,
+        "size": 30000,
+        "language": "python",
+        "configuration": "CPython",
+        "first_trial": 1,
+        "trials": 2,
+        "warmups": 2
+    },
+    {
+        "label": "b1_50000_cpp",
+        "block": 1,
+        "size": 50000,
+        "language": "cpp",
+        "configuration": "Release",
+        "first_trial": 1,
+        "trials": 2,
+        "warmups": 2
+    },
+    {
+        "label": "b1_50000_python",
+        "block": 1,
+        "size": 50000,
+        "language": "python",
+        "configuration": "CPython",
+        "first_trial": 1,
+        "trials": 2,
+        "warmups": 2
+    },
+    {
+        "label": "b2_30000_python",
+        "block": 2,
+        "size": 30000,
+        "language": "python",
+        "configuration": "CPython",
+        "first_trial": 3,
+        "trials": 2,
+        "warmups": 2
+    },
+    {
+        "label": "b2_30000_cpp",
+        "block": 2,
+        "size": 30000,
+        "language": "cpp",
+        "configuration": "Release",
+        "first_trial": 3,
+        "trials": 2,
+        "warmups": 2
+    },
+    {
+        "label": "b2_50000_python",
+        "block": 2,
+        "size": 50000,
+        "language": "python",
+        "configuration": "CPython",
+        "first_trial": 3,
+        "trials": 2,
+        "warmups": 2
+    },
+    {
+        "label": "b2_50000_cpp",
+        "block": 2,
+        "size": 50000,
+        "language": "cpp",
+        "configuration": "Release",
+        "first_trial": 3,
+        "trials": 2,
+        "warmups": 2
+    },
+    {
+        "label": "b2_10000_python",
+        "block": 2,
+        "size": 10000,
+        "language": "python",
+        "configuration": "CPython",
+        "first_trial": 3,
+        "trials": 2,
+        "warmups": 2
+    },
+    {
+        "label": "b2_10000_cpp",
+        "block": 2,
+        "size": 10000,
+        "language": "cpp",
+        "configuration": "Release",
+        "first_trial": 3,
+        "trials": 2,
+        "warmups": 2
+    },
+    {
+        "label": "b3_50000_cpp",
+        "block": 3,
+        "size": 50000,
+        "language": "cpp",
+        "configuration": "Release",
+        "first_trial": 5,
+        "trials": 2,
+        "warmups": 2
+    },
+    {
+        "label": "b3_50000_python",
+        "block": 3,
+        "size": 50000,
+        "language": "python",
+        "configuration": "CPython",
+        "first_trial": 5,
+        "trials": 2,
+        "warmups": 2
+    },
+    {
+        "label": "b3_10000_cpp",
+        "block": 3,
+        "size": 10000,
+        "language": "cpp",
+        "configuration": "Release",
+        "first_trial": 5,
+        "trials": 2,
+        "warmups": 2
+    },
+    {
+        "label": "b3_10000_python",
+        "block": 3,
+        "size": 10000,
+        "language": "python",
+        "configuration": "CPython",
+        "first_trial": 5,
+        "trials": 2,
+        "warmups": 2
+    },
+    {
+        "label": "b3_30000_cpp",
+        "block": 3,
+        "size": 30000,
+        "language": "cpp",
+        "configuration": "Release",
+        "first_trial": 5,
+        "trials": 2,
+        "warmups": 2
+    },
+    {
+        "label": "b3_30000_python",
+        "block": 3,
+        "size": 30000,
+        "language": "python",
+        "configuration": "CPython",
+        "first_trial": 5,
+        "trials": 2,
+        "warmups": 2
+    },
+    {
+        "label": "b4_10000_python",
+        "block": 4,
+        "size": 10000,
+        "language": "python",
+        "configuration": "CPython",
+        "first_trial": 7,
+        "trials": 2,
+        "warmups": 2
+    },
+    {
+        "label": "b4_10000_cpp",
+        "block": 4,
+        "size": 10000,
+        "language": "cpp",
+        "configuration": "Release",
+        "first_trial": 7,
+        "trials": 2,
+        "warmups": 2
+    },
+    {
+        "label": "b4_30000_python",
+        "block": 4,
+        "size": 30000,
+        "language": "python",
+        "configuration": "CPython",
+        "first_trial": 7,
+        "trials": 2,
+        "warmups": 2
+    },
+    {
+        "label": "b4_30000_cpp",
+        "block": 4,
+        "size": 30000,
+        "language": "cpp",
+        "configuration": "Release",
+        "first_trial": 7,
+        "trials": 2,
+        "warmups": 2
+    },
+    {
+        "label": "b4_50000_python",
+        "block": 4,
+        "size": 50000,
+        "language": "python",
+        "configuration": "CPython",
+        "first_trial": 7,
+        "trials": 2,
+        "warmups": 2
+    },
+    {
+        "label": "b4_50000_cpp",
+        "block": 4,
+        "size": 50000,
+        "language": "cpp",
+        "configuration": "Release",
+        "first_trial": 7,
+        "trials": 2,
+        "warmups": 2
+    },
+    {
+        "label": "b5_30000_cpp",
+        "block": 5,
+        "size": 30000,
+        "language": "cpp",
+        "configuration": "Release",
+        "first_trial": 9,
+        "trials": 2,
+        "warmups": 2
+    },
+    {
+        "label": "b5_30000_python",
+        "block": 5,
+        "size": 30000,
+        "language": "python",
+        "configuration": "CPython",
+        "first_trial": 9,
+        "trials": 2,
+        "warmups": 2
+    },
+    {
+        "label": "b5_50000_cpp",
+        "block": 5,
+        "size": 50000,
+        "language": "cpp",
+        "configuration": "Release",
+        "first_trial": 9,
+        "trials": 2,
+        "warmups": 2
+    },
+    {
+        "label": "b5_50000_python",
+        "block": 5,
+        "size": 50000,
+        "language": "python",
+        "configuration": "CPython",
+        "first_trial": 9,
+        "trials": 2,
+        "warmups": 2
+    },
+    {
+        "label": "b5_10000_cpp",
+        "block": 5,
+        "size": 10000,
+        "language": "cpp",
+        "configuration": "Release",
+        "first_trial": 9,
+        "trials": 2,
+        "warmups": 2
+    },
+    {
+        "label": "b5_10000_python",
+        "block": 5,
+        "size": 10000,
+        "language": "python",
+        "configuration": "CPython",
+        "first_trial": 9,
+        "trials": 2,
+        "warmups": 2
+    }
+]

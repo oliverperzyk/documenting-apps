@@ -1,0 +1,6 @@
+python3 generate_data.py
+clang++ -std=c++17 -O2 -DNDEBUG -Wall -Wextra -pedantic benchmark.cpp -o _build/benchmark
+_build/benchmark dane/input.txt 1
+python3 benchmark.py dane/input.txt 1
+python3 benchmark.py dane/input.txt 6
+_build/benchmark dane/input.txt 6

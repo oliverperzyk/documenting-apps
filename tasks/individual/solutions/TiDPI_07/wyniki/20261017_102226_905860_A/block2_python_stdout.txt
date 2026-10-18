@@ -1,0 +1,6 @@
+language;trial;time_ns;checksum;correct
+python;6;133934750;1002000000;true
+python;7;139381458;1002000000;true
+python;8;132183500;1002000000;true
+python;9;135451250;1002000000;true
+python;10;135279125;1002000000;true

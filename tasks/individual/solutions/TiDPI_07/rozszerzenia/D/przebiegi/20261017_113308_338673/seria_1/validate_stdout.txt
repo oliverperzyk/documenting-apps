@@ -1,0 +1,7 @@
+{
+  "accepted": true,
+  "errors": [],
+  "published_records": 80,
+  "warmup_records": 160,
+  "csv_created": true
+}

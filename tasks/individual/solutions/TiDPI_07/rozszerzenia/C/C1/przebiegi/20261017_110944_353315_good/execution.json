@@ -1,0 +1,128 @@
+[
+    {
+        "label": "compiler_version",
+        "started_at": "2026-10-17T11:09:44.357697+02:00",
+        "finished_at": "2026-10-17T11:09:44.394686+02:00",
+        "code": 0,
+        "status": "completed"
+    },
+    {
+        "label": "meta_macOS",
+        "started_at": "2026-10-17T11:09:44.395128+02:00",
+        "finished_at": "2026-10-17T11:09:44.403529+02:00",
+        "code": 0,
+        "status": "completed"
+    },
+    {
+        "label": "meta_build",
+        "started_at": "2026-10-17T11:09:44.403861+02:00",
+        "finished_at": "2026-10-17T11:09:44.411611+02:00",
+        "code": 0,
+        "status": "completed"
+    },
+    {
+        "label": "meta_cpu",
+        "started_at": "2026-10-17T11:09:44.412016+02:00",
+        "finished_at": "2026-10-17T11:09:44.415240+02:00",
+        "code": 0,
+        "status": "completed"
+    },
+    {
+        "label": "meta_memory_bytes",
+        "started_at": "2026-10-17T11:09:44.415649+02:00",
+        "finished_at": "2026-10-17T11:09:44.418746+02:00",
+        "code": 0,
+        "status": "completed"
+    },
+    {
+        "label": "compile_Debug",
+        "started_at": "2026-10-17T11:09:44.419337+02:00",
+        "finished_at": "2026-10-17T11:09:44.945449+02:00",
+        "code": 0,
+        "status": "completed"
+    },
+    {
+        "label": "compile_Release",
+        "started_at": "2026-10-17T11:09:44.946041+02:00",
+        "finished_at": "2026-10-17T11:09:45.299305+02:00",
+        "code": 0,
+        "status": "completed"
+    },
+    {
+        "label": "b1_10000_Debug",
+        "started_at": "2026-10-17T11:09:45.300197+02:00",
+        "finished_at": "2026-10-17T11:09:46.010796+02:00",
+        "code": 0,
+        "status": "completed"
+    },
+    {
+        "label": "b1_10000_Release",
+        "started_at": "2026-10-17T11:09:46.011437+02:00",
+        "finished_at": "2026-10-17T11:09:46.396483+02:00",
+        "code": 0,
+        "status": "completed"
+    },
+    {
+        "label": "b2_10000_Release",
+        "started_at": "2026-10-17T11:09:46.397665+02:00",
+        "finished_at": "2026-10-17T11:09:46.405140+02:00",
+        "code": 0,
+        "status": "completed"
+    },
+    {
+        "label": "b2_10000_Debug",
+        "started_at": "2026-10-17T11:09:46.406400+02:00",
+        "finished_at": "2026-10-17T11:09:46.455538+02:00",
+        "code": 0,
+        "status": "completed"
+    },
+    {
+        "label": "b3_10000_Debug",
+        "started_at": "2026-10-17T11:09:46.456173+02:00",
+        "finished_at": "2026-10-17T11:09:46.493822+02:00",
+        "code": 0,
+        "status": "completed"
+    },
+    {
+        "label": "b3_10000_Release",
+        "started_at": "2026-10-17T11:09:46.494329+02:00",
+        "finished_at": "2026-10-17T11:09:46.498873+02:00",
+        "code": 0,
+        "status": "completed"
+    },
+    {
+        "label": "b4_10000_Release",
+        "started_at": "2026-10-17T11:09:46.499402+02:00",
+        "finished_at": "2026-10-17T11:09:46.503750+02:00",
+        "code": 0,
+        "status": "completed"
+    },
+    {
+        "label": "b4_10000_Debug",
+        "started_at": "2026-10-17T11:09:46.504271+02:00",
+        "finished_at": "2026-10-17T11:09:46.541345+02:00",
+        "code": 0,
+        "status": "completed"
+    },
+    {
+        "label": "b5_10000_Debug",
+        "started_at": "2026-10-17T11:09:46.542133+02:00",
+        "finished_at": "2026-10-17T11:09:46.577333+02:00",
+        "code": 0,
+        "status": "completed"
+    },
+    {
+        "label": "b5_10000_Release",
+        "started_at": "2026-10-17T11:09:46.577832+02:00",
+        "finished_at": "2026-10-17T11:09:46.582440+02:00",
+        "code": 0,
+        "status": "completed"
+    },
+    {
+        "label": "validate",
+        "started_at": "2026-10-17T11:09:46.583106+02:00",
+        "finished_at": "2026-10-17T11:09:46.647854+02:00",
+        "code": 0,
+        "status": "completed"
+    }
+]

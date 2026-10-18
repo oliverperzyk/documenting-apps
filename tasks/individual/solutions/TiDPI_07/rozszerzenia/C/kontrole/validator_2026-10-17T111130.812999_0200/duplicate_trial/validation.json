@@ -1,0 +1,15 @@
+{
+    "accepted": false,
+    "errors": [
+        {
+            "rule": "TRIAL_SEQUENCE",
+            "location": "b1_10000_cpp"
+        },
+        {
+            "rule": "GROUP_COMPLETENESS",
+            "location": "Release/10000/cpp"
+        }
+    ],
+    "published_records": 0,
+    "csv_created": false
+}

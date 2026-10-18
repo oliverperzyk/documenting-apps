@@ -1,0 +1,7 @@
+{
+    "exit_code": 2,
+    "stage": "environment",
+    "failed_query": "cpu",
+    "measurements_started": false,
+    "note": "Sandbox sysctl denial; no compilation or benchmark; original streams preserved."
+}
