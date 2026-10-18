@@ -96,12 +96,20 @@ def write_csv(output_path, records):
     temporary_path = None
     try:
         with tempfile.NamedTemporaryFile(
-            mode="w", encoding="utf-8-sig", newline="", dir=output_path.parent,
-            prefix=".tidpi-results-", suffix=".tmp", delete=False,
+            mode="w",
+            encoding="utf-8-sig",
+            newline="",
+            dir=output_path.parent,
+            prefix=".tidpi-results-",
+            suffix=".tmp",
+            delete=False,
         ) as target:
             temporary_path = Path(target.name)
             writer = csv.DictWriter(
-                target, fieldnames=EXPECTED_HEADER, delimiter=";", lineterminator="\n",
+                target,
+                fieldnames=EXPECTED_HEADER,
+                delimiter=";",
+                lineterminator="\n",
             )
             writer.writeheader()
             writer.writerows(records)

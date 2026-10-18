@@ -245,9 +245,7 @@ def relative_config_display(config_path):
 
 def main():
     """Skompilować i uruchomić wybrany przypadek oraz zwrócić jego status."""
-    parser = argparse.ArgumentParser(
-        description="Compile, run and register evidence from a C++ experiment."
-    )
+    parser = argparse.ArgumentParser(description="Compile, run and register evidence from a C++ experiment.")
     parser.add_argument(
         "--config",
         default=None,
@@ -377,8 +375,8 @@ def main():
     program_path.unlink(missing_ok=True)
 
     summary["compile_command"] = format_command(compile_command)
-    compile_code, compile_stdout, compile_stderr, compile_ms, compile_timeout = (
-        run_process(compile_command, timeout_seconds=60)
+    compile_code, compile_stdout, compile_stderr, compile_ms, compile_timeout = run_process(
+        compile_command, timeout_seconds=60
     )
     save_text(evidence_dir / "compile_stdout.txt", decode_output(compile_stdout))
     save_text(evidence_dir / "compile_stderr.txt", decode_output(compile_stderr))
@@ -396,14 +394,10 @@ def main():
     # Walidacja --size po kompilacji, przed uruchomieniem programu.
     if size is not None and (size < SIZE_MIN or size > SIZE_MAX):
         summary["final_status"] = "validation_failed"
-        summary["validation_error"] = (
-            f"size out of range [{SIZE_MIN}, {SIZE_MAX}]"
-        )
+        summary["validation_error"] = f"size out of range [{SIZE_MIN}, {SIZE_MAX}]"
         summary["execution_attempted"] = "false"
         save_summary(evidence_dir / "summary.txt", summary)
-        print(
-            f"ERROR: --size must be an integer from {SIZE_MIN} to {SIZE_MAX}."
-        )
+        print(f"ERROR: --size must be an integer from {SIZE_MIN} to {SIZE_MAX}.")
         print(f"VALIDATION FAILED. Evidence: logs/{run_id}")
         return 2
 

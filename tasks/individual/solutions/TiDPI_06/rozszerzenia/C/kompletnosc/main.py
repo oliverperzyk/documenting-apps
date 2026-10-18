@@ -94,12 +94,20 @@ def write_csv(output_path, records):
     temporary_path = None
     try:
         with tempfile.NamedTemporaryFile(
-            mode="w", encoding="utf-8-sig", newline="", dir=output_path.parent,
-            prefix=".tidpi-results-", suffix=".tmp", delete=False,
+            mode="w",
+            encoding="utf-8-sig",
+            newline="",
+            dir=output_path.parent,
+            prefix=".tidpi-results-",
+            suffix=".tmp",
+            delete=False,
         ) as target:
             temporary_path = Path(target.name)
             writer = csv.DictWriter(
-                target, fieldnames=EXPECTED_HEADER, delimiter=";", lineterminator="\n",
+                target,
+                fieldnames=EXPECTED_HEADER,
+                delimiter=";",
+                lineterminator="\n",
             )
             writer.writeheader()
             writer.writerows(records)
@@ -111,6 +119,7 @@ def write_csv(output_path, records):
 
 def load_expected_config(path):
     """Sprawdź konfigurację przed porównaniem kompletu tożsamości."""
+
     def unique_keys(pairs):
         result = {}
         for key, value in pairs:
@@ -138,8 +147,7 @@ def load_expected_config(path):
         raise ValueError("sizes must be unique")
     if type(trials) is not int or trials < 1:
         raise ValueError("trials must be an integer >= 1 (not boolean)")
-    return {(case, size, trial) for case in cases for size in sizes
-            for trial in range(1, trials + 1)}
+    return {(case, size, trial) for case in cases for size in sizes for trial in range(1, trials + 1)}
 
 
 def validate_completeness(rows, records, expected):
@@ -160,8 +168,9 @@ def main(argv=None):
     )
     parser.add_argument("input", type=Path, help="surowy plik wyjściowy producenta C++")
     parser.add_argument("output", type=Path, help="docelowy CSV; stary plik zostanie usunięty")
-    parser.add_argument("--expected-config", required=True, type=Path,
-                        help="JSON: cases, sizes, trials — oczekiwany komplet")
+    parser.add_argument(
+        "--expected-config", required=True, type=Path, help="JSON: cases, sizes, trials — oczekiwany komplet"
+    )
     args = parser.parse_args(argv)
 
     # Sprawdzenie musi poprzedzać unlink, również dla aliasów i dowiązań twardych.

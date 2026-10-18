@@ -26,6 +26,7 @@ export default defineConfig([
         "**/env/**",
         "**/__pycache__/**",
         "**/.cache/**",
+        "**/.ruff_cache/**",
         "**/coverage/**",
         "**/pdfs/**",
         "**/submissions/**",

@@ -8,6 +8,7 @@
 /**/node_modules/
 /**/_build/
 /**/__pycache__/
+/**/.ruff_cache/
 /**/*.tmp
 /**/*.pdf
 /**/.preview/
