@@ -4,20 +4,23 @@ Checklista realizacji [zadania grupowego](assets/TASK.md). Etapy wykonujemy w po
 
 ## 1. Ustalenie zasad i podział pracy
 
-- [ ] Zapisać definicję słowa: niepusty ciąg znaków rozdzielany wyłącznie spacją, tabulatorem lub LF. Interpunkcja pozostaje częścią słowa.
+- [x] Zapisać definicję słowa: niepusty ciąg znaków rozdzielany wyłącznie spacją, tabulatorem lub LF. Interpunkcja pozostaje częścią słowa.
 - [ ] Ustalić przed pomiarami co najmniej trzy długości tekstu, warianty danych, liczbę powtórzeń, jednostkę czasu i kolejność uruchamiania implementacji.
 - [ ] Zapisać pytanie badawcze oraz hipotezę bez zakładania z góry, która implementacja będzie szybsza.
 
 ## 2. Dane i oczekiwane wyniki
 
-- [ ] Przygotować pliki ASCII lub deterministyczny generator z zapisaną konfiguracją, ziarnem losowania, jeśli jest używane, i instrukcją odtworzenia danych.
-- [ ] Przygotować warianty obejmujące krótkie i długie słowa oraz mały i duży udział separatorów dla każdej wybranej długości tekstu.
-- [ ] Zapewnić obu implementacjom dokładnie te same dane wejściowe; zapisać rozmiar w bajtach i identyfikator lub sumę kontrolną każdego pliku.
-- [ ] Wyznaczyć oczekiwane liczby słów niezależnie od porównania wyników obu programów.
-- [ ] Przygotować testy: pusty tekst → `0`, same spacje/tabulatory/LF → `0`, jedno słowo bez separatora na końcu → `1`.
-- [ ] Przygotować testy: `Ala  ma` → `2`, `Ala\tma\nkota` → `3`, `kot,pies` → `1`.
+- [x] Przygotować pliki ASCII lub deterministyczny generator z zapisaną konfiguracją, ziarnem losowania, jeśli jest używane, i instrukcją odtworzenia danych.
+- [x] Przygotować warianty obejmujące krótkie i długie słowa oraz mały i duży udział separatorów dla każdej wybranej długości tekstu.
+- [x] Przygotować wspólny zestaw danych wejściowych; zapisać rozmiar w bajtach i identyfikator lub sumę kontrolną każdego pliku.
+- [ ] Podłączyć wspólny zestaw danych do obu implementacji, zapewniając im dokładnie te same dane wejściowe.
+- [x] Wyznaczyć oczekiwane liczby słów niezależnie od porównania wyników obu programów.
+- [x] Przygotować testy: pusty tekst → `0`, same spacje/tabulatory/LF → `0`, jedno słowo bez separatora na końcu → `1`.
+- [x] Przygotować testy: `Ala  ma` → `2`, `Ala\tma\nkota` → `3`, `kot,pies` → `1`.
 - [ ] Sprawdzić separatory na początku i końcu tekstu, wielokrotne separatory oraz ich mieszanki.
 - [ ] Sprawdzić, że inne znaki ASCII, np. CR (`\r`), nie są traktowane jako separatory: `Ala\rma` → `1`.
+
+Przygotowano `WordGenerator.py`, słownik 250 angielskich słów w `assets/english_words.json` oraz 15 plików benchmarkowych w `data/`: po pięć dla 1000, 100000 i 1000000 bajtów, z ziarnami odpowiednio 14, 42 i 2026. Manifesty zawierają konfigurację, oczekiwane liczby słów i SHA-256. Zweryfikowano rozmiary, ASCII, oczekiwane liczby słów, sumy kontrolne oraz powtarzalność generowania. Przypadki kontrolne są zdefiniowane w `WordGenerator.FIXTURES`; uruchomienie ich na implementacjach C++ i Python pozostaje do wykonania.
 
 ## 3. Implementacje i kontrola poprawności
 
