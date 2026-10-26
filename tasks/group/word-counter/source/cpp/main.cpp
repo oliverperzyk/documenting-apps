@@ -41,6 +41,13 @@ class Solution {
     }
 
     static int init(int argc, char *argv[]) {
+        if (argc == 2 && std::string(argv[1]) == "--clock-info") {
+            using Clock = std::chrono::steady_clock;
+            std::cout << "{\"name\":\"std::chrono::steady_clock\",\"monotonic\":"
+                      << (Clock::is_steady ? "true" : "false") << ",\"period_num\":" << Clock::period::num
+                      << ",\"period_den\":" << Clock::period::den << "}\n";
+            return 0;
+        }
         if (argc != 2) {
             std::cerr << "Uzycie: " << argv[0] << " <sciezka-do-pliku>\n";
             return 1;

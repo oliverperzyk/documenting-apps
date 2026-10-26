@@ -1,0 +1,159 @@
+{
+    "started_at_utc": "2026-10-26T18:43:23.324588+00:00",
+    "status": "complete",
+    "repetitions": 30,
+    "warmups": 0,
+    "timeout_seconds": 30,
+    "unit": "ns",
+    "order": "per file: odd trial cpp/python, even trial python/cpp; sequential fresh processes",
+    "measurement": "algorithm and word-count result only; excludes process startup and IO",
+    "system": "macOS-27.0.1-arm64-arm-64bit-Mach-O",
+    "architecture": "arm64",
+    "cpu": "arm",
+    "logical_cpus": 14,
+    "python_version": "3.14.4 (main, Apr  7 2026, 13:13:20) [Clang 21.0.0 (clang-2100.0.123.102)]",
+    "python_executable": "/opt/homebrew/opt/python@3.14/bin/python3.14",
+    "compiler": "c++",
+    "compiler_flags": ["-std=c++17", "-O2", "-Wall", "-Wextra", "-Wpedantic"],
+    "datasets": [
+        {
+            "data_id": "1000B_seed14/long_dense_mixed_1000.txt",
+            "sha256": "27a1c0ae6a5b0c531c3338737f4ff73561fc855e8717fd4eb065e004714a0ae8",
+            "size_bytes": 1000,
+            "variant": "long_dense_mixed",
+            "expected_words": 65
+        },
+        {
+            "data_id": "1000B_seed14/long_sparse_mixed_1000.txt",
+            "sha256": "0690975565dc96bb177d122e443dee79013c37779d0353485eb6875c1f0967be",
+            "size_bytes": 1000,
+            "variant": "long_sparse_mixed",
+            "expected_words": 119
+        },
+        {
+            "data_id": "1000B_seed14/short_dense_mixed_1000.txt",
+            "sha256": "f1e25c3254ccab6e07bf8bdff19c16cd8f399dc0c7af9269b914b53e964d83b7",
+            "size_bytes": 1000,
+            "variant": "short_dense_mixed",
+            "expected_words": 88
+        },
+        {
+            "data_id": "1000B_seed14/short_spaces_1000.txt",
+            "sha256": "87a7179517260ac8b3ea9c00b9eef59ede7b2dadbe855d0dc285c585e38eedff",
+            "size_bytes": 1000,
+            "variant": "short_spaces",
+            "expected_words": 219
+        },
+        {
+            "data_id": "1000B_seed14/short_sparse_mixed_1000.txt",
+            "sha256": "76c4181579e46d72b0d413fbb2a36b252eaadcc798141e2f9af4154690b7503d",
+            "size_bytes": 1000,
+            "variant": "short_sparse_mixed",
+            "expected_words": 225
+        },
+        {
+            "data_id": "100000B_seed42/long_dense_mixed_100000.txt",
+            "sha256": "a6704b433bf8619527687056169473df2af811062b65cdda9128551819a3029a",
+            "size_bytes": 100000,
+            "variant": "long_dense_mixed",
+            "expected_words": 6498
+        },
+        {
+            "data_id": "100000B_seed42/long_sparse_mixed_100000.txt",
+            "sha256": "08c89faef42b97b4ec18458ade60da2d8ad55372b77ad63a45f197216aa1882c",
+            "size_bytes": 100000,
+            "variant": "long_sparse_mixed",
+            "expected_words": 11904
+        },
+        {
+            "data_id": "100000B_seed42/short_dense_mixed_100000.txt",
+            "sha256": "3b067d153d888dff0450734736db3da27396dde1a4d50813c6cb8d682a7d006e",
+            "size_bytes": 100000,
+            "variant": "short_dense_mixed",
+            "expected_words": 8747
+        },
+        {
+            "data_id": "100000B_seed42/short_sparse_mixed_100000.txt",
+            "sha256": "f015b4ba84dfa59b6ac54b34911104a5a23ae1831eb4dc3515194c5dafa5fb2f",
+            "size_bytes": 100000,
+            "variant": "short_sparse_mixed",
+            "expected_words": 22452
+        },
+        {
+            "data_id": "100000B_seed42/short_tabs_100000.txt",
+            "sha256": "d8d65c6ae0ce407222f442958ce207940d96aa8abed70664c60ce442adb795b4",
+            "size_bytes": 100000,
+            "variant": "short_tabs",
+            "expected_words": 22511
+        },
+        {
+            "data_id": "1000000B_seed2026/long_dense_mixed_1000000.txt",
+            "sha256": "1c8ef74e0611e26132f71d3e5d942e4f1242178b00223b61c448efa8f9e23bd3",
+            "size_bytes": 1000000,
+            "variant": "long_dense_mixed",
+            "expected_words": 64966
+        },
+        {
+            "data_id": "1000000B_seed2026/long_sparse_mixed_1000000.txt",
+            "sha256": "4457b9662a0b0d592d07d3cd9f3bb6cc6bc2f64c784397fdf4eeb1424cf719fc",
+            "size_bytes": 1000000,
+            "variant": "long_sparse_mixed",
+            "expected_words": 119166
+        },
+        {
+            "data_id": "1000000B_seed2026/short_dense_mixed_1000000.txt",
+            "sha256": "9a52993c5cf0da863137f1f0be98198486e17f48f5a73296f0a656dee471800d",
+            "size_bytes": 1000000,
+            "variant": "short_dense_mixed",
+            "expected_words": 87327
+        },
+        {
+            "data_id": "1000000B_seed2026/short_lf_1000000.txt",
+            "sha256": "4b2347250d7468583807af9ea5abb2cb2cafa10cc0f2084926f4b95f25963466",
+            "size_bytes": 1000000,
+            "variant": "short_lf",
+            "expected_words": 224800
+        },
+        {
+            "data_id": "1000000B_seed2026/short_sparse_mixed_1000000.txt",
+            "sha256": "b89cff4aa8c9d816c90eb6bd13c08a07d4fc4888bf93df99b35090d4b978ceb2",
+            "size_bytes": 1000000,
+            "variant": "short_sparse_mixed",
+            "expected_words": 224791
+        }
+    ],
+    "source_sha256": {
+        "source/cpp/main.cpp": "0873977281386e4cf605955ec9cf6059f688e191acd664bdd063d185932728ac",
+        "source/python/main.py": "177007f7e64a0174e804f8f30fdaf6f3f51748120bde7d38a15b7c182bfc82fe",
+        "Benchmark.py": "18d94d1457117f003c8fa22f22b3018b8e64aac4478e488f4d749ed857aa953a"
+    },
+    "compile_command": [
+        "c++",
+        "-std=c++17",
+        "-O2",
+        "-Wall",
+        "-Wextra",
+        "-Wpedantic",
+        "source/cpp/main.cpp",
+        "-o",
+        "results/20261026T184323Z_8894299b2b/word-counter"
+    ],
+    "compiler_version": "Apple clang version 21.0.0 (clang-2100.3.34.2)\nTarget: arm64-apple-darwin27.0.0\nThread model: posix\nInstalledDir: /Library/Developer/CommandLineTools/usr/bin",
+    "clocks": {
+        "cpp": {
+            "name": "std::chrono::steady_clock",
+            "monotonic": true,
+            "period_num": 1,
+            "period_den": 1000000000
+        },
+        "python": {
+            "implementation": "mach_absolute_time()",
+            "monotonic": true,
+            "adjustable": false,
+            "resolution": 4.166666666666666e-8
+        }
+    },
+    "clock_note": "ns is output unit; C++ period is nominal, Python resolution is declared; neither guarantees accuracy",
+    "error": "",
+    "finished_at_utc": "2026-10-26T18:43:37.936731+00:00"
+}

@@ -5,7 +5,7 @@ Checklista realizacji [zadania grupowego](assets/TASK.md). Etapy wykonujemy w po
 ## 1. Ustalenie zasad i podział pracy
 
 - [x] Zapisać definicję słowa: niepusty ciąg znaków rozdzielany wyłącznie spacją, tabulatorem lub LF. Interpunkcja pozostaje częścią słowa.
-- [ ] Ustalić przed pomiarami co najmniej trzy długości tekstu, warianty danych, liczbę powtórzeń, jednostkę czasu i kolejność uruchamiania implementacji.
+- [x] Ustalić przed pomiarami co najmniej trzy długości tekstu, warianty danych, liczbę powtórzeń, jednostkę czasu i kolejność uruchamiania implementacji.
 - [ ] Zapisać pytanie badawcze oraz hipotezę bez zakładania z góry, która implementacja będzie szybsza.
 
 ## 2. Dane i oczekiwane wyniki
@@ -13,12 +13,12 @@ Checklista realizacji [zadania grupowego](assets/TASK.md). Etapy wykonujemy w po
 - [x] Przygotować pliki ASCII lub deterministyczny generator z zapisaną konfiguracją, ziarnem losowania, jeśli jest używane, i instrukcją odtworzenia danych.
 - [x] Przygotować warianty obejmujące krótkie i długie słowa oraz mały i duży udział separatorów dla każdej wybranej długości tekstu.
 - [x] Przygotować wspólny zestaw danych wejściowych; zapisać rozmiar w bajtach i identyfikator lub sumę kontrolną każdego pliku.
-- [ ] Podłączyć wspólny zestaw danych do obu implementacji, zapewniając im dokładnie te same dane wejściowe.
+- [x] Podłączyć wspólny zestaw danych do obu implementacji, zapewniając im dokładnie te same dane wejściowe.
 - [x] Wyznaczyć oczekiwane liczby słów niezależnie od porównania wyników obu programów.
 - [x] Przygotować testy: pusty tekst → `0`, same spacje/tabulatory/LF → `0`, jedno słowo bez separatora na końcu → `1`.
 - [x] Przygotować testy: `Ala  ma` → `2`, `Ala\tma\nkota` → `3`, `kot,pies` → `1`.
-- [ ] Sprawdzić separatory na początku i końcu tekstu, wielokrotne separatory oraz ich mieszanki.
-- [ ] Sprawdzić, że inne znaki ASCII, np. CR (`\r`), nie są traktowane jako separatory: `Ala\rma` → `1`.
+- [x] Sprawdzić separatory na początku i końcu tekstu, wielokrotne separatory oraz ich mieszanki.
+- [x] Sprawdzić, że inne znaki ASCII, np. CR (`\r`), nie są traktowane jako separatory: `Ala\rma` → `1`.
 
 Przygotowano `WordGenerator.py`, słownik 250 angielskich słów w `assets/english_words.json` oraz 15 plików benchmarkowych w `data/`: po pięć dla 1000, 100000 i 1000000 bajtów, z ziarnami odpowiednio 14, 42 i 2026. Manifesty zawierają konfigurację, oczekiwane liczby słów i SHA-256. Zweryfikowano rozmiary, ASCII, oczekiwane liczby słów, sumy kontrolne oraz powtarzalność generowania. Przypadki kontrolne są zdefiniowane w `WordGenerator.FIXTURES`; uruchomienie ich na implementacjach C++ i Python pozostaje do wykonania.
 
@@ -34,16 +34,18 @@ Przygotowano `WordGenerator.py`, słownik 250 angielskich słów w `assets/engli
 
 ## 4. Automatyczny benchmark
 
-- [ ] Przygotować kompilację C++ z optymalizacją i zapisać dokładne flagi; pomiary wykonywać bez debuggera.
-- [ ] Wczytywać dane przed rozpoczęciem pomiaru. Mierzyć wyłącznie algorytm wraz z utworzeniem wyniku, bez odczytu, zapisu, drukowania i kontroli poprawności.
-- [ ] Użyć zegarów monotonicznych i opisać ich jednostkę oraz rozdzielczość.
-- [ ] Przygotować skrypt uruchamiający wielokrotne próby dla obu języków, wszystkich długości i wariantów danych.
-- [ ] Uruchamiać porównywane programy sekwencyjnie i zmieniać kolejność języków między próbami. Jeśli stosowane są rozgrzewki, ustalić ich liczbę wcześniej i oddzielić je od właściwych pomiarów.
-- [ ] Poza pomiarem porównywać wynik każdej próby z oczekiwaną liczbą słów; błędne próby wykluczać ze statystyk, zachowując informację o odrzuceniu i jego przyczynie.
-- [ ] Obsłużyć błędy kompilacji i uruchomienia; nie uruchamiać starego pliku wykonywalnego po nieudanej kompilacji.
-- [ ] Zapisywać surowe czasy do CSV wraz z językiem, identyfikatorem danych, długością tekstu, wariantem, numerem próby, jednostką i statusem poprawności.
-- [ ] Sprawdzić automat na małym zestawie i celowo błędnym wyniku, aby potwierdzić odrzucanie niepoprawnych prób.
-- [ ] Wykonać pełny benchmark i zachować wszystkie pomiary w osobnym katalogu przebiegu, bez nadpisywania wcześniejszych wyników.
+- [x] Przygotować kompilację C++ z optymalizacją i zapisać dokładne flagi; pomiary wykonywać bez debuggera.
+- [x] Wczytywać dane przed rozpoczęciem pomiaru. Mierzyć wyłącznie algorytm wraz z utworzeniem wyniku, bez odczytu, zapisu, drukowania i kontroli poprawności.
+- [x] Użyć zegarów monotonicznych i opisać ich jednostkę oraz rozdzielczość.
+- [x] Przygotować skrypt uruchamiający wielokrotne próby dla obu języków, wszystkich długości i wariantów danych.
+- [x] Uruchamiać porównywane programy sekwencyjnie i zmieniać kolejność języków między próbami. Jeśli stosowane są rozgrzewki, ustalić ich liczbę wcześniej i oddzielić je od właściwych pomiarów.
+- [x] Poza pomiarem porównywać wynik każdej próby z oczekiwaną liczbą słów; błędne próby wykluczać ze statystyk, zachowując informację o odrzuceniu i jego przyczynie.
+- [x] Obsłużyć błędy kompilacji i uruchomienia; nie uruchamiać starego pliku wykonywalnego po nieudanej kompilacji.
+- [x] Zapisywać surowe czasy do CSV wraz z językiem, identyfikatorem danych, długością tekstu, wariantem, numerem próby, jednostką i statusem poprawności.
+- [x] Sprawdzić automat na małym zestawie i celowo błędnym wyniku, aby potwierdzić odrzucanie niepoprawnych prób.
+- [x] Wykonać pełny benchmark i zachować wszystkie pomiary w osobnym katalogu przebiegu, bez nadpisywania wcześniejszych wyników.
+
+Automat: `Benchmark.py`; metoda i instrukcja: [BENCHMARK.md](BENCHMARK.md). Przeszło 11 testów automatu, w tym celowo błędny wynik. Mały przebieg: 20/20 poprawnych prób w `results/20261026T184237Z_ec1201df18/`. Pełny przebieg: 900/900 poprawnych prób, bez odrzuceń, w `results/20261026T184323Z_8894299b2b/` (30 prób na każdą parę język–plik, bez rozgrzewek). Zweryfikowano kompletność CSV, naprzemienną kolejność i zgodność sum kontrolnych źródeł. Do późniejszych statystyk dopuszczamy wyłącznie wiersze `status == valid`.
 
 ## 5. Analiza i raport Markdown
 
