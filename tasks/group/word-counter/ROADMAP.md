@@ -24,13 +24,13 @@ Przygotowano `WordGenerator.py`, słownik 250 angielskich słów w `assets/engli
 
 ## 3. Implementacje i kontrola poprawności
 
-- [ ] Napisać w C++ pętlę przeglądającą tekst znak po znaku, z licznikiem ustawionym na `0` i stanem `inWord` ustawionym na fałsz.
-- [ ] Napisać w Pythonie ten sam algorytm i te same przejścia stanu.
-- [ ] Zwiększać licznik wyłącznie przy wejściu w nowe słowo; nie doliczać osobno słowa po końcu tekstu.
-- [ ] Nie używać `split`, gotowego licznika słów ani ogólnego rozpoznawania białych znaków rozszerzającego listę separatorów.
-- [ ] Oddzielić funkcję liczącą od wczytywania plików, pomiaru, walidacji i wypisywania wyników; przy odczycie zachować rozróżnienie LF i CR.
-- [ ] Uruchomić wszystkie testy w obu językach i porównać wyniki z oczekiwaniami.
-- [ ] Sprawdzić poprawność także na wszystkich plikach przeznaczonych do benchmarku.
+- [x] Napisać w C++ pętlę przeglądającą tekst znak po znaku, z licznikiem ustawionym na `0` i stanem `inWord` ustawionym na fałsz.
+- [x] Napisać w Pythonie ten sam algorytm i te same przejścia stanu.
+- [x] Zwiększać licznik wyłącznie przy wejściu w nowe słowo; nie doliczać osobno słowa po końcu tekstu.
+- [x] Nie używać `split`, gotowego licznika słów ani ogólnego rozpoznawania białych znaków rozszerzającego listę separatorów.
+- [x] Oddzielić funkcję liczącą od wczytywania plików, pomiaru, walidacji i wypisywania wyników; przy odczycie zachować rozróżnienie LF i CR.
+- [x] Uruchomić wszystkie testy w obu językach i porównać wyniki z oczekiwaniami.
+- [x] Sprawdzić poprawność także na wszystkich plikach przeznaczonych do benchmarku.
 
 ## 4. Automatyczny benchmark
 
