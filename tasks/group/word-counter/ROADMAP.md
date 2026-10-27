@@ -63,10 +63,12 @@ Analiza: [RAPORT.md](RAPORT.md), skrypt `Analyze.py`, statystyki i kontrola komp
 
 ## 6. Eksport PDF i odbiór końcowy
 
-- [ ] Przygotować krótką instrukcję kompilacji, uruchomienia testów, wygenerowania danych i wykonania benchmarku.
-- [ ] Wyeksportować profesjonalnie złożony PDF przez Pandoc i zapisać dokładne polecenie eksportu oraz wymagane narzędzia.
-- [ ] Otworzyć PDF i sprawdzić każdą stronę: polskie znaki, tabele, wykresy, podpisy, kod, odnośniki, podział stron oraz brak uciętej treści i artefaktów wydruku z przeglądarki.
-- [ ] Porównać PDF z Markdownem i potwierdzić zgodność treści, liczb i wykresów.
-- [ ] Ręcznie przeliczyć wybrane wyniki z CSV i porównać je z tabelami oraz wykresami.
-- [ ] Sprawdzić komplet oddawanych materiałów: oba programy, automat benchmarku, instrukcja, dane lub generator, testy z oczekiwaniami, surowy CSV, raport MD, obrazy i PDF.
+- [x] Przygotować krótką instrukcję kompilacji, uruchomienia testów, wygenerowania danych i wykonania benchmarku.
+- [x] Wyeksportować profesjonalnie złożony PDF przez Pandoc i zapisać dokładne polecenie eksportu oraz wymagane narzędzia.
+- [x] Otworzyć PDF i sprawdzić każdą stronę: polskie znaki, tabele, wykresy, podpisy, kod, odnośniki, podział stron oraz brak uciętej treści i artefaktów wydruku z przeglądarki.
+- [x] Porównać PDF z Markdownem i potwierdzić zgodność treści, liczb i wykresów.
+- [x] Ręcznie przeliczyć wybrane wyniki z CSV i porównać je z tabelami oraz wykresami.
+- [x] Sprawdzić komplet oddawanych materiałów: oba programy, automat benchmarku, instrukcja, dane lub generator, testy z oczekiwaniami, surowy CSV, raport MD, obrazy i PDF.
 - [ ] Przejść instrukcję na czystym zestawie plików i potwierdzić, że wyniki można odtworzyć, a każdy członek zespołu potrafi wyjaśnić swoją część.
+
+Instrukcja: [CONTRIBUTING.md](CONTRIBUTING.md). PDF: [output/pdf/RAPORT.pdf](output/pdf/RAPORT.pdf). Kontrola wszystkich 7 stron, porównanie liczb i obrazów, niezależne przeliczenia oraz lista materiałów: [ODBIOR.md](ODBIOR.md). Generator nadal wymaga naprawy; końcowe potwierdzenie odtwarzalności i wiedzy członków zespołu pozostaje otwarte.

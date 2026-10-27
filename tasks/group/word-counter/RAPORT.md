@@ -235,7 +235,7 @@ Weryfikacja wyników AI obejmowała:
 - 18 testów automatycznych: 7 testów analizy i 11 istniejących testów automatu. Analiza sprawdza mediany parzyste i nieparzyste, połówkową medianę, zero, obserwację skrajną, pustą grupę, brak, duplikat, odrzucenie oraz błędne pola i liczniki.
 - Niezależne przeliczenie wszystkich 30 grup z surowego CSV przy użyciu sortowania i arytmetyki, bez wywoływania funkcji statystycznej analizatora; porównanie wyników z CSV analizy i tabelami raportu.
 - Kontrolę zawartości źródłowych plików danych przez SHA-256, kontrolę zgodności źródeł i potwierdzenie niezmienności wszystkich trzech surowych CSV po analizie. Próba uruchomienia generatora w katalogu tymczasowym ujawniła opisany błąd zapisu manifestu.
-- Oględziny obu obrazów, sprawdzenie jednostek i podpisów oraz kontrolę względnych odnośników w raporcie. Nie wykonano eksportu ani kontroli PDF.
+- Oględziny obu obrazów, sprawdzenie jednostek i podpisów oraz kontrolę względnych odnośników w raporcie. Eksport PDF przez Pandoc i odbiór materiałów opisano w [ODBIOR.md](ODBIOR.md).
 
 Raport i nowe artefakty nie zawierają nazwisk, nazw użytkowników, nazw hostów ani prywatnych ścieżek bezwzględnych. Narzędzia i dane są wskazane względnymi ścieżkami projektu; metadane sprzętu ograniczono do parametrów technicznych. Surowych metadanych nie przepisywano ani nie anonimizowano kosztem ich integralności. Informacja o roli autorów nadal wymaga potwierdzenia, dlatego odpowiedni punkt checklisty pozostaje otwarty.
 
@@ -243,4 +243,4 @@ Raport i nowe artefakty nie zawierają nazwisk, nazw użytkowników, nazw hostó
 
 Historyczne pomiary wskazują na niższe mediany C++ dla wszystkich porównywanych plików i na przybliżony liniowy wzrost czasu wraz z długością w czterech wspólnych wariantach. Budowa tekstu wiąże się z różnicami czasów, szczególnie w Pythonie, jednak kierunek różnicy nie jest identyczny w obu implementacjach. Skrajne, poprawne obserwacje pokazują, dlaczego sama pojedyncza próba nie wystarcza do porównania.
 
-Hipoteza skalowania jest zgodna z obserwacjami w badanym zakresie. Wnioski odnoszą się do wskazanego przebiegu i jego środowiska; nie potwierdzają wydajności obecnej wersji C++ i automatu z powodu niezgodności SHA-256. Do pełnego zamknięcia dokumentacji pozostaje rzeczywisty podział pracy i historia wcześniejszego użycia AI, a odtwarzanie danych wymaga naprawy generatora. Eksport PDF należy do następnego etapu.
+Hipoteza skalowania jest zgodna z obserwacjami w badanym zakresie. Wnioski odnoszą się do wskazanego przebiegu i jego środowiska; nie potwierdzają wydajności obecnej wersji C++ i automatu z powodu niezgodności SHA-256. Do pełnego zamknięcia dokumentacji pozostaje rzeczywisty podział pracy i historia wcześniejszego użycia AI, a odtwarzanie danych wymaga naprawy generatora. Polecenie eksportu PDF znajduje się w [CONTRIBUTING.md](CONTRIBUTING.md), a wyniki odbioru w [ODBIOR.md](ODBIOR.md).
