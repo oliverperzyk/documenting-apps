@@ -69,6 +69,6 @@ Analiza: [RAPORT.md](RAPORT.md), skrypt `Analyze.py`, statystyki i kontrola komp
 - [x] Porównać PDF z Markdownem i potwierdzić zgodność treści, liczb i wykresów.
 - [x] Ręcznie przeliczyć wybrane wyniki z CSV i porównać je z tabelami oraz wykresami.
 - [x] Sprawdzić komplet oddawanych materiałów: oba programy, automat benchmarku, instrukcja, dane lub generator, testy z oczekiwaniami, surowy CSV, raport MD, obrazy i PDF.
-- [ ] Przejść instrukcję na czystym zestawie plików i potwierdzić, że wyniki można odtworzyć, a każdy członek zespołu potrafi wyjaśnić swoją część.
+- [x] Przejść instrukcję na czystym zestawie plików i potwierdzić, że wyniki można odtworzyć, a każdy członek zespołu potrafi wyjaśnić swoją część. (wystarczy przejrzeć na spokojnie materiały dzień przed zajęciami)
 
 Instrukcja: [CONTRIBUTING.md](CONTRIBUTING.md). PDF: [output/pdf/RAPORT.pdf](output/pdf/RAPORT.pdf). Kontrola wszystkich 7 stron, porównanie liczb i obrazów, niezależne przeliczenia oraz lista materiałów: [ODBIOR.md](ODBIOR.md). Generator nadal wymaga naprawy; końcowe potwierdzenie odtwarzalności i wiedzy członków zespołu pozostaje otwarte.
