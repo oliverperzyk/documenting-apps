@@ -1,0 +1,85 @@
+{
+    "measurements_sha256": "921892a814f61e0c422c05d9fa780c57ae43188304adc19bcdd514b3347c619f",
+    "sources": [
+        {
+            "file": "source/cpp/main.cpp",
+            "recorded_sha256": "0873977281386e4cf605955ec9cf6059f688e191acd664bdd063d185932728ac",
+            "current_sha256": "c62fb2f4f8936103ac90b49a7f971021b2b2081972c8c95e74b84f42885467a1",
+            "matches": false
+        },
+        {
+            "file": "source/python/main.py",
+            "recorded_sha256": "177007f7e64a0174e804f8f30fdaf6f3f51748120bde7d38a15b7c182bfc82fe",
+            "current_sha256": "177007f7e64a0174e804f8f30fdaf6f3f51748120bde7d38a15b7c182bfc82fe",
+            "matches": true
+        },
+        {
+            "file": "Benchmark.py",
+            "recorded_sha256": "18d94d1457117f003c8fa22f22b3018b8e64aac4478e488f4d749ed857aa953a",
+            "current_sha256": "b05ef0e07f0214303fdad05c3e14d61056be84d182d8b3dee015af3ac5e85066",
+            "matches": false
+        }
+    ],
+    "datasets": [
+        {
+            "data_id": "1000B_seed14/long_dense_mixed_1000.txt",
+            "matches": true
+        },
+        {
+            "data_id": "1000B_seed14/long_sparse_mixed_1000.txt",
+            "matches": true
+        },
+        {
+            "data_id": "1000B_seed14/short_dense_mixed_1000.txt",
+            "matches": true
+        },
+        {
+            "data_id": "1000B_seed14/short_spaces_1000.txt",
+            "matches": true
+        },
+        {
+            "data_id": "1000B_seed14/short_sparse_mixed_1000.txt",
+            "matches": true
+        },
+        {
+            "data_id": "100000B_seed42/long_dense_mixed_100000.txt",
+            "matches": true
+        },
+        {
+            "data_id": "100000B_seed42/long_sparse_mixed_100000.txt",
+            "matches": true
+        },
+        {
+            "data_id": "100000B_seed42/short_dense_mixed_100000.txt",
+            "matches": true
+        },
+        {
+            "data_id": "100000B_seed42/short_sparse_mixed_100000.txt",
+            "matches": true
+        },
+        {
+            "data_id": "100000B_seed42/short_tabs_100000.txt",
+            "matches": true
+        },
+        {
+            "data_id": "1000000B_seed2026/long_dense_mixed_1000000.txt",
+            "matches": true
+        },
+        {
+            "data_id": "1000000B_seed2026/long_sparse_mixed_1000000.txt",
+            "matches": true
+        },
+        {
+            "data_id": "1000000B_seed2026/short_dense_mixed_1000000.txt",
+            "matches": true
+        },
+        {
+            "data_id": "1000000B_seed2026/short_lf_1000000.txt",
+            "matches": true
+        },
+        {
+            "data_id": "1000000B_seed2026/short_sparse_mixed_1000000.txt",
+            "matches": true
+        }
+    ]
+}
