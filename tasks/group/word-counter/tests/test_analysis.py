@@ -11,7 +11,8 @@ import Analyze
 class AnalysisTests(unittest.TestCase):
     def test_statistics(self):
         self.assertEqual(
-            Analyze.statistics([10, 0, 4, 2]), dict(count=4, median_ns=3, min_ns=0, max_ns=10, range_ns=10)
+            Analyze.statistics([10, 0, 4, 2]),
+            dict(count=4, median_ns=3, min_ns=0, max_ns=10, range_ns=10),
         )
         self.assertEqual(Analyze.statistics([0, 1, 1000000])["median_ns"], 1)
         self.assertEqual(Analyze.statistics([0, 1])["median_ns"], 0.5)

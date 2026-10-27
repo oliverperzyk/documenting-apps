@@ -56,7 +56,9 @@ class BenchmarkTests(unittest.TestCase):
             binary = root / "word-counter"
             binary.write_text("old executable")
             with patch.object(
-                benchmark.subprocess, "run", return_value=subprocess.CompletedProcess([], 1, b"", b"compile failed")
+                benchmark.subprocess,
+                "run",
+                return_value=subprocess.CompletedProcess([], 1, b"", b"compile failed"),
             ):
                 with self.assertRaises(RuntimeError):
                     benchmark.compile_cpp("c++", binary, root, root / "compilation.log")
@@ -94,9 +96,15 @@ class BenchmarkTests(unittest.TestCase):
             root = Path(directory)
             # Deliberately wrong expected value: both real programs must return 1.
             args = argparse.Namespace(
-                data_dir=self.make_data(root, expected=2), output_dir=root / "results", repetitions=2, compiler="c++"
+                data_dir=self.make_data(root, expected=2),
+                output_dir=root / "results",
+                repetitions=2,
+                compiler="c++",
             )
-            with contextlib.redirect_stdout(io.StringIO()), contextlib.redirect_stderr(io.StringIO()):
+            with (
+                contextlib.redirect_stdout(io.StringIO()),
+                contextlib.redirect_stderr(io.StringIO()),
+            ):
                 code = benchmark.run(args)
             self.assertEqual(code, 1)
             (run_dir,) = args.output_dir.iterdir()
@@ -113,7 +121,10 @@ class BenchmarkTests(unittest.TestCase):
         with tempfile.TemporaryDirectory() as directory:
             root = Path(directory)
             args = argparse.Namespace(
-                data_dir=self.make_data(root), output_dir=root / "results", repetitions=1, compiler="c++"
+                data_dir=self.make_data(root),
+                output_dir=root / "results",
+                repetitions=1,
+                compiler="c++",
             )
             with (
                 patch.object(benchmark, "compile_cpp", side_effect=RuntimeError("build failed")),
@@ -130,7 +141,10 @@ class BenchmarkTests(unittest.TestCase):
         with tempfile.TemporaryDirectory() as directory:
             root = Path(directory)
             args = argparse.Namespace(
-                data_dir=self.make_data(root), output_dir=root / "results", repetitions=1, compiler="c++"
+                data_dir=self.make_data(root),
+                output_dir=root / "results",
+                repetitions=1,
+                compiler="c++",
             )
             with (
                 patch.object(benchmark, "measure", side_effect=KeyboardInterrupt),

@@ -108,7 +108,10 @@ def measure(command, expected, timeout=TIMEOUT):
         elif not match or diagnostic["stderr"]:
             row.update(status="invalid_output", reason="Niepoprawny format stdout lub niepusty stderr")
         elif row["actual_words"] != expected:
-            row.update(status="wrong_result", reason=f"Oczekiwano {expected}, otrzymano {row['actual_words']}")
+            row.update(
+                status="wrong_result",
+                reason=f"Oczekiwano {expected}, otrzymano {row['actual_words']}",
+            )
         else:
             row.update(status="valid")
     except subprocess.TimeoutExpired as error:
@@ -229,7 +232,10 @@ def run(args, root=ROOT):
             "ns is output unit; C++ period is nominal, Python resolution is declared; neither guarantees accuracy"
         )
         write_json(run_dir / "metadata.json", metadata)
-        commands = {"cpp": [str(binary)], "python": [sys.executable, "-B", str(root / "source/python/main.py")]}
+        commands = {
+            "cpp": [str(binary)],
+            "python": [sys.executable, "-B", str(root / "source/python/main.py")],
+        }
         with (run_dir / "measurements.csv").open("w", newline="", encoding="utf-8") as stream:
             writer = csv.DictWriter(stream, fieldnames=FIELDS)
             writer.writeheader()
@@ -240,7 +246,14 @@ def run(args, root=ROOT):
                     for position, language in enumerate(order, 1):
                         result, diagnostic = measure([*commands[language], str(data["path"])], data["expected_words"])
                         row = {
-                            key: data[key] for key in ("data_id", "sha256", "size_bytes", "variant", "expected_words")
+                            key: data[key]
+                            for key in (
+                                "data_id",
+                                "sha256",
+                                "size_bytes",
+                                "variant",
+                                "expected_words",
+                            )
                         }
                         row.update(language=language, trial=trial, position=position, unit="ns", **result)
                         writer.writerow(row)
@@ -259,7 +272,14 @@ def run(args, root=ROOT):
             error = "Nie wszystkie zaplanowane proby sa poprawne."
     except KeyboardInterrupt:
         status, error, exit_code = "interrupted", "Przerwano przebieg.", 130
-    except (OSError, ValueError, KeyError, TypeError, RuntimeError, subprocess.SubprocessError) as exception:
+    except (
+        OSError,
+        ValueError,
+        KeyError,
+        TypeError,
+        RuntimeError,
+        subprocess.SubprocessError,
+    ) as exception:
         error = str(exception)
     finally:
         metadata.update(status=status, error=error, finished_at_utc=timestamp())

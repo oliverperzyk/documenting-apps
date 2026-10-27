@@ -11,7 +11,17 @@ from statistics import median
 
 ROOT = Path(__file__).resolve().parent
 DEFAULT_RUN = ROOT / "results/20261026T184512Z_7d95f26993"
-STAT_FIELDS = ["language", "data_id", "size_bytes", "variant", "count", "median_ns", "min_ns", "max_ns", "range_ns"]
+STAT_FIELDS = [
+    "language",
+    "data_id",
+    "size_bytes",
+    "variant",
+    "count",
+    "median_ns",
+    "min_ns",
+    "max_ns",
+    "range_ns",
+]
 STATUSES = {"valid", "wrong_result", "invalid_output", "runtime_error", "timeout"}
 
 
@@ -191,7 +201,14 @@ def provenance(run_dir):
     for name, expected in meta["source_sha256"].items():
         path = ROOT / name
         actual = hashlib.sha256(path.read_bytes()).hexdigest() if path.is_file() else None
-        sources.append(dict(file=name, recorded_sha256=expected, current_sha256=actual, matches=actual == expected))
+        sources.append(
+            dict(
+                file=name,
+                recorded_sha256=expected,
+                current_sha256=actual,
+                matches=actual == expected,
+            )
+        )
     data = []
     for item in meta["datasets"]:
         path = ROOT / "data" / item["data_id"]
@@ -247,7 +264,10 @@ def plots(stats, run_dir, output):
         ax.ticklabel_format(axis="x", style="plain")
     fig.suptitle("Mediany czasu a długość tekstu — cztery wspólne warianty (osie liniowe)")
     fig.text(
-        0.02, 0.02, f"Źródło: {source}\nPoprawne próby; ns / 1000 = µs. Osobne skale czasu dla języków.", fontsize=8
+        0.02,
+        0.02,
+        f"Źródło: {source}\nPoprawne próby; ns / 1000 = µs. Osobne skale czasu dla języków.",
+        fontsize=8,
     )
     fig.tight_layout(rect=(0, 0.10, 1, 0.94))
     fig.savefig(image_dir / "mediany_dlugosc.png", dpi=180)
@@ -309,7 +329,8 @@ def main():
         write_csv(args.output_dir / "completeness.csv", completeness, list(completeness[0]))
         write_csv(args.output_dir / "issues.csv", issues, ["row", "language", "data_id", "issue"])
         (args.output_dir / "provenance.json").write_text(
-            json.dumps(provenance(args.run_dir), ensure_ascii=False, indent=2) + "\n", encoding="utf-8"
+            json.dumps(provenance(args.run_dir), ensure_ascii=False, indent=2) + "\n",
+            encoding="utf-8",
         )
         plots(stats, args.run_dir, args.output_dir)
     except (OSError, ValueError, KeyError, ImportError) as error:
