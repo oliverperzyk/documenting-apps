@@ -1,0 +1,1 @@
+- sprawdzić, czy działa na Windowsie
