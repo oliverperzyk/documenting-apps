@@ -63,10 +63,14 @@ Testy `unittest` sprawdzają ścisły parser, zachowanie czasu zerowego, celowo 
 
 Test integracyjny tworzy wejście `Ala\rma`, ale celowo zapisuje oczekiwanie `2` zamiast `1`. Uruchamia oba rzeczywiste programy: wszystkie cztery próby trafiają do CSV jako `wrong_result`, podsumowanie ma zero poprawnych prób, a automat zwraca kod `1`. Tymczasowe dane testowe nie zmieniają manifestów projektu.
 
-Analiza median, rozrzutu i wykresów należy do kolejnego etapu. Przy jej wykonywaniu należy filtrować `status == valid` i sprawdzić kompletność każdej pary względem `summary.json`.
+Analiza jest dostępna w [RAPORT.md](RAPORT.md). Skrypt `Analyze.py` sprawdza plan i kompletność względem metadanych oraz `summary.json`, a do statystyk dopuszcza poprawne, jednoznaczne próby bez usuwania zer ani obserwacji skrajnych. Instrukcja instalacji zależności i uruchomienia znajduje się w raporcie.
 
 ## Zweryfikowane przebiegi
 
 Mały przebieg (5 plików, 2 języki, 2 próby) zakończył się wynikiem 20/20 w `results/20261026T184237Z_ec1201df18/`.
 
-Pełny przebieg: [surowe pomiary](results/20261026T184323Z_8894299b2b/measurements.csv), [metadane](results/20261026T184323Z_8894299b2b/metadata.json) i [podsumowanie](results/20261026T184323Z_8894299b2b/summary.json). Uzyskano 900/900 poprawnych prób bez odrzuceń. Zweryfikowano po 30 unikalnych prób dla każdej pary język–plik, kolejność uruchomień i zgodność SHA-256 aktualnych źródeł z metadanymi. Przeszło również wszystkich 11 testów automatu.
+Pełny przebieg: [surowe pomiary](results/20261026T184323Z_8894299b2b/measurements.csv), [metadane](results/20261026T184323Z_8894299b2b/metadata.json) i [podsumowanie](results/20261026T184323Z_8894299b2b/summary.json). Uzyskano 900/900 poprawnych prób bez odrzuceń. Pierwotna dokumentacja odnotowała weryfikację prób, kolejności i zgodności źródeł. Obecna kontrola wykazuje jednak, że C++ i `Benchmark.py` mają inne SHA-256 niż w historycznych metadanych; nie należy utożsamiać historycznych pomiarów z aktualnym kodem. Testy obecnego automatu przechodzą, ale nie potwierdzają zgodności historycznej wersji.
+
+Raport korzysta z nowszego pełnego przebiegu: [CSV](results/20261026T184512Z_7d95f26993/measurements.csv), [metadane](results/20261026T184512Z_7d95f26993/metadata.json), [podsumowanie](results/20261026T184512Z_7d95f26993/summary.json). Ma on 900/900 poprawnych prób, dokładny model CPU Apple M4 Pro i brak odrzuceń. Nie łączono go z wcześniejszymi seriami. Obecny Python jest zgodny z historycznym SHA-256; niezgodność C++ i automatu opisuje [kontrola pochodzenia](analysis/provenance.json). Łącznie przechodzi 18 testów automatu i analizy.
+
+Opis zgodności źródeł i sumy `current_sha256` są migawką kontroli sprzed późniejszego commitu formatującego. Formatowanie nie aktualizuje historycznych wyników ani zachowanego pliku kontroli pochodzenia.

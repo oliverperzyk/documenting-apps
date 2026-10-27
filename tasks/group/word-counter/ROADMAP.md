@@ -6,7 +6,7 @@ Checklista realizacji [zadania grupowego](assets/TASK.md). Etapy wykonujemy w po
 
 - [x] Zapisać definicję słowa: niepusty ciąg znaków rozdzielany wyłącznie spacją, tabulatorem lub LF. Interpunkcja pozostaje częścią słowa.
 - [x] Ustalić przed pomiarami co najmniej trzy długości tekstu, warianty danych, liczbę powtórzeń, jednostkę czasu i kolejność uruchamiania implementacji.
-- [ ] Zapisać pytanie badawcze oraz hipotezę bez zakładania z góry, która implementacja będzie szybsza.
+- [x] Zapisać pytanie badawcze oraz hipotezę bez zakładania z góry, która implementacja będzie szybsza. Zapis w `RAPORT.md` powstał po pomiarach, co jawnie zaznaczono.
 
 ## 2. Dane i oczekiwane wyniki
 
@@ -20,7 +20,7 @@ Checklista realizacji [zadania grupowego](assets/TASK.md). Etapy wykonujemy w po
 - [x] Sprawdzić separatory na początku i końcu tekstu, wielokrotne separatory oraz ich mieszanki.
 - [x] Sprawdzić, że inne znaki ASCII, np. CR (`\r`), nie są traktowane jako separatory: `Ala\rma` → `1`.
 
-Przygotowano `WordGenerator.py`, słownik 250 angielskich słów w `assets/english_words.json` oraz 15 plików benchmarkowych w `data/`: po pięć dla 1000, 100000 i 1000000 bajtów, z ziarnami odpowiednio 14, 42 i 2026. Manifesty zawierają konfigurację, oczekiwane liczby słów i SHA-256. Zweryfikowano rozmiary, ASCII, oczekiwane liczby słów, sumy kontrolne oraz powtarzalność generowania. Przypadki kontrolne są zdefiniowane w `WordGenerator.FIXTURES`; uruchomienie ich na implementacjach C++ i Python pozostaje do wykonania.
+Przygotowano `WordGenerator.py`, słownik 250 angielskich słów w `assets/english_words.json` oraz 15 plików benchmarkowych w `data/`: po pięć dla 1000, 100000 i 1000000 bajtów, z ziarnami odpowiednio 14, 42 i 2026. Manifesty zawierają konfigurację, oczekiwane liczby słów i SHA-256. Zweryfikowano rozmiary, ASCII, oczekiwane liczby słów, sumy kontrolne oraz powtarzalność generowania. Przypadki kontrolne są zdefiniowane w `WordGenerator.FIXTURES`; uruchomienie ich na implementacjach C++ i Python pozostaje do wykonania. Uwaga z etapu analizy: obecne wywołanie generatora nie kończy zapisu manifestu (`KeyError: source`, brak pola w słowniku); historyczne stwierdzenie powtarzalności nie potwierdza sprawności aktualnej wersji. Istniejące 15 plików jest zgodne z SHA-256 pomiaru; naprawa generatora pozostaje osobnym zadaniem.
 
 ## 3. Implementacje i kontrola poprawności
 
@@ -45,19 +45,21 @@ Przygotowano `WordGenerator.py`, słownik 250 angielskich słów w `assets/engli
 - [x] Sprawdzić automat na małym zestawie i celowo błędnym wyniku, aby potwierdzić odrzucanie niepoprawnych prób.
 - [x] Wykonać pełny benchmark i zachować wszystkie pomiary w osobnym katalogu przebiegu, bez nadpisywania wcześniejszych wyników.
 
-Automat: `Benchmark.py`; metoda i instrukcja: [BENCHMARK.md](BENCHMARK.md). Przeszło 11 testów automatu, w tym celowo błędny wynik. Mały przebieg: 20/20 poprawnych prób w `results/20261026T184237Z_ec1201df18/`. Pełny przebieg: 900/900 poprawnych prób, bez odrzuceń, w `results/20261026T184323Z_8894299b2b/` (30 prób na każdą parę język–plik, bez rozgrzewek). Zweryfikowano kompletność CSV, naprzemienną kolejność i zgodność sum kontrolnych źródeł. Do późniejszych statystyk dopuszczamy wyłącznie wiersze `status == valid`.
+Automat: `Benchmark.py`; metoda i instrukcja: [BENCHMARK.md](BENCHMARK.md). Przeszło 11 testów automatu, w tym celowo błędny wynik. Mały przebieg: 20/20 poprawnych prób w `results/20261026T184237Z_ec1201df18/`. Pełny przebieg: 900/900 poprawnych prób, bez odrzuceń, w `results/20261026T184323Z_8894299b2b/` (30 prób na każdą parę język–plik, bez rozgrzewek). Na etapie benchmarku odnotowano weryfikację kompletności CSV, kolejności i sum źródeł; aktualna kontrola wykazuje jednak niezgodność SHA-256 C++ i automatu z historycznymi metadanymi (szczegóły w raporcie). Do późniejszych statystyk dopuszczamy wyłącznie wiersze `status == valid`.
 
 ## 5. Analiza i raport Markdown
 
-- [ ] Sprawdzić kompletność CSV: dla każdej kombinacji języka, długości i wariantu musi być zaplanowana liczba poprawnych prób; braki opisać i wyjaśnić.
-- [ ] Obliczyć medianę, minimum, maksimum i rozstęp osobno dla każdej kombinacji. Dla parzystej liczby prób medianę liczyć jako średnią dwóch środkowych wartości po sortowaniu.
-- [ ] Zachować czasy równe `0` i obserwacje skrajne; wyjaśnić ograniczenia rozdzielczości zegara zamiast usuwać niewygodne pomiary.
-- [ ] Przygotować wykresy porównujące mediany i rozrzut czasów dla długości i wariantów danych; dodać tytuły, jednostki, legendy i odwołania do źródłowego CSV.
-- [ ] Umieścić obrazy w podkatalogu i podłączyć je w raporcie ścieżkami względnymi.
-- [ ] Napisać `raport.md`: cel i hipoteza, definicja słowa, algorytm, dane, oczekiwane wyniki testów, metoda pomiaru oraz liczba powtórzeń.
-- [ ] Opisać faktyczny sprzęt, system, wersje kompilatora i Pythona, flagi kompilacji, zegary oraz polecenia uruchomienia.
-- [ ] Dodać wyniki, wykresy, omówienie odrzuconych prób, ograniczenia i wnioski odnoszące się do zebranych danych. Oddzielić obserwacje od przypuszczeń o ich przyczynach.
+- [x] Sprawdzić kompletność CSV: dla każdej kombinacji języka, długości i wariantu musi być zaplanowana liczba poprawnych prób; braki opisać i wyjaśnić.
+- [x] Obliczyć medianę, minimum, maksimum i rozstęp osobno dla każdej kombinacji. Dla parzystej liczby prób medianę liczyć jako średnią dwóch środkowych wartości po sortowaniu.
+- [x] Zachować czasy równe `0` i obserwacje skrajne; wyjaśnić ograniczenia rozdzielczości zegara zamiast usuwać niewygodne pomiary.
+- [x] Przygotować wykresy porównujące mediany i rozrzut czasów dla długości i wariantów danych; dodać tytuły, jednostki, legendy i odwołania do źródłowego CSV.
+- [x] Umieścić obrazy w podkatalogu i podłączyć je w raporcie ścieżkami względnymi.
+- [x] Napisać `RAPORT.md`: cel i hipoteza, definicja słowa, algorytm, dane, oczekiwane wyniki testów, metoda pomiaru oraz liczba powtórzeń.
+- [x] Opisać faktyczny sprzęt, system, wersje kompilatora i Pythona, flagi kompilacji, zegary oraz polecenia uruchomienia.
+- [x] Dodać wyniki, wykresy, omówienie odrzuconych prób, ograniczenia i wnioski odnoszące się do zebranych danych. Oddzielić obserwacje od przypuszczeń o ich przyczynach.
 - [ ] Udokumentować podział pracy oraz wykorzystanie AI i sposób weryfikacji jej wyników. Sprawdzić, czy materiały nie ujawniają danych osobowych ani prywatnych ścieżek.
+
+Analiza: [RAPORT.md](RAPORT.md), skrypt `Analyze.py`, statystyki i kontrola kompletności w `analysis/`, obrazy w `analysis/images/`. Źródło: nowszy pełny przebieg `20261026T184512Z_7d95f26993` (900/900 poprawnych prób, bez braków i odrzuceń). Przeszło 18 testów automatu i analizy. Aktualne SHA-256 C++ i `Benchmark.py` różnią się od metadanych historycznego pomiaru; raport opisuje to ograniczenie. Ujawniono zakres pomocy AI w tej sesji i sprawdzono prywatność nowych materiałów. Ostatni punkt pozostaje otwarty: nie ma potwierdzonego podziału pracy ani historii wcześniejszego użycia AI.
 
 ## 6. Eksport PDF i odbiór końcowy
 
