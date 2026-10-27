@@ -1,50 +1,48 @@
-# Licznik słów ASCII — analiza czasu wykonania C++ i Pythona
+# Licznik słów ASCII — porównanie czasu wykonania w C++ i Pythonie
 
-## Cel i hipoteza
+**Projekt grupowy 14 · Zespół: Regulus i Mars "Czerwony Lew"**
 
-Celem jest porównanie czasu wykonania tego samego algorytmu liczenia słów w C++ i Pythonie dla różnych długości i budowy tekstu ASCII. Pytanie badawcze: jak długość tekstu, długość słów i gęstość separatorów wiążą się z medianą oraz rozrzutem czasu w obu implementacjach?
+## 1. Cel badania i hipoteza
 
-Hipoteza: przy stałym wariancie danych czas rośnie w przybliżeniu proporcjonalnie do liczby bajtów, ponieważ algorytm odwiedza każdy znak raz. Budowa tekstu może wpływać na stały koszt przetwarzania. Hipotezę zapisano podczas opracowania raportu, **po zebraniu pomiarów**, więc nie stanowi ona deklaracji zarejestrowanej przed eksperymentem. Nie zakładamy z góry przewagi języka.
+Celem projektu było zaimplementowanie tego samego algorytmu liczenia słów w C++ i Pythonie oraz porównanie czasu jego wykonania dla tekstów ASCII o różnej długości i budowie. Badaliśmy wpływ liczby bajtów, długości słów i udziału separatorów na medianę oraz rozrzut czasu.
 
-Analiza dotyczy wyłącznie przebiegu `20261026T184512Z_7d95f26993` z 26 października 2026, 18:45:12–18:45:28 UTC (19:45:12–19:45:28 czasu polskiego). Źródła: [surowy CSV](results/20261026T184512Z_7d95f26993/measurements.csv), [metadane](results/20261026T184512Z_7d95f26993/metadata.json), [podsumowanie](results/20261026T184512Z_7d95f26993/summary.json). Nie wykonywano nowych pomiarów benchmarkowych na potrzeby tego raportu.
+Postawiliśmy pytanie: **jak długość i budowa tekstu wiążą się z czasem działania obu implementacji?** Przyjęliśmy hipotezę, że dla ustalonego wariantu danych czas będzie rósł w przybliżeniu proporcjonalnie do liczby znaków, ponieważ algorytm przegląda każdy znak jeden raz. Nie przyjmowaliśmy przewagi żadnego języka jako założenia analizy. Hipotezę sformułowaliśmy podczas opracowania wyników, po wykonaniu pomiarów; nie była zarejestrowana przed eksperymentem.
 
-## Definicja słowa i algorytm
+Raport obejmuje jeden pełny przebieg: `20261026T184512Z_7d95f26993`, wykonany 26 października 2026 r., 18:45:12–18:45:28 UTC (19:45:12–19:45:28 czasu polskiego). Podstawą obliczeń jest [surowy CSV](results/20261026T184512Z_7d95f26993/measurements.csv), a opis warunków pochodzi z [metadanych](results/20261026T184512Z_7d95f26993/metadata.json). Nie łączyliśmy pomiarów z różnych przebiegów i nie wykonywaliśmy nowych pomiarów na potrzeby tego raportu.
 
-Słowo jest niepustym ciągiem znaków rozdzielanym wyłącznie spacją ASCII (`0x20`), tabulatorem (`0x09`) lub LF (`0x0A`). Interpunkcja oraz CR (`0x0D`) należą do słowa. Pusty tekst zawiera zero słów.
+## 2. Definicja słowa i algorytm
 
-Obie implementacje zaczynają od licznika `0` i stanu `inWord = false`. Separator zeruje stan. Znak niebędący separatorem zwiększa licznik tylko wtedy, gdy stan był fałszywy, po czym ustawia stan na prawdziwy. Koniec pliku nie wymaga doliczania słowa. Algorytm nie używa `split` ani ogólnej klasy białych znaków. Złożoność czasowa wynosi O(n), a dodatkowa pamięć algorytmu O(1); wczytany wcześniej tekst zajmuje O(n).
+W zadaniu słowo oznacza niepusty ciąg znaków rozdzielany wyłącznie spacją (`0x20`), tabulatorem (`0x09`) lub LF (`0x0A`). Interpunkcja i CR (`0x0D`) należą do słowa. Dlatego `kot,pies` oraz `Ala\rma` zawierają po jednym słowie, a pusty tekst nie zawiera żadnego.
 
-Oczekiwane wyniki przypadków kontrolnych są zapisane ręcznie w `WordGenerator.FIXTURES`, niezależnie od zgodności obu programów:
+Obie implementacje wykorzystują licznik oraz zmienną logiczną `inWord`:
 
-| Wejście (zapis znaków specjalnych) | Oczekiwane słowa |
-| ---------------------------------- | ---------------: |
-| pusty tekst                        |                0 |
-| ` \t\n  \n\t`                      |                0 |
-| `word` bez separatora na końcu     |                1 |
-| `Ala  ma`                          |                2 |
-| `Ala\tma\nkota`                    |                3 |
-| `\t\ncat  dog\n\t`                 |                2 |
-| `kot,pies`                         |                1 |
-| `Ala\rma`                          |                1 |
+1. Przed pętlą ustawiamy licznik na `0`, a `inWord` na fałsz.
+2. Separator ustawia `inWord` na fałsz, bez zwiększania licznika.
+3. Znak niebędący separatorem rozpoczyna nowe słowo tylko wtedy, gdy `inWord` było fałszywe. Wówczas zwiększamy licznik i ustawiamy stan na prawdziwy.
+4. Pozostałe znaki tego samego słowa nie zmieniają licznika. Po pętli zwracamy wynik bez dodatkowego doliczania ostatniego słowa.
 
-W tej sesji uruchomiono testy automatu i analizy. Nie przeprowadzano ponownie pełnego zestawu testów funkcjonalnych obu implementacji. Zgodność 900 wyników w historycznym CSV z oczekiwaniami manifestów jest osobnym sprawdzeniem dla danych benchmarkowych, a nie dowodem wykonania wszystkich powyższych przypadków kontrolnych.
+Nie korzystamy z `split`, gotowego licznika słów ani ogólnego rozpoznawania białych znaków. Algorytm ma złożoność czasową O(n) i dodatkową pamięć O(1). Osobno wczytany tekst zajmuje O(n) pamięci.
 
-## Dane wejściowe
+Kod znajduje się w [wersji C++](source/cpp/main.cpp) i [wersji Python](source/python/main.py). W klasie `Solution` funkcja licząca jest oddzielona od odczytu pliku, pomiaru i wypisywania wyników. Pliki są odczytywane binarnie, a Python dekoduje ASCII przed pomiarem, dzięki czemu CR nie jest zamieniany na LF.
 
-Zestaw zawiera 15 plików ASCII: po pięć dla 1 000, 100 000 i 1 000 000 B. Dla ASCII bajt odpowiada jednemu znakowi. Manifesty zapisują ziarna odpowiednio 14, 42 i 2026, konfigurację generatora, oczekiwane liczby słów i SHA-256. Wszystkie 15 aktualnych plików wejściowych ma SHA-256 zgodne z metadanymi analizowanego przebiegu.
+## 3. Dane i kontrola poprawności
 
-Generator wybiera pełne słowa z lokalnego słownika 250 słów: krótkie mają 1–5 liter, długie 7–8. Oczekiwana liczba słów jest zwiększana podczas dodawania pełnego słowa, niezależnie od badanych liczników. Pozostałe miejsce w pliku jest wypełniane separatorami. Pochodzenie słownika i sposób selekcji zapisano w polu `vocabulary_source` historycznych manifestów, np. [manifestu 1 000 B](data/1000B_seed14/manifest.json). Obecna [kopia słownika](assets/english_words.json) zawiera jedynie listy słów; analiza nie weryfikuje ponownie zewnętrznego źródła.
+### Przygotowanie danych
 
-Cztery warianty występują przy każdej długości:
+Wykorzystaliśmy 15 plików: po pięć dla 1000, 100000 i 1000000 bajtów. Dla ASCII jeden bajt odpowiada jednemu znakowi. Ziarna generatora dla tych rozmiarów wynoszą odpowiednio 14, 42 i 2026. Manifesty zawierają parametry danych, oczekiwane liczby słów i sumy SHA-256. Sprawdziliśmy zgodność wszystkich 15 zachowanych plików z metadanymi badanego przebiegu.
 
-- `short_sparse_mixed`: krótkie słowa, pojedyncze separatory w cyklu spacja/tabulator/LF;
-- `short_dense_mixed`: krótkie słowa, grupy ośmiu separatorów w tym cyklu;
-- `long_sparse_mixed`: długie słowa, pojedyncze separatory;
-- `long_dense_mixed`: długie słowa, grupy ośmiu separatorów.
+Dane powstały na podstawie lokalnego słownika 250 angielskich słów: 125 krótkich (1–5 liter) i 125 długich (7–8 liter). Według [metadanych źródła słownika](data/1000B_seed14/manifest.json) wykorzystano zasób `first20hours/google-10000-english`, wybierając słowa ASCII z listy bez wulgaryzmów w kolejności źródłowej. [Kopia słownika](assets/english_words.json) i generator są dołączone do projektu. Oczekiwana liczba słów jest wyznaczana podczas dodawania pełnych słów, niezależnie od porównywanych liczników. Pozostałe bajty są wypełniane separatorami.
 
-Dodatkowo dla 1 000 B występuje `short_spaces`, dla 100 000 B `short_tabs`, a dla 1 000 000 B `short_lf`: krótkie słowa z pojedynczym separatorem jednego rodzaju. To **niepełna macierz długość–wariant**. Brak pozostałych kombinacji nie jest utraconą próbą: nie były zaplanowane w metadanych. Tych trzech wariantów nie wolno traktować jako jednej serii do oceny wpływu samej długości lub rodzaju separatora.
+Dla każdej długości przygotowano cztery wspólne warianty:
 
-Oczekiwania dla wszystkich plików benchmarkowych:
+- `short_sparse_mixed` — krótkie słowa i pojedyncze separatory w cyklu spacja/tabulator/LF;
+- `short_dense_mixed` — krótkie słowa i grupy ośmiu separatorów;
+- `long_sparse_mixed` — długie słowa i pojedyncze separatory;
+- `long_dense_mixed` — długie słowa i grupy ośmiu separatorów.
+
+Piąty wariant to `short_spaces` dla 1000 B, `short_tabs` dla 100000 B oraz `short_lf` dla 1000000 B. Jest to niepełna macierz długość–wariant. Tych trzech dodatkowych wariantów nie traktujemy jako jednej serii do badania wpływu długości ani jako izolowanego porównania rodzajów separatorów.
+
+Oczekiwane wyniki dla danych benchmarkowych:
 
 | Długość [B] | Wariant              | Oczekiwane słowa |
 | ----------: | -------------------- | ---------------: |
@@ -64,74 +62,60 @@ Oczekiwania dla wszystkich plików benchmarkowych:
 |     1000000 | `short_lf`           |           224800 |
 |     1000000 | `short_sparse_mixed` |           224791 |
 
-## Środowisko i metoda pomiaru
+### Przypadki kontrolne
 
-Poniższe parametry pochodzą z historycznych metadanych, a nie z domysłów o obecnym komputerze:
+Ręcznie ustalone oczekiwania są zapisane w `WordGenerator.FIXTURES`. Przed przygotowaniem wersji końcowej uruchomiliśmy wszystkie osiem przypadków na obu rzeczywistych programach i uzyskaliśmy oczekiwane wyniki.
 
-- CPU: Apple M4 Pro, architektura arm64, 14 logicznych CPU. Ilość RAM, model urządzenia, zasilanie, temperatura i obciążenie w chwili pomiaru nie zostały zapisane.
-- System: `macOS-27.0.1-arm64-arm-64bit-Mach-O`.
-- Python: 3.14.4, kompilacja `main, Apr 7 2026, 13:13:20`, Clang 21.0.0 (`clang-2100.0.123.102`).
-- Kompilator C++: Apple clang 21.0.0 (`clang-2100.3.34.2`), target `arm64-apple-darwin27.0.0`, model wątków `posix`.
-- Flagi: `-std=c++17 -O2 -Wall -Wextra -Wpedantic`. Program uruchamiany bez debuggera; według metody automatu każdorazowo kompilowany do nowego katalogu przebiegu.
+| Wejście (zapis znaków specjalnych) | Oczekiwana liczba słów |
+| ---------------------------------- | ---------------------: |
+| Pusty tekst                        |                      0 |
+| ` \t\n  \n\t`                      |                      0 |
+| `word` bez separatora na końcu     |                      1 |
+| `Ala  ma`                          |                      2 |
+| `Ala\tma\nkota`                    |                      3 |
+| `\t\ncat  dog\n\t`                 |                      2 |
+| `kot,pies`                         |                      1 |
+| `Ala\rma`                          |                      1 |
 
-Każda kombinacja język–plik ma 30 powtórzeń, bez rozgrzewek: 15 × 2 × 30 = 900 prób. Dla prób nieparzystych kolejność to C++ → Python, dla parzystych Python → C++. Procesy są uruchamiane sekwencyjnie; każda próba to nowy proces i jedno wywołanie funkcji liczącej.
+Zapis `\t`, `\n` i `\r` w tabeli oznacza odpowiednio tabulator, LF i CR. Testy obejmują pusty tekst, same separatory, wielokrotne i mieszane separatory, separatory na brzegach, interpunkcję i brak separatora na końcu. Nie ograniczamy kontroli do zgodności obu języków: każdy wynik porównujemy z niezależnym oczekiwaniem.
 
-Pomiar obejmuje algorytm i uzyskanie wyniku liczbowego. Nie obejmuje uruchomienia procesu, odczytu pliku, dekodowania ASCII, drukowania, kontroli poprawności ani tworzenia struktury przechowującej wynik pomiaru. Dane są wczytywane binarnie, z zachowaniem różnicy CR/LF. Oczekiwanie jest sprawdzane po pomiarze. Limit pojedynczego procesu wynosi 30 s.
+Uruchomiliśmy również wszystkie 18 dostępnych testów automatycznych: 11 testów automatu benchmarkowego i 7 testów analizy. Sprawdzają one m.in. błędne wyniki, niepoprawne wyjście, timeout, błąd kompilacji, brakujące i powielone próby, mediany parzyste i nieparzyste oraz zachowanie zer i wartości skrajnych. Wszystkie testy zakończyły się powodzeniem.
 
-C++ używa monotonicznego `std::chrono::steady_clock`, z nominalnym okresem typu zegara 1/1 000 000 000 s. Python używa `time.perf_counter_ns()`; implementacja to `mach_absolute_time()`, zegar monotoniczny, nieregulowany, deklarowana rozdzielczość 4,166666666666666 × 10⁻⁸ s, czyli około 41,67 ns. Okres nominalny C++ nie jest zmierzoną rozdzielczością sprzętu. Jednostka zapisu `ns` nie oznacza dokładności 1 ns.
+## 4. Środowisko i metoda pomiaru
 
-Krótkie pomiary mogą być skwantowane przez zegar i obciążone kosztem jego odczytu. Czas `0` oznaczałby brak rozróżnialnego dodatniego odstępu w takim pomiarze, a nie dowód bezkosztowego wykonania. W tym przebiegu zer nie ma; analizator zachowuje je, jeśli wystąpią. Nie odjęto kosztu zegara i nie usuwano obserwacji skrajnych.
+### Warunki eksperymentu
 
-### Polecenia i odtworzenie analizy
+Parametry zapisane dla analizowanego przebiegu:
 
-Polecenia wykonuje się z katalogu projektu. Analiza z przypiętą wersją Matplotlib wymaga Pythona 3.11+; użyto wersji 3.11.2. Testy korzystają z biblioteki standardowej, a testy integracyjne automatu wymagają kompilatora C++17.
+- **CPU:** Apple M4 Pro, arm64, 14 logicznych CPU.
+- **System:** `macOS-27.0.1-arm64-arm-64bit-Mach-O`.
+- **Python:** 3.14.4, kompilacja `main, Apr 7 2026, 13:13:20`, Clang 21.0.0 (`clang-2100.0.123.102`).
+- **Kompilator C++:** Apple clang 21.0.0 (`clang-2100.3.34.2`), target `arm64-apple-darwin27.0.0`.
+- **Flagi:** `-std=c++17 -O2 -Wall -Wextra -Wpedantic`; uruchomienie bez debuggera.
 
-```sh
-python3 -m venv .venv-analysis
-.venv-analysis/bin/python -m pip install -r requirements-analysis.txt
-.venv-analysis/bin/python -B Analyze.py --run-dir results/20261026T184512Z_7d95f26993 --output-dir analysis
-python3 -B -m unittest discover -s tests -v
-```
+Nie zapisano ilości RAM, temperatury, zasilania ani obciążenia komputera podczas pomiarów. Nie wykorzystujemy tych nieznanych parametrów do wyjaśniania wyników.
 
-W Windows należy użyć interpretera `.venv-analysis\Scripts\python.exe`; przenośność tych poleceń i wykresów na Windows nie była testowana. Analizator zapisuje `statistics.csv`, `completeness.csv`, `issues.csv`, `provenance.json` oraz PNG w podkatalogu `images/`. Kod wyjścia `0` oznacza brak odstępstw kontroli CSV i podsumowania, `1` — wykryte odstępstwa, `2` — błąd wejścia, zależności lub zapisu. Niezgodność historycznych źródeł jest raportowana osobno w `provenance.json`; kod `0` nie potwierdza ich tożsamości.
+### Zakres i kolejność pomiarów
 
-Polecenie kompilacji zapisane dla historycznego przebiegu:
+Dla każdej pary język–plik wykonano 30 prób, bez rozgrzewek: **15 × 2 × 30 = 900 pomiarów**. Każda próba uruchamia osobny proces i wykonuje pojedyncze liczenie. Programy działają sekwencyjnie: w próbach nieparzystych C++ przed Pythonem, w parzystych odwrotnie.
 
-```sh
-c++ -std=c++17 -O2 -Wall -Wextra -Wpedantic source/cpp/main.cpp -o results/20261026T184512Z_7d95f26993/word-counter
-```
+Mierzony odcinek obejmuje wyłącznie algorytm i uzyskanie liczby słów. Nie obejmuje startu procesu, odczytu, dekodowania ASCII, drukowania, walidacji ani tworzenia struktury przechowującej czas i wynik. Dane są wczytywane przed uruchomieniem zegara, a sprawdzenie liczby słów następuje po pomiarze.
 
-To zapis historyczny — nie należy wykonywać go nad istniejącym artefaktem. Przy nowym eksperymencie automat tworzy świeży katalog:
+C++ używa monotonicznego `std::chrono::steady_clock` z nominalnym okresem 1/1000000000 s. Python używa `time.perf_counter_ns()`; zapisana implementacja to `mach_absolute_time()`, a deklarowana rozdzielczość wynosi około 41,67 ns. Oba programy zapisują całkowite nanosekundy. Jednostka zapisu nie oznacza dokładności 1 ns, a nominalny okres zegara C++ nie jest pomiarem jego rzeczywistej rozdzielczości.
 
-```sh
-python3 -B Benchmark.py
-```
+Automat sprawdza wejścia względem manifestów, kompiluje świeży program i nie uruchamia starej wersji po błędzie kompilacji. Poza pomiarem porównuje każdą otrzymaną liczbę słów z oczekiwaniem. Błędne próby pozostają w CSV ze statusem i przyczyną, lecz nie wchodzą do statystyk. Limit procesu wynosi 30 s.
 
-Jest to polecenie odpowiadające zapisanej konfiguracji domyślnej (30 prób, bez rozgrzewek). Metadane nie zawierają pełnej oryginalnej linii wywołania automatu. Nowy przebieg będzie dotyczył obecnego kodu, więc nie zastąpi identycznie historycznego eksperymentu. Szczegóły: [instrukcja benchmarku](BENCHMARK.md).
+### Kompletność i obliczenia
 
-Interfejs obecnego generatora przewiduje poniższe polecenia do **osobnego** katalogu, bez nadpisywania danych źródłowych. **Próba odtworzenia ujawniła jednak błąd `KeyError: 'source'` podczas zapisu manifestu:** `WordGenerator.py` oczekuje pola `source`, którego brakuje w `assets/english_words.json`. Polecenia dokumentują parametry zestawu, ale obecnie nie kończą się sukcesem. Nie naprawiano generatora w ramach analizy historycznych pomiarów.
+Kontrola [kompletności](analysis/completeness.csv) i [podsumowania przebiegu](results/20261026T184512Z_7d95f26993/summary.json) potwierdza 900 wierszy, 30 grup język–plik i po 30 unikalnych prób w każdej grupie. Wszystkie próby mają status `valid`, a liczby słów odpowiadają oczekiwaniom. Nie ma braków, duplikatów, odrzuceń ani zerowych czasów. [Rejestr odstępstw](analysis/issues.csv) zawiera tylko nagłówek.
 
-```sh
-python3 -B WordGenerator.py --output-dir regenerated/1000B_seed14 --sizes 1000 --seed 14
-python3 -B WordGenerator.py --output-dir regenerated/100000B_seed42 --sizes 100000 --seed 42
-python3 -B WordGenerator.py --output-dir regenerated/1000000B_seed2026 --sizes 1000000 --seed 2026
-```
+Dla każdej grupy obliczamy medianę, minimum, maksimum i rozstęp. Przy 30 próbach mediana jest średnią pozycji 15 i 16 po sortowaniu; rozstęp to różnica maksimum i minimum. Zachowujemy wszystkie poprawne pomiary, również skrajne. Wartości zerowe także pozostałyby w zbiorze, gdyby wystąpiły. Nie odejmujemy kosztu odczytu zegara. Brak danych nie jest traktowany jako zero.
 
-Przed błędem zapisu manifestu obecny generator zapisuje siedem wariantów dla każdego rozmiaru oraz przypadki kontrolne. Pełne odtwarzanie wymaga osobnej naprawy brakujących metadanych źródła słownika. Historyczny zestaw wybrał po pięć wariantów. Przy odtwarzaniu eksperymentu trzeba wybrać pliki wskazane w historycznych metadanych i sprawdzić ich SHA-256; nie należy bezpośrednio porównywać benchmarku wszystkich nowo wygenerowanych plików z tym przebiegiem.
+## 5. Wyniki
 
-## Kontrola kompletności i obliczenia
+Poniższe tabele obejmują wszystkie 30 grup, po 30 poprawnych prób każda. Czasy podano w nanosekundach, bez zaokrąglania median połówkowych. Źródłem jest [CSV pomiarów](results/20261026T184512Z_7d95f26993/measurements.csv); pełne zestawienie maszynowe zawiera [statistics.csv](analysis/statistics.csv).
 
-Kontrola [kompletności](analysis/completeness.csv) potwierdziła 900 wierszy, 30 grup język–plik i w każdej dokładnie 30 unikalnych numerów prób 1–30. Wszystkie statusy są `valid`, wyniki liczenia odpowiadają oczekiwaniom, jednostką jest `ns`, a identyfikatory, rozmiary, warianty i SHA-256 odpowiadają metadanym. Zweryfikowano pozycję języka w każdej parze i liczniki `summary.json`. Nie ma braków, duplikatów ani odrzuceń. [Rejestr odstępstw](analysis/issues.csv) zawiera wyłącznie nagłówek.
-
-Do statystyk dopuszcza się wyłącznie poprawne, jednoznaczne próby z poprawnymi polami. W razie duplikatu numeru próby analizator zgłasza problem i wyłącza wszystkie kopie tego numeru; nie wybiera dogodnego pomiaru. Odrzucone próby są wykazywane z przyczynami, ale ich czasy nie wchodzą do statystyk. Brakująca wartość nie jest zerem.
-
-Dla posortowanych 30 czasów mediana wynosi `(t[15] + t[16]) / 2`, przy numerowaniu od 1. Minimum i maksimum są skrajnymi pomiarami, a rozstęp to `maksimum − minimum`. Tabele pozostają w ns, aby zachować wyniki połówkowe bez zaokrągleń; wykresy pokazują te same wartości podzielone przez 1000, w µs. Rozstęp opisuje zaobserwowany zakres i zależy od liczby prób; nie jest przedziałem ufności.
-
-### Statystyki wszystkich kombinacji
-
-Źródło każdej poniższej tabeli: [surowe pomiary](results/20261026T184512Z_7d95f26993/measurements.csv). Pełna wersja maszynowa: [statistics.csv](analysis/statistics.csv). Każdy wiersz ma 30 poprawnych prób; wartości skrajne zachowano.
-
-#### Tekst 1000 B
+### Tekst 1000 B
 
 | Język  | Wariant            |   n | Mediana [ns] | Minimum [ns] | Maksimum [ns] | Rozstęp [ns] |
 | ------ | ------------------ | --: | -----------: | -----------: | ------------: | -----------: |
@@ -146,7 +130,7 @@ Dla posortowanych 30 czasów mediana wynosi `(t[15] + t[16]) / 2`, przy numerowa
 | C++    | short_sparse_mixed |  30 |        500.0 |          458 |           625 |          167 |
 | Python | short_sparse_mixed |  30 |      19083.5 |        18542 |         22584 |         4042 |
 
-#### Tekst 100000 B
+### Tekst 100000 B
 
 | Język  | Wariant            |   n | Mediana [ns] | Minimum [ns] | Maksimum [ns] | Rozstęp [ns] |
 | ------ | ------------------ | --: | -----------: | -----------: | ------------: | -----------: |
@@ -161,7 +145,7 @@ Dla posortowanych 30 czasów mediana wynosi `(t[15] + t[16]) / 2`, przy numerowa
 | C++    | short_tabs         |  30 |      47896.0 |        46584 |         61917 |        15333 |
 | Python | short_tabs         |  30 |    2020479.0 |      1841875 |       2409167 |       567292 |
 
-#### Tekst 1000000 B
+### Tekst 1000000 B
 
 | Język  | Wariant            |   n | Mediana [ns] | Minimum [ns] | Maksimum [ns] | Rozstęp [ns] |
 | ------ | ------------------ | --: | -----------: | -----------: | ------------: | -----------: |
@@ -178,69 +162,73 @@ Dla posortowanych 30 czasów mediana wynosi `(t[15] + t[16]) / 2`, przy numerowa
 
 Przykłady niezależnej kontroli arytmetycznej: dla C++ `short_spaces`, 1 000 B, dwie środkowe wartości wynoszą 541 i 542 ns, więc mediana to `(541 + 542) / 2 = 541,5 ns`, a rozstęp `750 − 458 = 292 ns`. Dla Pythona `long_sparse_mixed`, 1 000 000 B, wartości środkowe 18 995 708 i 18 997 666 ns dają medianę 18 996 687 ns, a rozstęp `22 482 667 − 18 418 667 = 4 064 000 ns`.
 
-### Wykresy
+### Wizualizacja median i rozrzutu
 
-![Mediany czasu dla czterech wspólnych wariantów według długości tekstu, w µs](analysis/images/mediany_dlugosc.png)
+Na wykresach te same czasy są podzielone przez 1000 i przedstawione w mikrosekundach. Osobne skale języków i paneli poprawiają czytelność; należy uwzględniać je przy porównywaniu wysokości punktów i długości odcinków.
 
-Rysunek 1. Mediany czterech wariantów dostępnych dla wszystkich długości. Osie długości i czasu są liniowe; oba języki mają osobne skale czasu. Punkty są pomiarami, a odcinki tylko je łączą — nie stanowią dopasowanego modelu. Źródło: [CSV przebiegu](results/20261026T184512Z_7d95f26993/measurements.csv). Liniowa oś długości ścieśnia punkty 1 000 i 100 000 B; dokładne liczby znajdują się w tabelach.
+![Mediany czasu czterech wspólnych wariantów według długości tekstu [µs]](analysis/images/mediany_dlugosc.png)
 
-![Mediany oraz przedziały minimum–maksimum wszystkich wariantów, osobno według długości i języka](analysis/images/rozrzut_warianty.png)
+Pierwszy wykres obejmuje tylko warianty występujące przy wszystkich trzech długościach. Osie są liniowe. Odcinki łączą mediany, ale nie przedstawiają dopasowanego modelu. Bliskość punktów dla 1000 i 100000 B wynika ze skali osi długości. Źródło: [CSV przebiegu](results/20261026T184512Z_7d95f26993/measurements.csv).
 
-Rysunek 2. Punkt oznacza medianę, końce odcinka minimum i maksimum z 30 prób. Wszystkie obserwacje skrajne wchodzą do zakresu. Każdy panel ma własną liniową skalę czasu w µs; długość odcinków należy porównywać z uwzględnieniem wartości osi. Źródło: [CSV przebiegu](results/20261026T184512Z_7d95f26993/measurements.csv).
+![Mediany i zakresy minimum–maksimum wszystkich wariantów [µs]](analysis/images/rozrzut_warianty.png)
 
-## Obserwacje i interpretacja
+Drugi wykres pokazuje medianę jako punkt, a minimum i maksimum jako końce odcinka. Każdy zakres obejmuje wszystkie 30 poprawnych prób i nie jest przedziałem ufności. Panele rozdzielają długości tekstu i języki. Źródło: [CSV przebiegu](results/20261026T184512Z_7d95f26993/measurements.csv).
+
+## 6. Interpretacja i ograniczenia
 
 ### Obserwacje wynikające z danych
 
-1. Dla każdej z 15 par plików mediana C++ jest niższa niż Pythona. Iloraz median Python/C++ wynosi od około 31,31 (`short_dense_mixed`, 1 000 000 B) do 42,30 (`short_sparse_mixed`, 100 000 B). Jest to iloraz median grup, a nie mediana ilorazów pojedynczych prób ani uniwersalny współczynnik szybkości języków.
-2. We wszystkich czterech wspólnych wariantach mediany rosną wraz z długością. Dla `short_sparse_mixed` C++ ma mediany 500, 47 750 i 489 667 ns, a Python 19 083,5, 2 020 042 i 20 014 896 ns. Wzrost długości 100× odpowiada tutaj wzrostowi mediany około 95,5× i 105,85×; kolejny wzrost długości 10× — około 10,25× i 9,91×. To zgodne z przybliżonym skalowaniem liniowym w badanym zakresie, bez dowodu ścisłej proporcjonalności.
-3. W Pythonie `short_dense_mixed` ma niższą medianę niż `short_sparse_mixed` przy każdej długości: odpowiednio 15 792 wobec 19 083,5 ns; 1 573 875 wobec 2 020 042 ns; 15 717 312,5 wobec 20 014 896 ns. Dla C++ przy 1 000 B oba warianty mają medianę 500 ns, a przy 1 000 000 B wariant gęsty ma medianę wyższą (502 041,5 wobec 489 667 ns). Dane nie uzasadniają tezy, że więcej separatorów zawsze przyspiesza obie implementacje.
-4. Rozrzut jest istotny także przy poprawnych wynikach. Dla C++ `long_dense_mixed`, 100 000 B, minimum wynosi 46 541 ns, mediana 48 104 ns, a maksimum 98 666 ns — ponad dwa razy więcej niż mediana. Zachowano tę obserwację. Dla Pythona `long_sparse_mixed`, 1 000 000 B, zakres wynosi 18 418 667–22 482 667 ns, czyli rozstęp 4 064 000 ns.
-5. Wszystkie 900 wyników liczby słów odpowiada oczekiwaniom. Nie odrzucono żadnej próby; liczba zerowych czasów wynosi 0. Wcześniejszy mały przebieg `20261026T184237Z_ec1201df18` miał 20 poprawnych prób, a wcześniejszy pełny `20261026T184323Z_8894299b2b` — 900. Nie dołączono ich do obliczeń, więc liczność grup pozostaje równa 30.
+Dla wszystkich 15 plików mediana czasu C++ jest niższa od mediany Pythona. Iloraz median Python/C++ wynosi od około **31,31** (`short_dense_mixed`, 1000000 B) do **42,30** (`short_sparse_mixed`, 100000 B). Są to ilorazy median w tym eksperymencie, a nie uniwersalne współczynniki szybkości języków.
 
-### Przypuszczenia o przyczynach
+W czterech wspólnych wariantach mediany rosną wraz z długością. Przykładowo dla `short_sparse_mixed` C++ uzyskuje 500, 47750 i 489667 ns, a Python 19083,5, 2020042 i 20014896 ns. Przy wzroście długości 100× mediana rośnie odpowiednio około 95,5× i 105,85×; przy kolejnym wzroście długości 10× — około 10,25× i 9,91×. Jest to zgodne z przybliżonym skalowaniem liniowym w badanym zakresie, bez dowodu ścisłej proporcjonalności.
 
-Różnice między językami mogą wynikać m.in. z kosztu interpretowanej pętli Pythona oraz optymalizacji kodu maszynowego C++. Zależność od wariantu może wiązać się z różną częstością gałęzi warunkowych, porównań znaków i zwiększania licznika. Wartości skrajne mogą mieć związek z planistą systemu, obciążeniem lub zmianą stanu CPU. Nie rejestrowano liczników sprzętowych, temperatury ani obciążenia, więc pomiary **nie identyfikują tych przyczyn**. Sam fakt krótszego czasu nie wyjaśnia mechanizmu.
+Wpływ budowy danych nie jest identyczny w obu językach. W Pythonie `short_dense_mixed` ma niższą medianę niż `short_sparse_mixed` przy każdej długości. W C++ dla 1000 B obie mediany wynoszą 500 ns, natomiast dla 1000000 B wariant gęsty ma medianę wyższą: 502041,5 wobec 489667 ns. Nie ma podstaw do wniosku, że większy udział separatorów zawsze przyspiesza obie implementacje.
 
-## Ograniczenia i zgodność źródeł
+Rozrzut pokazuje ograniczenia pojedynczego pomiaru. Dla C++ `long_dense_mixed`, 100000 B, maksimum 98666 ns jest ponad dwukrotnie większe od mediany 48104 ns. Dla Pythona `long_sparse_mixed`, 1000000 B, rozstęp wynosi 4064000 ns. Zachowaliśmy te poprawne obserwacje, zamiast usuwać je jako niewygodne.
 
-Sumy `current_sha256` w `analysis/provenance.json` oraz poniższy opis zgodności odnoszą się do stanu kontroli przed commitem formatującym kod i dokumentację. Plik kontroli zachowano jako migawkę tej weryfikacji; późniejsze formatowanie może zmienić sumy źródeł bez zmiany działania algorytmu.
+### Możliwe przyczyny i granice interpretacji
 
-W [kontroli pochodzenia](analysis/provenance.json) zapisano historyczne i obecne SHA-256 źródeł. `source/python/main.py` jest zgodny z metadanymi. **Obecne `source/cpp/main.cpp` i `Benchmark.py` mają inne sumy niż zapisane przy pomiarze.** Nie dysponujemy historycznymi kopiami pozwalającymi ustalić charakter zmian. Nie należy przypisywać historycznych czasów obecnemu kodowi C++ ani uznawać obecnych testów automatu za weryfikację jego historycznej wersji. Opis historycznej metody opiera się na metadanych i dokumentacji; obecny kod pozwala sprawdzić zamysł algorytmu, lecz nie usuwa tej luki pochodzenia. Ponowny pomiar aktualnego kodu pozostaje osobnym zadaniem.
+Różnice mogą wiązać się z kosztem interpretowanej pętli Pythona i optymalizacją kodu maszynowego C++. Budowa tekstu może zmieniać częstość porównań, gałęzi i zwiększania licznika. Na obserwacje skrajne mogą wpływać planista systemu i stan CPU. Nie rejestrowaliśmy jednak liczników sprzętowych, temperatury ani obciążenia, więc nie potwierdzamy tych przypuszczeń jako przyczyn.
 
-Dodatkowo próba odtworzenia danych wykazała błąd obecnego generatora przy zapisie pochodzenia słownika (opisany przy poleceniach). Zgodność zachowanych plików wejściowych z historycznym pomiarem jest potwierdzona, ale pełna procedura generowania manifestów nie jest obecnie sprawna.
+Badanie obejmuje jedną maszynę, jeden system, jeden zestaw optymalizacji i jeden pełny przebieg. Nie przeprowadzaliśmy testów istotności ani estymacji przedziałów ufności. Brak rozgrzewek nie oznacza zimnej pamięci podręcznej: kontrola danych i wcześniejsze procesy mogły rozgrzać cache. Naprzemienna kolejność ogranicza efekt pozycji, ale nie eliminuje zakłóceń. Wyniki około 500 ns są szczególnie wrażliwe na rozdzielczość zegara i koszt jego odczytu.
 
-SHA-256 analizowanego CSV wynosi:
+### Pochodzenie kodu i odtwarzalność
 
-```text
-921892a814f61e0c422c05d9fa780c57ae43188304adc19bcdd514b3347c619f
+[Kontrola pochodzenia](analysis/provenance.json) jest zachowaną migawką sprzed późniejszego formatowania. W tej kontroli Python był zgodny z sumą z pomiaru, natomiast C++ i `Benchmark.py` miały inne SHA-256. Samo formatowanie może zmieniać sumy bez zmiany działania, ale brak zgodności bajtowej nie pozwala przypisać historycznych czasów bieżącym źródłom. Wyniki dotyczą zapisanego przebiegu; testy obecnego kodu nie zastępują potwierdzenia tożsamości jego historycznej wersji.
+
+Zachowane dane wejściowe i manifesty są dostępne i zgodne z metadanymi eksperymentu. Generator ma jednak znany błąd: przed zapisaniem manifestu odwołuje się do brakującego pola `source` słownika i kończy się `KeyError: 'source'`. Nie przedstawiamy zatem generowania od nowa jako w pełni sprawnej procedury. Ograniczenie nie zmienia analizy zachowanego CSV; naprawa generatora i nowy pomiar bieżącego kodu pozostają odrębnymi zadaniami.
+
+## 7. Podział pracy i wykorzystanie AI
+
+Projekt realizowaliśmy i weryfikowaliśmy wspólnie, z następującym podziałem odpowiedzialności:
+
+- **Regulus** odpowiadał za planowanie, projektowanie algorytmu i końcowy przegląd rozwiązania.
+- **Mars** odpowiadał za implementację algorytmu oraz przygotowanie materiałów do oddania.
+
+Podział pracy był zgodny z zalecanym podziałem pracy wedle naszych predyspozycji oraz cech otrzymanych przez maila na podstawie wyników testu na archityp dewelopera.
+
+Wykorzystaliśmy AI jako wsparcie pracy nad projektem. Pomoc obejmowała:
+
+- przeportowanie implementacji licznika z C++ do Pythona z zachowaniem tego samego algorytmu i przejść stanu;
+- przygotowanie dodatkowych testów w Pythonie;
+- opracowanie końcowego raportu na podstawie `MOCK_RAPORT.md`;
+- wyszukanie zasobów potrzebnych do przygotowania zestawów danych, w tym źródła słownika angielskich słów.
+
+Rezultatów AI nie przyjmowaliśmy bez sprawdzenia. Kontrola obejmowała porównanie implementacji z definicją słowa, uruchomienie przypadków kontrolnych i testów automatycznych, weryfikację wejść przez SHA-256 oraz niezależne przeliczenie statystyk wszystkich 30 grup z surowego CSV, bez używania funkcji statystycznej analizatora. Porównaliśmy też liczby w raporcie i jednostki wykresów. Za przyjęte rozwiązanie, interpretację wyników i ostateczną treść raportu odpowiada zespół.
+
+## 8. Odtworzenie analizy i wnioski
+
+Instrukcja kompilacji, testów, generowania danych, uruchomienia nowego benchmarku i dokładne polecenie eksportu przez Pandoc znajdują się w [CONTRIBUTING.md](CONTRIBUTING.md). Szczegóły automatu i formatu wyników opisano w [BENCHMARK.md](BENCHMARK.md). Do odtworzenia statystyk zachowanego przebiegu służy:
+
+```sh
+python3 -m venv .venv-analysis
+.venv-analysis/bin/python -m pip install -r requirements-analysis.txt
+.venv-analysis/bin/python -B Analyze.py --run-dir results/20261026T184512Z_7d95f26993 --output-dir analysis-reproduced
+python3 -B -m unittest discover -s tests -v
 ```
 
-Dalsze ograniczenia:
+Polecenia dotyczą macOS/Linux. W Windows ścieżka interpretera środowiska to `.venv-analysis\Scripts\python.exe`; przenośność całości na tym systemie nie była sprawdzana. Nowa analiza jest zapisywana osobno, bez zastępowania zachowanych materiałów. Nowy benchmark również tworzy osobny katalog i nie powinien nadpisywać historycznych wyników.
 
-- Jedna maszyna, jeden system, jeden zestaw optymalizacji i jeden pełny przebieg; brak podstaw do uogólnienia wyników na wszystkie implementacje języków i komputery.
-- Brak rozgrzewek nie oznacza zimnej pamięci podręcznej. Walidacja danych i poprzednie procesy mogą rozgrzewać cache systemu. Naprzemienna kolejność ogranicza jednostronny efekt pozycji, ale nie eliminuje wszystkich zakłóceń.
-- Ziarna i zawartość plików różnią się między długościami. Wariant określa regułę budowy, a nie identyczny tekst powtórzony określoną liczbę razy. Rodzaju separatora w dodatkowych wariantach nie da się oddzielić od długości tekstu.
-- Rozstęp zależy od skrajnych obserwacji i 30 powtórzeń. Nie przeprowadzano testów istotności, estymacji przedziałów ufności ani porównania wielu niezależnych sesji.
-- Zegary mają ograniczoną rozdzielczość; szczególnie wyniki C++ około 500 ns są wrażliwe na kwantowanie i narzut odczytu zegara. Nie wnioskowano o różnicach poniżej możliwości pomiaru.
+W badanym przebiegu implementacja C++ miała niższą medianę dla każdego pliku. W obu językach wzrost czasu w czterech wspólnych wariantach był zgodny z oczekiwanym, przybliżonym skalowaniem liniowym. Budowa tekstu wiązała się z różnicami czasów, ale nie uzyskaliśmy jednej reguły wpływu separatorów wspólnej dla obu implementacji.
 
-## Podział pracy, AI i weryfikacja
-
-Nie otrzymano potwierdzonego podziału zadań członków zespołu ani historii wcześniejszego użycia AI. Nie przypisujemy autorstwa implementacji, generatora, danych ani benchmarku konkretnym osobom. Ten element dokumentacji zespołowej pozostaje do uzupełnienia na podstawie rzeczywistych informacji.
-
-Potwierdzony zakres pomocy AI w tej sesji: przegląd lokalnych materiałów, opracowanie i implementacja `Analyze.py`, testów analizy, wykresów, niniejszego raportu i zmian dokumentacji. AI pomagało także sformułować plan. To ujawnienie nie przesądza o wykorzystaniu AI we wcześniejszych etapach.
-
-Weryfikacja wyników AI obejmowała:
-
-- 18 testów automatycznych: 7 testów analizy i 11 istniejących testów automatu. Analiza sprawdza mediany parzyste i nieparzyste, połówkową medianę, zero, obserwację skrajną, pustą grupę, brak, duplikat, odrzucenie oraz błędne pola i liczniki.
-- Niezależne przeliczenie wszystkich 30 grup z surowego CSV przy użyciu sortowania i arytmetyki, bez wywoływania funkcji statystycznej analizatora; porównanie wyników z CSV analizy i tabelami raportu.
-- Kontrolę zawartości źródłowych plików danych przez SHA-256, kontrolę zgodności źródeł i potwierdzenie niezmienności wszystkich trzech surowych CSV po analizie. Próba uruchomienia generatora w katalogu tymczasowym ujawniła opisany błąd zapisu manifestu.
-- Oględziny obu obrazów, sprawdzenie jednostek i podpisów oraz kontrolę względnych odnośników w raporcie. Eksport PDF przez Pandoc i odbiór materiałów opisano w [ODBIOR.md](ODBIOR.md).
-
-Raport i nowe artefakty nie zawierają nazwisk, nazw użytkowników, nazw hostów ani prywatnych ścieżek bezwzględnych. Narzędzia i dane są wskazane względnymi ścieżkami projektu; metadane sprzętu ograniczono do parametrów technicznych. Surowych metadanych nie przepisywano ani nie anonimizowano kosztem ich integralności. Informacja o roli autorów nadal wymaga potwierdzenia, dlatego odpowiedni punkt checklisty pozostaje otwarty.
-
-## Wnioski
-
-Historyczne pomiary wskazują na niższe mediany C++ dla wszystkich porównywanych plików i na przybliżony liniowy wzrost czasu wraz z długością w czterech wspólnych wariantach. Budowa tekstu wiąże się z różnicami czasów, szczególnie w Pythonie, jednak kierunek różnicy nie jest identyczny w obu implementacjach. Skrajne, poprawne obserwacje pokazują, dlaczego sama pojedyncza próba nie wystarcza do porównania.
-
-Hipoteza skalowania jest zgodna z obserwacjami w badanym zakresie. Wnioski odnoszą się do wskazanego przebiegu i jego środowiska; nie potwierdzają wydajności obecnej wersji C++ i automatu z powodu niezgodności SHA-256. Do pełnego zamknięcia dokumentacji pozostaje rzeczywisty podział pracy i historia wcześniejszego użycia AI, a odtwarzanie danych wymaga naprawy generatora. Polecenie eksportu PDF znajduje się w [CONTRIBUTING.md](CONTRIBUTING.md), a wyniki odbioru w [ODBIOR.md](ODBIOR.md).
+Hipoteza skalowania jest zgodna z obserwacjami w badanym zakresie. Rozrzut poprawnych pomiarów potwierdza potrzebę powtórzeń i analizy mediany wraz z zakresem, zamiast oceniania programu na podstawie jednej próby. Wnioski ograniczamy do zapisanych danych i warunków eksperymentu, z uwzględnieniem opisanych ograniczeń pochodzenia źródeł i odtwarzalności generatora.
