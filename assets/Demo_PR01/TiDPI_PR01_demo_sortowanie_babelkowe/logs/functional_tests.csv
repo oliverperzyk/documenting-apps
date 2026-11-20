@@ -1,0 +1,17 @@
+test_id,language,expected_exit_code,observed_exit_code,expectation_matched,status,data_kind
+T01,cpp,0,0,true,PASS,synthetic
+T02,cpp,0,0,true,PASS,synthetic
+T03,cpp,0,0,true,PASS,synthetic
+T04,cpp,0,0,true,PASS,synthetic
+T05,cpp,0,0,true,PASS,synthetic
+T06,cpp,0,0,true,PASS,synthetic
+T07,cpp,1,1,true,PASS,synthetic
+T08,cpp,2,2,true,PASS,synthetic
+T01,python,0,0,true,PASS,synthetic
+T02,python,0,0,true,PASS,synthetic
+T03,python,0,0,true,PASS,synthetic
+T04,python,0,0,true,PASS,synthetic
+T05,python,0,0,true,PASS,synthetic
+T06,python,0,0,true,PASS,synthetic
+T07,python,1,1,true,PASS,synthetic
+T08,python,2,2,true,PASS,synthetic

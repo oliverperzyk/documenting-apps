@@ -1,0 +1,262 @@
+{
+    "data_kind": "synthetic",
+    "run_id": "E01-DEMO",
+    "rows": 480,
+    "statistics": [
+        {
+            "case_id": "random_100",
+            "language": "cpp",
+            "count": 20,
+            "min_ms": 0.018,
+            "median_ms": 0.02,
+            "mean_ms": 0.02,
+            "stdev_sample_ms": 0.0012732056517228267,
+            "max_ms": 0.022
+        },
+        {
+            "case_id": "random_100",
+            "language": "python",
+            "count": 20,
+            "min_ms": 0.63,
+            "median_ms": 0.7,
+            "mean_ms": 0.7,
+            "stdev_sample_ms": 0.044562197810298916,
+            "max_ms": 0.77
+        },
+        {
+            "case_id": "random_500",
+            "language": "cpp",
+            "count": 20,
+            "min_ms": 0.45,
+            "median_ms": 0.5,
+            "mean_ms": 0.5,
+            "stdev_sample_ms": 0.03183014129307068,
+            "max_ms": 0.55
+        },
+        {
+            "case_id": "random_500",
+            "language": "python",
+            "count": 20,
+            "min_ms": 15.75,
+            "median_ms": 17.5,
+            "mean_ms": 17.5,
+            "stdev_sample_ms": 1.114054945257473,
+            "max_ms": 19.25
+        },
+        {
+            "case_id": "random_1000",
+            "language": "cpp",
+            "count": 20,
+            "min_ms": 1.8,
+            "median_ms": 2.0,
+            "mean_ms": 2.0,
+            "stdev_sample_ms": 0.1273205651722827,
+            "max_ms": 2.2
+        },
+        {
+            "case_id": "random_1000",
+            "language": "python",
+            "count": 20,
+            "min_ms": 63.0,
+            "median_ms": 70.0,
+            "mean_ms": 72.1,
+            "stdev_sample_ms": 11.7900493280518,
+            "max_ms": 119.0
+        },
+        {
+            "case_id": "ascending_100",
+            "language": "cpp",
+            "count": 20,
+            "min_ms": 0.00072,
+            "median_ms": 0.0007999999999999999,
+            "mean_ms": 0.0008,
+            "stdev_sample_ms": 5.092822606891306e-5,
+            "max_ms": 0.00088
+        },
+        {
+            "case_id": "ascending_100",
+            "language": "python",
+            "count": 20,
+            "min_ms": 0.00576,
+            "median_ms": 0.0063999999999999994,
+            "mean_ms": 0.0064,
+            "stdev_sample_ms": 0.00040742580855130447,
+            "max_ms": 0.00704
+        },
+        {
+            "case_id": "ascending_500",
+            "language": "cpp",
+            "count": 20,
+            "min_ms": 0.0036,
+            "median_ms": 0.004,
+            "mean_ms": 0.004,
+            "stdev_sample_ms": 0.00025464113034456533,
+            "max_ms": 0.0044
+        },
+        {
+            "case_id": "ascending_500",
+            "language": "python",
+            "count": 20,
+            "min_ms": 0.0288,
+            "median_ms": 0.032,
+            "mean_ms": 0.032,
+            "stdev_sample_ms": 0.0020371290427565227,
+            "max_ms": 0.0352
+        },
+        {
+            "case_id": "ascending_1000",
+            "language": "cpp",
+            "count": 20,
+            "min_ms": 0.0072,
+            "median_ms": 0.008,
+            "mean_ms": 0.008,
+            "stdev_sample_ms": 0.0005092822606891307,
+            "max_ms": 0.0088
+        },
+        {
+            "case_id": "ascending_1000",
+            "language": "python",
+            "count": 20,
+            "min_ms": 0.0576,
+            "median_ms": 0.064,
+            "mean_ms": 0.064,
+            "stdev_sample_ms": 0.004074258085513045,
+            "max_ms": 0.0704
+        },
+        {
+            "case_id": "descending_100",
+            "language": "cpp",
+            "count": 20,
+            "min_ms": 0.0225,
+            "median_ms": 0.025,
+            "mean_ms": 0.025,
+            "stdev_sample_ms": 0.001591507064653533,
+            "max_ms": 0.0275
+        },
+        {
+            "case_id": "descending_100",
+            "language": "python",
+            "count": 20,
+            "min_ms": 0.81,
+            "median_ms": 0.9,
+            "mean_ms": 0.9,
+            "stdev_sample_ms": 0.057294254327527196,
+            "max_ms": 0.99
+        },
+        {
+            "case_id": "descending_500",
+            "language": "cpp",
+            "count": 20,
+            "min_ms": 0.5625,
+            "median_ms": 0.625,
+            "mean_ms": 0.625,
+            "stdev_sample_ms": 0.03978767661633833,
+            "max_ms": 0.6875
+        },
+        {
+            "case_id": "descending_500",
+            "language": "python",
+            "count": 20,
+            "min_ms": 20.25,
+            "median_ms": 22.5,
+            "mean_ms": 22.5,
+            "stdev_sample_ms": 1.4323563581881797,
+            "max_ms": 24.75
+        },
+        {
+            "case_id": "descending_1000",
+            "language": "cpp",
+            "count": 20,
+            "min_ms": 2.25,
+            "median_ms": 2.5,
+            "mean_ms": 2.5,
+            "stdev_sample_ms": 0.15915070646535331,
+            "max_ms": 2.75
+        },
+        {
+            "case_id": "descending_1000",
+            "language": "python",
+            "count": 20,
+            "min_ms": 81.0,
+            "median_ms": 90.0,
+            "mean_ms": 90.0,
+            "stdev_sample_ms": 5.729425432752719,
+            "max_ms": 99.0
+        },
+        {
+            "case_id": "duplicates_100",
+            "language": "cpp",
+            "count": 20,
+            "min_ms": 0.0135,
+            "median_ms": 0.015,
+            "mean_ms": 0.015,
+            "stdev_sample_ms": 0.0009549042387921198,
+            "max_ms": 0.0165
+        },
+        {
+            "case_id": "duplicates_100",
+            "language": "python",
+            "count": 20,
+            "min_ms": 0.432,
+            "median_ms": 0.48,
+            "mean_ms": 0.48,
+            "stdev_sample_ms": 0.030556935641347833,
+            "max_ms": 0.528
+        },
+        {
+            "case_id": "duplicates_500",
+            "language": "cpp",
+            "count": 20,
+            "min_ms": 0.3375,
+            "median_ms": 0.375,
+            "mean_ms": 0.375,
+            "stdev_sample_ms": 0.023872605969802996,
+            "max_ms": 0.4125
+        },
+        {
+            "case_id": "duplicates_500",
+            "language": "python",
+            "count": 20,
+            "min_ms": 10.8,
+            "median_ms": 12.0,
+            "mean_ms": 12.0,
+            "stdev_sample_ms": 0.7639233910336959,
+            "max_ms": 13.2
+        },
+        {
+            "case_id": "duplicates_1000",
+            "language": "cpp",
+            "count": 20,
+            "min_ms": 1.35,
+            "median_ms": 1.5,
+            "mean_ms": 1.5,
+            "stdev_sample_ms": 0.09549042387921199,
+            "max_ms": 1.65
+        },
+        {
+            "case_id": "duplicates_1000",
+            "language": "python",
+            "count": 20,
+            "min_ms": 43.2,
+            "median_ms": 48.0,
+            "mean_ms": 48.0,
+            "stdev_sample_ms": 3.0556935641347835,
+            "max_ms": 52.8
+        }
+    ],
+    "ratio_python_over_cpp": {
+        "random_100": 35.0,
+        "random_500": 35.0,
+        "random_1000": 35.0,
+        "ascending_100": 8.0,
+        "ascending_500": 8.0,
+        "ascending_1000": 8.0,
+        "descending_100": 36.0,
+        "descending_500": 36.0,
+        "descending_1000": 36.0,
+        "duplicates_100": 32.0,
+        "duplicates_500": 32.0,
+        "duplicates_1000": 32.0
+    },
+    "source_sha256": "20b6775d46daa3faecdcf8a6cb4f3299504b47eb800dfd2bae69e960785911a3"
+}

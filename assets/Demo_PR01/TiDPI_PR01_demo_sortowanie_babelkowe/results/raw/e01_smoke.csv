@@ -1,0 +1,3 @@
+protocol_version;run_id;task;language;implementation;case_id;size;rounds;warmup;trial;order;time_ns;result_checksum;correct;data_kind
+1;E01-SMOKE;bubble_sort_int;cpp;bubble_cpp_release;random_100;100;500;false;1;1;9100000;f0d09daf58adae1255d85fa63ec94fd46705bdeff492e2efe05b88cae3b37796;true;synthetic
+1;E01-SMOKE;bubble_sort_int;python;bubble_cpython;random_100;100;500;false;1;2;357000000;f0d09daf58adae1255d85fa63ec94fd46705bdeff492e2efe05b88cae3b37796;true;synthetic

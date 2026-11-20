@@ -1,0 +1,8 @@
+{
+  "run_id": "E01-SMOKE",
+  "data_kind": "synthetic",
+  "exit_code": 0,
+  "record_count": 2,
+  "command": "python src/automation/run_benchmark.py --smoke --run-id E01-SMOKE",
+  "included_in_E01_DEMO": false
+}

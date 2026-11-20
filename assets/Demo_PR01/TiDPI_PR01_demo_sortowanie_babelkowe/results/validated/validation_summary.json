@@ -1,0 +1,14 @@
+{
+    "run_id": "E01-DEMO",
+    "data_kind": "synthetic",
+    "status": "PASS",
+    "expected_records": 480,
+    "accepted_records": 480,
+    "rejected_records": 0,
+    "groups": 24,
+    "records_per_group": 20,
+    "duplicate_keys": 0,
+    "missing_trials": 0,
+    "invalid_checksums": 0,
+    "source": "results/raw/e01.csv"
+}

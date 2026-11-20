@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup><ClCompile Include="main.cpp"><Filter>Pliki źródłowe</Filter></ClCompile></ItemGroup>
+  <ItemGroup><None Include="parse_results.py"><Filter>Skrypty</Filter></None></ItemGroup>
+  <ItemGroup>
+    <Filter Include="Pliki źródłowe"><UniqueIdentifier>{D084F3CD-731D-4EF6-806E-FC10A30D4E38}</UniqueIdentifier><Extensions>cpp;c;cxx</Extensions></Filter>
+    <Filter Include="Skrypty"><UniqueIdentifier>{BB74C9D7-ACCF-498A-B1CE-8E3293E16AD2}</UniqueIdentifier><Extensions>py</Extensions></Filter>
+  </ItemGroup>
+</Project>

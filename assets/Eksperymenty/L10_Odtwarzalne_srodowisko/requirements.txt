@@ -1,0 +1,2 @@
+# Demonstracja korzysta wyłącznie z biblioteki standardowej Pythona.
+# Pusty wykaz jest także jawną informacją o zależnościach zewnętrznych.

@@ -1,0 +1,9 @@
+test_id,scenario,expected_decision,observed_decision,status,data_kind
+P01,complete_valid_series,ACCEPT,ACCEPT,PASS,synthetic
+P02,missing_trial,REJECT,REJECT,PASS,synthetic
+P03,duplicate_key,REJECT,REJECT,PASS,synthetic
+P04,negative_time,REJECT,REJECT,PASS,synthetic
+P05,wrong_result_checksum,REJECT,REJECT,PASS,synthetic
+P06,incorrect_result,REJECT,REJECT,PASS,synthetic
+P07,wrong_case,REJECT,REJECT,PASS,synthetic
+P08,invalid_numeric_field,REJECT,REJECT,PASS,synthetic

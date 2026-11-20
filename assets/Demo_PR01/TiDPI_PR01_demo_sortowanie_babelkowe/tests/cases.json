@@ -1,0 +1,46 @@
+{
+    "test_data_kind": "demonstration",
+    "cases": [
+        {
+            "id": "T01",
+            "input": [],
+            "expected": []
+        },
+        {
+            "id": "T02",
+            "input": [7],
+            "expected": [7]
+        },
+        {
+            "id": "T03",
+            "input": [5, 3, 2],
+            "expected": [2, 3, 5]
+        },
+        {
+            "id": "T04",
+            "input": [-1, 0, -1, 1],
+            "expected": [-1, -1, 0, 1]
+        },
+        {
+            "id": "T05",
+            "input": [1, 2, 3],
+            "expected": [1, 2, 3]
+        },
+        {
+            "id": "T06",
+            "input": [3, 2, 1],
+            "expected": [1, 2, 3]
+        }
+    ],
+    "controlled_error": {
+        "id": "T07",
+        "expected": [1, 2, 3],
+        "injected": [1, 2, 4],
+        "expected_exit_code": 1
+    },
+    "missing_input": {
+        "id": "T08",
+        "input": "tests/brakujacy_plik.csv",
+        "expected_exit_code": 2
+    }
+}

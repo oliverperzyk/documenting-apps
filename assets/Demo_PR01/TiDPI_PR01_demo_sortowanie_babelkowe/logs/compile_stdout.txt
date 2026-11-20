@@ -1,0 +1,5 @@
+Microsoft (R) C/C++ Optimizing Compiler Version 19.40 for x64
+main.cpp
+Microsoft (R) Incremental Linker
+/out:build/bubble.exe
+main.obj

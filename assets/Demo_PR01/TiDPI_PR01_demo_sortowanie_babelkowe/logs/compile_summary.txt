@@ -1,0 +1,10 @@
+data_kind=synthetic
+command=cl /nologo /std:c++17 /O2 /EHsc /DNDEBUG src/cpp/main.cpp /Fe:build/bubble.exe
+working_directory=.
+configuration=Release|x64
+started=2026-11-14T10:00:00+01:00
+finished=2026-11-14T10:00:00.820+01:00
+elapsed_ms=820
+exit_code=0
+stdout=logs/compile_stdout.txt
+stderr=logs/compile_stderr.txt

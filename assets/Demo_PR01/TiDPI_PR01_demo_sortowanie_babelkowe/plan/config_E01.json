@@ -1,0 +1,100 @@
+{
+    "protocol_version": 1,
+    "experiment_id": "E01",
+    "run_id": "E01-DEMO",
+    "task": "bubble_sort_int",
+    "hypothesis_id": "H1",
+    "threshold_ratio": 10,
+    "decision": "every_case",
+    "warmups": 2,
+    "trials": 20,
+    "order": "odd_cpp_first_even_python_first",
+    "outlier_policy": "keep_all_correct",
+    "time_unit": "ns",
+    "cases": [
+        {
+            "case_id": "random_100",
+            "size": 100,
+            "rounds": 500,
+            "input": "data/input/random_100.csv",
+            "reference": "data/reference/random_100.csv"
+        },
+        {
+            "case_id": "random_500",
+            "size": 500,
+            "rounds": 20,
+            "input": "data/input/random_500.csv",
+            "reference": "data/reference/random_500.csv"
+        },
+        {
+            "case_id": "random_1000",
+            "size": 1000,
+            "rounds": 10,
+            "input": "data/input/random_1000.csv",
+            "reference": "data/reference/random_1000.csv"
+        },
+        {
+            "case_id": "ascending_100",
+            "size": 100,
+            "rounds": 10000,
+            "input": "data/input/ascending_100.csv",
+            "reference": "data/reference/ascending_100.csv"
+        },
+        {
+            "case_id": "ascending_500",
+            "size": 500,
+            "rounds": 2000,
+            "input": "data/input/ascending_500.csv",
+            "reference": "data/reference/ascending_500.csv"
+        },
+        {
+            "case_id": "ascending_1000",
+            "size": 1000,
+            "rounds": 1000,
+            "input": "data/input/ascending_1000.csv",
+            "reference": "data/reference/ascending_1000.csv"
+        },
+        {
+            "case_id": "descending_100",
+            "size": 100,
+            "rounds": 500,
+            "input": "data/input/descending_100.csv",
+            "reference": "data/reference/descending_100.csv"
+        },
+        {
+            "case_id": "descending_500",
+            "size": 500,
+            "rounds": 20,
+            "input": "data/input/descending_500.csv",
+            "reference": "data/reference/descending_500.csv"
+        },
+        {
+            "case_id": "descending_1000",
+            "size": 1000,
+            "rounds": 10,
+            "input": "data/input/descending_1000.csv",
+            "reference": "data/reference/descending_1000.csv"
+        },
+        {
+            "case_id": "duplicates_100",
+            "size": 100,
+            "rounds": 500,
+            "input": "data/input/duplicates_100.csv",
+            "reference": "data/reference/duplicates_100.csv"
+        },
+        {
+            "case_id": "duplicates_500",
+            "size": 500,
+            "rounds": 20,
+            "input": "data/input/duplicates_500.csv",
+            "reference": "data/reference/duplicates_500.csv"
+        },
+        {
+            "case_id": "duplicates_1000",
+            "size": 1000,
+            "rounds": 10,
+            "input": "data/input/duplicates_1000.csv",
+            "reference": "data/reference/duplicates_1000.csv"
+        }
+    ]
+}

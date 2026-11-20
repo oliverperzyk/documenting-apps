@@ -1,0 +1,7 @@
+{
+    "schema_version": 1,
+    "experiment_id": "L10-demo",
+    "data_file": "sample_data.txt",
+    "rounds": 25,
+    "mode": "comparison"
+}

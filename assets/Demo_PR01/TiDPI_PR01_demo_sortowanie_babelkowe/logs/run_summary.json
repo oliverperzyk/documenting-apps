@@ -1,0 +1,10 @@
+{
+  "run_id": "E01-DEMO",
+  "data_kind": "synthetic",
+  "status": "PASS",
+  "warmups": 48,
+  "measured_trials": 480,
+  "program_calls": 528,
+  "nonzero_exit_codes": 0,
+  "validated_groups": 24
+}
