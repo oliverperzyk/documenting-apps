@@ -26,7 +26,16 @@ STATUSES = {"valid", "wrong_result", "invalid_output", "runtime_error", "timeout
 
 
 def statistics(values):
-    """Keep zeros and extremes; no rounding of half-integer medians."""
+    """Oblicza statystyki czasu bez odrzucania zer ani wartości skrajnych.
+
+    Args:
+        values: Sekwencja czasów prób w nanosekundach.
+
+    Returns:
+        Słownik z liczbą prób, medianą, minimum, maksimum i rozstępem.
+        Dla pustej sekwencji liczba prób wynosi 0, a pozostałe pola są
+        pustymi napisami. Mediana może mieć część ułamkową.
+    """
     if not values:
         return dict(count=0, median_ns="", min_ns="", max_ns="", range_ns="")
     return dict(
@@ -39,6 +48,25 @@ def statistics(values):
 
 
 def analyze(run_dir):
+    """Sprawdza pomiary i oblicza statystyki dla par język–plik.
+
+    Porównuje wiersze CSV z metadanymi i podsumowaniem przebiegu. Do
+    statystyk włącza tylko poprawne próby o unikalnym numerze w danej parze.
+
+    Args:
+        run_dir: Obiekt Path wskazujący katalog z metadata.json,
+            summary.json i measurements.csv.
+
+    Returns:
+        Krotka trzech list słowników ze statystykami, kompletnością prób
+        dla poszczególnych par i wykrytymi odstępstwami.
+
+    Raises:
+        OSError: Gdy nie można odczytać plików przebiegu.
+        ValueError: Gdy JSON jest niepoprawny, w CSV brakuje wymaganych
+            kolumn lub metadane zawierają błędny plan albo duplikaty ID.
+        KeyError: Gdy w metadanych lub podsumowaniu brakuje wymaganego pola.
+    """
     metadata = json.loads((run_dir / "metadata.json").read_text())
     summary = json.loads((run_dir / "summary.json").read_text())
     with (run_dir / "measurements.csv").open(newline="", encoding="utf-8") as stream:
@@ -72,6 +100,14 @@ def analyze(run_dir):
     issues = []
 
     def issue(message, language="", data_id="", row=""):
+        """Dodaje odstępstwo do listy zgłoszeń bieżącego przebiegu.
+
+        Args:
+            message: Tekst opisujący odstępstwo.
+            language: Identyfikator języka lub pusty napis.
+            data_id: Identyfikator pliku lub pusty napis.
+            row: Numer wiersza CSV (nagłówek to wiersz 1) lub pusty napis.
+        """
         issues.append(dict(row=row, language=language, data_id=data_id, issue=message))
 
     for number, row in enumerate(rows, 2):
@@ -189,6 +225,16 @@ def analyze(run_dir):
 
 
 def write_csv(path, rows, fields):
+    """Zapisuje raport CSV z nagłówkiem w kodowaniu UTF-8.
+
+    Args:
+        path: Obiekt Path wskazujący plik docelowy.
+        rows: Iterowalna kolekcja słowników opisujących wiersze.
+        fields: Sekwencja nazw kolumn w kolejności zapisu.
+
+    Raises:
+        OSError: Gdy nie można otworzyć lub zapisać pliku.
+    """
     with path.open("w", newline="", encoding="utf-8") as stream:
         writer = csv.DictWriter(stream, fieldnames=fields)
         writer.writeheader()
@@ -196,6 +242,23 @@ def write_csv(path, rows, fields):
 
 
 def provenance(run_dir):
+    """Porównuje aktualne sumy SHA-256 z metadanymi przebiegu.
+
+    Szuka źródeł w katalogu projektu, a danych w jego podkatalogu data.
+    Brak pliku oznacza brak zgodności z zapisaną sumą.
+
+    Args:
+        run_dir: Obiekt Path wskazujący katalog przebiegu.
+
+    Returns:
+        Słownik z sumą SHA-256 pliku measurements.csv, porównaniem zapisanych
+        i aktualnych sum źródeł oraz wynikami porównania dla plików danych.
+
+    Raises:
+        OSError: Gdy nie można odczytać metadanych, pomiarów lub plików.
+        ValueError: Gdy metadane nie zawierają poprawnego JSON.
+        KeyError: Gdy w metadanych brakuje wymaganych pól.
+    """
     meta = json.loads((run_dir / "metadata.json").read_text())
     sources = []
     for name, expected in meta["source_sha256"].items():
@@ -222,6 +285,21 @@ def provenance(run_dir):
 
 
 def plots(stats, run_dir, output):
+    """Zapisuje dwa wykresy PNG w podkatalogu images.
+
+    Pierwszy pokazuje mediany w zależności od rozmiaru dla wspólnych
+    wariantów. Drugi pokazuje mediany i zakresy min–max dla poszczególnych
+    wariantów. Czasy na wykresach są podane w mikrosekundach.
+
+    Args:
+        stats: Niepusta lista słowników statystyk zwrócona przez analyze.
+        run_dir: Obiekt Path wskazujący przebieg cytowany na wykresach.
+        output: Obiekt Path wskazujący istniejący katalog analizy.
+
+    Raises:
+        ImportError: Gdy nie można zaimportować wymaganych modułów Matplotlib.
+        OSError: Gdy nie można utworzyć katalogu images lub zapisać wykresów.
+    """
     # Avoid writes to a private user cache; works on headless systems too.
     os.environ.setdefault("MPLCONFIGDIR", "/tmp/word-counter-matplotlib")
     import matplotlib
@@ -312,6 +390,18 @@ def plots(stats, run_dir, output):
 
 
 def main():
+    """Uruchamia analizę na podstawie argumentów wiersza poleceń.
+
+    Przyjmuje --run-dir i --output-dir. Zapisuje statistics.csv,
+    completeness.csv, issues.csv, provenance.json i dwa wykresy PNG.
+
+    Returns:
+        Kod 0, gdy kontrola nie wykryła odstępstw, lub 1, gdy je wykryła.
+
+    Raises:
+        SystemExit: Kod 0 po wyświetleniu pomocy, kod 2 przy błędzie
+            argumentów, danych wejściowych, zależności lub zapisu.
+    """
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--run-dir", type=Path, default=DEFAULT_RUN)
     parser.add_argument("--output-dir", type=Path, default=ROOT / "analysis")

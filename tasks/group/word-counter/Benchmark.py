@@ -36,20 +36,51 @@ FIELDS = [
 
 
 def timestamp():
+    """Zwraca bieżący czas UTC jako napis w formacie ISO 8601."""
     return datetime.now(timezone.utc).isoformat()
 
 
 def write_json(path, value):
+    """Zapisuje obiekt jako JSON w UTF-8 i podmienia plik docelowy.
+
+    Args:
+        path: Obiekt Path wskazujący plik docelowy. Zapis najpierw trafia
+            do pliku o tej samej nazwie z rozszerzeniem .tmp.
+        value: Wartość, którą można zapisać w formacie JSON.
+
+    Raises:
+        OSError: Gdy nie można zapisać pliku tymczasowego lub przenieść go.
+    """
     temporary = path.with_suffix(".tmp")
     temporary.write_text(json.dumps(value, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     temporary.replace(path)
 
 
 def sha256(data):
+    """Zwraca sumę SHA-256 danych bajtowych jako napis szesnastkowy."""
     return hashlib.sha256(data).hexdigest()
 
 
 def load_datasets(data_dir):
+    """Wczytuje i weryfikuje pliki z manifestów w katalogu danych.
+
+    Sprawdza unikalność identyfikatorów, kodowanie ASCII, rozmiar,
+    sumę SHA-256 i oczekiwaną liczbę słów.
+
+    Args:
+        data_dir: Obiekt Path wskazujący katalog przeszukiwany rekurencyjnie
+            w poszukiwaniu plików manifest.json.
+
+    Returns:
+        Lista słowników z metadanymi i ścieżką każdego pliku, sortowana
+        według rozmiaru, a następnie identyfikatora względem data_dir.
+
+    Raises:
+        OSError: Gdy nie można odczytać manifestu lub pliku danych.
+        ValueError: Gdy brakuje manifestów lub wpisów, dane są niepoprawne
+            albo ścieżka pliku prowadzi poza katalog danych.
+        KeyError: Gdy w manifeście brakuje wymaganego pola.
+    """
     datasets = []
     seen = set()
     manifests = sorted(data_dir.rglob("manifest.json"))
@@ -85,12 +116,37 @@ def load_datasets(data_dir):
 
 
 def as_text(value):
+    """Zwraca tekst diagnostyczny z wyjścia procesu.
+
+    Args:
+        value: Bajty, napis lub None.
+
+    Returns:
+        Napis w niezmienionej postaci, bajty zdekodowane jako UTF-8 ze
+        znakami zastępczymi w razie błędów albo pusty napis dla None.
+    """
     if isinstance(value, bytes):
         return value.decode("utf-8", errors="replace")
     return value or ""
 
 
 def measure(command, expected, timeout=TIMEOUT):
+    """Uruchamia jedną próbę i sprawdza wynik licznika.
+
+    Status valid wymaga kodu wyjścia 0, dokładnego formatu stdout, pustego
+    stderr i oczekiwanej liczby słów. Czas w nanosekundach odczytuje ze
+    stdout także w próbie odrzuconej, jeśli format wyniku jest poprawny.
+
+    Args:
+        command: Sekwencja nazwy programu i argumentów, w tym ścieżki danych.
+        expected: Oczekiwana liczba słów jako liczba całkowita.
+        timeout: Limit czasu działania procesu w sekundach (int lub float).
+
+    Returns:
+        Krotka dwóch słowników. Pierwszy zawiera czas, liczbę słów, status
+        i przyczynę odrzucenia. Drugi zawiera stdout, stderr i kod wyjścia,
+        jeśli proces zakończył się w wyznaczonym czasie.
+    """
     row = {"elapsed": "", "actual_words": "", "status": "runtime_error", "reason": ""}
     diagnostic = {"stdout": "", "stderr": ""}
     try:
@@ -123,6 +179,24 @@ def measure(command, expected, timeout=TIMEOUT):
 
 
 def compile_cpp(compiler, binary, root, log):
+    """Kompiluje licznik C++17 i zapisuje wyjście kompilatora.
+
+    Usuwa wcześniejszy plik wykonywalny przed uruchomieniem kompilatora.
+
+    Args:
+        compiler: Nazwa lub ścieżka kompilatora jako napis.
+        binary: Obiekt Path wskazujący docelowy plik wykonywalny.
+        root: Obiekt Path wskazujący katalog projektu i pracy kompilatora.
+        log: Obiekt Path wskazujący plik dziennika kompilacji.
+
+    Returns:
+        Lista argumentów polecenia kompilacji, razem z nazwą kompilatora.
+
+    Raises:
+        RuntimeError: Gdy kompilacja nie powiedzie się lub przekroczy
+            limit czasu albo nie powstanie plik wykonywalny.
+        OSError: Gdy nie można usunąć starego pliku lub zapisać dziennika.
+    """
     command = [compiler, *FLAGS, "source/cpp/main.cpp", "-o", os.path.relpath(binary, root)]
     # Never reuse an output, even if this helper is called outside a fresh run.
     binary.unlink(missing_ok=True)
@@ -138,11 +212,29 @@ def compile_cpp(compiler, binary, root, log):
 
 
 def version(command):
+    """Zwraca stdout pomyślnie wykonanego polecenia diagnostycznego.
+
+    Args:
+        command: Sekwencja nazwy programu i jego argumentów.
+
+    Returns:
+        Napis z stdout bez początkowych i końcowych białych znaków.
+
+    Raises:
+        OSError: Gdy nie można uruchomić programu.
+        subprocess.CalledProcessError: Gdy program zwraca kod różny od zera.
+        subprocess.TimeoutExpired: Gdy polecenie przekracza limit czasu.
+    """
     result = subprocess.run(command, capture_output=True, text=True, timeout=TIMEOUT, check=True)
     return result.stdout.strip()
 
 
 def cpu_info():
+    """Zwraca nazwę procesora lub napis 'unavailable'.
+
+    Raises:
+        OSError: Gdy istniejącego pliku /proc/cpuinfo nie można odczytać.
+    """
     if sys.platform == "darwin":
         try:
             return version(["sysctl", "-n", "machdep.cpu.brand_string"])
@@ -156,6 +248,20 @@ def cpu_info():
 
 
 def summarize(datasets, repetitions, counts, status, error=""):
+    """Zestawia plan i wykonanie prób dla całego przebiegu.
+
+    Args:
+        datasets: Lista słowników z metadanymi plików danych.
+        repetitions: Planowana liczba prób (int) dla każdej pary język–plik.
+        counts: Słownik liczników executed, valid i rejected indeksowany
+            krotkami (data_id, language).
+        status: Napis określający stan końcowy przebiegu.
+        error: Komunikat błędu lub pusty napis.
+
+    Returns:
+        Słownik ze stanem, czasem zakończenia, sumami prób i licznikami
+        dla każdej pary język–plik.
+    """
     pairs = []
     for data in datasets:
         for language in ("cpp", "python"):
@@ -174,6 +280,26 @@ def summarize(datasets, repetitions, counts, status, error=""):
 
 
 def run(args, root=ROOT):
+    """Przeprowadza benchmark w osobnym katalogu przebiegu.
+
+    Dla każdego pliku liczniki działają kolejno w osobnych procesach. C++
+    jest pierwszy w próbach nieparzystych, a Python w parzystych. Kolejne
+    etapy zapisują metadata.json, compilation.log, plik wykonywalny C++,
+    measurements.csv i summary.json. Odrzucenia trafiają do errors.jsonl.
+
+    Args:
+        args: Obiekt argparse.Namespace z polami data_dir, output_dir,
+            repetitions i compiler.
+        root: Obiekt Path wskazujący katalog projektu ze źródłami liczników.
+
+    Returns:
+        Kod 0 po kompletnym przebiegu bez odrzuceń, 1 przy odrzuceniach lub
+        obsłużonym błędzie albo 130 po obsłużonym przerwaniu.
+
+    Raises:
+        OSError: Gdy nie można przygotować katalogu przebiegu lub zapisać
+            jego końcowych metadanych albo podsumowania.
+    """
     output_dir = args.output_dir.resolve()
     output_dir.mkdir(parents=True, exist_ok=True)
     run_id = datetime.now(timezone.utc).strftime("%Y%m%dT%H%M%SZ") + "_" + uuid.uuid4().hex[:10]
@@ -293,6 +419,18 @@ def run(args, root=ROOT):
 
 
 def positive_int(value):
+    """Przekształca argument w dodatnią liczbę całkowitą.
+
+    Args:
+        value: Napis z liczbą powtórzeń benchmarku.
+
+    Returns:
+        Dodatnia liczba całkowita podana w argumencie.
+
+    Raises:
+        ValueError: Gdy napisu nie można przekształcić w liczbę całkowitą.
+        argparse.ArgumentTypeError: Gdy wynik jest niedodatni.
+    """
     number = int(value)
     if number <= 0:
         raise argparse.ArgumentTypeError("Liczba prob musi byc dodatnia.")
@@ -300,6 +438,16 @@ def positive_int(value):
 
 
 def main():
+    """Odczytuje argumenty wiersza poleceń i uruchamia benchmark.
+
+    Obsługuje --repetitions, --data-dir, --output-dir i --compiler.
+
+    Returns:
+        Kod zakończenia zwrócony przez run.
+
+    Raises:
+        SystemExit: Kod 0 po wyświetleniu pomocy lub 2 przy błędzie argumentów.
+    """
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--repetitions", type=positive_int, default=30)
     parser.add_argument("--data-dir", type=Path, default=ROOT / "data")
