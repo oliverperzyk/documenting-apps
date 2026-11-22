@@ -85,6 +85,13 @@ Na **Windows** pomiar pojedynczego pliku uzyskasz z wyjścia obu liczników. Pe�
 
 Do pomiarów użyj dołączonego `data/`. W bieżącej wersji `WordGenerator.py` kończy się błędem `KeyError: 'source'` przed zapisaniem manifestu. [Opis danych i generatora](CONTRIBUTING.md#4-generowanie-danych--znane-ograniczenie)
 
+### Pomiar Pythona po rozgrzewce
+
+> [!NOTE]
+> Jeśli interpreter ma włączony JIT, przed pomiarem wykonaj kilka prób bez mierzenia czasu w tym samym procesie Pythona. `Benchmark.py` uruchamia każdą próbę w nowym procesie, więc osobny przebieg nie rozgrzeje JIT-a przed właściwym pomiarem.
+
+Aby zmierzyć czas po rozgrzewce, uruchom [warmup.py](warmup.py) poleceniem `python3 -B warmup.py` na macOS lub Linuxie, a na Windows poleceniem `py -3 -B warmup.py`.
+
 ## 4. Sprawdź pomiary i odtwórz analizę
 
 Benchmark wypisuje ścieżkę do nowego podkatalogu `results/`. W `summary.json` sprawdź, czy `status` to `complete`, pola `planned`, `executed` i `valid` mają wartość 20 lub 900 zgodnie z zakresem, a `rejected` wynosi `0`. W `measurements.csv` każda poprawna próba ma `status=valid`, zgodne `actual_words` i `expected_words` oraz `unit=ns`. Jeśli przebieg się nie powiedzie, zajrzyj do `compilation.log` lub do `errors.jsonl`, jeśli powstał. [Format plików i kody zakończenia](BENCHMARK.md)
