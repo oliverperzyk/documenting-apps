@@ -1,0 +1,13 @@
+run_id=20260815_170514_833006
+configuration=debug
+case=pass
+compile_exit_code=0
+execution_attempted=true
+run_exit_code=0
+final_status=passed
+compile_command=cl /nologo /std:c++17 /EHsc /W4 /permissive- /utf-8 main.cpp /Fe:_build\experiment.exe /Fo:_build\main.obj /Od /MDd
+compile_time_ms=725.679
+compile_timeout=false
+run_command=_build\experiment.exe
+run_time_ms=3145.352
+run_timeout=false

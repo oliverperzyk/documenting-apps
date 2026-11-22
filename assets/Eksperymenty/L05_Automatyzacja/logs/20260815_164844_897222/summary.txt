@@ -1,0 +1,10 @@
+run_id=20260815_164844_897222
+configuration=release
+case=pass
+compile_exit_code=2
+execution_attempted=false
+run_exit_code=not_started
+final_status=compile_failed
+compile_command=cl /nologo /std:c++17 /EHsc /W4 /permissive- /utf-8 main.cpp /Fe:_build\experiment.exe /Fo:_build\main.obj /O2 /MD /DNDEBUG
+compile_time_ms=62.153
+compile_timeout=false

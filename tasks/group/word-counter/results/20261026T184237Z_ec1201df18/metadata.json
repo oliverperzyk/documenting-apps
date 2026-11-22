@@ -1,0 +1,89 @@
+{
+    "started_at_utc": "2026-10-26T18:42:37.851215+00:00",
+    "status": "complete",
+    "repetitions": 2,
+    "warmups": 0,
+    "timeout_seconds": 30,
+    "unit": "ns",
+    "order": "per file: odd trial cpp/python, even trial python/cpp; sequential fresh processes",
+    "measurement": "algorithm and word-count result only; excludes process startup and IO",
+    "system": "macOS-27.0.1-arm64-arm-64bit-Mach-O",
+    "architecture": "arm64",
+    "cpu": "arm",
+    "logical_cpus": 14,
+    "python_version": "3.14.4 (main, Apr  7 2026, 13:13:20) [Clang 21.0.0 (clang-2100.0.123.102)]",
+    "python_executable": "/opt/homebrew/opt/python@3.14/bin/python3.14",
+    "compiler": "c++",
+    "compiler_flags": ["-std=c++17", "-O2", "-Wall", "-Wextra", "-Wpedantic"],
+    "datasets": [
+        {
+            "data_id": "long_dense_mixed_1000.txt",
+            "sha256": "27a1c0ae6a5b0c531c3338737f4ff73561fc855e8717fd4eb065e004714a0ae8",
+            "size_bytes": 1000,
+            "variant": "long_dense_mixed",
+            "expected_words": 65
+        },
+        {
+            "data_id": "long_sparse_mixed_1000.txt",
+            "sha256": "0690975565dc96bb177d122e443dee79013c37779d0353485eb6875c1f0967be",
+            "size_bytes": 1000,
+            "variant": "long_sparse_mixed",
+            "expected_words": 119
+        },
+        {
+            "data_id": "short_dense_mixed_1000.txt",
+            "sha256": "f1e25c3254ccab6e07bf8bdff19c16cd8f399dc0c7af9269b914b53e964d83b7",
+            "size_bytes": 1000,
+            "variant": "short_dense_mixed",
+            "expected_words": 88
+        },
+        {
+            "data_id": "short_spaces_1000.txt",
+            "sha256": "87a7179517260ac8b3ea9c00b9eef59ede7b2dadbe855d0dc285c585e38eedff",
+            "size_bytes": 1000,
+            "variant": "short_spaces",
+            "expected_words": 219
+        },
+        {
+            "data_id": "short_sparse_mixed_1000.txt",
+            "sha256": "76c4181579e46d72b0d413fbb2a36b252eaadcc798141e2f9af4154690b7503d",
+            "size_bytes": 1000,
+            "variant": "short_sparse_mixed",
+            "expected_words": 225
+        }
+    ],
+    "source_sha256": {
+        "source/cpp/main.cpp": "0873977281386e4cf605955ec9cf6059f688e191acd664bdd063d185932728ac",
+        "source/python/main.py": "177007f7e64a0174e804f8f30fdaf6f3f51748120bde7d38a15b7c182bfc82fe",
+        "benchmark.py": "5e06fbecfd9683a8c19d88c57bdd09604696539c89b0454870ffaa6f431a92d4"
+    },
+    "compiler_version": "Apple clang version 21.0.0 (clang-2100.3.34.2)\nTarget: arm64-apple-darwin27.0.0\nThread model: posix\nInstalledDir: /Library/Developer/CommandLineTools/usr/bin",
+    "compile_command": [
+        "c++",
+        "-std=c++17",
+        "-O2",
+        "-Wall",
+        "-Wextra",
+        "-Wpedantic",
+        "source/cpp/main.cpp",
+        "-o",
+        "results/20261026T184237Z_ec1201df18/word-counter"
+    ],
+    "clocks": {
+        "cpp": {
+            "name": "std::chrono::steady_clock",
+            "monotonic": true,
+            "period_num": 1,
+            "period_den": 1000000000
+        },
+        "python": {
+            "implementation": "mach_absolute_time()",
+            "monotonic": true,
+            "adjustable": false,
+            "resolution": 4.166666666666666e-8
+        }
+    },
+    "clock_note": "ns is output unit; C++ period is nominal, Python resolution is declared; neither guarantees accuracy",
+    "error": "",
+    "finished_at_utc": "2026-10-26T18:42:38.557999+00:00"
+}

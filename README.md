@@ -11,5 +11,4 @@ Rozwiązania zadań z materiałów indywidualnych (od TiDPI_03 do TiDPI_12) znaj
 
 ## 🏡 Rozwiązania grupowe
 
-> [!NOTE]
-> Informacja o rozwiązaniach grupowych zostanie dodana wraz z implementacją pierwszych rozwiązań.
+- [`📚 tasks/group/word-counter`](./tasks/group/word-counter/README.md) - Pierwsze zadanie grupowe polegające na implementacji algorytmu do liczenia słów w plikach tekstowych.
